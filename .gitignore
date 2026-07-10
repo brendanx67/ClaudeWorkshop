@@ -1,0 +1,25 @@
+# Participant working files may land in the root, not in this repo — but guard
+# against accidental commits of common local cruft.
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Node
+node_modules/
+
+# Local Claude Code state that shouldn't be shared
+.claude/settings.local.json
