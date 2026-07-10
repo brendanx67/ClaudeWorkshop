@@ -28,14 +28,17 @@ CONTENTS  (keep every file thin — reference, don't embed)
       - Current work: todos/active/
     INTERVIEW: what should we call this lab, and how should Claude refer to you?
 
-  CRITICAL-RULES.md — start with these two; invite more:
+  CRITICAL-RULES.md — start with these; invite more:
       1. Reference, don't embed — keep CLAUDE.md and this file short; put
          knowledge in docs/ and point to it.
-      2. TODO files are prefixed "TODO". In active/ and completed/, the title
+      2. Ask me questions one at a time and wait for my answer — don't post a
+         long numbered list at once. When a question is a simple choice, offer
+         it as selectable options.
+      3. TODO files are prefixed "TODO". In active/ and completed/, the title
          carries the start date:   TODO-YYYYMMDD-short-goal.md
          (the date is the day the work was started). In backlog/ (not started
          yet), no date:            TODO-short-goal.md
-    INTERVIEW: any rule you already know you want Claude to always follow?
+    INTERVIEW: any other rule you already know you want Claude to always follow?
 
   docs/about-my-work.md — do NOT use a template.
     INTERVIEW: ask about a dozen questions about the participant's work and what

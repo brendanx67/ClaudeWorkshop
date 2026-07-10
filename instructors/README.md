@@ -134,4 +134,7 @@ Ran the full flow in Windows Sandbox. Key findings, now baked into
   validated.
 - **Pre-event email:** exact wording, whether to include a tray-quit screenshot,
   and how much we ask people to finish at home vs. at 8:00.
+- **Question-interaction behavior:** confirm the Code tab honors "ask one at a
+  time" and renders the selectable-options picker (CRITICAL-RULES rule #2 in the
+  Session-1 skeleton). The interview quality depends on it.
 - Sessions 2–6: owners to draft their lesson folders.
