@@ -91,15 +91,21 @@ with just *"I want to build a check-splitting app. Ask me 12 questions,"* then
 open exploration, everyone in a different place. Aim for that shape. A participant
 who finishes early should have somewhere to keep going, not a wall.
 
-**Recurring named concepts** (reinforce them by name across sessions, the way we
-repeat "reference, don't embed"):
+**Recurring named concepts** (reinforce them by name across sessions):
 
-- **Have Claude ask you** — when a participant doesn't know where to start, have
-  Claude interview them instead of straining to explain everything up front. The
-  most unlocking move for a beginner.
-- **Interview → spec → demo** — the check-splitting arc is Day 1 in miniature:
-  Lesson 1 does *interview* (have Claude ask you) and *spec* (flush to Markdown in
-  `docs/`); Lesson 2 does the *demo* (HTML/JS). Later sessions can reuse the arc.
+- **All you have to do is explain (to Claude).** The master idea: the participant
+  brings the intent and explains it; Claude does the building. Everything below
+  serves this. Two techniques sit under it:
+  - *Have Claude ask you* — when they don't know where to start, let Claude
+    interview them instead of straining to explain everything up front. The most
+    unlocking move for a beginner.
+  - *Flush what you explain* — capture the explanation in a durable artifact. A
+    Markdown **spec** and a **DHTML demo** are both flushes — the same move in
+    different media (one reads, one runs) — alongside `docs/` and `todos/`.
+- **Reference, don't embed** — keep the always-on hub (`CLAUDE.md`) thin; put
+  knowledge in `docs/` and point to it.
+- **Interview → spec → demo** — the check-splitting arc, Day 1 in miniature:
+  Lesson 1 does the interview and the spec; Lesson 2 does the demo.
 
 ## What the Windows clean-machine test settled (July 2026)
 

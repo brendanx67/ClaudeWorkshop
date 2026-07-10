@@ -24,10 +24,11 @@ Before any setup, tell Claude what you do and let it interview you. Something li
 > *"I'm a [what you do]. Ask me a dozen questions about my work and what I'd like
 > help with."*
 
-Answer however you like — there are no wrong answers. This is a technique worth a
-name: **have Claude ask you.** When you don't know where to start, don't strain to
-explain everything up front — let Claude interview you. You'll reach for it all
-week, and it's often better than trying to *tell* Claude everything at once.
+Answer however you like — there are no wrong answers. Here's the whole trick of
+the workshop: **all you have to do is explain to Claude** — you bring the ideas,
+Claude builds. And when you're not sure how to explain, use the move you just
+made: **have Claude ask you.** Let Claude interview you instead of straining to lay
+it all out up front. You'll reach for it all week.
 
 ## 2. Give it a home
 
@@ -98,10 +99,11 @@ That's the whole idea — and why it stays short. Save and push.
 ## Up next
 
 You just did the first half of a pattern you'll see all workshop: **interview →
-spec → demo.** Today you had Claude *ask* you, then flushed the answers into a
-Markdown spec in `docs/`. In **Session 2** you'll take an idea like that and have
-Claude turn it into a working HTML page you can see and click — the "demo" half,
-and one of the most delightful things Claude does.
+spec → demo.** You had Claude *ask* you, then *flushed* your answers into a
+Markdown spec in `docs/`. In **Session 2** you'll flush the same kind of idea a
+different way — asking Claude to turn it into a working HTML page you can see and
+click. A spec and a demo are both ways of capturing what you explained: one reads,
+one runs.
 
 ---
 
