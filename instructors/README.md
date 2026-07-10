@@ -81,6 +81,16 @@ Assume Claude does the mechanics; the participant supplies intent and judgment. 
 bar: they succeed by **describing what they want to Claude**, not by typing
 commands.
 
+**Small instructions, wide-open space — not a copy-paste script.** Don't write a
+session as a chain of prompts to paste. Give a small nudge, then leave room for
+the participant to talk to their own Claude and go their own way. When you show a
+prompt, mark it clearly as *an example, in your own words* — never "paste this."
+Favor the **interview opener**: the standout session at Code with Claude SF began
+with just *"I want to build a check-splitting app. Ask me 12 questions,"* then
+*"write a spec,"* then *"make a demo"* — three tiny instructions, a full hour of
+open exploration, everyone in a different place. Aim for that shape. A participant
+who finishes early should have somewhere to keep going, not a wall.
+
 ## What the Windows clean-machine test settled (July 2026)
 
 Ran the full flow in Windows Sandbox. Key findings, now baked into
