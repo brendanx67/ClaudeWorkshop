@@ -40,7 +40,7 @@ you; you do these first, yourself.
 ## Paste this once (after the Code tab has detected Git)
 
 ```
-Set up this computer to use GitHub from here. Install the GitHub CLI if it isn't already installed — but don't sign me in to GitHub, I'll do that at the workshop. Then clone https://github.com/brendanx67/ClaudeWorkshop into this folder, and tell me what you installed. This completes the pre-workshop setup.
+Set up this computer for the workshop from here. Install the GitHub CLI and Python 3 if they aren't already installed — but don't sign me in to GitHub, I'll do that at the workshop. Then clone https://github.com/brendanx67/ClaudeWorkshop into this folder, and tell me what you installed. This completes the pre-workshop setup.
 ```
 
 Approve the steps as Claude asks. On a clean machine this is exactly what happens:
@@ -49,6 +49,8 @@ Approve the steps as Claude asks. On a clean machine this is exactly what happen
 - If the GitHub CLI is missing and there's **no package manager** (winget/choco),
   Claude downloads the **official `gh` installer directly** and installs it
   silently — verified on a machine with no winget.
+- Same for **Python 3** — Claude installs it from the official python.org
+  installer (PATH enabled, `py` launcher included) — verified on a clean machine.
 - Claude clones `ClaudeWorkshop` into `ws`. **No sign-in required** — it's a
   public repo.
 
@@ -60,10 +62,11 @@ cloned. GitHub sign-in is the first thing Lesson 1 does.
 
 ## Python (needed for the Day-1 data session)
 
-Python 3 is used later in the workshop. Plan: install it as part of pre-event
-setup so it's ready. **Clean-machine Python install is not yet verified** — until
-it is, treat Python as a "we'll make sure it's installed at the 8:00 hour" item
-rather than a promised pre-event step.
+Python 3 is used later in the workshop, and the pre-event prompt above installs
+it. **Verified on a clean Windows machine:** with no package manager present,
+Claude Code installed Python 3.14 from the official python.org installer (silent,
+PATH enabled, `py` launcher) and confirmed it runs. Nothing extra to do — same
+"works in new sessions" PATH note applies.
 
 ## Notes for the teaching team
 
@@ -76,5 +79,5 @@ Findings from the Windows Sandbox dry run (July 2026):
 - **No package manager is fine** — Claude installed `gh` from the official MSI on
   its own. We don't need to prescribe winget.
 - The bundled installer self-updated; tell people to expect the upgrade prompt.
-- Still open: **Mac clean-machine test**, and **verifying Python install** on a
-  clean machine.
+- Still open: **Mac clean-machine test**. (Windows path — Git prereq, `gh`,
+  Python, clone — is fully validated.)

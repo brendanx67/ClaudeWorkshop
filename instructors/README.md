@@ -88,12 +88,15 @@ Ran the full flow in Windows Sandbox. Key findings, now baked into
   the official `gh` MSI and installed it silently. We don't prescribe a method.
 - **Bundled installers go stale** and self-update on first launch — expected.
 - **Option B held up:** install `gh` + clone the public repo, zero sign-in.
+- **Python installs cleanly too:** no package manager, so Claude Code pulled
+  Python 3.14 from python.org and installed it silently (PATH + `py` launcher).
+  We can promise Python as a pre-event step.
 
 ## Open questions (help us close these before July 21)
 
 - **Mac clean-machine test** — no built-in disposable VM; needs a Mac owner among
-  us (fresh user account or a UTM/Parallels VM).
-- **Python install on a clean machine** — not yet verified; see setup.md.
+  us (fresh user account or a UTM/Parallels VM). The whole **Windows** path is
+  validated.
 - **Pre-event email:** exact wording, whether to include a tray-quit screenshot,
   and how much we ask people to finish at home vs. at 8:00.
 - Sessions 2–6: owners to draft their lesson folders.
