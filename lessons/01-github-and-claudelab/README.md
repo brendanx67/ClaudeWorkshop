@@ -2,14 +2,14 @@
 
 **Day 1 · 8:00–9:00 · Brendan**
 
-This hour is mostly *conversation*. You'll talk to Claude about your own work,
-and along the way you'll learn to keep what's worth keeping — in your own
-repository on GitHub, your **ClaudeLab**. Claude does the mechanics; you bring the
-ideas.
+This hour is mostly *conversation*. You'll create your own repository on GitHub —
+your **ClaudeLab** — and let Claude interview you to fill it. The whole trick of
+the workshop: **all you have to do is explain to Claude.** You bring the ideas;
+Claude builds. And when you're not sure how to explain, **have Claude ask you.**
 
 There's deliberately more room here than instruction. The prompts below are
-**examples, in your own words** — not things to copy exactly. Finish a step early?
-Keep talking to Claude and see where it goes. That's the assignment.
+**examples, in your own words** — not things to copy exactly. Finish early? Keep
+talking to Claude. That's the assignment.
 
 > **Where you should be:** Claude Code open on your `ws` folder, with
 > `ClaudeWorkshop` already cloned inside it. Not there? Grab an instructor — that's
@@ -17,74 +17,69 @@ Keep talking to Claude and see where it goes. That's the assignment.
 
 ---
 
-## 1. Just start talking
-
-Before any setup, tell Claude what you do and let it interview you. Something like:
-
-> *"I'm a [what you do]. Ask me a dozen questions about my work and what I'd like
-> help with."*
-
-Answer however you like — there are no wrong answers. Here's the whole trick of
-the workshop: **all you have to do is explain to Claude** — you bring the ideas,
-Claude builds. And when you're not sure how to explain, use the move you just
-made: **have Claude ask you.** Let Claude interview you instead of straining to lay
-it all out up front. You'll reach for it all week.
-
-## 2. Give it a home
-
-That conversation was worth keeping. Let's put it somewhere permanent — which is
-the whole reason to learn Git and GitHub.
+## 1. Create your ClaudeLab
 
 - **Sign in to GitHub** (the one step we saved for the room — an instructor will
   help if the browser sign-in is new).
-- Then ask Claude, in your words, to **create a repository called `ClaudeLab`,
-  save a summary of your interview as `docs/about-my-work.md`, and push it to your
-  GitHub.** Watch each step and approve it.
+- Then ask Claude, in your words, to **create a repository called `ClaudeLab` in
+  this folder and push it to your GitHub.** Watch each step and approve it.
 
-Open your `ClaudeLab` on GitHub — your work is online. 🎉
+Open your `ClaudeLab` on GitHub — empty for now; you'll fill it next.
 
 Three words you'll hear all morning: a **repo** is a project folder that tracks
 its own history; a **commit** is a saved snapshot; a **push** sends your commits
 up to GitHub. You supply the intent; Claude does the Git.
 
-## 3. Set up your drawers
+## 2. Let Claude set it up — and interview you
 
-Ask Claude to make the folders you'll fill all week — **`docs/`, `scripts/`, and
-`todos/` with `active/`, `backlog/`, and `completed/`** — and to leave a one-line
-note in each saying what it's for. (Git only tracks files, so those little notes
-are also what make the folders "real.")
+Rather than list folders yourself, point Claude at a recipe we've written for you:
 
-Then drop the first thing you'd like to try into `todos/active/`. Think of it this
-way: **`docs/` is what you want Claude to know; `todos/` is the work you want to
-track** (it flows `backlog → active → completed`).
+> *"Set up the folders and files described in
+> `ClaudeWorkshop/lessons/01-github-and-claudelab/skeleton.txt` in my ClaudeLab.
+> Keep every file thin, and interview me wherever it says to."*
 
-## 4. Teach Claude your rules — "reference, don't embed"
+Claude makes the structure and then **asks you questions** — about your work
+(→ `docs/about-my-work.md`), any rule you want it to always follow
+(→ `CRITICAL-RULES.md`), and one thing you'd like to achieve (→ your first
+`todos/` item). Answer freely.
 
-This is the habit that keeps a knowledge base from turning to mush. Ask Claude to
-create two files:
+That's two ideas at once: **have Claude ask you**, and — as your answers land in
+files — **flush what you explain** into a knowledge base you own. Notice
+`CLAUDE.md` stays short: it *points* to the other files instead of repeating them.
+That's **reference, don't embed.**
 
-- **`CRITICAL-RULES.md`** — start it with one rule: *reference, don't embed* —
-  keep your always-on files short, put knowledge in `docs/`, and point to it.
-- **`CLAUDE.md`** — a short **hub** Claude reads every time it works in your lab,
-  that *points to* your rules and docs instead of repeating them.
+## 3. Look it over, then save
 
-Notice what just happened: your `CLAUDE.md` follows the very rule it points at.
-That's the whole idea — and why it stays short. Save and push.
+Skim what Claude made — open a file or two. When it looks right:
 
-## If you have time (or want to keep going)
+> *"Save everything to my ClaudeLab and push it to GitHub."*
 
-- **`STYLEGUIDE.md`** — tell Claude one or two ways you like work done.
+Refresh the GitHub page — your notes, rules, and first todo are there,
+timestamped. A real first commit. 🎉
+
+## Keep going (or if you have time)
+
+- Add a rule to `CRITICAL-RULES.md` the moment you notice a preference.
 - Once you have a few files, ask Claude to **read your repo and write a `TOC.md`**
-  — a map of your ClaudeLab. A nice way to watch Claude survey what you've built.
+  — a map of your ClaudeLab.
 - Or just keep talking to Claude about your work, and save anything worth keeping.
   That's the real skill.
+
+## Up next
+
+You just did the first half of a pattern you'll see all workshop: **interview →
+spec → demo.** You had Claude *ask* you, then *flushed* your answers into files in
+`docs/`. In **Session 2** you'll flush the same kind of idea a different way —
+asking Claude to turn it into a working HTML page you can see and click. A spec
+and a demo are both ways of capturing what you explained: one reads, one runs.
 
 ## You're on track when
 
 - [ ] `ClaudeLab/` sits next to `ClaudeWorkshop/` in `ws`, and is on your GitHub.
-- [ ] It has `docs/`, `scripts/`, and `todos/{active,backlog,completed}`, with a
-      first commit from today.
-- [ ] A thin `CLAUDE.md` that *references* `CRITICAL-RULES.md`.
+- [ ] It has `CLAUDE.md`, `CRITICAL-RULES.md`, `docs/about-my-work.md`, and
+      `todos/{active,backlog,completed}`, with a first commit from today.
+- [ ] One todo in `active/` or `backlog/`, named the workshop way
+      (`TODO-YYYYMMDD-...` if you started it today).
 - [ ] You can say what *commit* and *push* mean — and what *"reference, don't
       embed"* is protecting you from.
 
@@ -93,17 +88,8 @@ That's the whole idea — and why it stays short. Save and push.
 - A repo you own and keep using — this workshop and beyond.
 - The **multi-repo root**: `ws` now holds two repos; add a third anytime with
   *"clone it into this folder."*
-- The habit at the heart of the week: **talk to Claude, then flush what you
-  explained into your knowledge base — and keep the hub thin.**
-
-## Up next
-
-You just did the first half of a pattern you'll see all workshop: **interview →
-spec → demo.** You had Claude *ask* you, then *flushed* your answers into a
-Markdown spec in `docs/`. In **Session 2** you'll flush the same kind of idea a
-different way — asking Claude to turn it into a working HTML page you can see and
-click. A spec and a demo are both ways of capturing what you explained: one reads,
-one runs.
+- The habit at the heart of the week: **explain to Claude, let it ask you, and
+  flush what you explain into a knowledge base you own — keeping the hub thin.**
 
 ---
 

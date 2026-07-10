@@ -1,0 +1,48 @@
+ClaudeLab — starting structure (Session 1)
+==========================================
+
+HOW TO USE THIS FILE (participant)
+  In Claude Code, say something like:
+    "Set up the folders and files described in
+     ClaudeWorkshop/lessons/01-github-and-claudelab/skeleton.txt in my ClaudeLab.
+     Keep every file thin, and interview me wherever it says INTERVIEW."
+  Then answer Claude's questions. Letting Claude ask you is the whole point.
+
+MINIMAL LAYOUT
+  ClaudeLab/
+  ├── CLAUDE.md            Thin hub Claude reads every time it works here.
+  ├── CRITICAL-RULES.md    Rules Claude must always follow.
+  ├── docs/
+  │   └── about-my-work.md  Short summary of who you are and what you do.
+  └── todos/               Work to track: backlog -> active -> completed.
+      ├── active/
+      ├── backlog/
+      └── completed/
+
+CONTENTS  (keep every file thin — reference, don't embed)
+
+  CLAUDE.md — a short hub, all pointers:
+      # ClaudeLab — <your lab>
+      - Always follow CRITICAL-RULES.md
+      - About me and my work: docs/about-my-work.md
+      - Current work: todos/active/
+    INTERVIEW: what should we call this lab, and how should Claude refer to you?
+
+  CRITICAL-RULES.md — start with these two; invite more:
+      1. Reference, don't embed — keep CLAUDE.md and this file short; put
+         knowledge in docs/ and point to it.
+      2. TODO files are prefixed "TODO". In active/ and completed/, the title
+         carries the start date:   TODO-YYYYMMDD-short-goal.md
+         (the date is the day the work was started). In backlog/ (not started
+         yet), no date:            TODO-short-goal.md
+    INTERVIEW: any rule you already know you want Claude to always follow?
+
+  docs/about-my-work.md — do NOT use a template.
+    INTERVIEW: ask about a dozen questions about the participant's work and what
+    they'd like help with, then write a short summary here.
+
+  todos/ — create active/, backlog/, completed/, then make ONE todo:
+    INTERVIEW: what is one thing you'd like to achieve? Starting now, or later?
+      - now   ->  todos/active/TODO-YYYYMMDD-<goal>.md   (today's date)
+      - later ->  todos/backlog/TODO-<goal>.md            (no date)
+    Keep the todo short: a title and a one-line goal.
