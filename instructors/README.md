@@ -91,6 +91,16 @@ with just *"I want to build a check-splitting app. Ask me 12 questions,"* then
 open exploration, everyone in a different place. Aim for that shape. A participant
 who finishes early should have somewhere to keep going, not a wall.
 
+**Recurring named concepts** (reinforce them by name across sessions, the way we
+repeat "reference, don't embed"):
+
+- **Have Claude ask you** — when a participant doesn't know where to start, have
+  Claude interview them instead of straining to explain everything up front. The
+  most unlocking move for a beginner.
+- **Interview → spec → demo** — the check-splitting arc is Day 1 in miniature:
+  Lesson 1 does *interview* (have Claude ask you) and *spec* (flush to Markdown in
+  `docs/`); Lesson 2 does the *demo* (HTML/JS). Later sessions can reuse the arc.
+
 ## What the Windows clean-machine test settled (July 2026)
 
 Ran the full flow in Windows Sandbox. Key findings, now baked into

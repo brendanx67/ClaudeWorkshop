@@ -24,8 +24,10 @@ Before any setup, tell Claude what you do and let it interview you. Something li
 > *"I'm a [what you do]. Ask me a dozen questions about my work and what I'd like
 > help with."*
 
-Answer however you like — there are no wrong answers. This "ask me N questions"
-move is one you'll reuse all week: it turns a blank page into a conversation.
+Answer however you like — there are no wrong answers. This is a technique worth a
+name: **have Claude ask you.** When you don't know where to start, don't strain to
+explain everything up front — let Claude interview you. You'll reach for it all
+week, and it's often better than trying to *tell* Claude everything at once.
 
 ## 2. Give it a home
 
@@ -92,6 +94,14 @@ That's the whole idea — and why it stays short. Save and push.
   *"clone it into this folder."*
 - The habit at the heart of the week: **talk to Claude, then flush what you
   explained into your knowledge base — and keep the hub thin.**
+
+## Up next
+
+You just did the first half of a pattern you'll see all workshop: **interview →
+spec → demo.** Today you had Claude *ask* you, then flushed the answers into a
+Markdown spec in `docs/`. In **Session 2** you'll take an idea like that and have
+Claude turn it into a working HTML page you can see and click — the "demo" half,
+and one of the most delightful things Claude does.
 
 ---
 
