@@ -49,5 +49,8 @@ links: [`lessons/README.md`](lessons/README.md).
 - [`setup/`](setup/) — how a participant gets from "Claude Desktop installed" to
   ready for lesson one.
 - [`lessons/`](lessons/) — one folder per session; each is a participant guide.
+- [`presentation-template/`](presentation-template/) — a single-file HTML slide
+  deck (UW-branded, prints to 16:9 PDF) for instructors who want to build their
+  talk with Claude Code instead of PowerPoint.
 - [`instructors/`](instructors/) — open notes on how we're building and teaching
   this, for the team and any Ambassador who's curious.

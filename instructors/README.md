@@ -58,6 +58,15 @@ place to experiment, not a system of record.
 - **Keep `main` runnable** — someone should always be able to clone `main` and get
   a working setup → Lesson 1.
 
+## Slides in HTML, not PowerPoint
+
+We'd like instructors to build their talks as HTML with Claude Code — it models
+the exact skill participants learn, lives in Git, and prints to a clean 16:9 PDF.
+Start from [`../presentation-template/`](../presentation-template/) (UW-branded,
+single file, no build step). Copy it into your own working area and make it
+yours. Not mandatory — but if you try it, you'll have a better sense of what
+we're asking participants to do.
+
 ## Adding your session
 
 1. Copy `lessons/01-github-and-claudelab/` as a structural template.
