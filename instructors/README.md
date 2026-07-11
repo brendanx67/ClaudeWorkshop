@@ -103,7 +103,13 @@ who finishes early should have somewhere to keep going, not a wall.
     Markdown **spec** and a **DHTML demo** are both flushes — the same move in
     different media (one reads, one runs) — alongside `docs/` and `todos/`.
 - **Reference, don't embed** — keep the always-on hub (`CLAUDE.md`) thin; put
-  knowledge in `docs/` and point to it.
+  knowledge in `docs/` and `CRITICAL-RULES.md` and point to it. **Deeper cut
+  (worth teaching): the wrapper is tool-specific, the knowledge is not.**
+  `CLAUDE.md` is the thin, *Claude Code-specific* layer; the files it points to
+  hold *tool-agnostic* know-how that works just as well pasted into ChatGPT,
+  Cursor, or Copilot. Swap the wrapper, keep the knowledge — **no lock-in.** So a
+  tool-specific instruction ("use the question interface") belongs in `CLAUDE.md`;
+  a general one ("pace your questions") belongs in `CRITICAL-RULES.md`.
 - **Interview → spec → demo** — the check-splitting arc, Day 1 in miniature:
   Lesson 1 does the interview and the spec; Lesson 2 does the demo.
 

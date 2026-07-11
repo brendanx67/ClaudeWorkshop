@@ -21,19 +21,22 @@ MINIMAL LAYOUT
 
 CONTENTS  (keep every file thin — reference, don't embed)
 
-  CLAUDE.md — a short hub, all pointers:
+  CLAUDE.md — the thin, Claude Code-specific layer: pointers, plus anything unique
+  to THIS tool. Keep portable know-how in the files it points to.
       # ClaudeLab — <your lab>
       - Always follow CRITICAL-RULES.md
       - About me and my work: docs/about-my-work.md
       - Current work: todos/active/
+      - Use the Claude Code question interface for discrete, choose-one questions.
     INTERVIEW: what should we call this lab, and how should Claude refer to you?
 
-  CRITICAL-RULES.md — start with these; invite more:
+  CRITICAL-RULES.md — portable rules that apply to ANY AI tool. Start with these;
+  invite more:
       1. Reference, don't embed — keep CLAUDE.md and this file short; put
          knowledge in docs/ and point to it.
-      2. Ask me questions one at a time and wait for my answer — don't post a
-         long numbered list at once. When a question is a simple choice, offer
-         it as selectable options.
+      2. Pace your questions — ask one at a time and wait for my answer; never
+         dump a wall of questions I have to coordinate and answer before moving
+         on.
       3. TODO files are prefixed "TODO". In active/ and completed/, the title
          carries the start date:   TODO-YYYYMMDD-short-goal.md
          (the date is the day the work was started). In backlog/ (not started
