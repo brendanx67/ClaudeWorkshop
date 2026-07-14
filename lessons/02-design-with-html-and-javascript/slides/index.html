@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 2 &middot; Design with HTML and JavaScript</title>
+
+<!--
+  ============================================================================
+  ClaudeWorkshop presentation template
+  ============================================================================
+  A single-file HTML slide deck. No build step, no dependencies. Open it in a
+  browser to present; print it to a 16:9 PDF to share. Everything lives in this
+  one file plus an optional assets/ folder for images and video.
+
+  HOW TO USE
+    - Present:  double-click index.html. Arrow keys / Space / click to advance.
+                Press F for fullscreen.
+    - Edit:     each <section class="slide"> is one slide. Duplicate a slide,
+                change the words. Ask Claude Code to add or restyle slides.
+    - Colors:   edit the --brand / --accent variables in :root below.
+    - Print PDF: Ctrl/Cmd-P -> "Save as PDF". See the notes above @media print.
+
+  Ask Claude Code things like:
+    "Add a two-column slide comparing X and Y."
+    "Turn my three bullet points on the agenda slide into a diagram."
+    "Change the brand color to forest green."
+  ============================================================================
+-->
+
+<style>
+:root {
+  /* ---- EDIT THESE: your event's palette (UW colors by default) ---------- */
+  --brand:       #4B2E83;   /* UW purple — primary */
+  --brand-dark:  #362161;   /* headings, dark section backgrounds */
+  --brand-light: #EDE9F3;   /* light section backgrounds, borders */
+  --accent:      #85754D;   /* UW gold — highlights, bullet markers */
+  /* ----------------------------------------------------------------------- */
+  --bg:    #FFFFFF;
+  --text:  #1A1A1A;
+  --muted: #777777;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  width: 100%; height: 100%;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ---- Slide model --------------------------------------------------------
+   One .slide is shown at a time (.active). Sizes use vw/vh so the deck fills
+   any screen. In print, these same units resolve against the 16:9 page box. */
+.deck  { position: relative; width: 100vw; height: 100vh; }
+.slide {
+  position: absolute; inset: 0;
+  padding: 6vh 8vw;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+}
+.slide.active { display: flex; }
+
+/* ---- Typography ---------------------------------------------------------- */
+h1 { font-size: 5.5vw; line-height: 1.05; font-weight: 700; color: var(--brand-dark); letter-spacing: -0.02em; }
+h2 { font-size: 3.8vw; line-height: 1.1;  font-weight: 600; color: var(--brand-dark); letter-spacing: -0.01em; margin-bottom: 4vh; }
+h3 { font-size: 2.4vw; color: var(--accent); margin-bottom: 1vh; font-weight: 600; }
+p, li { font-size: 2.2vw; line-height: 1.5; }
+.accent { color: var(--accent); }
+.muted  { color: var(--muted); font-size: 1.6vw; }
+
+/* Bullet list */
+ul.bullets { list-style: none; margin-top: 2vh; }
+ul.bullets li { font-size: 2.6vw; font-weight: 500; margin-bottom: 1.6vh; }
+ul.bullets li::before { content: "▸"; color: var(--accent); margin-right: 1.2vw; font-weight: 700; }
+ul.bullets li .sub {
+  display: block; font-size: 1.5vw; font-weight: 400; font-style: italic;
+  color: var(--muted); margin-top: 0.3vh; padding-left: 2.5vw;
+}
+
+/* ---- Title slide --------------------------------------------------------- */
+.title-slide { text-align: center; align-items: center; justify-content: center; }
+.title-slide h1 { font-size: 7vw; margin-bottom: 2.5vh; letter-spacing: -0.025em; }
+.title-slide .subtitle { font-size: 2.4vw; color: var(--muted); line-height: 1.35; }
+.title-slide .byline { font-size: 2vw; font-weight: 500; margin-top: 6vh; }
+.title-slide .affil  { font-size: 1.5vw; color: var(--muted); margin-top: 0.4vh; }
+
+/* UW wordmark (asset-free; swap for your institution or an <img> logo) */
+.uw-logo { display: flex; align-items: center; justify-content: center; gap: 1vw; margin-top: 4vh; }
+.uw-w {
+  width: 4vw; height: 4vw; background: var(--brand); color: white;
+  font-family: Georgia, "Times New Roman", serif; font-style: italic; font-weight: 700;
+  font-size: 3vw; display: flex; align-items: center; justify-content: center;
+  line-height: 1; letter-spacing: -0.05em;
+}
+.uw-text { font-size: 1vw; color: var(--text); letter-spacing: 0.08em; line-height: 1.25; font-weight: 600; text-align: left; }
+.uw-text em { font-style: italic; font-weight: 400; letter-spacing: 0; }
+
+/* ---- Section opener (dark background) ------------------------------------ */
+.opener { background: var(--brand-dark); color: white; justify-content: center; align-items: center; text-align: center; }
+.opener .eyebrow { font-size: 1.8vw; color: var(--brand-light); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 4vh; }
+.opener h1 { color: white; font-size: 6vw; line-height: 1.1; max-width: 80vw; }
+.opener .sub { font-size: 2.2vw; color: var(--brand-light); margin-top: 4vh; font-weight: 400; max-width: 70vw; }
+
+/* ---- Two-column ---------------------------------------------------------- */
+.two-col { display: flex; gap: 4vw; flex: 1; }
+.two-col .col { flex: 1; display: flex; flex-direction: column; }
+.two-col .col h3 { margin-bottom: 2vh; }
+
+/* ---- Big statement ------------------------------------------------------- */
+.statement { justify-content: center; }
+.statement .thesis { font-size: 5vw; line-height: 1.2; font-weight: 600; }
+
+/* ---- Figure slide (image / embed) ---------------------------------------- */
+.figure-slide { justify-content: flex-start; }
+.figure-slide h2 { margin-bottom: 2vh; }
+.figure-wrap {
+  flex: 1; width: 100%;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--brand-light); border-radius: 6px; overflow: hidden;
+}
+.figure-wrap img, .figure-wrap svg { max-width: 100%; max-height: 100%; object-fit: contain; }
+.figure-wrap iframe, .figure-wrap video { width: 100%; height: 100%; border: none; display: block; }
+.caption { font-size: 1.4vw; color: var(--muted); text-align: center; margin-top: 1.6vh; font-style: italic; }
+
+/* ---- Slide counter ------------------------------------------------------- */
+.counter {
+  position: fixed; bottom: 1vh; right: 1.5vw;
+  font-size: 1vw; color: var(--muted);
+  font-variant-numeric: tabular-nums; letter-spacing: 0.1em;
+  z-index: 100; pointer-events: none;
+}
+.counter.dark { color: rgba(255,255,255,0.55); }
+
+/* ---- Screen/print element swap ------------------------------------------
+   Interactive content (iframe, video) cannot render in a printed PDF. Mark it
+   .screen-only, and provide a static .print-only image beside it as a fallback.
+   On screen you see the live thing; in the PDF you see the picture. */
+.print-only { display: none; }
+
+/* ==========================================================================
+   PRINT: one slide per 16:9 page. Ctrl/Cmd-P -> Save as PDF.
+   In the print dialog: Margins = None (or Default), and turn ON "Background
+   graphics" so dark slides keep their color.
+   ========================================================================== */
+@media print {
+  @page { size: 13.333in 7.5in; margin: 0; }   /* 16:9 at 96dpi = 1280x720 */
+  html, body { width: 13.333in; height: auto; overflow: visible; background: white; }
+  .deck { width: 13.333in; height: auto; position: static; }
+  .slide {
+    display: flex !important;
+    position: relative; inset: auto;
+    width: 13.333in; height: 7.5in;
+    page-break-after: always; break-after: page;
+    overflow: hidden;
+  }
+  .slide:last-of-type { page-break-after: auto; break-after: auto; }
+  .counter { display: none !important; }
+  .screen-only { display: none !important; }
+  .print-only  { display: block !important; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+}
+</style>
+</head>
+<body tabindex="-1">
+<div class="deck">
+
+  <!-- ===================== 1. Title ===================== -->
+  <section class="slide title-slide active">
+    <h1>Design with HTML and JavaScript</h1>
+    <p class="subtitle">Build a live web page of your own papers, with interactive charts</p>
+    <p class="byline">Lesson 2 &middot; Vagisha Sharma</p>
+    <p class="affil">MacCoss Lab &middot; UW Genome Sciences</p>
+    <div class="uw-logo">
+      <div class="uw-w">W</div>
+      <div class="uw-text">UNIVERSITY <em>of</em><br>WASHINGTON</div>
+    </div>
+  </section>
+
+  <!-- ===================== 2. What you walk out with ===================== -->
+  <section class="slide figure-slide">
+    <h2>What you walk out with</h2>
+    <div class="figure-wrap" style="gap:2vw;">
+      <img src="assets/finished-page.png"   alt="A finished publications page with citation charts" style="max-width:48%;">
+      <img src="assets/finished-page-2.png" alt="Another finished publications page"                style="max-width:48%;">
+    </div>
+    <p class="caption">You build one of these for yourself in the next hour, and put it on a public URL. No coding.</p>
+  </section>
+
+  <!-- ===================== 3. OpenAlex and ORCID ===================== -->
+  <section class="slide">
+    <h2>OpenAlex and ORCID</h2>
+    <ul class="bullets">
+      <li><span class="accent">OpenAlex</span>, a free and open catalog of the world's papers
+        <span class="sub">citations, co-authors, and a year-by-year citation count since 2012</span>
+      </li>
+      <li><span class="accent">ORCID</span>, short for Open Researcher and Contributor ID
+        <span class="sub">a free 16-digit ID that distinguishes you from every other researcher</span>
+      </li>
+      <li>Do not remember your ORCID? Ask Claude to look it up for you</li>
+    </ul>
+  </section>
+
+  <!-- ===================== 4. How this hour works ===================== -->
+  <section class="slide">
+    <h2>How this hour works</h2>
+    <p style="font-size:2vw; margin-bottom:2.5vh;">You will add a second repo, <span class="accent">MyPublications</span>, next to your ClaudeLab in ws.</p>
+    <ul class="bullets">
+      <li>Gather your papers first, and check they are yours
+        <span class="sub">OpenAlex is not error-free, and Claude can make mistakes</span>
+      </li>
+      <li>Then <span class="accent">interview &rarr; spec &rarr; demo</span> to build the page, like Lesson 1</li>
+      <li>All you have to do is explain your goal
+        <span class="sub">when unsure, have Claude ask you</span>
+      </li>
+      <li>Commit each step, publish at the end</li>
+    </ul>
+    <p class="muted" style="margin-top:3vh">
+      You should already have your ClaudeLab in the ws folder, be signed in to GitHub, and have the Code tab open.
+    </p>
+  </section>
+
+</div>
+
+<div class="counter" id="counter">1 / 1</div>
+
+<script>
+const slides  = document.querySelectorAll('.slide');
+const counter = document.getElementById('counter');
+let current = 0;
+
+function show(n) {
+  n = Math.max(0, Math.min(slides.length - 1, n));
+  slides.forEach(s => s.classList.remove('active'));
+  slides[n].classList.add('active');
+  current = n;
+  counter.textContent = `${n + 1} / ${slides.length}`;
+  counter.classList.toggle('dark', slides[n].classList.contains('dark-bg'));
+  try { document.body.focus(); } catch (_) {}
+}
+function next() { show(current + 1); }
+function prev() { show(current - 1); }
+
+document.addEventListener('keydown', e => {
+  if (['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)) { next(); e.preventDefault(); }
+  else if (['ArrowLeft','ArrowUp','PageUp'].includes(e.key))     { prev(); e.preventDefault(); }
+  else if (e.key === 'Home') { show(0); e.preventDefault(); }
+  else if (e.key === 'End')  { show(slides.length - 1); e.preventDefault(); }
+  else if (e.key === 'f' || e.key === 'F') {
+    if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+    else document.exitFullscreen();
+    e.preventDefault();
+  }
+});
+
+/* Click to advance — but ignore drags (text selection) and clicks on embeds/links. */
+let downX = 0, downY = 0;
+document.addEventListener('mousedown', e => { downX = e.clientX; downY = e.clientY; });
+document.addEventListener('click', e => {
+  if (Math.hypot(e.clientX - downX, e.clientY - downY) > 5) return;
+  if (['IFRAME','VIDEO','A'].includes(e.target.tagName)) return;
+  if (e.target.closest('.figure-wrap')) return;
+  next();
+});
+
+window.addEventListener('load', () => { try { document.body.focus(); } catch (_) {} });
+show(0);
+</script>
+</body>
+</html>
