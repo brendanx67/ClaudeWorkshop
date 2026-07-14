@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Session 3 — Data cleanup and visualization</title>
+
+<!--
+  ============================================================================
+  ClaudeWorkshop · Session 3 — Data cleanup and visualization
+  Built from instructors/presentation-template/. Single file + assets/.
+  Present: open in a browser, press F for fullscreen. Arrows/Space to advance.
+  Print:  Ctrl/Cmd-P -> Save as PDF, Margins: None, Background graphics: ON.
+  ============================================================================
+-->
+
+<style>
+:root {
+  --brand:       #4B2E83;   /* UW purple */
+  --brand-dark:  #362161;
+  --brand-light: #EDE9F3;
+  --accent:      #85754D;   /* UW gold */
+  --bg:    #FFFFFF;
+  --text:  #1A1A1A;
+  --muted: #777777;
+  --warn:  #A3341F;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  width: 100%; height: 100%;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.deck  { position: relative; width: 100vw; height: 100vh; }
+.slide {
+  position: absolute; inset: 0;
+  padding: 6vh 8vw;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+}
+.slide.active { display: flex; }
+
+h1 { font-size: 5.5vw; line-height: 1.05; font-weight: 700; color: var(--brand-dark); letter-spacing: -0.02em; }
+h2 { font-size: 3.8vw; line-height: 1.1;  font-weight: 600; color: var(--brand-dark); letter-spacing: -0.01em; margin-bottom: 4vh; }
+h3 { font-size: 2.4vw; color: var(--accent); margin-bottom: 1vh; font-weight: 600; }
+p, li { font-size: 2.2vw; line-height: 1.5; }
+.accent { color: var(--accent); }
+.muted  { color: var(--muted); font-size: 1.6vw; }
+
+ul.bullets { list-style: none; margin-top: 2vh; }
+ul.bullets li { font-size: 2.6vw; font-weight: 500; margin-bottom: 1.6vh; }
+ul.bullets li::before { content: "▸"; color: var(--accent); margin-right: 1.2vw; font-weight: 700; }
+ul.bullets li .sub {
+  display: block; font-size: 1.5vw; font-weight: 400; font-style: italic;
+  color: var(--muted); margin-top: 0.3vh; padding-left: 2.5vw;
+}
+
+.title-slide { text-align: center; align-items: center; justify-content: center; }
+.title-slide h1 { font-size: 7vw; margin-bottom: 2.5vh; letter-spacing: -0.025em; }
+.title-slide .subtitle { font-size: 2.4vw; color: var(--muted); line-height: 1.35; }
+.title-slide .byline { font-size: 2vw; font-weight: 500; margin-top: 6vh; }
+.title-slide .affil  { font-size: 1.5vw; color: var(--muted); margin-top: 0.4vh; }
+
+.uw-logo { display: flex; align-items: center; justify-content: center; gap: 1vw; margin-top: 4vh; }
+.uw-w {
+  width: 4vw; height: 4vw; background: var(--brand); color: white;
+  font-family: Georgia, "Times New Roman", serif; font-style: italic; font-weight: 700;
+  font-size: 3vw; display: flex; align-items: center; justify-content: center;
+  line-height: 1; letter-spacing: -0.05em;
+}
+.uw-text { font-size: 1vw; color: var(--text); letter-spacing: 0.08em; line-height: 1.25; font-weight: 600; text-align: left; }
+.uw-text em { font-style: italic; font-weight: 400; letter-spacing: 0; }
+
+.opener { background: var(--brand-dark); color: white; justify-content: center; align-items: center; text-align: center; }
+.opener .eyebrow { font-size: 1.8vw; color: var(--brand-light); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 4vh; }
+.opener h1 { color: white; font-size: 6vw; line-height: 1.1; max-width: 80vw; }
+.opener .sub { font-size: 2.2vw; color: var(--brand-light); margin-top: 4vh; font-weight: 400; max-width: 70vw; }
+
+.two-col { display: flex; gap: 4vw; flex: 1; }
+.two-col .col { flex: 1; display: flex; flex-direction: column; }
+.two-col .col h3 { margin-bottom: 2vh; }
+
+.statement { justify-content: center; }
+.statement .thesis { font-size: 5vw; line-height: 1.2; font-weight: 600; }
+
+.figure-slide { justify-content: flex-start; }
+.figure-slide h2 { margin-bottom: 2vh; font-size: 3vw; }
+.figure-wrap {
+  flex: 1; width: 100%; min-height: 0;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--brand-light); border-radius: 6px; overflow: hidden;
+  background: #FAFAF8;
+}
+.figure-wrap img, .figure-wrap svg { max-width: 100%; max-height: 100%; object-fit: contain; }
+.caption { font-size: 1.4vw; color: var(--muted); text-align: center; margin-top: 1.6vh; font-style: italic; }
+.caption b { color: var(--warn); font-style: normal; }
+
+/* ---- Session-3 additions ------------------------------------------------- */
+
+/* Raw text — the pivoted CSV, as it actually arrives */
+.raw {
+  font-family: "SF Mono", Consolas, "Courier New", monospace;
+  font-size: 1.15vw; line-height: 1.7; color: #222;
+  background: #FAFAF8; padding: 2vh 2vw; width: 100%;
+  white-space: pre; overflow: hidden;
+}
+.raw .k  { color: var(--brand); font-weight: 600; }
+.raw .hl { background: #FFE9A8; }
+
+/* Excel-ish rendering of the Cascade workbook */
+.xl { width: 100%; font-size: 1.15vw; }
+.xl table { border-collapse: collapse; width: 100%; background: white; }
+.xl th, .xl td { border: 1px solid #D6D6D6; padding: 0.55vh 0.7vw; text-align: left; white-space: nowrap; }
+.xl th { background: #F1F1EF; font-weight: 600; }
+.xl tr.amber td { background: #FFE0A3; }
+.xl .tabs { display: flex; gap: 0.3vw; margin-top: 1.2vh; }
+.xl .tab {
+  font-size: 1.1vw; padding: 0.5vh 1.1vw; border: 1px solid #D6D6D6; border-top: none;
+  background: #EDEDEB; color: #555; border-radius: 0 0 4px 4px;
+}
+.xl .tab.on { background: white; font-weight: 700; color: var(--brand-dark); }
+.xl .title-row td { font-weight: 700; color: var(--brand-dark); background: #F7F5FA; }
+
+/* Three cover letters side by side */
+.three-up { display: flex; gap: 1.5vw; flex: 1; min-height: 0; align-items: stretch; }
+.three-up figure { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+.three-up img {
+  flex: 1; min-height: 0; width: 100%; object-fit: contain;
+  border: 1px solid var(--brand-light); border-radius: 4px; background: white;
+}
+.three-up figcaption { font-size: 1.2vw; color: var(--muted); text-align: center; margin-top: 0.8vh; }
+
+/* Reveal cards */
+.reveal-grid { display: flex; gap: 3vw; margin-top: 2vh; }
+.reveal-grid .card { flex: 1; border-left: 0.4vw solid var(--accent); padding-left: 1.5vw; }
+.reveal-grid .card .big { font-size: 3.4vw; font-weight: 700; color: var(--brand-dark); line-height: 1.1; }
+.reveal-grid .card .lbl { font-size: 1.4vw; color: var(--muted); margin-top: 0.6vh; line-height: 1.4; }
+.reveal-grid .card.bad { border-left-color: var(--warn); }
+.reveal-grid .card.bad .big { color: var(--warn); }
+
+.counter {
+  position: fixed; bottom: 1vh; right: 1.5vw;
+  font-size: 1vw; color: var(--muted);
+  font-variant-numeric: tabular-nums; letter-spacing: 0.1em;
+  z-index: 100; pointer-events: none;
+}
+.counter.dark { color: rgba(255,255,255,0.55); }
+
+.print-only { display: none; }
+
+@media print {
+  @page { size: 13.333in 7.5in; margin: 0; }
+  html, body { width: 13.333in; height: auto; overflow: visible; background: white; }
+  .deck { width: 13.333in; height: auto; position: static; }
+  .slide {
+    display: flex !important;
+    position: relative; inset: auto;
+    width: 13.333in; height: 7.5in;
+    page-break-after: always; break-after: page;
+    overflow: hidden;
+  }
+  .slide:last-of-type { page-break-after: auto; break-after: auto; }
+  .counter { display: none !important; }
+  .screen-only { display: none !important; }
+  .print-only  { display: block !important; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+}
+</style>
+</head>
+<body tabindex="-1">
+<div class="deck">
+
+  <!-- ============ 1. Title ============ -->
+  <section class="slide title-slide active">
+    <h1>Data cleanup<br>and visualization</h1>
+    <p class="subtitle">Session 3 · Four cohorts that don't agree on anything</p>
+    <p class="byline">Lauren Fields &amp; Chris</p>
+    <p class="affil">Claude Code Workshop · Day 1 · 10:30–12:00</p>
+    <div class="uw-logo">
+      <div class="uw-w">W</div>
+      <div class="uw-text">UNIVERSITY <em>of</em><br>WASHINGTON</div>
+    </div>
+  </section>
+
+  <!-- ============ 2. Thesis ============ -->
+  <section class="slide statement">
+    <p class="thesis">Projects don't fail at the instrument.<br>They fail at the <span class="accent">metadata</span>.</p>
+    <p class="muted" style="margin-top:3vh">The sample sheet. The case list. The spreadsheet a collaborator emailed you in March.</p>
+  </section>
+
+  <!-- ============ 3. Why metadata is hard ============ -->
+  <section class="slide">
+    <h2>Why this is harder than it looks</h2>
+    <ul class="bullets">
+      <li>Metadata is written by <em>people</em>, for <em>themselves</em>
+        <span class="sub">Every lab's choices make sense — inside that lab.</span>
+      </li>
+      <li>Two labs both say “age.” They mean different things.
+        <span class="sub">Age at death? At draw? Binned into decades for privacy?</span>
+      </li>
+      <li>The format is never the format you want
+        <span class="sub">A PDF. A pivoted CSV. A workbook with four tabs and a colour code.</span>
+      </li>
+      <li>And what matters most is often not in the file at all</li>
+    </ul>
+  </section>
+
+  <!-- ============ 4. Scenario opener ============ -->
+  <section class="slide opener dark-bg">
+    <p class="eyebrow">The scenario</p>
+    <h1>Three labs. One disease.<br><span style="color:var(--accent)">No two fields alike.</span></h1>
+    <p class="sub">You prepare clinical samples. Three independent CTE groups have each shipped you
+    samples and metadata, and each wants to know how their cohort compares.</p>
+  </section>
+
+  <!-- ============ 5. The three labs ============ -->
+  <section class="slide">
+    <h2>Who sent you what</h2>
+    <ul class="bullets">
+      <li>Whitfield Institute — <span class="accent">neuropathology</span>
+        <span class="sub">Post-mortem brain. A typeset PDF case manifest.</span>
+      </li>
+      <li>Universiteit van Rijndal — <span class="accent">clinical biomarkers</span>
+        <span class="sub">A living cohort. CSF and plasma. A CSV export.</span>
+      </li>
+      <li>Cascade Athletic Health Center — <span class="accent">sports medicine</span>
+        <span class="sub">Mixed sample types. An Excel workbook.</span>
+      </li>
+    </ul>
+    <p class="muted" style="margin-top:3vh">Nobody coordinated. Why would they? They don't work with each other — they work with <em>you</em>.</p>
+  </section>
+
+  <!-- ============ 6. Lab 1 — the PDF ============ -->
+  <section class="slide figure-slide">
+    <h2>Lab 1 sent a beautiful PDF</h2>
+    <div class="figure-wrap">
+      <img src="assets/manifest-p1.png" alt="Whitfield Institute case manifest, page 1">
+    </div>
+    <p class="caption">Publication quality. Footnoted. Perfectly typeset. <b>And you cannot compute a single thing with it.</b></p>
+  </section>
+
+  <!-- ============ 7. Lab 2 — the pivoted CSV ============ -->
+  <section class="slide figure-slide">
+    <h2>Lab 2 sent a CSV. Sort of.</h2>
+    <div class="figure-wrap">
+      <div class="raw"><span class="k"># Universiteit van Rijndal - Klinisch Neurochemisch Laboratorium</span>
+<span class="k"># Cohort export RIJ-2026-03. Delimiter: semicolon. Decimal separator: comma.</span>
+
+Subject code<span class="hl">;</span>TES-B-001;TES-B-002;TES-B-003;TES-B-004;   … 40 columns
+TES classification (2021 criteria);TES - probable;TES - probable;TES - possible;   …
+Age band (years);70-79;70-79;40-49;50-59;   …
+Sex (1/2);1;2;1;2;   …
+Years contact sport;8;10;16;n.d.;   …</div>
+    </div>
+    <p class="caption">The table is on its side — one <em>column</em> per patient. <b>Excel will not save you here.</b></p>
+  </section>
+
+  <!-- ============ 8. Lab 3 — the workbook ============ -->
+  <section class="slide figure-slide">
+    <h2>Lab 3 sent a workbook</h2>
+    <div class="figure-wrap">
+      <div class="xl" style="padding:2vh 2vw">
+        <table>
+          <tr class="title-row"><td colspan="8">Cascade Athletic Health Center — Brain Tissue Inventory (frozen, -80C)</td></tr>
+          <tr><td colspan="8" style="border:none;height:1.4vh;padding:0"></td></tr>
+          <tr><th>Donor ID</th><th>CTE status</th><th>Age</th><th>Sex</th><th>Yrs contact sport</th><th>PMI (min)</th><th>Region</th><th>Aliquots</th></tr>
+          <tr><td>SM-001</td><td>CTE-</td><td>35</td><td>M</td><td>18</td><td>2566</td><td>DLPFC</td><td>1</td></tr>
+          <tr><td>SM-002</td><td>CTE-</td><td>28</td><td>M</td><td>11</td><td>263</td><td>DLPFC</td><td>4</td></tr>
+          <tr class="amber"><td>SM-003</td><td>CTE-</td><td>22</td><td>M</td><td>10</td><td>1275</td><td>Sup. temporal</td><td>2</td></tr>
+          <tr><td>SM-004</td><td>CTE-</td><td>59</td><td>M</td><td>3</td><td>461</td><td>Amygdala</td><td>1</td></tr>
+        </table>
+        <div class="tabs">
+          <div class="tab on">Brain</div><div class="tab">CSF</div><div class="tab">Plasma</div><div class="tab">Notes</div>
+        </div>
+      </div>
+    </div>
+    <p class="caption">Four tabs. The header isn't on row 1. And that amber row means <em>something</em> — but the file never says what.</p>
+  </section>
+
+  <!-- ============ 9. The literature ============ -->
+  <section class="slide">
+    <h2>And a fourth cohort, free</h2>
+    <ul class="bullets">
+      <li>Kumar et&nbsp;al., <em>Cell</em> 2026 — tauopathy-associated dementias
+        <span class="sub">doi:10.1016/j.cell.2025.12.036 · Supplementary Table S1</span>
+      </li>
+      <li>Case-level demographics: <span class="accent">one row per brain donor</span>
+        <span class="sub">24 CTE, 24 controls, plus AD, PSP, CBD, PiD, DLB.</span>
+      </li>
+      <li>You don't have this file. <span class="accent">Claude goes and gets it.</span></li>
+    </ul>
+    <p class="muted" style="margin-top:3vh">Then do the thing that matters: <strong>ask it what it actually downloaded.</strong>
+    Publishers don't always hand a robot the spreadsheet it asked for — and Claude will report success either way.</p>
+  </section>
+
+  <!-- ============ 10. Unplugged planning ============ -->
+  <section class="slide opener dark-bg">
+    <p class="eyebrow">Five minutes · in pairs · no laptops</p>
+    <h1>How would <span style="color:var(--accent)">you</span> merge these?</h1>
+    <p class="sub">Write the steps down. What has to be decided? What would you have to look up,
+    guess, or ask someone about?<br><br>
+    In a minute you'll read a plan Claude wrote. The only way to judge a plan is to already have one.</p>
+  </section>
+
+  <!-- ============ 11. Hand it to Claude ============ -->
+  <section class="slide">
+    <h2>Now hand it over — in planning mode</h2>
+    <ul class="bullets">
+      <li>Shift+Tab: Claude <em>proposes</em>, and waits, instead of charging ahead</li>
+      <li>Read its plan against yours. Where they differ, <span class="accent">one of you is wrong</span></li>
+      <li>One workbook: a sheet per cohort, plus a combined sheet</li>
+      <li>Insist on a <span class="accent">decisions log</span>
+        <span class="sub">Every mapping, conversion, guess and dropped field gets a row: what, and why.</span>
+      </li>
+    </ul>
+    <p class="muted" style="margin-top:2.5vh">Then a <strong>code-review agent</strong> reads it cold. Then commit and push to your ClaudeLab.</p>
+  </section>
+
+  <!-- ============ 12. Visualization ============ -->
+  <section class="slide">
+    <h2>Don't ask for plots. Ask to be asked.</h2>
+    <p style="font-size:2.6vw;line-height:1.5;margin-bottom:3vh">
+      <em>“I want to visualize these cohorts. Ask me the questions you need answered
+      before you make a single plot.”</em>
+    </p>
+    <ul class="bullets">
+      <li>Answer honestly — including <em>“I don't know yet”</em></li>
+      <li>Then around ten plots. <span class="accent">Look at every one.</span></li>
+      <li>Some will be wrong. Say so. Ask for another.</li>
+    </ul>
+    <p class="muted" style="margin-top:2.5vh">Favourites → one HTML report → push it → your partner pulls it down and opens it.</p>
+  </section>
+
+  <!-- ============ 13. Reveals opener ============ -->
+  <section class="slide opener dark-bg">
+    <p class="eyebrow">Before you believe any of it</p>
+    <h1>Three things<br>nobody told you</h1>
+  </section>
+
+  <!-- ============ 14. Reveal 1 — the ghost row ============ -->
+  <section class="slide">
+    <h2>One. Did anyone get a strange PMI?</h2>
+    <div class="reveal-grid">
+      <div class="card">
+        <div class="big">30</div>
+        <div class="lbl">cases you can see in the PDF</div>
+      </div>
+      <div class="card bad">
+        <div class="big">31</div>
+        <div class="lbl">cases Claude reads out of it</div>
+      </div>
+      <div class="card bad">
+        <div class="big">480 h</div>
+        <div class="lbl">the 31st case's post-mortem interval<br>(every other case: 4.5–38 h)</div>
+      </div>
+    </div>
+    <p class="muted" style="margin-top:4vh">
+      <strong>BINC-24-031 is printed in white ink on white paper.</strong> Go back and look for it —
+      there is nothing there. It wrecks every PMI plot, and no human reading that PDF would ever find it.
+    </p>
+    <p style="font-size:2.6vw;font-weight:700;color:var(--brand-dark);margin-top:2vh">Claude sees what you don't.</p>
+  </section>
+
+  <!-- ============ 15. Reveal 2 — the letters ============ -->
+  <section class="slide figure-slide">
+    <h2>Two. Every shipment came with a letter</h2>
+    <div class="three-up">
+      <figure>
+        <img src="assets/letter-whitfield.png" alt="Whitfield cover letter">
+        <figcaption>Whitfield</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/letter-rijndal.png" alt="Rijndal cover letter">
+        <figcaption>Rijndal</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/letter-cascade.png" alt="Cascade cover letter">
+        <figcaption>Cascade</figcaption>
+      </figure>
+    </div>
+    <p class="caption">Nobody read them. They contradict the spreadsheets in three specific, consequential ways.</p>
+  </section>
+
+  <!-- ============ 16. TES is not CTE ============ -->
+  <section class="slide statement">
+    <p class="thesis">Claude will happily map<br><span class="accent">TES → CTE</span>.</p>
+    <p style="font-size:2.4vw;line-height:1.5;margin-top:4vh">
+      They are not the same thing. TES is a <em>clinical syndrome</em>, in the living.
+      CTE is a <em>neuropathological diagnosis</em>, made at autopsy.
+    </p>
+    <p class="muted" style="margin-top:2vh">Prof. Kastelein's letter says so, at length. It was in the folder the whole time.<br>
+      <strong style="color:var(--warn)">Claude misses what you know — if you never tell it.</strong></p>
+  </section>
+
+  <!-- ============ 17. Reveal 3 — the confound ============ -->
+  <section class="slide figure-slide">
+    <h2>Three. Now look at the <em>published</em> cohort</h2>
+    <div class="figure-wrap" style="background:white">
+      <svg viewBox="0 0 900 375" xmlns="http://www.w3.org/2000/svg" aria-label="Kumar 2026: CTE vs control composition by sex, brain bank and post-mortem interval">
+        <style>
+          .lab { font: 600 17px sans-serif; fill: #362161; }
+          .sm  { font: 400 13px sans-serif; fill: #777; }
+          .num { font: 700 14px sans-serif; fill: #fff; }
+          .hd  { font: 700 19px sans-serif; fill: #362161; }
+        </style>
+        <text x="20" y="24" class="hd">Kumar et al., Cell 2026 — 24 CTE vs 24 controls</text>
+
+        <text x="20" y="72" class="lab">Sex</text>
+        <text x="95" y="99" class="sm">CTE</text>
+        <rect x="150" y="81" width="610" height="26" fill="#4B2E83"/>
+        <text x="455" y="99" class="num" text-anchor="middle">24 male · 0 female</text>
+        <text x="95" y="137" class="sm">Control</text>
+        <rect x="150" y="119" width="305" height="26" fill="#4B2E83"/>
+        <rect x="455" y="119" width="305" height="26" fill="#B9A7D9"/>
+        <text x="302" y="137" class="num" text-anchor="middle">12 male</text>
+        <text x="607" y="137" class="num" text-anchor="middle">12 female</text>
+
+        <text x="20" y="196" class="lab">Brain bank</text>
+        <text x="95" y="223" class="sm">CTE</text>
+        <rect x="150" y="205" width="610" height="26" fill="#A3341F"/>
+        <text x="455" y="223" class="num" text-anchor="middle">VA-BU-CLF — all 24</text>
+        <text x="95" y="261" class="sm">Control</text>
+        <rect x="150" y="243" width="457" height="26" fill="#85754D"/>
+        <rect x="607" y="243" width="127" height="26" fill="#B3A47A"/>
+        <rect x="734" y="243" width="26"  height="26" fill="#D8CFB4"/>
+        <text x="378" y="261" class="num" text-anchor="middle">MADRC (18)</text>
+        <text x="670" y="261" class="num" text-anchor="middle">HBSFRC (5)</text>
+
+        <text x="20" y="320" class="lab">Median PMI</text>
+        <text x="95" y="347" class="sm">CTE</text>
+        <rect x="150" y="329" width="610" height="26" fill="#A3341F"/>
+        <text x="455" y="347" class="num" text-anchor="middle">48 hours</text>
+        <text x="775" y="347" class="sm">vs 13 h in controls</text>
+      </svg>
+    </div>
+    <p class="caption">A real dataset. A real journal. <b>CTE vs control here is also a sex contrast, a site contrast, and a PMI contrast.</b></p>
+  </section>
+
+  <!-- ============ 18. Closing thesis ============ -->
+  <section class="slide statement">
+    <p class="thesis">Data does not carry<br>its <span class="accent">own context</span>.</p>
+    <p style="font-size:2.4vw;line-height:1.5;margin-top:4vh">Somebody has to ask. That somebody is you.</p>
+    <p class="muted" style="margin-top:2vh">And you now have a tool that will ask twelve questions the moment you tell it to —
+    and that will tell you, confidently, that it succeeded.</p>
+  </section>
+
+  <!-- ============ 19. Takeaways ============ -->
+  <section class="slide">
+    <h2>What you take with you</h2>
+    <ul class="bullets">
+      <li>A merge you can <em>defend</em> — because the decisions log says what you decided</li>
+      <li>The reflex to check what Claude <em>actually did</em>
+        <span class="sub">Especially when it tells you it succeeded.</span>
+      </li>
+      <li>A checklist for the next collaborator who ships you metadata
+        <span class="sub">The questions you now wish you'd asked. Keep it in your ClaudeLab.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============ 20. Close ============ -->
+  <section class="slide opener dark-bg">
+    <p class="eyebrow">Session 3</p>
+    <h1>Questions?</h1>
+    <p class="sub">lfields2@uw.edu</p>
+  </section>
+
+</div>
+
+<div class="counter" id="counter">1 / 1</div>
+
+<script>
+const slides  = document.querySelectorAll('.slide');
+const counter = document.getElementById('counter');
+let current = 0;
+
+function show(n) {
+  n = Math.max(0, Math.min(slides.length - 1, n));
+  slides.forEach(s => s.classList.remove('active'));
+  slides[n].classList.add('active');
+  current = n;
+  counter.textContent = `${n + 1} / ${slides.length}`;
+  counter.classList.toggle('dark', slides[n].classList.contains('dark-bg'));
+  try { document.body.focus(); } catch (_) {}
+}
+function next() { show(current + 1); }
+function prev() { show(current - 1); }
+
+document.addEventListener('keydown', e => {
+  if (['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)) { next(); e.preventDefault(); }
+  else if (['ArrowLeft','ArrowUp','PageUp'].includes(e.key))     { prev(); e.preventDefault(); }
+  else if (e.key === 'Home') { show(0); e.preventDefault(); }
+  else if (e.key === 'End')  { show(slides.length - 1); e.preventDefault(); }
+  else if (e.key === 'f' || e.key === 'F') {
+    if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+    else document.exitFullscreen();
+    e.preventDefault();
+  }
+});
+
+let downX = 0, downY = 0;
+document.addEventListener('mousedown', e => { downX = e.clientX; downY = e.clientY; });
+document.addEventListener('click', e => {
+  if (Math.hypot(e.clientX - downX, e.clientY - downY) > 5) return;
+  if (['IFRAME','VIDEO','A'].includes(e.target.tagName)) return;
+  if (e.target.closest('.figure-wrap')) return;
+  next();
+});
+
+window.addEventListener('load', () => { try { document.body.focus(); } catch (_) {} });
+show(0);
+</script>
+</body>
+</html>
