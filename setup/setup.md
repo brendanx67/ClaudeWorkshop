@@ -27,9 +27,14 @@ you; you do these first, yourself.
      right-click the Claude icon in the **system tray** (the hidden-icons area by
      the clock) → **Quit**, then reopen from the Start menu. On **Mac**, **Cmd-Q**
      (or Claude menu → Quit), then reopen. *Now* the Code tab detects Git.
-4. **A free GitHub account** — [github.com/signup](https://github.com/signup).
-   Remember your username and the email you used. (You'll sign in at the workshop,
-   not now.)
+4. **A free GitHub account you can actually log into** —
+   [github.com/signup](https://github.com/signup). We connect Claude to GitHub
+   together at the workshop, but **you** have to complete that sign-in, and it
+   almost always needs **two-factor authentication** (a code from your phone or an
+   authenticator app). This is the one step no instructor can do for you, so
+   **before Tuesday:** log in to github.com in a browser, confirm your password
+   and your second factor work, and **bring your phone** both mornings. Staying
+   logged in on github.com makes the workshop sign-in quicker.
 
 ## Make your workspace and open Claude Code
 
@@ -74,8 +79,13 @@ Findings from the Windows Sandbox dry run (July 2026):
 
 - **Git must be pre-installed**; the Code tab is inert without it. This is the
   biggest change from our first draft — Claude cannot bootstrap Git.
-- **The tray-quit step is the top support risk.** Expect to walk beginners
-  through it; consider a screenshot in the email.
+- **The tray-quit step is the top *software* support risk.** Expect to walk
+  beginners through it; consider a screenshot in the email.
+- **GitHub 2FA is the top risk we CANNOT fix onsite.** A participant who can't
+  pass their own two-factor sign-in (wrong device, lost authenticator, forgotten
+  password) is locked out and no instructor can rescue them. The pre-event email
+  asks everyone to verify github.com login + 2FA at home and bring their phone.
+  Treat "can you log into GitHub right now?" as a triage question at 8:00.
 - **No package manager is fine** — Claude installed `gh` from the official MSI on
   its own. We don't need to prescribe winget.
 - The bundled installer self-updated; tell people to expect the upgrade prompt.
