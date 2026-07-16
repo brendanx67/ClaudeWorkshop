@@ -23,10 +23,11 @@ you; you do these first, yourself.
      the **default options** (Windows: "Git for Windows"; Mac: it will prompt for
      the Xcode command-line tools, or use [git-scm.com](https://git-scm.com)).
    - **⚠️ The gotcha:** after Git installs, the Code tab still won't see it until
-     you **fully quit Claude** — not just close the window. On **Windows**,
-     right-click the Claude icon in the **system tray** (the hidden-icons area by
-     the clock) → **Quit**, then reopen from the Start menu. On **Mac**, **Cmd-Q**
-     (or Claude menu → Quit), then reopen. *Now* the Code tab detects Git.
+     you **fully quit Claude** — not just close the window. On **Windows**, find
+     the Claude icon in the **system tray** by the clock — click the **^** (show
+     hidden icons) if you don't see it — then right-click it → **Quit**, and
+     reopen from the Start menu. On **Mac**, **Cmd-Q** (or Claude menu → Quit),
+     then reopen. *Now* the Code tab detects Git.
 4. **A free GitHub account you can actually log into** —
    [github.com/signup](https://github.com/signup). We connect Claude to GitHub
    together at the workshop, but **you** have to complete that sign-in, and it
