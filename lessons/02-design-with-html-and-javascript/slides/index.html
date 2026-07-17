@@ -39,6 +39,7 @@
   --bg:    #FFFFFF;
   --text:  #1A1A1A;
   --muted: #777777;
+  --warn:  #A3341F;   /* verification and danger beats */
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -170,7 +171,7 @@ ul.bullets li .sub {
   <!-- ===================== 1. Title ===================== -->
   <section class="slide title-slide active">
     <h1>Design with HTML and JavaScript</h1>
-    <p class="subtitle">Build a live web page of your own papers, with interactive charts</p>
+    <p class="subtitle">Showcase your papers with interactive charts on a live web page</p>
     <p class="byline">Lesson 2 &middot; Vagisha Sharma</p>
     <p class="affil">MacCoss Lab &middot; UW Genome Sciences</p>
     <div class="uw-logo">
@@ -179,17 +180,23 @@ ul.bullets li .sub {
     </div>
   </section>
 
-  <!-- ===================== 2. What you walk out with ===================== -->
+  <!-- ===================== 2. Hook ===================== -->
+  <section class="slide statement">
+    <p class="thesis">You explain and brainstorm.<br><span class="accent">Claude writes the code.</span></p>
+    <p class="muted" style="margin-top:4vh;">You bring the ideas. No coding from you, start to finish.</p>
+  </section>
+
+  <!-- ===================== 3. What you walk out with ===================== -->
   <section class="slide figure-slide">
     <h2>What you walk out with</h2>
     <div class="figure-wrap" style="gap:2vw;">
       <img src="assets/finished-page.png"   alt="A finished publications page with citation charts" style="max-width:48%;">
       <img src="assets/finished-page-2.png" alt="Another finished publications page"                style="max-width:48%;">
     </div>
-    <p class="caption">You build one of these for yourself in the next hour, and put it on a public URL. No coding.</p>
+    <p class="caption">You build one of these for yourself this hour, put it on a public URL, and package it into a reusable skill you can run for anyone. No coding.</p>
   </section>
 
-  <!-- ===================== 3. OpenAlex and ORCID ===================== -->
+  <!-- ===================== 4. OpenAlex and ORCID ===================== -->
   <section class="slide">
     <h2>OpenAlex and ORCID</h2>
     <ul class="bullets">
@@ -203,7 +210,7 @@ ul.bullets li .sub {
     </ul>
   </section>
 
-  <!-- ===================== 4. How this hour works ===================== -->
+  <!-- ===================== 5. How this hour works ===================== -->
   <section class="slide">
     <h2>How this hour works</h2>
     <p style="font-size:2vw; margin-bottom:2.5vh;">You will add a second repo, <span class="accent">MyPublications</span>, next to your ClaudeLab in ws.</p>
@@ -211,15 +218,51 @@ ul.bullets li .sub {
       <li>Gather your papers first, and check they are yours
         <span class="sub">OpenAlex is not error-free, and Claude can make mistakes</span>
       </li>
-      <li>Then <span class="accent">interview &rarr; spec &rarr; demo</span> to build the page, like Lesson 1</li>
-      <li>All you have to do is explain your goal
-        <span class="sub">when unsure, have Claude ask you</span>
-      </li>
-      <li>Commit each step, publish at the end</li>
+      <li>Then <span class="accent">interview &rarr; spec &rarr; demo</span> to build the page</li>
+      <li>Commit each step, and publish it live at the end</li>
+      <li>Then <span class="accent">package the workflow into a skill</span> you can run for anyone</li>
     </ul>
     <p class="muted" style="margin-top:3vh">
       You should already have your ClaudeLab in the ws folder, be signed in to GitHub, and have the Code tab open.
     </p>
+  </section>
+
+  <!-- ===================== 6. Review and verify each step ===================== -->
+  <section class="slide">
+    <h2>Review and verify each step</h2>
+    <p style="font-size:3vw; line-height:1.2; font-weight:600; margin-bottom:3vh;">You searched Michael MacCoss.<br>OpenAlex sent back <span class="accent">Malcolm MacCoss</span>.</p>
+    <p style="font-size:2.4vw; line-height:1.5;">Two papers, a different researcher. Someone who shares your last name can turn up in your results.</p>
+    <p class="muted" style="margin-top:2.5vh;"><strong style="color:var(--warn)">Even the right ORCID puts other people's work on your page. Review your list before you build.</strong></p>
+  </section>
+
+  <!-- ===================== 7. Start with a conversation ===================== -->
+  <section class="slide">
+    <h2>Start with a conversation, not a design</h2>
+    <p style="font-size:2.6vw; line-height:1.5; margin-bottom:3vh;"><em>"Build a page of my papers with citation charts. Ask me at least twelve things before you build anything."</em></p>
+    <ul class="bullets">
+      <li><span class="accent">"You decide"</span> is a fine answer, and you can change anything later</li>
+      <li>Then look at what it built. Wrong? Say so, and ask again</li>
+      <li>It is a conversation, not a form</li>
+    </ul>
+  </section>
+
+  <!-- ===================== 8. What you take with you ===================== -->
+  <section class="slide">
+    <h2>What you take with you</h2>
+    <ul class="bullets">
+      <li>A live, shareable page you built by <em>describing</em> it, not coding it</li>
+      <li>The reflex to <span class="accent">check what Claude did</span>
+        <span class="sub">especially when it tells you it succeeded</span>
+      </li>
+      <li>The design loop &mdash; inspect, adjust, repeat</li>
+      <li>A <span class="accent">publications-page skill</span> that turns your one-off page into a tool</li>
+    </ul>
+  </section>
+
+  <!-- ===================== 9. Close ===================== -->
+  <section class="slide opener dark-bg">
+    <p class="eyebrow">Lesson 2</p>
+    <h1>Questions?</h1>
   </section>
 
 </div>

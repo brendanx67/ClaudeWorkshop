@@ -2,236 +2,238 @@
 
 **Day 1 · 9:00–10:00 · Vagisha**
 
-In this session you build an **interactive HTML page of your own published papers, with
-charts of how your citations have grown over time**, and put it on a live web address you can
-share with others. You start by gathering your papers and checking they are yours. Then you
-continue the **interview → spec → demo** pattern from Lesson 1, explaining your goal to Claude
-and having it ask you questions to work out the details.
+You build an **interactive HTML page of your own published papers, with charts of
+how your citations have grown over time**, and put it on a live web address you can share.
 
-> **Where you should be.** 
-> - You should have a `ClaudeLab` from Lesson 1 sitting in your `ws` folder.
-> - You should be signed in to GitHub.
-> - You should have Claude Desktop open to its **Code** tab.
+In this session you will
+
+- find your ORCID and pull your papers from OpenAlex, checking they are really yours
+- design the page by describing what you want and letting Claude interview you
+- build it, refine the look, and publish it live with GitHub Pages
+- fold the whole workflow into a reusable tool you can run for anyone
+
+**All you have to do is explain.** You bring the decisions, Claude does the fetching, the building, the
+publishing.
+
+Each step below lists **what to ask for**, and leaves the wording to you.
+Turn the intent into a message for Claude. Do not aim for perfect wording. If you are unsure about something, **have Claude ask you questions so you can brainstorm**.
+
+> **Where you should be.**
+> - Signed in to GitHub.
+> - Claude Desktop on its **Code** tab with a new session open on your `ws` folder.
+> - Python installed, which Claude uses behind the scenes to fetch your papers.
+> - Your folders from Lesson 1 look like the tree below.
+
+```
+ws/
+├─ .claude/          shared rules and setup for all your projects
+├─ ClaudeWorkshop/   the workshop guide, cloned during setup
+└─ ClaudeLab/        your repo from Lesson 1
+   ├─ CLAUDE.md
+   ├─ CRITICAL-RULES.md
+   ├─ docs/about-my-work.md
+   └─ todos/         active, backlog, completed
+```
+
+**One thing before we start.** Paste this.
+
+> *"For anything you do in this session, run Python with `-X utf8`."*
+
+Claude uses Python to fetch your papers. Published work is full of accented names and Greek letters,
+and by default Python on Windows crashes when it writes the first one out, partway through the fetch.
 
 ---
 
 ## OpenAlex and ORCID
 
-Your page is built from real data, so it helps to know where that data will come from and how
-Claude finds your work in it.
+Your page is built from real data, so two names to know.
 
-**[OpenAlex](https://openalex.org)** is a free and open catalog of the world's published research. For almost every paper it
-records the authors, where it was published, and how many times it has been cited, with a
-year-by-year breakdown. The yearly breakdown is what lets us chart how your citations have
-grown. One limit is worth knowing. OpenAlex only breaks citations out by year from about 2012 on.
-Citations your older papers earned before then still count in the lifetime total, but they are
-not broken down by year. 
+**[OpenAlex](https://openalex.org)** is a free, open catalog of the world's published research. For almost
+every paper it knows the authors, the venue, and how many times it has been cited, year by year.
+That yearly breakdown is what provides the data for your citation charts. One limit is worth knowing. OpenAlex only breaks citations out by year from about 2012 on. Citations your older papers earned before 2012 still count in the lifetime total, but they are not broken down by year.
 
-**[ORCID](https://orcid.org)**, short for Open Researcher and Contributor ID, is a free, persistent 16-digit
-identifier that distinguishes you from every other researcher, for example `0000-0002-1825-0097`. We search
-OpenAlex by ORCID rather than by name because names are not unique, so an ORCID is the most reliable way to
-pull your papers. If you do not remember your ORCID, give Claude your name and institution, and ask it to
-look it up for you.
+**[ORCID](https://orcid.org)** is a free, permanent 16-digit ID that tells you apart from every
+other researcher, for example `0000-0002-1825-0097`. We will use your ORCID, not your name, to pull your papers, because names
+are not unique. Do not know your ORCID? Give Claude your name and institution and have it look you up in
+the **ORCID registry**, which is the place ORCIDs come from.
 
-If you do not have an ORCID, or too few papers for an interesting page, follow along with
-your PI's. Give Claude your PI's name and
-institution instead of your own, and it finds their ORCID and builds a page from their
-publications. For today, Michael MacCoss at the University of Washington is a good one to use.
-
-> Every prompt below is an example, not something to copy and paste. Finish early? Keep refining the
-> look, or add new charts to the page. You can even ask Claude for suggestions on how to improve the page.
+No ORCID, or too few papers for an interesting page? Follow along with your PI's. Michael MacCoss
+at the University of Washington works well for today.
 
 ## Get set up
 
-This lesson's work lives in its own repository, a new folder called **`MyPublications`** that
-sits right next to your `ClaudeLab` inside `ws`. Make that empty folder first, since you point
-the Code session at it in a moment. You can create it in your file browser, or in the
-working-directory chooser you are about to open.
+You are already on `ws` from Lesson 1, so the rules set up there apply to everything you do. Two
+short setup steps come first.
 
-Now open Claude Desktop, go to the **Code** tab, and start a **New session**. The first time
-you open the Code tab it asks you to pick a working folder. After that, a new session opens on
-the folder you used last, so you may need to switch it. Point this session at your new
-**`MyPublications`** folder by clicking the **Working directory** button and choosing it.
+**First, make a folder for the work.** A new repository next to your `ClaudeLab`, so everything for
+this project lives in one place, ready to publish at the end and to re-run later.
 
-![Using the Working directory button to point the session at your folder](ClaudeDesktop-working-dir-change.png)
+> *"Make a folder called MyPublications here, make it a git repository, and keep everything for this
+> project inside it. Save any code you write as reusable scripts I can run again."*
 
-`MyPublications` is a separate folder from `ClaudeLab`, but the rules and notes from Lesson 1
-still apply. They live above both folders in `ws`, so they carry down into everything under
-it. Now give Claude its first instruction, to set up the repository and a couple of working
-habits. In your own words, something close to this.
+Now `ws` has a new folder next to `ClaudeLab`.
 
-> *"Make this folder a git repository so we can commit our work as we go, and keep all of this
-> project's files, scripts, and data here. Save any code you write as reusable scripts I can
-> run again. After each chunk of work, remind me to review it. When you commit, first show me
-> which files will be included and a short commit message of no more than five bullet points,
-> and wait for me to clearly approve before committing."*
+```
+ws/
+├─ .claude/
+├─ ClaudeWorkshop/
+├─ ClaudeLab/          your repo from Lesson 1
+└─ MyPublications/     new, everything for this project lives here
+```
 
-Claude sets up the repository, and from here on your data, scripts, and page all live in it.
-Two habits carry through the hour. You check Claude's work at each step, because OpenAlex is
-not error-free and Claude can slip up too. You commit after each step, so every checkpoint is
-saved and easy to return to. These commits stay on your own computer for now. Your work does
-not go to GitHub until the last step, when you publish the page. Before each commit Claude
-shows you the exact files it will include and a short message to approve, so you always see
-what is being saved before it is.
+**Second, set the ground rules for committing.** You will commit and push several times this session,
+so it is worth telling Claude once how you want it done.
 
-## 1. Find your ORCID
+> *"In the MyPublications folder, add a rule that you never commit without first
+> showing me the files you will include and a short commit message of no more than five bullet
+> points, then waiting for my okay."*
 
-You only need this step if you do not already know your ORCID. If you have it, skip to the
-next step.
+From now on, **"commit it"** is all you need, and Claude shows you what it will save, displays a commit message for you to approve, and waits.
+Commit whenever a piece is done. It costs nothing, and every checkpoint is easy to return to.
 
-Your papers are pulled by ORCID, so getting the right one matters. Ask Claude to find yours,
-then confirm the papers it shows are really yours before you go on, since a wrong match
-means a page full of someone else's work.
+## Your ORCID
 
-> *"Find my ORCID from my name and institution. I am [your name] at [your institution]. Show
-> me the ORCID and a couple of paper titles on it so I can confirm it is mine."*
+Skip this if you know your ORCID. If not, have Claude find it from your name and institution, and
+**give you the link to the ORCID record so you can open it and confirm the name and institution are
+yours** before going on. A wrong ID means a page full of someone else's work.
 
-Check the titles. If they are your papers, you are set. If not, tell Claude, or give it your
-ORCID directly if you know it. Following along with your PI? Give Claude their name and
-institution instead.
+## Your papers from OpenAlex, and check they are yours
 
-## 2. Fetch your papers, and check they are yours
+Have Claude pull your full publications list from OpenAlex, then do the part that matters, **check it.** Even the
+right ORCID is not foolproof. When we searched Michael MacCoss's, OpenAlex handed back two papers by
+a different researcher, Malcolm MacCoss. Someone who shares your last name can turn up in your
+results, so this is where you catch it, before anything is built on top.
 
-With your ORCID set, have Claude pull your full publication list from OpenAlex. Do not take
-it on faith. Even a correct ORCID is not foolproof. When we searched Michael MacCoss's ORCID,
-OpenAlex returned two papers by a different researcher named Malcolm MacCoss. A same-name
-stranger's work can slip in, so this is where you check, before anything is built on top of it.
+Do this in two steps.
 
-> *"Ask me any questions before you get started. Fetch all my works from OpenAlex using my
-> ORCID, and save the results. Review the results for potential spurious papers, e.g. papers
-> with no shared co-authors with my other work, a different research area, or a duplicate
-> title. Then write a Markdown file listing every paper, with the flagged ones pulled to the
-> top and marked with the reason. Show it to me as a preview I can read."*
+**First, fetch.** Tell Claude what you are building, a page of your papers with charts of your
+citations over time, so it knows what to pull. **Ask Claude to**
 
-Claude may ask you a question or two first, then writes the list to a file like
-`papers-review.md` and opens it as a rendered preview in the Code tab. Read the flagged ones first, then skim the rest, because a paper Claude did
-not flag can still be wrong. The full list is also a quick gut check. Does the count look
-about right?
+- fetch all your works from OpenAlex by your ORCID, with the details that page needs — the venue, the year, the work type, and how often each was cited each year — and save them
+- ask you questions if anything is unclear
+- show you a short summary once it is done — how many works, and a breakdown by type (article, review, preprint, and so on)
+- **wait for you before moving on, and not build the page until you tell it to**
 
-Tell Claude which papers are not yours. Have it remove them and record the exclusions in a
-file, so the next time you fetch for the same ORCID, Claude already knows which papers to
-drop and you do not repeat this review. The whole workflow is meant to be re-run, not done
-once by hand.
+Skim the breakdown and tell Claude which kinds to keep. Dropping **preprints** is usually a good call,
+since the published version of the same paper is already in your list, so it tidies things and clears
+out the duplicate pairs in one move. Keep them if your preprints matter to you — it is your page.
 
-> *"These are not mine, [titles or numbers from the list]. Remove them from my data, and save
-> their IDs to a file so that re-running the fetch for my ORCID leaves them out automatically."*
+**Then, check. Ask Claude to**
 
-When the list looks right, commit this checkpoint before moving on.
+- review what is left and flag anything that might not be yours — for example, a paper with no co-authors in common with the rest
+- show you the list, most suspicious first, with the reason, and tell you how many it flagged
+- remember the ones you reject, so a re-run drops them automatically
 
-> *"Commit everything to the repo."*
+Read the flagged ones first, then skim the rest, a paper Claude did not flag can still be wrong.
+Tell Claude which are not yours. Claude should clean up the list and save a list of flagged publications.
+At this point you might want to peek in the directory to see which scripts and files Claude has added. Tell Claude to **commit it**. 
 
-## 3. Describe the page, and let Claude interview you
+## Design the page
 
-Your papers are fetched and checked, so now shape the page. You do not need the design worked
-out in advance. When you are not sure where to start, have Claude ask you. Describe what you
-want, and let it interview you before it builds anything. In your own words, something close
-to this.
+Do not spell out the design, unless you really want to. Start the other way and let Claude interview you. **Ask Claude to**
 
-> *"I want a web page of my published papers with charts of my citations over the years.
-> Ask me about a dozen questions about how the page should look and what it should show,
-> before you build anything."*
+- ask you at least 12 things it needs to know before it builds anything
 
-Claude **asks you** about the look, the accent color, which summary numbers to feature,
-which charts, and how to sort the list. Many questions arrive as clickable options with a
-small counter. In Lesson 1 you told Claude, in its rules, to ask one question at a time and
-present the options in a clickable format. If you notice it not following that, a quick
-reminder puts it back on track. 
+Claude asks about the look, the accent color, the numbers to feature, the charts. **"You decide" is a
+fine answer**, and you can change anything later.
 
-You do not need an opinion on all of the questions. **"You decide" is a fine
-answer**, and you can change anything later.
+When the questions run out, have Claude write a short spec (**todo**), the plan for building your page. **Ask Claude to**
 
-## 4. Approve a short spec, then let Claude build
+- write a short todo that describes the page from your answers
+- say how the data was fetched and cleaned up, so the whole thing can be re-run
+- save it in your `ClaudeLab` under `todos/active`, since it is the plan for a piece of ongoing work
+- name the todo `TODO-YYYYMMDD-...` per the convention introduced in Lesson 1.
+- wait for you to approve the todo before building anything.
 
-When the questions are done, ask Claude to **write a short spec**, a plain-English
-description of the page with a simple sketch of the layout, and to wait for your okay
-before building.
+Review the plan. Fixing a plan is quick. When it looks right, say **"commit it."**
 
-> *"Write a short spec of the page from my answers, with a text sketch of the layout. Include
-> where the page gets its data and how it is rebuilt from that data, so the whole workflow can
-> be re-run. Show it to me before you build."*
+**NOTE**: The todo lives in `ClaudeLab`, a different repo from `MyPublications`, and Claude commits it there.
+Your session is open on `ws` so Claude can reach both.
 
-Read it as the plan for your page. Change anything that is off, in plain language, then
-approve it. Fixing a plan is quick. Fixing a built page is slower. When it looks right,
-say so.
+Now tell Claude to build `index.html`. The todo and the page are **the demo**, your explanation made
+real. **Open the file in your own browser and review it.** Claude may attempt to show you a preview but it can be hit or miss.
+**Commit** this first version. The commit lands in `MyPublications`.
 
-> *"This looks good. Build it as index.html I can open in my browser."*
+## Make it yours
 
-Claude writes `index.html` into your `MyPublications` folder. It may first
-show the page in its own preview inside the Code tab. That preview can be hit or miss, so open
-the file in your own browser, or ask Claude to. That is the reliable view, and the one you
-refine against. Now you have a real page on screen. Commit your work before you start
-refining it.
+This is the design heart of the hour. Look at the page, tell Claude what to change, refresh, review
+again. Color, headings, a dark-mode toggle, another chart, a link from each title to its DOI,
+whatever you want. It is a conversation, not a form. Say what looks wrong and what you want instead. Want a chart but are not sure
+which kind? Have Claude suggest a few and pick one. If something looks empty or off, say so.
+**Commit** when it looks right.
 
-## 5. Look and refine
+## Put it online
 
-This is the design heart of the hour, and it works as a loop. Look at the page in your
-browser, ask Claude for a change or an addition, then look again. Getting it the way you want
-takes a few rounds, but each round is typically a short prompt. Refresh to see each change.
+**GitHub Pages** turns a public repository into a live website, for free. Your page is a single
+`index.html` in `MyPublications`, so two facts are all that matter. Pages needs the repository to be
+**public**, which is fine here, it is public research, and it can serve straight from the
+**repository root**, where your file already sits.
 
-> *"Use a deep blue accent, make the headings larger, and give me a dark-mode toggle."*
->
-> *"Add a chart of my top collaborators, and link each paper title to its DOI."*
->
-> *"I want to add another chart. Suggest a few chart types that would suit my data, and let me
-> pick one before you build it."*
+**Ask Claude to**
 
-That last prompt is the interview habit again, letting Claude offer options instead of
-deciding for you. If a chart looks empty or a number looks off, say so and Claude fixes it. 
+- create a public GitHub repository called MyPublications from this folder
+- push everything to it
+- publish the page to GitHub Pages and tell you the live URL
+- ask questions if anything is unclear
 
-When the page looks right, commit your work.
+Claude runs the git commands one step at a time, and you approve each one. If it cannot turn on GitHub Pages for some reason, 
+ask it to outline the steps so that you can do it manually. After GitHub Pages is turned on, a minute later your page is live at
+`https://<your-username>.github.io/MyPublications/`. Share the link with anyone.
 
-## 6. Put it on the web with GitHub Pages
 
-**GitHub Pages** is a free service from GitHub that turns the files in a public repository
-into a real website at a public web address. Your page is a single `index.html` sitting in
-your `MyPublications` folder, so all that is left is to put that folder on GitHub and switch
-Pages on.
+Your page is live, so the todo is done. Tell Claude to move it from `todos/active` to
+`todos/completed` in your `ClaudeLab` and **commit it** there. That closes the todo the workshop way,
+and it is the same cross-repo commit you made when you saved the todo. Claude should be able to handle it seamlessly. 
 
-Two things to know.
+## Turn it into a tool
 
-- **Free Pages needs a public repository.** So `MyPublications` has to be public. For this
-  workshop that is fine, it is all public research, just know the whole repository becomes
-  visible, scripts and data and all.
-- **Pages can publish straight from the repository root.** Your `index.html` is already there,
-  so there is nothing to move.
+The payoff. You did not just make a page, you made all the parts of a page-maker — a fetch script, an
+exclusions list, and a page design template you can reuse. Fold them into a **skill** you can run for
+anyone, your PI, a labmate. **Ask Claude to**
 
-Have Claude create the repository and push your work.
+- package this into a publications-page skill that takes a name or ORCID and an organization
+- reuse your fetch script, and turn your page into a template, keeping both in the skill folder so it stands alone
+- not re-interview you, but always confirm the ORCID first and show you any flagged papers before
+  building
+  
+Your prompt could simply be:
 
-> *"Create a public GitHub repository called MyPublications from this folder, push everything
-> to it, then enable GitHub Pages from the main branch and root folder and tell me the live
-> URL."*
+> *"Turn the work we did in this session into a publications-page skill that takes as input a name or
+> ORCID and an organization, and produces a standalone HTML page."*
 
-Claude does the git one step at a time, and you approve each one. If GitHub asks you to sign
-in, it is the same sign-in you did in Lesson 1. Claude may be able to switch Pages on for you.
-If it cannot, its account may lack the permission, so turn Pages on yourself. On your new
-`MyPublications` repo on github.com, open **Settings**, then **Pages**, and set the source to
-deploy from the **`main`** branch and the **`/ (root)`** folder, then Save. A minute later
-your page is live at `https://<your-username>.github.io/MyPublications/`. Send the link to
-anyone.
+
+The rule is **bake in the design, re-check the facts.** The slow parts, the interview and the look,
+get frozen into the template. The two things it must never skip, the ORCID and the flagged papers,
+stay as quick checks, because skipping them publishes a page from unchecked data.
+
+To try it now, run `/reload-skills` and ask Claude in words to run it, for example *"run the
+publications-page skill for my PI."* You will see a warning that the command is not recognized yet.
+Ignore it. That only means it is not in the type-ahead menu until you next restart Claude. Asked in
+words, it still runs. Refreshing your own page is then seconds. Building one for your PI is a couple
+of minutes, the flag check still happens, but the design work is gone.
 
 ## Keep going (or if you have time)
 
-- Add a search box, more stat cards, or a publications-per-year chart.
-- Add a one-line intro about you or the lab under the title.
-- Re-run the fetch later to refresh the numbers and push again, and the live page
-  updates itself.
-- Ask Claude how to automate that refresh with GitHub Actions, so the page updates on its own.
+- A search box, more stat cards, or a papers-per-year chart.
+- A one-line intro about you or the lab under the title.
+- Re-fetch from OpenAlex later to refresh the numbers, your `publications-page` skill makes it a one-liner. Ask Claude how to
+  automate it with GitHub Actions.
 
 ## You're on track when
 
-- [ ] You reviewed your fetched papers and dropped any that were not yours.
+- [ ] You checked your fetched papers and dropped any that were not yours.
 - [ ] A page of your papers with at least one chart is open in your browser.
-- [ ] Your finished page is saved as `index.html` in your `MyPublications` repo, and that repo is public.
 - [ ] It is live at a `github.io` address you can share.
+- [ ] You packaged the workflow into a `/publications-page` skill.
 
 ## What you take with you
 
 - A live, shareable page you built by describing it, not by coding it.
-- The **design loop** of look, ask, look again, refining a step at a time.
-- Checking the work and committing after each step, so nothing is trusted blindly or lost.
-- Publishing with GitHub Pages, the `MyPublications` repository you built this hour now serves a live web page.
+- The reflex to **check what Claude did**, especially when it tells you it succeeded.
+- The design loop, look, ask, look again.
+- A `/publications-page` skill that turns your one-off page into a tool, **a page-maker you can use for anyone.**
 
 ---
 
-*Snagged? Nothing here is fragile. Ask Claude to explain the current state, or wave over
-an instructor.*
+*Snagged? Nothing here is fragile. Ask Claude to explain the current state, or wave over an
+instructor.*
