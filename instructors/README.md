@@ -63,15 +63,28 @@ place to experiment, not a system of record.
 We'd like instructors to build their talks as HTML with Claude Code — it models
 the exact skill participants learn, lives in Git, and prints to a clean 16:9 PDF.
 Start from [`presentation-template/`](presentation-template/) (UW-branded,
-single file, no build step). Copy it into your own working area and make it
-yours. Not mandatory — but if you try it, you'll have a better sense of what
-we're asking participants to do.
+single file, no build step). Copy it into your session's
+`lessons/NN-.../slides/` folder and make it yours. Not mandatory — but if you
+try it, you'll have a better sense of what we're asking participants to do.
+
+**The template lives in `instructors/`, but finished decks live in `lessons/`.**
+That's on purpose: the template is an instructor tool an attendee never needs,
+but a finished deck is *for* attendees — they may refer back to it during the
+hands-on. See "Adding your session" for exactly where things go.
 
 ## Adding your session
 
 1. Copy `lessons/01-github-and-claudelab/` as a structural template.
 2. Name it `lessons/NN-your-slug/`; write a participant `README.md`.
 3. Add your row to `lessons/README.md` and the table in the top-level `README.md`.
+
+**Where each file goes** — the test is "does an attendee need this?":
+
+- **Slide deck** → `lessons/NN-your-slug/slides/index.html` (for attendees; built
+  from the template).
+- **Data / files participants use** → in `lessons/NN-your-slug/`.
+- **Instructor-only material** (answer keys, offline backups, host notes) →
+  `instructors/NN-your-slug/`.
 
 ## Writing standard
 
