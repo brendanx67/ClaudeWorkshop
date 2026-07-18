@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Session 1 — GitHub and your ClaudeLab — Brendan MacLean</title>
+
+<!--
+  Session 1 opening deck (Day 1, 8:00-9:00, Brendan).
+  Built from ClaudeWorkshop/instructors/presentation-template/. Self-contained:
+  no external assets, so it just works. Present full-screen (press F); prints to
+  16:9 PDF (Ctrl/Cmd-P -> Save as PDF, Margins None, Background graphics ON).
+  Framing distilled from the May 2026 meetup deck ("Automation by Explanation").
+  Add team photos / the pwiz-ai callgraph later via the screen/print swap.
+-->
+
+<style>
+:root {
+  --brand:       #4B2E83;   /* UW purple */
+  --brand-dark:  #362161;
+  --brand-light: #EDE9F3;
+  --accent:      #85754D;   /* UW gold */
+  --bg:    #FFFFFF;
+  --text:  #1A1A1A;
+  --muted: #777777;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  width: 100%; height: 100%; overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  background: var(--bg); color: var(--text);
+}
+.deck  { position: relative; width: 100vw; height: 100vh; }
+.slide {
+  position: absolute; inset: 0; padding: 6vh 8vw;
+  display: none; flex-direction: column; justify-content: center;
+}
+.slide.active { display: flex; }
+
+h1 { font-size: 5.5vw; line-height: 1.05; font-weight: 700; color: var(--brand-dark); letter-spacing: -0.02em; }
+h2 { font-size: 3.6vw; line-height: 1.1;  font-weight: 600; color: var(--brand-dark); letter-spacing: -0.01em; margin-bottom: 4vh; }
+h3 { font-size: 2.2vw; color: var(--accent); margin-bottom: 1vh; font-weight: 600; }
+p, li { font-size: 2.2vw; line-height: 1.5; }
+.accent { color: var(--accent); }
+.muted  { color: var(--muted); font-size: 1.6vw; }
+
+ul.bullets { list-style: none; margin-top: 2vh; }
+ul.bullets li { font-size: 2.6vw; font-weight: 500; margin-bottom: 1.8vh; }
+ul.bullets li::before { content: "▸"; color: var(--accent); margin-right: 1.2vw; font-weight: 700; }
+ul.bullets li .sub {
+  display: block; font-size: 1.5vw; font-weight: 400; font-style: italic;
+  color: var(--muted); margin-top: 0.3vh; padding-left: 2.6vw;
+}
+
+/* Title */
+.title-slide { text-align: center; align-items: center; justify-content: center; }
+.title-slide h1 { font-size: 5vw; margin-bottom: 2.5vh; letter-spacing: -0.025em; }
+.title-slide .subtitle { font-size: 2.4vw; color: var(--muted); line-height: 1.35; }
+.title-slide .byline { font-size: 2vw; font-weight: 500; margin-top: 6vh; }
+.title-slide .affil  { font-size: 1.5vw; color: var(--muted); margin-top: 0.4vh; }
+.uw-logo { display: flex; align-items: center; justify-content: center; gap: 1vw; margin-top: 4vh; }
+.uw-w {
+  width: 4vw; height: 4vw; background: var(--brand); color: white;
+  font-family: Georgia, "Times New Roman", serif; font-style: italic; font-weight: 700;
+  font-size: 3vw; display: flex; align-items: center; justify-content: center;
+  line-height: 1; letter-spacing: -0.05em;
+}
+.uw-text { font-size: 1vw; color: var(--text); letter-spacing: 0.08em; line-height: 1.25; font-weight: 600; text-align: left; }
+.uw-text em { font-style: italic; font-weight: 400; letter-spacing: 0; }
+
+/* Dark opener / statement */
+.opener { background: var(--brand-dark); color: white; justify-content: center; align-items: center; text-align: center; }
+.opener .eyebrow { font-size: 1.7vw; color: var(--brand-light); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 4vh; }
+.opener h1 { color: white; font-size: 6vw; line-height: 1.12; max-width: 82vw; }
+.opener .sub { font-size: 2.2vw; color: var(--brand-light); margin-top: 4vh; font-weight: 400; max-width: 72vw; }
+.statement { justify-content: center; }
+.statement .thesis { font-size: 5vw; line-height: 1.2; font-weight: 600; }
+
+/* Evidence stats */
+.stat-row { display: flex; gap: 5vw; justify-content: center; margin: 5vh 0 2vh; }
+.stat { text-align: center; }
+.stat .num { font-size: 5vw; font-weight: 700; color: var(--brand); line-height: 1; font-variant-numeric: tabular-nums; }
+.stat .lbl { font-size: 1.4vw; color: var(--muted); margin-top: 0.8vh; line-height: 1.3; }
+
+/* Team */
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3.5vh 4vw; margin-top: 2vh; }
+.team-card { text-align: center; }
+.team-card .name { font-size: 2vw; font-weight: 600; color: var(--brand-dark); }
+.team-card .role { font-size: 1.3vw; color: var(--muted); font-style: italic; margin-top: 0.4vh; line-height: 1.3; }
+.team-card.lead .name { color: var(--accent); }
+
+/* Habits list */
+.habits { list-style: none; margin-top: 2vh; }
+.habits li { font-size: 2.6vw; font-weight: 600; color: var(--brand-dark); margin-bottom: 1.8vh; }
+.habits li::before { content: "▸"; color: var(--accent); margin-right: 1.1vw; }
+.habits li span { display: block; font-size: 1.5vw; color: var(--muted); font-style: italic; font-weight: 400; padding-left: 2.6vw; margin-top: 0.2vh; }
+
+/* Closing verb */
+.start-verb { font-size: 7vw; color: var(--accent); font-weight: 700; margin: 2vh 0 3vh; letter-spacing: -0.03em; }
+
+/* Counter */
+.counter { position: fixed; bottom: 1vh; right: 1.5vw; font-size: 1vw; color: var(--muted); font-variant-numeric: tabular-nums; letter-spacing: 0.1em; z-index: 100; pointer-events: none; }
+.counter.dark { color: rgba(255,255,255,0.55); }
+
+@media print {
+  @page { size: 13.333in 7.5in; margin: 0; }
+  html, body { width: 13.333in; height: auto; overflow: visible; background: white; }
+  .deck { width: 13.333in; height: auto; position: static; }
+  .slide {
+    display: flex !important; position: relative; inset: auto;
+    width: 13.333in; height: 7.5in; page-break-after: always; break-after: page; overflow: hidden;
+  }
+  .slide:last-of-type { page-break-after: auto; break-after: auto; }
+  .counter { display: none !important; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+}
+</style>
+</head>
+<body tabindex="-1">
+<div class="deck">
+
+  <!-- 1. Title -->
+  <section class="slide title-slide active">
+    <h1>Claude Code for<br>Scientific Researchers</h1>
+    <p class="subtitle">Two mornings, your own data, Claude at the keyboard.</p>
+    <p class="byline">Brendan MacLean · MacCoss Lab</p>
+    <div class="uw-logo">
+      <div class="uw-w">W</div>
+      <div class="uw-text">UNIVERSITY <em>of</em><br>WASHINGTON</div>
+    </div>
+  </section>
+
+  <!-- 2. Who I am -->
+  <section class="slide">
+    <h2>Who's running this</h2>
+    <ul class="bullets">
+      <li>I'm Brendan — I build <strong>Skyline</strong> in the MacCoss Lab.
+        <span class="sub">Open-source software for proteomics; ~23,000 researchers, 18 years, all in the open.</span>
+      </li>
+      <li>I'm a developer, not an AI researcher.</li>
+      <li>For the past year, my <strong>whole team</strong> has developed with Claude Code.
+        <span class="sub">This isn't a demo of something I tried once. It's how we work now.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 3. The workshop -->
+  <section class="slide">
+    <h2>These two mornings</h2>
+    <ul class="bullets">
+      <li>Hands-on, with real scientific data — <strong>you</strong> at your own laptop.</li>
+      <li>Claude writes the code. You learn to <strong>explain what you want.</strong></li>
+      <li>Six of us circulating, ~27 of you — you won't be stuck for long.</li>
+      <li>You leave <strong>able to use Claude in your own research</strong> — not just having watched.</li>
+    </ul>
+  </section>
+
+  <!-- 4. Thesis -->
+  <section class="slide opener dark-bg">
+    <p class="eyebrow">The whole idea</p>
+    <h1>All you have to do is <span style="color:var(--accent)">explain.</span></h1>
+    <p class="sub">Claude is a remarkable tool — but it needs <em>you</em> to explain your work. That's the skill we're here to build.</p>
+  </section>
+
+  <!-- 5. Train like a new-hire -->
+  <section class="slide">
+    <h2>Train Claude like a talented new-hire</h2>
+    <ul class="bullets">
+      <li>Start with <strong>small projects.</strong></li>
+      <li><strong>Capture what you teach.</strong>
+        <span class="sub">Notes, rules, scripts — Claude writes them down as you explain, so the next session already knows.</span>
+      </li>
+      <li><strong>Build on success.</strong></li>
+    </ul>
+    <p class="muted" style="margin-top:4vh">Claude will never be perfect. You keep training — and it keeps getting more useful.</p>
+  </section>
+
+  <!-- 6. Evidence -->
+  <section class="slide">
+    <h2>This works — at team scale</h2>
+    <div class="stat-row">
+      <div class="stat"><div class="num">6</div><div class="lbl">months in</div></div>
+      <div class="stat"><div class="num">7</div><div class="lbl">developers</div></div>
+      <div class="stat"><div class="num">100s</div><div class="lbl">of artifacts,<br>all written by Claude</div></div>
+    </div>
+    <p class="muted" style="text-align:center">Our team's knowledge base — docs, skills, commands, scripts — is open source: <span class="accent">github.com/ProteoWizard/pwiz-ai</span></p>
+    <p class="muted" style="text-align:center; margin-top:0.6vh; font-style:italic">Today you start your own — much smaller, but the same idea.</p>
+  </section>
+
+  <!-- 7. The team -->
+  <section class="slide">
+    <h2>Your instruction team</h2>
+    <div class="team-grid">
+      <div class="team-card lead"><div class="name">Brendan MacLean</div><div class="role">Setup &amp; your ClaudeLab</div></div>
+      <div class="team-card"><div class="name">Vagisha Sharma</div><div class="role">Design with HTML &amp; JavaScript</div></div>
+      <div class="team-card"><div class="name">Lauren Fields &amp; Chris Hsu</div><div class="role">Data cleanup &amp; visualization</div></div>
+      <div class="team-card"><div class="name">Mike Riffle</div><div class="role">Scientific data analysis</div></div>
+      <div class="team-card"><div class="name">Lindsay Pino</div><div class="role">ELN reviews</div></div>
+      <div class="team-card"><div class="name">Mark Belanger</div><div class="role">Event organizer</div></div>
+    </div>
+    <p class="muted" style="text-align:center; margin-top:4vh">One lead up front, the rest circulating as helpers — all morning, both mornings.</p>
+  </section>
+
+  <!-- 8. This hour's goal -->
+  <section class="slide">
+    <h2>By 9:00, you'll have…</h2>
+    <ul class="bullets">
+      <li>A <strong>GitHub login that works</strong> — signed in, two-factor and all.</li>
+      <li>Your own <strong>ClaudeLab</strong> repository, on your GitHub — with your first notes and a to-do, saved.</li>
+    </ul>
+    <p class="muted" style="margin-top:3vh">…and you'll have met the three habits we'll use all week:</p>
+    <ul class="habits">
+      <li>All you have to do is explain</li>
+      <li>Have Claude ask <em>you</em><span>when you're not sure how to explain, let Claude interview you</span></li>
+      <li>Reference, don't embed<span>keep what you build small and pointed — knowledge in files, not one big wall</span></li>
+    </ul>
+  </section>
+
+  <!-- 9. Let's go -->
+  <section class="slide opener dark-bg">
+    <p class="eyebrow">Open Claude Code on your <span style="color:var(--accent)">ws</span> folder</p>
+    <div class="start-verb">Let's build.</div>
+    <p class="sub">First move: ask Claude to create your ClaudeLab — then point it at our recipe and let it interview you.</p>
+  </section>
+
+</div>
+
+<div class="counter" id="counter">1 / 9</div>
+
+<script>
+const slides  = document.querySelectorAll('.slide');
+const counter = document.getElementById('counter');
+let current = 0;
+function show(n) {
+  n = Math.max(0, Math.min(slides.length - 1, n));
+  slides.forEach(s => s.classList.remove('active'));
+  slides[n].classList.add('active');
+  current = n;
+  counter.textContent = `${n + 1} / ${slides.length}`;
+  counter.classList.toggle('dark', slides[n].classList.contains('dark-bg'));
+  try { document.body.focus(); } catch (_) {}
+}
+function next() { show(current + 1); }
+function prev() { show(current - 1); }
+document.addEventListener('keydown', e => {
+  if (['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)) { next(); e.preventDefault(); }
+  else if (['ArrowLeft','ArrowUp','PageUp'].includes(e.key))     { prev(); e.preventDefault(); }
+  else if (e.key === 'Home') { show(0); e.preventDefault(); }
+  else if (e.key === 'End')  { show(slides.length - 1); e.preventDefault(); }
+  else if (e.key === 'f' || e.key === 'F') {
+    if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+    else document.exitFullscreen();
+    e.preventDefault();
+  }
+});
+let downX = 0, downY = 0;
+document.addEventListener('mousedown', e => { downX = e.clientX; downY = e.clientY; });
+document.addEventListener('click', e => {
+  if (Math.hypot(e.clientX - downX, e.clientY - downY) > 5) return;
+  if (['IFRAME','VIDEO','A'].includes(e.target.tagName)) return;
+  next();
+});
+window.addEventListener('load', () => { try { document.body.focus(); } catch (_) {} });
+show(0);
+</script>
+</body>
+</html>
