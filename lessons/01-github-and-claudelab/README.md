@@ -57,6 +57,22 @@ Skim what Claude made — open a file or two. When it looks right:
 Refresh the GitHub page — your notes, rules, and first todo are there,
 timestamped. A real first commit. 🎉
 
+## 4. See it rendered
+
+Open one of your new files — say `ClaudeLab/docs/about-my-work.md`. That's
+**Markdown**: plain text with light formatting. Readable — but it can look a lot
+nicer, and you'll be reading `.md` files all week.
+
+Install **Markdown Reader** (free; Chrome or Edge; Mac or Windows):
+
+1. Get it from the Chrome Web Store:
+   [chromewebstore.google.com/…/markdown-reader](https://chromewebstore.google.com/detail/markdown-reader/medapdbncneneejhbgcjceippjlfkmkg)
+2. Browser **Extensions** (puzzle-piece icon) → **Markdown Reader** → **Manage
+   extension** → turn **ON** "**Allow access to file URLs**." *(The step everyone
+   misses — without it, it won't render files on your computer.)*
+
+Now open that same file in Chrome or Edge — headings, links, and lists, rendered. 🎉
+
 ## Keep going (or if you have time)
 
 - Add a rule to `CRITICAL-RULES.md` the moment you notice a preference.
@@ -82,6 +98,7 @@ and a demo are both ways of capturing what you explained: one reads, one runs.
       (`TODO-YYYYMMDD-...` if you started it today).
 - [ ] You can say what *commit* and *push* mean — and what *"reference, don't
       embed"* is protecting you from.
+- [ ] **Markdown Reader** installed — your `.md` files render in the browser.
 
 ## What you take with you
 

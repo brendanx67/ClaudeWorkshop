@@ -74,28 +74,6 @@ Claude Code installed Python 3.14 from the official python.org installer (silent
 PATH enabled, `py` launcher) and confirmed it runs. Nothing extra to do — same
 "works in new sessions" PATH note applies.
 
-## Recommended: see your Markdown rendered
-
-You'll create and read a lot of **Markdown** all workshop — plain-text `.md` files
-with light formatting (`docs/`, `todos/`, `CLAUDE.md`, and more). A free browser
-extension renders them nicely instead of showing raw text. Many people find it a
-game-changer.
-
-**Chrome or Edge (Mac or Windows):**
-
-1. Install **Markdown Reader** from the Chrome Web Store:
-   [chromewebstore.google.com/…/markdown-reader](https://chromewebstore.google.com/detail/markdown-reader/medapdbncneneejhbgcjceippjlfkmkg)
-2. Open the browser's **Extensions** (puzzle-piece icon) → **Markdown Reader** →
-   **Manage extension**.
-3. Turn **ON** "**Allow access to file URLs**." Without this it won't render files
-   on your own computer — this is the step people miss.
-
-**Check it works:** open `ws/ClaudeWorkshop/README.md` in Chrome or Edge — it
-should show formatted headings and links, not raw text.
-
-> Tip: on **Windows 11** you can set `.md` files to open in Chrome for one-click
-> viewing; on **Mac** or **Windows 10**, drag a `.md` file onto a browser window.
-
 ## Notes for the teaching team
 
 Findings from the Windows Sandbox dry run (July 2026):
