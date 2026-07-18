@@ -19,7 +19,7 @@ own folder with a participant `README.md`.
 | 8:00–10:00 | Scientific data analysis | Mike Riffle | [`04-scientific-data-analysis/`](04-scientific-data-analysis/) |
 | 10:00–10:30 | Coffee | | |
 | 10:30–11:15 | ELN reviews | Lindsay | [`05-eln-reviews/`](05-eln-reviews/) |
-| 11:15–12:00 | Extending Claude Code with MCP servers (Python) | _TBD_ | [`06-extending-claude-code-with-mcp/`](06-extending-claude-code-with-mcp/) |
+| 11:15–12:00 | Extending Claude Code with MCP servers (Python) | Brendan | [`06-extending-claude-code-with-mcp/`](06-extending-claude-code-with-mcp/) |
 
 ## Instructors: where your lesson goes
 

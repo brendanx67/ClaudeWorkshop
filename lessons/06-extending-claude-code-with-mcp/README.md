@@ -1,8 +1,8 @@
 # Lesson 6 — Extending Claude Code with MCP servers (Python)
 
-**Day 2 · 11:15–12:00 · owner TBD**
+**Day 2 · 11:15–12:00 · Brendan**
 
-> **Status: draft — owner needed.** Copy the shape of
+> **Status: draft.** Copy the shape of
 > [Lesson 1](../01-github-and-claudelab/README.md): beginner-first, define any
 > jargon the first time, Claude does the mechanics while the participant supplies
 > intent. See [instructors/README.md](../../instructors/README.md) for the writing
