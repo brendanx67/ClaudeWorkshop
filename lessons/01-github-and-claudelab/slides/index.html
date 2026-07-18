@@ -82,6 +82,15 @@ ul.bullets li .sub {
 .stat .num { font-size: 5vw; font-weight: 700; color: var(--brand); line-height: 1; font-variant-numeric: tabular-nums; }
 .stat .lbl { font-size: 1.4vw; color: var(--muted); margin-top: 0.8vh; line-height: 1.3; }
 
+/* Evidence — pwiz-ai callgraph animation */
+.callgraph-slide { justify-content: flex-start; }
+.callgraph-slide h2 { margin-bottom: 2vh; }
+.iframe-wrap { flex: 1; width: 100%; min-height: 0; border: 1px solid var(--brand-light); border-radius: 6px; overflow: hidden; position: relative; }
+.iframe-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
+.iframe-wrap img.print-fill { width: 100%; height: 100%; object-fit: contain; }
+.caption { font-size: 1.3vw; color: var(--muted); text-align: center; margin-top: 1.5vh; line-height: 1.4; }
+.print-only { display: none; }
+
 /* Team */
 .team-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 3vh 3vw; margin-top: 2vh; }
 .team-card { text-align: center; width: 18vw; }
@@ -122,6 +131,8 @@ ul.bullets li .sub {
   }
   .slide:last-of-type { page-break-after: auto; break-after: auto; }
   .counter { display: none !important; }
+  .screen-only { display: none !important; }
+  .print-only  { display: block !important; }
   * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
 }
 </style>
@@ -174,27 +185,26 @@ ul.bullets li .sub {
     <p class="sub">Claude is a remarkable tool — but it needs <em>you</em> to explain your work. We will teach you to record critical explanations as skills and commands that keep you from re-explaining.</p>
   </section>
 
-  <!-- 5. Train like a new-hire -->
+  <!-- 5. Not a programmer? You don't have to be -->
   <section class="slide">
-    <h2>Train Claude like a talented new-hire</h2>
+    <h2 style="margin-bottom:1.5vh">Not a programmer? Not a data analyst?</h2>
+    <p style="font-size:3.4vw; font-weight:700; color:var(--accent); margin-bottom:2vh">You don't have to be.</p>
     <ul class="bullets">
-      <li>Start with <strong>small projects.</strong></li>
-      <li><strong>Capture what you teach.</strong></li>
-      <li><strong>Build on success.</strong></li>
+      <li>Explain what you want.</li>
+      <li>Start small.</li>
+      <li>Surprise yourself — fast.</li>
     </ul>
-    <p class="muted" style="margin-top:4vh">Claude will never be perfect. Keep training.</p>
+    <p class="muted" style="margin-top:3vh">The expert help you'd go find — now on call, the moment you can explain the problem.</p>
   </section>
 
-  <!-- 6. Evidence -->
-  <section class="slide">
-    <h2>This works — at team scale</h2>
-    <div class="stat-row">
-      <div class="stat"><div class="num">6</div><div class="lbl">months in</div></div>
-      <div class="stat"><div class="num">7</div><div class="lbl">developers</div></div>
-      <div class="stat"><div class="num">100s</div><div class="lbl">of artifacts,<br>all written by Claude</div></div>
+  <!-- 6. Evidence — pwiz-ai callgraph animation (press Play; runs at 4x, ~30s) -->
+  <section class="slide callgraph-slide">
+    <h2>Nine months. Seven developers. Hundreds of artifacts.</h2>
+    <div class="iframe-wrap">
+      <iframe class="screen-only" src="assets/callgraph/callgraph-latest.html" title="pwiz-ai callgraph — months of AI-written artifacts, sped up"></iframe>
+      <img class="print-only print-fill" src="assets/print-callgraph.png" alt="pwiz-ai callgraph">
     </div>
-    <p class="muted" style="text-align:center">All open source: <span class="accent">github.com/ProteoWizard/pwiz-ai</span></p>
-    <p class="muted" style="text-align:center; margin-top:0.6vh; font-style:italic">Today, you start your own.</p>
+    <p class="caption">pwiz-ai — docs · skills · commands · TODOs · scripts · MCPs, <span class="accent">all written by Claude.</span> &nbsp;Open source: github.com/ProteoWizard/pwiz-ai</p>
   </section>
 
   <!-- 7. The team -->
