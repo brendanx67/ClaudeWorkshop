@@ -83,18 +83,18 @@ ul.bullets li .sub {
 .stat .lbl { font-size: 1.4vw; color: var(--muted); margin-top: 0.8vh; line-height: 1.3; }
 
 /* Team */
-.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3.5vh 4vw; margin-top: 2vh; }
-.team-card { text-align: center; }
-.team-card .name { font-size: 2vw; font-weight: 600; color: var(--brand-dark); }
-.team-card .role { font-size: 1.3vw; color: var(--muted); font-style: italic; margin-top: 0.4vh; line-height: 1.3; }
+.team-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 3vh 3vw; margin-top: 2vh; }
+.team-card { text-align: center; width: 18vw; }
+.team-card .name { font-size: 1.7vw; font-weight: 600; color: var(--brand-dark); }
+.team-card .role { font-size: 1.2vw; color: var(--muted); font-style: italic; margin-top: 0.4vh; line-height: 1.3; }
 .team-card.lead .name { color: var(--accent); }
 .team-card img {
-  width: 7.5vw; height: 7.5vw; border-radius: 50%; object-fit: cover;
+  width: 7vw; height: 7vw; border-radius: 50%; object-fit: cover;
   margin: 0 auto 1vh; display: block; border: 3px solid var(--brand-light);
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 .team-card .ph {
-  width: 7.5vw; height: 7.5vw; border-radius: 50%; margin: 0 auto 1vh;
+  width: 7vw; height: 7vw; border-radius: 50%; margin: 0 auto 1vh;
   display: flex; align-items: center; justify-content: center;
   background: var(--brand-light); color: var(--brand); font-size: 2.4vw; font-weight: 700;
 }
@@ -210,15 +210,19 @@ ul.bullets li .sub {
         <div class="name">Vagisha Sharma</div><div class="role">Design with HTML &amp; JavaScript</div>
       </div>
       <div class="team-card">
-        <div class="ph">L·C</div>
-        <div class="name">Lauren Fields &amp; Chris Hsu</div><div class="role">Data cleanup &amp; visualization</div>
+        <img src="assets/team/LaurenFields.jpg" alt="Lauren Fields">
+        <div class="name">Lauren Fields</div><div class="role">Data cleanup &amp; visualization</div>
       </div>
       <div class="team-card">
-        <div class="ph">MR</div>
+        <img src="assets/team/ChrisHsu.png" alt="Chris Hsu">
+        <div class="name">Chris Hsu</div><div class="role">Data cleanup &amp; visualization</div>
+      </div>
+      <div class="team-card">
+        <img src="assets/team/MikeRiffle.jpg" alt="Mike Riffle">
         <div class="name">Mike Riffle</div><div class="role">Scientific data analysis</div>
       </div>
       <div class="team-card">
-        <div class="ph">LP</div>
+        <img src="assets/team/LindsayPino.jpg" alt="Lindsay Pino">
         <div class="name">Lindsay Pino</div><div class="role">ELN reviews</div>
       </div>
       <div class="team-card">
@@ -240,7 +244,7 @@ ul.bullets li .sub {
     <ul class="habits">
       <li>All you have to do is explain</li>
       <li>Have Claude ask <em>you</em></li>
-      <li>Reference, don't embed</li>
+      <li>Have Claude <em>record</em> - to your GitHub repository</li>
     </ul>
   </section>
 
