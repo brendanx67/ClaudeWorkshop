@@ -88,6 +88,16 @@ ul.bullets li .sub {
 .team-card .name { font-size: 2vw; font-weight: 600; color: var(--brand-dark); }
 .team-card .role { font-size: 1.3vw; color: var(--muted); font-style: italic; margin-top: 0.4vh; line-height: 1.3; }
 .team-card.lead .name { color: var(--accent); }
+.team-card img {
+  width: 7.5vw; height: 7.5vw; border-radius: 50%; object-fit: cover;
+  margin: 0 auto 1vh; display: block; border: 3px solid var(--brand-light);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.team-card .ph {
+  width: 7.5vw; height: 7.5vw; border-radius: 50%; margin: 0 auto 1vh;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--brand-light); color: var(--brand); font-size: 2.4vw; font-weight: 700;
+}
 
 /* Habits list */
 .habits { list-style: none; margin-top: 2vh; }
@@ -132,37 +142,36 @@ ul.bullets li .sub {
 
   <!-- 2. Who I am -->
   <section class="slide">
-    <h2>First — full disclosure</h2>
+    <h2>About me: Brendan MacLean</h2>
     <ul class="bullets">
-      <li>I'm a <strong>software developer.</strong> I build Skyline in the MacCoss Lab.
+      <li>I am a <strong>software developer.</strong> I build Skyline in the MacCoss Lab.
         <span class="sub">Open-source software for proteomics; ~23,000 researchers, 18 years, all in the open.</span>
       </li>
-      <li>I am <strong>not a scientific researcher.</strong>
-        <span class="sub">No formal scientific training since high school. "Computer Science" isn't really science — we never used the scientific method.</span>
-      </li>
-      <li>So I recruited <strong>actual researchers</strong> to teach the science.
-        <span class="sub">My hour is setup and tooling. The sessions that follow bear directly on your work.</span>
+      <li>I am <strong>not a scientific researcher.</strong></li>
+      <li>The instruction team
+        <span class="sub">An impressive range of scientific researchers and data analysts.</span>
       </li>
     </ul>
-    <p class="muted" style="margin-top:3vh">What I <em>do</em> know cold: Claude Code. My team has developed with it every day for a year.</p>
+    <p class="muted" style="margin-top:3vh">I do know Claude Code. Over the past year, I transitioned my team to using Claude Code every day.</p>
   </section>
 
   <!-- 3. The workshop -->
   <section class="slide">
-    <h2>These two mornings</h2>
+    <h2>The two mornings</h2>
     <ul class="bullets">
-      <li>Hands-on, with real scientific data — <strong>you</strong> at your own laptop.</li>
-      <li>Claude writes the code. You learn to <strong>explain what you want.</strong></li>
-      <li>Six of us circulating, ~27 of you — you won't be stuck for long.</li>
-      <li>You leave <strong>able to use Claude in your own research</strong> — not just having watched.</li>
+      <li>Hands-on, with real scientific data</li>
+	  <li>Learn to <strong>explain what you want.</strong></li>
+      <li>Claude builds it for you.</li>
+      <li>Six instructors, ~25 students — no one stuck for long.</li>
+      <li>Leave <strong>able to use Claude in your own research</strong>.</li>
     </ul>
   </section>
 
   <!-- 4. Thesis -->
   <section class="slide opener dark-bg">
-    <p class="eyebrow">The whole idea</p>
-    <h1>All you have to do is <span style="color:var(--accent)">explain.</span></h1>
-    <p class="sub">Claude is a remarkable tool — but it needs <em>you</em> to explain your work. That's the skill we're here to build.</p>
+    <p class="eyebrow">Critical lesson</p>
+    <h1>What you do is <span style="color:var(--accent)">explain.</span></h1>
+    <p class="sub">Claude is a remarkable tool — but it needs <em>you</em> to explain your work. We will teach you to record critical explanations as skills and commands that keep you from re-explaining.</p>
   </section>
 
   <!-- 5. Train like a new-hire -->
@@ -170,12 +179,10 @@ ul.bullets li .sub {
     <h2>Train Claude like a talented new-hire</h2>
     <ul class="bullets">
       <li>Start with <strong>small projects.</strong></li>
-      <li><strong>Capture what you teach.</strong>
-        <span class="sub">Notes, rules, scripts — Claude writes them down as you explain, so the next session already knows.</span>
-      </li>
+      <li><strong>Capture what you teach.</strong></li>
       <li><strong>Build on success.</strong></li>
     </ul>
-    <p class="muted" style="margin-top:4vh">Claude will never be perfect. You keep training — and it keeps getting more useful.</p>
+    <p class="muted" style="margin-top:4vh">Claude will never be perfect. Keep training.</p>
   </section>
 
   <!-- 6. Evidence -->
@@ -186,36 +193,54 @@ ul.bullets li .sub {
       <div class="stat"><div class="num">7</div><div class="lbl">developers</div></div>
       <div class="stat"><div class="num">100s</div><div class="lbl">of artifacts,<br>all written by Claude</div></div>
     </div>
-    <p class="muted" style="text-align:center">Our team's knowledge base — docs, skills, commands, scripts — is open source: <span class="accent">github.com/ProteoWizard/pwiz-ai</span></p>
-    <p class="muted" style="text-align:center; margin-top:0.6vh; font-style:italic">Today you start your own — much smaller, but the same idea.</p>
+    <p class="muted" style="text-align:center">All open source: <span class="accent">github.com/ProteoWizard/pwiz-ai</span></p>
+    <p class="muted" style="text-align:center; margin-top:0.6vh; font-style:italic">Today, you start your own.</p>
   </section>
 
   <!-- 7. The team -->
   <section class="slide">
     <h2>Your instruction team</h2>
     <div class="team-grid">
-      <div class="team-card lead"><div class="name">Brendan MacLean</div><div class="role">Setup &amp; your ClaudeLab</div></div>
-      <div class="team-card"><div class="name">Vagisha Sharma</div><div class="role">Design with HTML &amp; JavaScript</div></div>
-      <div class="team-card"><div class="name">Lauren Fields &amp; Chris Hsu</div><div class="role">Data cleanup &amp; visualization</div></div>
-      <div class="team-card"><div class="name">Mike Riffle</div><div class="role">Scientific data analysis</div></div>
-      <div class="team-card"><div class="name">Lindsay Pino</div><div class="role">ELN reviews</div></div>
-      <div class="team-card"><div class="name">Mark Belanger</div><div class="role">Event organizer</div></div>
+      <div class="team-card lead">
+        <img src="assets/team/BrendanMacLean.jpg" alt="Brendan MacLean">
+        <div class="name">Brendan MacLean</div><div class="role">Setup &amp; your ClaudeLab</div>
+      </div>
+      <div class="team-card">
+        <img src="assets/team/Vagisha_Sharma_square.jpg" alt="Vagisha Sharma">
+        <div class="name">Vagisha Sharma</div><div class="role">Design with HTML &amp; JavaScript</div>
+      </div>
+      <div class="team-card">
+        <div class="ph">L·C</div>
+        <div class="name">Lauren Fields &amp; Chris Hsu</div><div class="role">Data cleanup &amp; visualization</div>
+      </div>
+      <div class="team-card">
+        <div class="ph">MR</div>
+        <div class="name">Mike Riffle</div><div class="role">Scientific data analysis</div>
+      </div>
+      <div class="team-card">
+        <div class="ph">LP</div>
+        <div class="name">Lindsay Pino</div><div class="role">ELN reviews</div>
+      </div>
+      <div class="team-card">
+        <img src="assets/team/Mark_Belanger_square.jpg" alt="Mark Belanger">
+        <div class="name">Mark Belanger</div><div class="role">Event organizer</div>
+      </div>
     </div>
-    <p class="muted" style="text-align:center; margin-top:4vh">One lead up front, the rest circulating as helpers — all morning, both mornings.</p>
+    <p class="muted" style="text-align:center; margin-top:3vh">One lead up front, the rest circulating — all morning, both mornings.</p>
   </section>
 
   <!-- 8. This hour's goal -->
   <section class="slide">
     <h2>By 9:00, you'll have…</h2>
     <ul class="bullets">
-      <li>A <strong>GitHub login that works</strong> — signed in, two-factor and all.</li>
-      <li>Your own <strong>ClaudeLab</strong> repository, on your GitHub — with your first notes and a to-do, saved.</li>
+      <li>A <strong>GitHub login</strong> that works.</li>
+      <li>Your own <strong>ClaudeLab</strong> repo, on your GitHub.</li>
     </ul>
-    <p class="muted" style="margin-top:3vh">…and you'll have met the three habits we'll use all week:</p>
+    <p class="muted" style="margin-top:3vh">…and three habits for the week:</p>
     <ul class="habits">
       <li>All you have to do is explain</li>
-      <li>Have Claude ask <em>you</em><span>when you're not sure how to explain, let Claude interview you</span></li>
-      <li>Reference, don't embed<span>keep what you build small and pointed — knowledge in files, not one big wall</span></li>
+      <li>Have Claude ask <em>you</em></li>
+      <li>Reference, don't embed</li>
     </ul>
   </section>
 
@@ -223,7 +248,7 @@ ul.bullets li .sub {
   <section class="slide opener dark-bg">
     <p class="eyebrow">Open Claude Code on your <span style="color:var(--accent)">ws</span> folder</p>
     <div class="start-verb">Let's build.</div>
-    <p class="sub">First move: ask Claude to create your ClaudeLab — then point it at our recipe and let it interview you.</p>
+    <p class="sub">Ask Claude to create your ClaudeLab — then let it interview you.</p>
   </section>
 
 </div>
