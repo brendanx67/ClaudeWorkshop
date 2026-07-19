@@ -6,19 +6,17 @@
 <title>Session 6 — Extending Claude Code with MCP — Brendan MacLean</title>
 
 <!--
-  SKELETON DECK — Session 6 (Day 2, 11:15-12:00, Brendan).
-  Built from ClaudeWorkshop/instructors/presentation-template/. Fill in the
-  placeholder slides; framing distilled from the May 2026 meetup deck (slides
-  6-13: portals, Status MCP, LabKey MCP, AI Connector, architecture, demo).
+  SKELETON DECK — Session 6 (Day 2, 11:15-12:00, Brendan). The workshop capstone.
+  Spine: "describe vs. run" (SOP vs. automation). The whole workshop trained
+  "describe"; this hour is the next move — push settled describing into tools
+  that just run. Bookends Day 1's "flush what you explain" with "automate what
+  you explain."
 
-  Assets to lift from the meetup deck when you flesh this out
-  (G:\My Drive\Claude\2026-05 Meetup\Presentations\3-Brendan MacLean.html):
-    - the architecture SVG (meetup slide 10) — self-contained, paste inline
-    - LabKey email screenshots / AI Connector icon / demo video (assets/)
-  Use the screen/print swap for any iframe/video (see the template).
-
-  Present full-screen (press F); prints to 16:9 PDF (Ctrl/Cmd-P -> Save as PDF,
-  Margins None, Background graphics ON).
+  Fill the TODO boxes. Assets to lift when you flesh it out:
+    - meetup deck (…\2026-05 Meetup\3-Brendan MacLean.html): Status MCP slide, portals
+    - Cascadia deck (…\2026-07 Cascadia\MacLean-html\index.html): the MCP-concept
+      SVG (slide 4) and the architecture SVG (slide 8), both self-contained
+  Present full-screen (F); prints to 16:9 PDF (Ctrl/Cmd-P, Margins None, Background graphics ON).
 -->
 
 <style>
@@ -32,16 +30,9 @@
   --muted: #777777;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html, body {
-  width: 100%; height: 100%; overflow: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-  background: var(--bg); color: var(--text);
-}
+html, body { width: 100%; height: 100%; overflow: hidden; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; background: var(--bg); color: var(--text); }
 .deck  { position: relative; width: 100vw; height: 100vh; }
-.slide {
-  position: absolute; inset: 0; padding: 6vh 8vw;
-  display: none; flex-direction: column; justify-content: center;
-}
+.slide { position: absolute; inset: 0; padding: 6vh 8vw; display: none; flex-direction: column; justify-content: center; }
 .slide.active { display: flex; }
 
 h1 { font-size: 5.5vw; line-height: 1.05; font-weight: 700; color: var(--brand-dark); letter-spacing: -0.02em; }
@@ -57,25 +48,21 @@ ul.bullets li { font-size: 2.6vw; font-weight: 500; margin-bottom: 1.8vh; }
 ul.bullets li::before { content: "▸"; color: var(--accent); margin-right: 1.2vw; font-weight: 700; }
 ul.bullets li .sub { display: block; font-size: 1.5vw; font-weight: 400; font-style: italic; color: var(--muted); margin-top: 0.3vh; padding-left: 2.6vw; }
 
-/* Title */
 .title-slide { text-align: center; align-items: center; justify-content: center; }
 .title-slide h1 { font-size: 6vw; margin-bottom: 2.5vh; letter-spacing: -0.025em; }
 .title-slide .subtitle { font-size: 2.4vw; color: var(--muted); line-height: 1.35; }
 .title-slide .byline { font-size: 2vw; font-weight: 500; margin-top: 6vh; }
-.title-slide .affil  { font-size: 1.5vw; color: var(--muted); margin-top: 0.4vh; }
 .uw-logo { display: flex; align-items: center; justify-content: center; gap: 1vw; margin-top: 4vh; }
 .uw-w { width: 4vw; height: 4vw; background: var(--brand); color: white; font-family: Georgia, serif; font-style: italic; font-weight: 700; font-size: 3vw; display: flex; align-items: center; justify-content: center; line-height: 1; letter-spacing: -0.05em; }
 .uw-text { font-size: 1vw; color: var(--text); letter-spacing: 0.08em; line-height: 1.25; font-weight: 600; text-align: left; }
 .uw-text em { font-style: italic; font-weight: 400; letter-spacing: 0; }
 
-/* Dark opener / statement */
 .opener { background: var(--brand-dark); color: white; justify-content: center; align-items: center; text-align: center; }
 .opener .eyebrow { font-size: 1.7vw; color: var(--brand-light); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 4vh; }
 .opener h1 { color: white; font-size: 6vw; line-height: 1.12; max-width: 82vw; }
-.opener .sub { font-size: 2.2vw; color: var(--brand-light); margin-top: 4vh; font-weight: 400; max-width: 72vw; }
+.opener .sub { font-size: 2.2vw; color: var(--brand-light); margin-top: 4vh; font-weight: 400; max-width: 74vw; line-height: 1.4; }
 .statement { justify-content: center; }
-.statement .thesis { font-size: 5vw; line-height: 1.2; font-weight: 600; }
-.start-verb { font-size: 7vw; color: var(--accent); font-weight: 700; margin: 2vh 0 3vh; letter-spacing: -0.03em; }
+.statement .thesis { font-size: 4.6vw; line-height: 1.2; font-weight: 600; }
 
 /* Two portals (Chat / Code) */
 .portals { display: flex; gap: 3vw; margin-top: 3vh; }
@@ -83,15 +70,18 @@ ul.bullets li .sub { display: block; font-size: 1.5vw; font-weight: 400; font-st
 .portal p { font-size: 1.5vw; color: var(--muted); }
 .portals-caption { margin-top: 4vh; text-align: center; color: var(--muted); font-size: 1.6vw; }
 
-/* Figure / embed (for a later demo or the architecture SVG) */
-.figure-slide { justify-content: flex-start; }
-.figure-slide h2 { margin-bottom: 2vh; }
-.figure-wrap { flex: 1; width: 100%; min-height: 0; display: flex; align-items: center; justify-content: center; border: 1px solid var(--brand-light); border-radius: 6px; overflow: hidden; background: #FAFAF8; }
-.figure-wrap img, .figure-wrap svg { max-width: 100%; max-height: 100%; object-fit: contain; }
-.figure-wrap iframe, .figure-wrap video { width: 100%; height: 100%; border: none; display: block; }
-.caption { font-size: 1.4vw; color: var(--muted); text-align: center; margin-top: 1.5vh; font-style: italic; }
+/* describe vs run — two columns */
+.two-col { display: flex; gap: 4vw; flex: 1; align-items: stretch; min-height: 0; margin-top: 1vh; }
+.two-col .col { flex: 1; border-radius: 12px; padding: 3vh 2.2vw; display: flex; flex-direction: column; }
+.two-col .col.describe { border: 2px solid var(--brand-light); background: #FBFAFD; }
+.two-col .col.run { border: 2px solid var(--brand); background: var(--brand-light); }
+.two-col .col .tag { font-size: 1.2vw; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; margin-bottom: 1.2vh; color: var(--accent); }
+.two-col .col.run .tag { color: var(--brand-dark); }
+.two-col .col .head { font-size: 2vw; font-weight: 700; margin-bottom: 1.5vh; line-height: 1.15; }
+.two-col .col p { font-size: 1.55vw; line-height: 1.45; color: var(--text); }
+.kicker { text-align: center; font-size: 2.4vw; font-weight: 700; color: var(--brand-dark); margin-top: 3vh; }
+.kicker .accent { color: var(--accent); }
 
-/* Placeholder box (skeleton only — delete when you add real content) */
 .todo { border: 2px dashed var(--accent); border-radius: 8px; padding: 3vh 3vw; margin-top: 2vh; color: var(--accent); font-size: 1.6vw; background: #FCFAF5; }
 
 .counter { position: fixed; bottom: 1vh; right: 1.5vw; font-size: 1vw; color: var(--muted); font-variant-numeric: tabular-nums; letter-spacing: 0.1em; z-index: 100; pointer-events: none; }
@@ -125,77 +115,95 @@ ul.bullets li .sub { display: block; font-size: 1.5vw; font-weight: 400; font-st
     </div>
   </section>
 
-  <!-- 2. What's an MCP? — the portals framing (meetup slide 6) -->
+  <!-- 2. The turn -->
+  <section class="slide opener dark-bg">
+    <p class="eyebrow">Two days of describing</p>
+    <h1>So why build a <span style="color:var(--accent)">tool?</span></h1>
+    <p class="sub">You've explained your way to a lot this week. This hour is the next move.</p>
+  </section>
+
+  <!-- 3. describe vs. run — the answer, in your audience's language -->
   <section class="slide">
-    <h2>What is an MCP?</h2>
-    <p style="font-size:2.4vw">How Claude <strong>sees and acts on</strong> your computer.</p>
+    <h2>A skill is an SOP. A tool is automation.</h2>
+    <div class="two-col">
+      <div class="col describe">
+        <div class="tag">Describe · a skill</div>
+        <div class="head">A well-written SOP</div>
+        <p>Instructions the model reads and re-enacts, step by step, <em>every</em> call. Only as good as the operator following each step, in order, without drift.</p>
+      </div>
+      <div class="col run">
+        <div class="tag">Run · a tool</div>
+        <div class="head">The automation</div>
+        <p>The procedure encoded once. You just start the run. Fewer steps, fewer places a step gets skipped or done slightly wrong.</p>
+      </div>
+    </div>
+    <p class="kicker">An SOP with <span class="accent">20 steps</span> — or <span class="accent">2</span>?</p>
+  </section>
+
+  <!-- 4. Why it wins — one axis, not two -->
+  <section class="slide">
+    <h2>Fewer steps, fewer tokens, fewer mistakes</h2>
+    <ul class="bullets">
+      <li>Every interpreted step is a <strong>token spent</strong> — and a place to <strong>slip</strong>.</li>
+      <li>Collapse many steps to one command: cheaper <em>and</em> more reliable, at once.</li>
+      <li>The model does better, too — less to hold in context is less to get wrong.</li>
+    </ul>
+    <p class="muted" style="margin-top:3vh">It <em>drastically cuts</em> steps and mistakes — one claim, not two. (Not "eliminates.")</p>
+  </section>
+
+  <!-- 5. What an MCP is — the mechanism -->
+  <section class="slide">
+    <h2>The kind of tool you'll build: an MCP</h2>
+    <p style="font-size:2.2vw">How Claude <strong>sees and acts on</strong> your computer — beyond chat.</p>
     <div class="portals">
       <div class="portal"><h3>Chat</h3><p>conversation · attachments · web search</p></div>
       <div class="portal"><h3>Code</h3><p>tools · files · your whole system</p></div>
     </div>
-    <p class="portals-caption">Two portals into the same Claude. An MCP extends what each can <em>perceive</em> and <em>do</em>.</p>
+    <p class="portals-caption">An MCP gives Claude a <em>validated list of functions</em> it can call — your tools, on tap.</p>
   </section>
 
-  <!-- 3. Simplest example — Status MCP (meetup slide 7) -->
+  <!-- 6. Examples — tiny to huge, same idea -->
   <section class="slide">
-    <h2>The simplest one: Status MCP</h2>
-    <ul class="bullets">
-      <li>Take a screenshot</li>
-      <li>Tell me the local time</li>
-      <li>Git &amp; GitHub status across many repos</li>
-      <li>How much session I have left</li>
-    </ul>
-    <p class="muted" style="margin-top:3vh">Claude wrote it. Python. <span class="accent">A few small functions Claude can call.</span></p>
-  </section>
-
-  <!-- 4. It scales — LabKey MCP / AI Connector (meetup slides 8-9) -->
-  <section class="slide">
-    <h2>An MCP goes as far as you want</h2>
+    <h2>Same idea, any size</h2>
     <div class="todo">
-      TODO — pick one "wow" example and show it:<br>
-      • <strong>LabKey MCP</strong> — every morning Claude queries the database and emails the team
-        (lift the email screenshots from the meetup deck), or<br>
-      • <strong>Skyline AI Connector</strong> — every Skyline user gets AI through their own subscription.<br>
-      Point: same idea as Status MCP, just bigger.
+      TODO — two examples, both "Claude wrote it, Python":<br>
+      • <strong>Status MCP</strong> — the tiny one: screenshot, time, git status, session % (meetup deck).<br>
+      • <strong>Skyline AI Connector</strong> — the big one: 60+ tools, shipped to ~23k users (Cascadia deck).<br>
+      Point: from a 20-line script to a distributed product — same move.
     </div>
   </section>
 
-  <!-- 5. Anatomy — what a Python MCP actually is (the teaching bridge) -->
+  <!-- 7. The judgment — don't tool everything -->
   <section class="slide">
-    <h2>What you're about to build</h2>
+    <h2>Not everything should be a tool</h2>
     <ul class="bullets">
-      <li>A small <strong>Python</strong> program</li>
-      <li>A handful of <strong>functions</strong>, each with a plain-language description</li>
-      <li>Register it, and Claude can <strong>call your functions</strong></li>
+      <li><strong>Stable, repeated, well-defined</strong> → promote it to a tool.</li>
+      <li><strong>Exploratory or one-off</strong> → keep describing.</li>
     </ul>
-    <div class="todo">TODO — a tiny code snippet here (one decorated function) so they see how little it takes.</div>
+    <p class="muted" style="margin-top:3vh">Knowing which is which is the judgment you take home. Describe stays your default; run is the upgrade you reach for.</p>
   </section>
 
-  <!-- 6. (Optional) Architecture — lift the SVG from meetup slide 10 -->
-  <section class="slide figure-slide">
-    <h2>How it fits together</h2>
-    <div class="figure-wrap">
-      <div class="todo">TODO — paste the architecture SVG from the meetup deck (slide 10), or a simpler client → MCP → tool diagram. Delete this slide if it's more than the hour needs.</div>
-    </div>
+  <!-- 8. Hands-on — feel the difference on one task -->
+  <section class="slide">
+    <h2>Your turn: describe it, then run it</h2>
+    <ul class="bullets">
+      <li>Do a small task by <strong>describing</strong> it to Claude.</li>
+      <li>Now wrap that same task as <strong>one Python MCP tool.</strong></li>
+      <li>Re-run — watch the <strong>steps and tokens fall.</strong></li>
+    </ul>
+    <p class="muted" style="margin-top:2.5vh">Open the Session 6 lesson. You'll build a tiny MCP and call it from Claude Code.</p>
   </section>
 
-  <!-- 7. Hands-on transition -->
+  <!-- 9. Close — the two-day bookend -->
   <section class="slide opener dark-bg">
-    <p class="eyebrow">Your turn</p>
-    <div class="start-verb">Let's build one.</div>
-    <p class="sub">A tiny MCP in Python — then call it from Claude Code. Open the Session 6 lesson.</p>
-  </section>
-
-  <!-- 8. Close -->
-  <section class="slide opener dark-bg">
-    <p class="eyebrow">Session 6</p>
-    <h1>Now Claude can do <span style="color:var(--accent)">what you built.</span></h1>
-    <p class="sub">Same move as all week: you explained what you wanted — and recorded it, as a tool.</p>
+    <p class="eyebrow">The whole workshop, in one line</p>
+    <h1>Describe — then <span style="color:var(--accent)">automate</span> what you described.</h1>
+    <p class="sub">Day 1, you flushed what you explained into <em>docs</em>. Today, into <em>tools</em>.</p>
   </section>
 
 </div>
 
-<div class="counter" id="counter">1 / 8</div>
+<div class="counter" id="counter">1 / 9</div>
 
 <script>
 const slides  = document.querySelectorAll('.slide');
