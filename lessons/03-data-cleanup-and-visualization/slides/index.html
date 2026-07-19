@@ -153,6 +153,10 @@ ul.bullets li .sub {
 
 .print-only { display: none; }
 
+/* Click-to-reveal fragments (appear one per click, then the slide advances) */
+.fragment { opacity: 0; transition: opacity 0.35s ease; }
+.fragment.visible { opacity: 1; }
+
 @media print {
   @page { size: 13.333in 7.5in; margin: 0; }
   html, body { width: 13.333in; height: auto; overflow: visible; background: white; }
@@ -168,6 +172,7 @@ ul.bullets li .sub {
   .counter { display: none !important; }
   .screen-only { display: none !important; }
   .print-only  { display: block !important; }
+  .fragment    { opacity: 1 !important; }
   * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
 }
 </style>
@@ -178,8 +183,8 @@ ul.bullets li .sub {
   <!-- ============ 1. Title ============ -->
   <section class="slide title-slide active">
     <h1>Data cleanup<br>and visualization</h1>
-    <p class="subtitle">Session 3 · Four cohorts that don't agree on anything</p>
-    <p class="byline">Lauren Fields &amp; Chris</p>
+    <p class="subtitle">Session 3</p>
+    <p class="byline">Lauren Fields &amp; Chris Hsu</p>
     <p class="affil">Claude Code Workshop · Day 1 · 10:30–12:00</p>
     <div class="uw-logo">
       <div class="uw-w">W</div>
@@ -187,66 +192,116 @@ ul.bullets li .sub {
     </div>
   </section>
 
-  <!-- ============ 2. Thesis ============ -->
-  <section class="slide statement">
-    <p class="thesis">Projects don't fail at the instrument.<br>They fail at the <span class="accent">metadata</span>.</p>
-    <p class="muted" style="margin-top:3vh">The sample sheet. The case list. The spreadsheet a collaborator emailed you in March.</p>
-  </section>
-
-  <!-- ============ 3. Why metadata is hard ============ -->
+  <!-- ============ 2. Overview ============ -->
   <section class="slide">
-    <h2>Why this is harder than it looks</h2>
+    <h2>Overview</h2>
     <ul class="bullets">
-      <li>Metadata is written by <em>people</em>, for <em>themselves</em>
-        <span class="sub">Every lab's choices make sense — inside that lab.</span>
+      <li>Metadata fundamentals
+        <span class="sub">What is metadata?</span>
+        <span class="sub">Common harmonization challenges</span>
       </li>
-      <li>Two labs both say “age.” They mean different things.
-        <span class="sub">Age at death? At draw? Binned into decades for privacy?</span>
+      <li>Example metadata cleanup
+        <span class="sub">Standardize variables, units, and codes</span>
+        <span class="sub">Document decisions using Claude Code</span>
       </li>
-      <li>The format is never the format you want
-        <span class="sub">A PDF. A pivoted CSV. A workbook with four tabs and a colour code.</span>
+      <li>Visualization and reporting
+        <span class="sub">Identify missingness and potential confounders</span>
+        <span class="sub">Produce a reproducible HTML report</span>
       </li>
-      <li>And what matters most is often not in the file at all</li>
     </ul>
   </section>
 
-  <!-- ============ 4. Scenario opener ============ -->
+  <!-- ============ 3. What is metadata ============ -->
+  <section class="slide">
+    <h2>What is metadata?</h2>
+    <ul class="bullets">
+      <li>Context that makes a measurement interpretable</li>
+      <li>Subject, sample, collection, processing, conditions</li>
+      <li>Sources: sample sheets, case manifests, clinical variables, run records</li>
+      <li>Determines how data is grouped and compared</li>
+      <li>Errors propagate downstream</li>
+    </ul>
+  </section>
+
+  <!-- ============ 4. Examples of metadata ============ -->
+  <section class="slide">
+    <h2>Examples of metadata</h2>
+    <div style="display:flex; flex-direction:column; gap:6vh; margin-top:2vh">
+      <div class="fragment">
+        <h3 style="margin-bottom:0.6vh">Human patient</h3>
+        <div class="xl">
+          <table>
+            <tr><th>Age</th><th>Sex</th><th>Diagnosis</th><th>Tissue</th><th>Post-mortem interval</th><th>CSF p-tau (pg/mL)</th></tr>
+            <tr><td>67 years</td><td>M</td><td>CTE</td><td>DLPFC</td><td>12.5 h</td><td>412</td></tr>
+            <tr><td>54 years</td><td>F</td><td>Control</td><td>Hippocampus</td><td>8.0 h</td><td>N/A</td></tr>
+            <tr><td>72 years</td><td>M</td><td>CTE</td><td>DLPFC</td><td>22.4 h</td><td>0</td></tr>
+            <tr><td>61 years</td><td>F</td><td>Control</td><td>Amygdala</td><td>15.7 h</td><td>N/A</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="fragment">
+        <h3 style="margin-bottom:0.6vh">scRNA-seq</h3>
+        <div class="xl">
+          <table>
+            <tr><th>Cell barcode</th><th>Cell type</th><th>Genes detected</th><th>UMI count</th><th>Mitochondrial %</th><th>Spike-in reads</th></tr>
+            <tr><td>AACGTTGCAGT-1</td><td>CD8⁺ T cell</td><td>2,145</td><td>6,780</td><td>3.2 %</td><td>0</td></tr>
+            <tr><td>GGTCAACTGCA-1</td><td>B cell</td><td>1,876</td><td>5,204</td><td>2.8 %</td><td>N/A</td></tr>
+            <tr><td>TTGCAAGGTCA-1</td><td>NK cell</td><td>2,530</td><td>8,112</td><td>4.1 %</td><td>128</td></tr>
+            <tr><td>CCATGGTACAA-1</td><td>Monocyte</td><td>3,012</td><td>9,845</td><td>5.6 %</td><td>0</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. Why metadata is hard ============ -->
+  <section class="slide">
+    <h2>Why metadata harmonization is difficult?</h2>
+    <ul class="bullets">
+      <li>Variables are defined differently across cohorts
+        <span class="sub">“Age” might mean age at death, age at draw, or a decade band.</span>
+      </li>
+      <li>Units, formats, and coding systems do not match
+        <span class="sub">Sex as 1/2 vs. M/F; PMI in minutes vs. hours; comma vs. period decimals.</span>
+      </li>
+      <li>Missing values are represented inconsistently
+        <span class="sub">Blank, “n.d.”, “NA”, a zero, or a row hidden in white-on-white ink.</span>
+      </li>
+      <li>Critical context may sit outside the data table
+        <span class="sub">In a cover letter, a footnote, or the paper's methods section.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============ 6. Scenario opener ============ -->
   <section class="slide opener dark-bg">
-    <p class="eyebrow">The scenario</p>
-    <h1>Three labs. One disease.<br><span style="color:var(--accent)">No two fields alike.</span></h1>
-    <p class="sub">You prepare clinical samples. Three independent CTE groups have each shipped you
+    <p class="eyebrow">Claude Code practice</p>
+    <h1>Metadata Example Dataset</h1>
+    <p class="sub" style="color:#C9C4D4">You prepare clinical samples. Three independent CTE groups have each shipped you
     samples and metadata, and each wants to know how their cohort compares.</p>
   </section>
 
-  <!-- ============ 5. The three labs ============ -->
+  <!-- ============ 7. The three labs ============ -->
   <section class="slide">
-    <h2>Who sent you what</h2>
+    <h2>Where did the data come from?</h2>
     <ul class="bullets">
-      <li>Whitfield Institute — <span class="accent">neuropathology</span>
-        <span class="sub">Post-mortem brain. A typeset PDF case manifest.</span>
-      </li>
-      <li>Universiteit van Rijndal — <span class="accent">clinical biomarkers</span>
-        <span class="sub">A living cohort. CSF and plasma. A CSV export.</span>
-      </li>
-      <li>Cascade Athletic Health Center — <span class="accent">sports medicine</span>
-        <span class="sub">Mixed sample types. An Excel workbook.</span>
-      </li>
+      <li>Whitfield Institute — <span class="accent">neuropathology</span></li>
+      <li>Universiteit van Rijndal — <span class="accent">clinical biomarkers</span></li>
+      <li>Cascade Athletic Health Center — <span class="accent">sports medicine</span></li>
     </ul>
-    <p class="muted" style="margin-top:3vh">Nobody coordinated. Why would they? They don't work with each other — they work with <em>you</em>.</p>
   </section>
 
-  <!-- ============ 6. Lab 1 — the PDF ============ -->
+  <!-- ============ 8. Lab 1 — the PDF ============ -->
   <section class="slide figure-slide">
-    <h2>Lab 1 sent a beautiful PDF</h2>
+    <h2>Whitfield Institute sent a PDF</h2>
     <div class="figure-wrap">
       <img src="assets/manifest-p1.png" alt="Whitfield Institute case manifest, page 1">
     </div>
-    <p class="caption">Publication quality. Footnoted. Perfectly typeset. <b>And you cannot compute a single thing with it.</b></p>
   </section>
 
-  <!-- ============ 7. Lab 2 — the pivoted CSV ============ -->
+  <!-- ============ 9. Lab 2 — the pivoted CSV ============ -->
   <section class="slide figure-slide">
-    <h2>Lab 2 sent a CSV. Sort of.</h2>
+    <h2>Universiteit van Rijndal sent a CSV</h2>
     <div class="figure-wrap">
       <div class="raw"><span class="k"># Universiteit van Rijndal - Klinisch Neurochemisch Laboratorium</span>
 <span class="k"># Cohort export RIJ-2026-03. Delimiter: semicolon. Decimal separator: comma.</span>
@@ -257,12 +312,11 @@ Age band (years);70-79;70-79;40-49;50-59;   …
 Sex (1/2);1;2;1;2;   …
 Years contact sport;8;10;16;n.d.;   …</div>
     </div>
-    <p class="caption">The table is on its side — one <em>column</em> per patient. <b>Excel will not save you here.</b></p>
   </section>
 
-  <!-- ============ 8. Lab 3 — the workbook ============ -->
+  <!-- ============ 10. Lab 3 — the workbook ============ -->
   <section class="slide figure-slide">
-    <h2>Lab 3 sent a workbook</h2>
+    <h2>Cascade Athletic Health Center sent a workbook</h2>
     <div class="figure-wrap">
       <div class="xl" style="padding:2vh 2vw">
         <table>
@@ -279,12 +333,11 @@ Years contact sport;8;10;16;n.d.;   …</div>
         </div>
       </div>
     </div>
-    <p class="caption">Four tabs. The header isn't on row 1. And that amber row means <em>something</em> — but the file never says what.</p>
   </section>
 
-  <!-- ============ 9. The literature ============ -->
+  <!-- ============ 11. The literature ============ -->
   <section class="slide">
-    <h2>And a fourth cohort, free</h2>
+    <h2>Let's add one more dataset from the literature</h2>
     <ul class="bullets">
       <li>Kumar et&nbsp;al., <em>Cell</em> 2026 — tauopathy-associated dementias
         <span class="sub">doi:10.1016/j.cell.2025.12.036 · Supplementary Table S1</span>
@@ -292,59 +345,56 @@ Years contact sport;8;10;16;n.d.;   …</div>
       <li>Case-level demographics: <span class="accent">one row per brain donor</span>
         <span class="sub">24 CTE, 24 controls, plus AD, PSP, CBD, PiD, DLB.</span>
       </li>
-      <li>You don't have this file. <span class="accent">Claude goes and gets it.</span></li>
+      <li>If you don't have this file, <span class="accent">Claude Code can retrieve it.</span></li>
     </ul>
-    <p class="muted" style="margin-top:3vh">Then do the thing that matters: <strong>ask it what it actually downloaded.</strong>
-    Publishers don't always hand a robot the spreadsheet it asked for — and Claude will report success either way.</p>
   </section>
 
-  <!-- ============ 10. Unplugged planning ============ -->
+  <!-- ============ 12. Unplugged planning ============ -->
   <section class="slide opener dark-bg">
     <p class="eyebrow">Five minutes · in pairs · no laptops</p>
-    <h1>How would <span style="color:var(--accent)">you</span> merge these?</h1>
+    <h1>How would you merge these?</h1>
     <p class="sub">Write the steps down. What has to be decided? What would you have to look up,
-    guess, or ask someone about?<br><br>
-    In a minute you'll read a plan Claude wrote. The only way to judge a plan is to already have one.</p>
+    guess, or ask someone about?</p>
   </section>
 
-  <!-- ============ 11. Hand it to Claude ============ -->
+  <!-- ============ 13. Hand it to Claude ============ -->
   <section class="slide">
-    <h2>Now hand it over — in planning mode</h2>
+    <h2>Let's go to Claude Code <em>planning mode</em></h2>
+    <div style="display:flex; justify-content:center; align-items:center; gap:2.5vw; margin:1vh 0 2.5vh">
+      <img src="assets/Plan%20in%20Claude%20Code%202.png" alt="Claude Code mode menu — Plan mode selected"
+           style="width:22vw; border-radius:8px; box-shadow:0 6px 24px rgba(54,33,97,0.22); display:block">
+      <img src="assets/Planning%20in%20Claude%20Code.png" alt="Claude Code planning mode — 'Help me plan!' with Plan mode selected"
+           style="width:46vw; border-radius:8px; box-shadow:0 6px 24px rgba(54,33,97,0.22); display:block">
+    </div>
     <ul class="bullets">
-      <li>Shift+Tab: Claude <em>proposes</em>, and waits, instead of charging ahead</li>
-      <li>Read its plan against yours. Where they differ, <span class="accent">one of you is wrong</span></li>
-      <li>One workbook: a sheet per cohort, plus a combined sheet</li>
-      <li>Insist on a <span class="accent">decisions log</span>
-        <span class="sub">Every mapping, conversion, guess and dropped field gets a row: what, and why.</span>
+      <li>Select <span class="accent">Plan</span> mode from the mode menu</li>
+      <li>Claude proposes a plan and pauses before making any edits</li>
+      <li>Review the plan, then require a <span class="accent">decisions log</span>
+        <span class="sub">Every column mapping, unit conversion, and dropped field, recorded.</span>
       </li>
     </ul>
-    <p class="muted" style="margin-top:2.5vh">Then a <strong>code-review agent</strong> reads it cold. Then commit and push to your ClaudeLab.</p>
   </section>
 
-  <!-- ============ 12. Visualization ============ -->
-  <section class="slide">
-    <h2>Don't ask for plots. Ask to be asked.</h2>
-    <p style="font-size:2.6vw;line-height:1.5;margin-bottom:3vh">
-      <em>“I want to visualize these cohorts. Ask me the questions you need answered
-      before you make a single plot.”</em>
-    </p>
-    <ul class="bullets">
-      <li>Answer honestly — including <em>“I don't know yet”</em></li>
-      <li>Then around ten plots. <span class="accent">Look at every one.</span></li>
-      <li>Some will be wrong. Say so. Ask for another.</li>
-    </ul>
-    <p class="muted" style="margin-top:2.5vh">Favourites → one HTML report → push it → your partner pulls it down and opens it.</p>
-  </section>
-
-  <!-- ============ 13. Reveals opener ============ -->
+  <!-- ============ 14. Execution phase ============ -->
   <section class="slide opener dark-bg">
-    <p class="eyebrow">Before you believe any of it</p>
-    <h1>Three things<br>nobody told you</h1>
+    <p class="eyebrow">Execution phase</p>
+    <h1>Approve the run and allow Claude to work</h1>
+    <img src="assets/Accept%20edits%20claude.png" alt="Claude Code mode menu — Accept edits selected"
+         style="width:56vw; margin-top:5vh; border-radius:8px; border:1px solid rgba(255,255,255,0.12); box-shadow:0 6px 24px rgba(0,0,0,0.35)">
+    <p class="sub" style="color:#C9C4D4; margin-top:4vh">Output in a format you feel most comfortable working with (CSV, Excel, TSV, etc.).</p>
   </section>
 
-  <!-- ============ 14. Reveal 1 — the ghost row ============ -->
+  <!-- ============ 15. Visualization ============ -->
+  <section class="slide opener dark-bg">
+    <p class="eyebrow">5–10 minutes</p>
+    <h1>Let's work on metadata visualization</h1>
+    <p class="sub" style="max-width:74vw"><strong>Tip #1:</strong> Ask Claude to ask you questions before making plots</p>
+    <p class="sub" style="max-width:74vw; margin-top:2vh"><strong>Tip #2:</strong> Generate more than one plot to explore different views</p>
+  </section>
+
+  <!-- ============ 16. Reveal 1 — the ghost row ============ -->
   <section class="slide">
-    <h2>One. Did anyone get a strange PMI?</h2>
+    <h2>Did anyone notice this strange result?</h2>
     <div class="reveal-grid">
       <div class="card">
         <div class="big">30</div>
@@ -356,19 +406,17 @@ Years contact sport;8;10;16;n.d.;   …</div>
       </div>
       <div class="card bad">
         <div class="big">480 h</div>
-        <div class="lbl">the 31st case's post-mortem interval<br>(every other case: 4.5–38 h)</div>
+        <div class="lbl">the 31st case's post-mortem interval (PMI)<br>(every other case: 4.5–38 h)</div>
       </div>
     </div>
-    <p class="muted" style="margin-top:4vh">
-      <strong>BINC-24-031 is printed in white ink on white paper.</strong> Go back and look for it —
-      there is nothing there. It wrecks every PMI plot, and no human reading that PDF would ever find it.
+    <p class="muted fragment" style="margin-top:4vh">
+      <strong>BINC-24-031 is printed in white ink on white paper.</strong>
     </p>
-    <p style="font-size:2.6vw;font-weight:700;color:var(--brand-dark);margin-top:2vh">Claude sees what you don't.</p>
   </section>
 
-  <!-- ============ 15. Reveal 2 — the letters ============ -->
+  <!-- ============ 17. Reveal 2 — the letters ============ -->
   <section class="slide figure-slide">
-    <h2>Two. Every shipment came with a letter</h2>
+    <h2>Every shipment came with a letter</h2>
     <div class="three-up">
       <figure>
         <img src="assets/letter-whitfield.png" alt="Whitfield cover letter">
@@ -383,87 +431,82 @@ Years contact sport;8;10;16;n.d.;   …</div>
         <figcaption>Cascade</figcaption>
       </figure>
     </div>
-    <p class="caption">Nobody read them. They contradict the spreadsheets in three specific, consequential ways.</p>
   </section>
 
-  <!-- ============ 16. TES is not CTE ============ -->
-  <section class="slide statement">
-    <p class="thesis">Claude will happily map<br><span class="accent">TES → CTE</span>.</p>
-    <p style="font-size:2.4vw;line-height:1.5;margin-top:4vh">
+  <!-- ============ 18. TES is not CTE ============ -->
+  <section class="slide">
+    <h2>Did anyone notice this other result?</h2>
+    <p class="thesis" style="font-size:3.6vw; margin-top:1vh">Claude will happily map <span class="accent">TES → CTE</span></p>
+    <p style="font-size:2.2vw;line-height:1.5;margin-top:4vh">
       They are not the same thing. TES is a <em>clinical syndrome</em>, in the living.
       CTE is a <em>neuropathological diagnosis</em>, made at autopsy.
     </p>
-    <p class="muted" style="margin-top:2vh">Prof. Kastelein's letter says so, at length. It was in the folder the whole time.<br>
+    <p class="muted" style="margin-top:2vh">Dr. Kastelein's letter addresses this in detail.<br>
       <strong style="color:var(--warn)">Claude misses what you know — if you never tell it.</strong></p>
   </section>
 
-  <!-- ============ 17. Reveal 3 — the confound ============ -->
+  <!-- ============ 19. Confounders ============ -->
   <section class="slide figure-slide">
-    <h2>Three. Now look at the <em>published</em> cohort</h2>
+    <h2>Watch for hidden confounders</h2>
     <div class="figure-wrap" style="background:white">
-      <svg viewBox="0 0 900 375" xmlns="http://www.w3.org/2000/svg" aria-label="Kumar 2026: CTE vs control composition by sex, brain bank and post-mortem interval">
+      <svg viewBox="0 0 900 340" width="900" height="340" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:100%" xmlns="http://www.w3.org/2000/svg" aria-label="Cases and controls differ in sex, collection site, and sample age, not only in disease">
         <style>
-          .lab { font: 600 17px sans-serif; fill: #362161; }
-          .sm  { font: 400 13px sans-serif; fill: #777; }
-          .num { font: 700 14px sans-serif; fill: #fff; }
-          .hd  { font: 700 19px sans-serif; fill: #362161; }
+          .hd  { font: 700 20px sans-serif; fill: #362161; }
+          .lab { font: 600 16px sans-serif; fill: #362161; }
+          .sm  { font: 400 13px sans-serif; fill: #555; }
+          .num { font: 700 13px sans-serif; fill: #fff; }
         </style>
-        <text x="20" y="24" class="hd">Kumar et al., Cell 2026 — 24 CTE vs 24 controls</text>
+        <text x="20" y="24" class="hd">Cases and controls differ in more than the disease</text>
 
-        <text x="20" y="72" class="lab">Sex</text>
-        <text x="95" y="99" class="sm">CTE</text>
-        <rect x="150" y="81" width="610" height="26" fill="#4B2E83"/>
-        <text x="455" y="99" class="num" text-anchor="middle">24 male · 0 female</text>
-        <text x="95" y="137" class="sm">Control</text>
-        <rect x="150" y="119" width="305" height="26" fill="#4B2E83"/>
-        <rect x="455" y="119" width="305" height="26" fill="#B9A7D9"/>
-        <text x="302" y="137" class="num" text-anchor="middle">12 male</text>
-        <text x="607" y="137" class="num" text-anchor="middle">12 female</text>
+        <!-- legend -->
+        <rect x="640" y="12" width="14" height="14" fill="#4B2E83"/>
+        <text x="660" y="24" class="sm">Cases</text>
+        <rect x="730" y="12" width="14" height="14" fill="#85754D"/>
+        <text x="750" y="24" class="sm">Controls</text>
 
-        <text x="20" y="196" class="lab">Brain bank</text>
-        <text x="95" y="223" class="sm">CTE</text>
-        <rect x="150" y="205" width="610" height="26" fill="#A3341F"/>
-        <text x="455" y="223" class="num" text-anchor="middle">VA-BU-CLF — all 24</text>
-        <text x="95" y="261" class="sm">Control</text>
-        <rect x="150" y="243" width="457" height="26" fill="#85754D"/>
-        <rect x="607" y="243" width="127" height="26" fill="#B3A47A"/>
-        <rect x="734" y="243" width="26"  height="26" fill="#D8CFB4"/>
-        <text x="378" y="261" class="num" text-anchor="middle">MADRC (18)</text>
-        <text x="670" y="261" class="num" text-anchor="middle">HBSFRC (5)</text>
+        <!-- Sex -->
+        <text x="20" y="70" class="lab">Sex — % male</text>
+        <text x="120" y="94" class="sm" text-anchor="end">Cases</text>
+        <rect x="140" y="80" width="560" height="22" fill="#4B2E83"/>
+        <text x="420" y="96" class="num" text-anchor="middle">100%</text>
+        <text x="120" y="124" class="sm" text-anchor="end">Controls</text>
+        <rect x="140" y="110" width="280" height="22" fill="#85754D"/>
+        <text x="280" y="126" class="num" text-anchor="middle">50%</text>
 
-        <text x="20" y="320" class="lab">Median PMI</text>
-        <text x="95" y="347" class="sm">CTE</text>
-        <rect x="150" y="329" width="610" height="26" fill="#A3341F"/>
-        <text x="455" y="347" class="num" text-anchor="middle">48 hours</text>
-        <text x="775" y="347" class="sm">vs 13 h in controls</text>
+        <!-- Site -->
+        <text x="20" y="166" class="lab">Collection site — % from one bank</text>
+        <text x="120" y="190" class="sm" text-anchor="end">Cases</text>
+        <rect x="140" y="176" width="560" height="22" fill="#4B2E83"/>
+        <text x="420" y="192" class="num" text-anchor="middle">100%</text>
+        <text x="120" y="220" class="sm" text-anchor="end">Controls</text>
+        <rect x="140" y="206" width="224" height="22" fill="#85754D"/>
+        <text x="252" y="222" class="num" text-anchor="middle">40%</text>
+
+        <!-- Sample age -->
+        <text x="20" y="262" class="lab">Sample age — median hours to preservation</text>
+        <text x="120" y="286" class="sm" text-anchor="end">Cases</text>
+        <rect x="140" y="272" width="448" height="22" fill="#4B2E83"/>
+        <text x="364" y="288" class="num" text-anchor="middle">48 h</text>
+        <text x="120" y="316" class="sm" text-anchor="end">Controls</text>
+        <rect x="140" y="302" width="121" height="22" fill="#85754D"/>
+        <text x="200" y="318" class="num" text-anchor="middle">13 h</text>
       </svg>
     </div>
-    <p class="caption">A real dataset. A real journal. <b>CTE vs control here is also a sex contrast, a site contrast, and a PMI contrast.</b></p>
+    <p class="caption">If the groups also differ in sex, site, and sample age, a <b>“disease” difference could be any of them</b>.</p>
   </section>
 
-  <!-- ============ 18. Closing thesis ============ -->
-  <section class="slide statement">
-    <p class="thesis">Data does not carry<br>its <span class="accent">own context</span>.</p>
-    <p style="font-size:2.4vw;line-height:1.5;margin-top:4vh">Somebody has to ask. That somebody is you.</p>
-    <p class="muted" style="margin-top:2vh">And you now have a tool that will ask twelve questions the moment you tell it to —
-    and that will tell you, confidently, that it succeeded.</p>
-  </section>
-
-  <!-- ============ 19. Takeaways ============ -->
+  <!-- ============ 20. Summary ============ -->
   <section class="slide">
-    <h2>What you take with you</h2>
+    <h2>Summary</h2>
     <ul class="bullets">
-      <li>A merge you can <em>defend</em> — because the decisions log says what you decided</li>
-      <li>The reflex to check what Claude <em>actually did</em>
-        <span class="sub">Especially when it tells you it succeeded.</span>
-      </li>
-      <li>A checklist for the next collaborator who ships you metadata
-        <span class="sub">The questions you now wish you'd asked. Keep it in your ClaudeLab.</span>
-      </li>
+      <li>Plan first, then standardize variables, units, and codes</li>
+      <li>Log decisions; verify what Claude <em>actually did</em></li>
+      <li>Visualize to catch missingness and confounders</li>
     </ul>
+    <p class="muted" style="margin-top:3vh"><strong>Bonus:</strong> Generate an HTML report with the results and figures to share with the group</p>
   </section>
 
-  <!-- ============ 20. Close ============ -->
+  <!-- ============ 21. Close ============ -->
   <section class="slide opener dark-bg">
     <p class="eyebrow">Session 3</p>
     <h1>Questions?</h1>
@@ -479,23 +522,30 @@ const slides  = document.querySelectorAll('.slide');
 const counter = document.getElementById('counter');
 let current = 0;
 
-function show(n) {
+function show(n, revealAll) {
   n = Math.max(0, Math.min(slides.length - 1, n));
   slides.forEach(s => s.classList.remove('active'));
-  slides[n].classList.add('active');
+  const slide = slides[n];
+  slide.classList.add('active');
+  slide.querySelectorAll('.fragment').forEach(f => f.classList.toggle('visible', !!revealAll));
   current = n;
   counter.textContent = `${n + 1} / ${slides.length}`;
-  counter.classList.toggle('dark', slides[n].classList.contains('dark-bg'));
+  counter.classList.toggle('dark', slide.classList.contains('dark-bg'));
   try { document.body.focus(); } catch (_) {}
 }
-function next() { show(current + 1); }
-function prev() { show(current - 1); }
+function next() {
+  const hidden = [...slides[current].querySelectorAll('.fragment')]
+    .find(f => !f.classList.contains('visible'));
+  if (hidden) { hidden.classList.add('visible'); return; }
+  show(current + 1, false);
+}
+function prev() { show(current - 1, true); }
 
 document.addEventListener('keydown', e => {
   if (['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)) { next(); e.preventDefault(); }
   else if (['ArrowLeft','ArrowUp','PageUp'].includes(e.key))     { prev(); e.preventDefault(); }
   else if (e.key === 'Home') { show(0); e.preventDefault(); }
-  else if (e.key === 'End')  { show(slides.length - 1); e.preventDefault(); }
+  else if (e.key === 'End')  { show(slides.length - 1, true); e.preventDefault(); }
   else if (e.key === 'f' || e.key === 'F') {
     if (!document.fullscreenElement) document.documentElement.requestFullscreen();
     else document.exitFullscreen();
