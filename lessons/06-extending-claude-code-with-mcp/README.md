@@ -80,10 +80,12 @@ You built two tools. My Status MCP has more — two worth knowing:
   screenshots — the graph before and after"* and Claude sees them. (I once had it
   screenshot every slide of a deck like this one — before Claude Code had its own
   browser to do that itself.)
-- **Context remaining.** A tool that reports how much of the session's context is
-  left. Useful — but it only works by reading a file the Claude Code *statusline*
-  writes, so it breaks the moment that plumbing isn't there. A good reminder that
-  a tool leaning on hidden state is a fragile tool.
+- **Context remaining.** Claude couldn't see how much context was left, so it kept
+  guessing — *"that's been a long session, want a handoff?"* (the clock blind spot
+  again). A tool that returns the real number let me add a **rule**: *don't suggest
+  wrapping up until we're under 20%.* The tool supplies the fact; a rule in
+  `CRITICAL-RULES.md` acts on it. (Fragile, though: it reads a file the Claude Code
+  *statusline* writes — hidden plumbing that can vanish in a new setup.)
 
 ## You're on track when
 
