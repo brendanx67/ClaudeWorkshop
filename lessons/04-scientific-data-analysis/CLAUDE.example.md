@@ -14,6 +14,24 @@ This project focuses on proteomics scientific data analysis. These notes
 **supplement** the standing instructions in the ClaudeLab root `CLAUDE.md` — they
 don't replace them. What follows is only what's specific to the analysis itself.
 
+## Project map — keep it current
+
+This file is the project's **map**, and it must stay accurate. When any document,
+script, figure, or result is **created, moved, or renamed**, update its pointer
+below in the same step; when the underlying work changes, update the document it
+points to as well (e.g. revise `PROJECT.md` when the hypotheses change). A stale
+pointer is worse than none.
+
+Point to where each of these lives, and fill them in as they appear:
+
+- **Science** — study, questions, hypotheses, goals — e.g. `PROJECT.md`
+- **Metadata description** — what the sample sheet's columns mean
+- **Data description** — shape, units, raw vs. transformed
+- **Scripts** — the analysis code and how to run it
+- **Figures** — where plots are written
+- **Results** — tables and the report
+- **Project status** — where things stand and what's next
+
 ## How to work through an analysis
 
 Follow these steps in order. Understand each one before moving to the next, and
