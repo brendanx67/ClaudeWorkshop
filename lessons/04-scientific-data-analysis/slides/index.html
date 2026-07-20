@@ -225,9 +225,12 @@ ul.bullets li .sub {
   <section class="slide">
     <h2>Set up the project</h2>
     <ul class="bullets">
-      <li>Copy the data and the example <code>CLAUDE.md</code> into a new folder in your ClaudeLab</li>
-      <li>Have Claude create a <span class="accent">venv</span> — an isolated Python sandbox</li>
-      <li>That <code>CLAUDE.md</code> carries the workflow, the rules, and a project map it keeps current</li>
+      <li>Copy <code>data/</code> and the example <code>CLAUDE.example.md</code> into a new folder in your ClaudeLab — then rename it to <code>CLAUDE.md</code></li>
+      <li>Open a new Claude Code session in that folder</li>
+      <li>Have Claude <span class="accent">scaffold the project</span> — setup only, no analysis yet
+        <span class="sub">If Python's missing it installs it with <code>uv</code>, creates the venv, installs packages.</span>
+      </li>
+      <li>Open the lightweight <code>CLAUDE.md</code> together — walk the decisions and rules it carries</li>
     </ul>
   </section>
 
