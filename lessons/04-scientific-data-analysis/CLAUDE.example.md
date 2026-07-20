@@ -29,6 +29,7 @@ Point to where each of these lives, and fill them in as they appear:
 - **Data description** — shape, units, raw vs. transformed
 - **Scripts** — the analysis code and how to run it
 - **Figures** — where plots are written
+- **Findings** — the running index of results — `findings/FINDINGS.md`
 - **Results** — tables and the report
 - **Project status** — where things stand and what's next
 
@@ -49,6 +50,21 @@ don't jump ahead to results.
    thought.
 6. **Report the findings** in a clear, shareable report.
 
+## Save findings as you go
+
+Don't wait until the end to write things down — capture each result the moment you
+have it.
+
+- Keep findings in a **`findings/` directory**, one file per finding, named for
+  what it shows.
+- Each finding is **self-contained**: its status, the discussion, and the figures,
+  tables, or lists it produced.
+- Record **full provenance** — the data and the script behind each finding, so it
+  can be retraced. A finding you can't retrace is a rumor.
+- Maintain a manifest, **`findings/FINDINGS.md`**, that indexes every finding;
+  update it in the same step you add or change one, and keep the project map above
+  pointed at it.
+
 ## How the statistics should be done
 
 - **Rigor is essential**, and always **correct for multiple hypothesis testing**.
@@ -64,10 +80,15 @@ don't jump ahead to results.
 
 ## How the code should be written
 
-- Write the analysis in **Python** (already installed).
-- Work inside a **virtual environment (`venv`) in this folder** — create one and
-  install every library into it. **Never install packages outside the venv** (no
-  global or system installs).
+- Write the analysis in **Python**. **Don't assume Python is installed** — check
+  first (`python3 --version`, or `python --version` on Windows). If it isn't
+  available, install it with [`uv`](https://docs.astral.sh/uv/) **into this project**
+  so the folder is self-contained: point `UV_PYTHON_INSTALL_DIR` at a local
+  `.python` directory, then run `uv python install` (e.g. `uv python install 3.12`).
+  Don't install Python system-wide.
+- Work inside a **virtual environment (`venv`) in this folder** — create it with
+  `uv venv` and install every library into it. **Never install packages outside the
+  venv** (no global or system installs).
 - Install **only established, widely trusted libraries** — e.g. `numpy`,
   `pandas`, `scikit-learn`. Nothing obscure or unvetted.
 - **Test, lint, and type-check** all code: `pytest` for unit tests, `ruff` for
