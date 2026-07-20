@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scientific Data Analysis — Session 4</title>
+
+<!--
+  ============================================================================
+  Session 4 — Scientific Data Analysis · slide deck (first draft)
+  Built from instructors/presentation-template/. Style + script are the
+  template's, verbatim; only the slides differ.
+
+  Content spine: instructors/04-scientific-data-analysis/SLIDES_OUTLINE.md
+  Pitfall cues (instructors/.../NOTES.md) live as HTML speaker-note comments on
+  the relevant slides — deliver them live; keep them off the screen.
+
+  Present: open in a browser, arrows/space/click to advance, F for fullscreen.
+  Print:   Ctrl/Cmd-P -> Save as PDF, Margins None, Background graphics ON.
+  ============================================================================
+-->
+
+<style>
+:root {
+  /* ---- EDIT THESE: your event's palette (UW colors by default) ---------- */
+  --brand:       #4B2E83;   /* UW purple — primary */
+  --brand-dark:  #362161;   /* headings, dark section backgrounds */
+  --brand-light: #EDE9F3;   /* light section backgrounds, borders */
+  --accent:      #85754D;   /* UW gold — highlights, bullet markers */
+  /* ----------------------------------------------------------------------- */
+  --bg:    #FFFFFF;
+  --text:  #1A1A1A;
+  --muted: #777777;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  width: 100%; height: 100%;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ---- Slide model --------------------------------------------------------
+   One .slide is shown at a time (.active). Sizes use vw/vh so the deck fills
+   any screen. In print, these same units resolve against the 16:9 page box. */
+.deck  { position: relative; width: 100vw; height: 100vh; }
+.slide {
+  position: absolute; inset: 0;
+  padding: 6vh 8vw;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+}
+.slide.active { display: flex; }
+
+/* ---- Typography ---------------------------------------------------------- */
+h1 { font-size: 5.5vw; line-height: 1.05; font-weight: 700; color: var(--brand-dark); letter-spacing: -0.02em; }
+h2 { font-size: 3.8vw; line-height: 1.1;  font-weight: 600; color: var(--brand-dark); letter-spacing: -0.01em; margin-bottom: 4vh; }
+h3 { font-size: 2.4vw; color: var(--accent); margin-bottom: 1vh; font-weight: 600; }
+p, li { font-size: 2.2vw; line-height: 1.5; }
+.accent { color: var(--accent); }
+.muted  { color: var(--muted); font-size: 1.6vw; }
+
+/* Bullet list */
+ul.bullets { list-style: none; margin-top: 2vh; }
+ul.bullets li { font-size: 2.6vw; font-weight: 500; margin-bottom: 1.6vh; }
+ul.bullets li::before { content: "▸"; color: var(--accent); margin-right: 1.2vw; font-weight: 700; }
+ul.bullets li .sub {
+  display: block; font-size: 1.5vw; font-weight: 400; font-style: italic;
+  color: var(--muted); margin-top: 0.3vh; padding-left: 2.5vw;
+}
+
+/* ---- Title slide --------------------------------------------------------- */
+.title-slide { text-align: center; align-items: center; justify-content: center; }
+.title-slide h1 { font-size: 7vw; margin-bottom: 2.5vh; letter-spacing: -0.025em; }
+.title-slide .subtitle { font-size: 2.4vw; color: var(--muted); line-height: 1.35; }
+.title-slide .byline { font-size: 2vw; font-weight: 500; margin-top: 6vh; }
+.title-slide .affil  { font-size: 1.5vw; color: var(--muted); margin-top: 0.4vh; }
+
+/* UW wordmark (asset-free; swap for your institution or an <img> logo) */
+.uw-logo { display: flex; align-items: center; justify-content: center; gap: 1vw; margin-top: 4vh; }
+.uw-w {
+  width: 4vw; height: 4vw; background: var(--brand); color: white;
+  font-family: Georgia, "Times New Roman", serif; font-style: italic; font-weight: 700;
+  font-size: 3vw; display: flex; align-items: center; justify-content: center;
+  line-height: 1; letter-spacing: -0.05em;
+}
+.uw-text { font-size: 1vw; color: var(--text); letter-spacing: 0.08em; line-height: 1.25; font-weight: 600; text-align: left; }
+.uw-text em { font-style: italic; font-weight: 400; letter-spacing: 0; }
+
+/* ---- Section opener (dark background) ------------------------------------ */
+.opener { background: var(--brand-dark); color: white; justify-content: center; align-items: center; text-align: center; }
+.opener .eyebrow { font-size: 1.8vw; color: var(--brand-light); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 4vh; }
+.opener h1 { color: white; font-size: 6vw; line-height: 1.1; max-width: 80vw; }
+.opener .sub { font-size: 2.2vw; color: var(--brand-light); margin-top: 4vh; font-weight: 400; max-width: 70vw; }
+
+/* ---- Two-column ---------------------------------------------------------- */
+.two-col { display: flex; gap: 4vw; flex: 1; }
+.two-col .col { flex: 1; display: flex; flex-direction: column; }
+.two-col .col h3 { margin-bottom: 2vh; }
+
+/* ---- Big statement ------------------------------------------------------- */
+.statement { justify-content: center; }
+.statement .thesis { font-size: 5vw; line-height: 1.2; font-weight: 600; }
+
+/* ---- Figure slide (image / embed) ---------------------------------------- */
+.figure-slide { justify-content: flex-start; }
+.figure-slide h2 { margin-bottom: 2vh; }
+.figure-wrap {
+  flex: 1; width: 100%;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--brand-light); border-radius: 6px; overflow: hidden;
+}
+.figure-wrap img, .figure-wrap svg { max-width: 100%; max-height: 100%; object-fit: contain; }
+.figure-wrap iframe, .figure-wrap video { width: 100%; height: 100%; border: none; display: block; }
+.caption { font-size: 1.4vw; color: var(--muted); text-align: center; margin-top: 1.6vh; font-style: italic; }
+
+/* ---- Slide counter ------------------------------------------------------- */
+.counter {
+  position: fixed; bottom: 1vh; right: 1.5vw;
+  font-size: 1vw; color: var(--muted);
+  font-variant-numeric: tabular-nums; letter-spacing: 0.1em;
+  z-index: 100; pointer-events: none;
+}
+.counter.dark { color: rgba(255,255,255,0.55); }
+
+/* ---- Screen/print element swap ------------------------------------------
+   Interactive content (iframe, video) cannot render in a printed PDF. Mark it
+   .screen-only, and provide a static .print-only image beside it as a fallback.
+   On screen you see the live thing; in the PDF you see the picture. */
+.print-only { display: none; }
+
+/* ==========================================================================
+   PRINT: one slide per 16:9 page. Ctrl/Cmd-P -> Save as PDF.
+   In the print dialog: Margins = None (or Default), and turn ON "Background
+   graphics" so dark slides keep their color.
+   ========================================================================== */
+@media print {
+  @page { size: 13.333in 7.5in; margin: 0; }   /* 16:9 at 96dpi = 1280x720 */
+  html, body { width: 13.333in; height: auto; overflow: visible; background: white; }
+  .deck { width: 13.333in; height: auto; position: static; }
+  .slide {
+    display: flex !important;
+    position: relative; inset: auto;
+    width: 13.333in; height: 7.5in;
+    page-break-after: always; break-after: page;
+    overflow: hidden;
+  }
+  .slide:last-of-type { page-break-after: auto; break-after: auto; }
+  .counter { display: none !important; }
+  .screen-only { display: none !important; }
+  .print-only  { display: block !important; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+}
+</style>
+</head>
+<body tabindex="-1">
+<div class="deck">
+
+  <!-- ===================== 1. Title ===================== -->
+  <section class="slide title-slide active">
+    <h1>Scientific Data Analysis</h1>
+    <p class="subtitle">Session 4 · From raw data to a report you'd actually send</p>
+    <p class="byline">Mike Riffle</p>
+    <p class="affil">UW Genome Sciences · MacCoss Lab</p>
+    <div class="uw-logo">
+      <div class="uw-w">W</div>
+      <div class="uw-text">UNIVERSITY <em>of</em><br>WASHINGTON</div>
+    </div>
+  </section>
+
+  <!-- ===================== 2. Who I am ===================== -->
+  <section class="slide">
+    <h2>Who I am</h2>
+    <ul class="bullets">
+      <li>Research scientist — computer science (data science &amp; statistics) and biology</li>
+      <li>A long time spent doing scientific data analysis
+        <span class="sub">This is the workflow I actually use — not a toy example.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ===================== 3. What we'll do today ===================== -->
+  <section class="slide statement">
+    <p class="thesis">Today we do the <span class="accent">whole process</span> — scaffold a project, all the way to a final report.</p>
+    <p class="muted" style="margin-top:2vh">One real dataset. Claude writes the code; you bring the science and the judgment.</p>
+  </section>
+
+  <!-- ===================== 4. What you leave with ===================== -->
+  <section class="slide">
+    <h2>What I hope you leave with</h2>
+    <div class="two-col">
+      <div class="col">
+        <h3>The process</h3>
+        <ul class="bullets">
+          <li>The steps — and the judgment at each</li>
+          <li>A heavy focus on the start: metadata, data, QC
+            <span class="sub">Everything downstream depends on it.</span>
+          </li>
+          <li>The confidence to do this yourself</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>In your ClaudeLab</h3>
+        <ul class="bullets">
+          <li>Python scripts</li>
+          <li>Figures &amp; tables</li>
+          <li>Protein lists</li>
+          <li>A final report</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 5. Opener: getting ready ===================== -->
+  <section class="slide opener dark-bg">
+    <p class="eyebrow">Before the science</p>
+    <h1>Set up, and two habits<br>that <span style="color:var(--accent)">pay off all day</span></h1>
+    <p class="sub">The unglamorous part that makes everything after it easy.</p>
+  </section>
+
+  <!-- ===================== 6. Set up the project ===================== -->
+  <section class="slide">
+    <h2>Set up the project</h2>
+    <ul class="bullets">
+      <li>Copy the data and the example <code>CLAUDE.md</code> into a new folder in your ClaudeLab</li>
+      <li>Have Claude create a <span class="accent">venv</span> — an isolated Python sandbox</li>
+      <li>That <code>CLAUDE.md</code> carries the workflow, the rules, and a project map it keeps current</li>
+    </ul>
+  </section>
+
+  <!-- ===================== 7. Two habits ===================== -->
+  <section class="slide">
+    <h2>Two habits that make it work</h2>
+    <div class="two-col">
+      <div class="col">
+        <h3>Write it down, once</h3>
+        <ul class="bullets">
+          <li>Save everything to Markdown files</li>
+          <li>Point <code>CLAUDE.md</code> at them — don't restate
+            <span class="sub">This is how you start a new session cold and pick up where you stopped.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>Findings files</h3>
+        <ul class="bullets">
+          <li>Have Claude save findings as it goes, named well</li>
+          <li>Self-contained: status, discussion, figures, tables, lists</li>
+          <li>Full provenance — the data &amp; scripts behind each one
+            <span class="sub">A finding you can't retrace is a rumor.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 8. Opener: the process ===================== -->
+  <section class="slide opener dark-bg">
+    <p class="eyebrow">The process</p>
+    <h1>The analysis, <span style="color:var(--accent)">step by step</span></h1>
+    <p class="sub">The order matters. The beginning carries everything.</p>
+  </section>
+
+  <!-- ===================== 9. Step 1 — science ===================== -->
+  <section class="slide">
+    <h3>Step 1 · The science</h3>
+    <h2>Let Claude interview you</h2>
+    <ul class="bullets">
+      <li>Domain, the experiment, hypotheses &amp; questions, the goal of the study</li>
+      <li>One question at a time — no walls of questions</li>
+      <li>Save it to <code>PROJECT.md</code>, so it carries into future sessions
+        <span class="sub">You can't analyze what you can't state.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ===================== 10. Step 2 — metadata ===================== -->
+  <!-- SPEAKER NOTE / pitfall to seed live: the pooled reference/QC samples are NOT
+       biological replicates (GroupName = Batch QC, biological fields = pool). They
+       have no dose and don't belong in group comparisons. Surface it here or at QC. -->
+  <section class="slide">
+    <h3>Step 2 · The metadata</h3>
+    <h2>Know every column before you trust it</h2>
+    <ul class="bullets">
+      <li>Have Claude report the columns and the value types in each</li>
+      <li>Let it ask questions; correct its mistakes — you're the expert</li>
+      <li>Visualize the key variables (Lesson 3, yesterday)</li>
+      <li>Mark which samples are controls, which are experimental</li>
+      <li>Save the metadata findings to <code>METADATA.md</code>, and point <code>CLAUDE.md</code> at it</li>
+    </ul>
+  </section>
+
+  <!-- ===================== 11. Step 3 — data ===================== -->
+  <!-- SPEAKER NOTE / pitfall: values sit ~17-24 => almost certainly already log2,
+       despite "unnormalized" in the filename. Great "raw or transformed?" beat;
+       don't let anyone log it twice. (On the NOTES.md verify-list — confirm first.) -->
+  <section class="slide">
+    <h3>Step 3 · The data</h3>
+    <h2>What are you actually looking at?</h2>
+    <ul class="bullets">
+      <li>What's the shape — are rows samples, or proteins?</li>
+      <li>What kind of values are stored? Raw, or already transformed?</li>
+      <li>How bad is the missingness?</li>
+      <li>Save the data findings to <code>DATA.md</code>, and point <code>CLAUDE.md</code> at it</li>
+    </ul>
+  </section>
+
+  <!-- ===================== 12. Step 4 — loaders ===================== -->
+  <!-- SPEAKER NOTE / pitfall: batch correction ties to confounding — dose can be
+       entangled with dose-rate, batch, plate/well position, or acquisition order,
+       all present as columns. Crosstab before believing any effect. -->
+  <section class="slide">
+    <h3>Step 4 · Data loaders</h3>
+    <h2>Real work begins</h2>
+    <ul class="bullets">
+      <li>Testing &amp; validating this code is essential — every downstream script uses it</li>
+      <li>Decide now: normalization, batch correction, how to handle missingness</li>
+      <li>Discuss it through, then have Claude build the reusable loader — tested, linted, typed</li>
+    </ul>
+  </section>
+
+  <!-- ===================== 13. Step 5 — QC ===================== -->
+  <!-- SPEAKER NOTE / pitfalls: (1) CV on linear-scale intensities, not logged data;
+       (2) watch the pooled controls specifically; (3) reference samples aren't
+       biological replicates — this is where excluding them gets decided. -->
+  <section class="slide">
+    <h3>Step 5 · Quality control</h3>
+    <h2>Look before you leap</h2>
+    <ul class="bullets">
+      <li>CV plots — on linear-scale data, not logged — especially among controls</li>
+      <li>PCA plots colored by metadata variables</li>
+      <li>How does normalization change CV and PCA — especially in the controls?</li>
+      <li>Abundance distributions across runs; correlation plots</li>
+      <li>Save the good ones as findings — and pull them into an HTML QC report
+        <span class="sub">One page you can scroll and share; a preview of the final report.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ===================== 14. Step 6 — explore & analyze ===================== -->
+  <!-- SPEAKER NOTE / pitfalls: (1) ~9,600 proteins => correct for multiple testing (FDR);
+       (2) cross-validate against the right unit — split by subject/mouse, not by
+       sample, or performance leaks and inflates. -->
+  <section class="slide">
+    <h3>Step 6 · Exploration &amp; analysis</h3>
+    <h2>Now, the real questions</h2>
+    <ul class="bullets">
+      <li>Univariate: proteins vs. exposure, dose, dose rate — plots &amp; lists, saved as findings</li>
+      <li>Predict dose from the proteome — regularized regression; let Claude talk you through it</li>
+      <li>GO (Gene Ontology) enrichment of the significant proteins</li>
+      <li>Can Claude build a story from the hits?
+        <span class="sub">This is where most of the two hours goes.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ===================== 15. Step 7 — report ===================== -->
+  <section class="slide">
+    <h3>Step 7 · The report</h3>
+    <h2>Assemble it from your findings</h2>
+    <ul class="bullets">
+      <li>Claude builds a report of findings &amp; methods from the saved findings files</li>
+      <li>Output as HTML or Markdown (→ PDF)</li>
+      <li>Something you'd hand a collaborator — or your future self</li>
+    </ul>
+  </section>
+
+  <!-- ===================== 16. Push to GitHub ===================== -->
+  <section class="slide">
+    <h2>Push everything to GitHub</h2>
+    <ul class="bullets">
+      <li>It backs up your work</li>
+      <li>It never overwrites earlier sessions' findings</li>
+      <li>It lets you pick up later, from anywhere
+        <span class="sub">This is why Day 1 was about Git.</span>
+      </li>
+    </ul>
+  </section>
+
+</div>
+
+<div class="counter" id="counter">1 / 1</div>
+
+<script>
+const slides  = document.querySelectorAll('.slide');
+const counter = document.getElementById('counter');
+let current = 0;
+
+function show(n) {
+  n = Math.max(0, Math.min(slides.length - 1, n));
+  slides.forEach(s => s.classList.remove('active'));
+  slides[n].classList.add('active');
+  current = n;
+  counter.textContent = `${n + 1} / ${slides.length}`;
+  counter.classList.toggle('dark', slides[n].classList.contains('dark-bg'));
+  try { document.body.focus(); } catch (_) {}
+}
+function next() { show(current + 1); }
+function prev() { show(current - 1); }
+
+document.addEventListener('keydown', e => {
+  if (['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)) { next(); e.preventDefault(); }
+  else if (['ArrowLeft','ArrowUp','PageUp'].includes(e.key))     { prev(); e.preventDefault(); }
+  else if (e.key === 'Home') { show(0); e.preventDefault(); }
+  else if (e.key === 'End')  { show(slides.length - 1); e.preventDefault(); }
+  else if (e.key === 'f' || e.key === 'F') {
+    if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+    else document.exitFullscreen();
+    e.preventDefault();
+  }
+});
+
+/* Click to advance — but ignore drags (text selection) and clicks on embeds/links. */
+let downX = 0, downY = 0;
+document.addEventListener('mousedown', e => { downX = e.clientX; downY = e.clientY; });
+document.addEventListener('click', e => {
+  if (Math.hypot(e.clientX - downX, e.clientY - downY) > 5) return;
+  if (['IFRAME','VIDEO','A'].includes(e.target.tagName)) return;
+  if (e.target.closest('.figure-wrap')) return;
+  next();
+});
+
+window.addEventListener('load', () => { try { document.body.focus(); } catch (_) {} });
+show(0);
+</script>
+</body>
+</html>
