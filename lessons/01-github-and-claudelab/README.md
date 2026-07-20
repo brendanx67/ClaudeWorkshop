@@ -15,10 +15,24 @@ talking to Claude. That's the assignment.
 > `ClaudeWorkshop` already cloned inside it. Not there? Grab an instructor — that's
 > what the 8:00 hour is for.
 
-> **One step at a time.** If you point Claude at this whole lesson, it can do all
-> four steps in about a minute — and you'll have a correct repo and an empty hour.
+> **One step at a time.** If you point Claude at this whole lesson, it can do
+> every step in about a minute — and you'll have a correct repo and an empty hour.
 > Ask it to stop and check in after each numbered step. The conversation *is* the
 > lesson; the files are just where it lands.
+
+**Seeing headings and links rather than `#` marks?** Then **Markdown Reader** is
+working and you're set. If not, install it now (we did this together in the
+opening talk): the
+[Chrome Web Store](https://chromewebstore.google.com/detail/markdown-reader/medapdbncneneejhbgcjceippjlfkmkg),
+then **Extensions** (puzzle-piece icon) → **Markdown Reader** → **Manage
+extension** → turn **ON** "**Allow access to file URLs**" — the step everyone
+misses. Every lesson this week is a `.md` file like this one.
+
+*Windows asking which program to open `.md` files with? Pick Edge or Chrome — if
+neither is listed, "Choose an app on your PC" and browse to
+`C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe` or
+`C:\Program Files\Google\Chrome\Application\chrome.exe`. Tick "Always use this
+app" and you're done with that dialog.*
 
 ---
 
@@ -39,6 +53,10 @@ talking to Claude. That's the assignment.
 
 Open your `ClaudeLab` on GitHub — empty for now; you'll fill it next.
 
+Three words you'll hear all morning: a **repo** is a project folder that tracks
+its own history; a **commit** is a saved snapshot; a **push** sends your commits
+up to GitHub. You supply the intent; Claude does the Git.
+
 **Then two folders and one file, once.** These live in `ws` itself, beside your
 repos, and serve everything you do this week:
 
@@ -46,19 +64,11 @@ repos, and serve everything you do this week:
 > folder for scratch work, and a short `CLAUDE.md` that points at my ClaudeLab's
 > `CLAUDE.md` and `CRITICAL-RULES.md`. Put a one-line README in each folder."*
 
-- `.claude/` — where your own skills and commands live; you build your first one
-  in Session 2. It has to sit here at `ws`: a `.claude` inside a repo folder
-  isn't picked up.
-- `.tmp/` — scratch. Claude's working files go here where you can see them, and
-  because it's outside every repo they can't be committed by accident.
-- `CLAUDE.md` — three lines pointing into your `ClaudeLab`. The rules themselves
-  stay in the repo, where they're saved and versioned; this just makes sure
-  Claude finds them from anywhere in `ws`. That's **reference, don't embed** —
-  rule 1 of the file you're about to write — applied to your own setup.
-
-Three words you'll hear all morning: a **repo** is a project folder that tracks
-its own history; a **commit** is a saved snapshot; a **push** sends your commits
-up to GitHub. You supply the intent; Claude does the Git.
+- `.claude/` — your skills and commands, starting in Session 2. It has to sit at
+  `ws`; inside a repo folder it isn't picked up.
+- `.tmp/` — scratch, outside every repo, so nothing lands in a commit by accident.
+- `CLAUDE.md` — three lines pointing into your `ClaudeLab`, so Claude finds your
+  rules from anywhere in `ws`. **Reference, don't embed**, applied to your setup.
 
 ## 2. Let Claude set it up — and interview you
 
@@ -87,21 +97,8 @@ Skim what Claude made — open a file or two. When it looks right:
 Refresh the GitHub page — your notes, rules, and first todo are there,
 timestamped. A real first commit. 🎉
 
-## 4. See it rendered
-
-Open one of your new files — say `ClaudeLab/docs/about-my-work.md`. That's
-**Markdown**: plain text with light formatting. Readable — but it can look a lot
-nicer, and you'll be reading `.md` files all week.
-
-Install **Markdown Reader** (free; Chrome or Edge; Mac or Windows):
-
-1. Get it from the Chrome Web Store:
-   [chromewebstore.google.com/…/markdown-reader](https://chromewebstore.google.com/detail/markdown-reader/medapdbncneneejhbgcjceippjlfkmkg)
-2. Browser **Extensions** (puzzle-piece icon) → **Markdown Reader** → **Manage
-   extension** → turn **ON** "**Allow access to file URLs**." *(The step everyone
-   misses — without it, it won't render files on your computer.)*
-
-Now open that same file in Chrome or Edge — headings, links, and lists, rendered. 🎉
+Now open one of your own new files in the browser — say
+`ClaudeLab/docs/about-my-work.md`. Rendered, like this page.
 
 ## Keep going (or if you have time)
 
@@ -122,6 +119,8 @@ and a demo are both ways of capturing what you explained: one reads, one runs.
 ## You're on track when
 
 - [ ] `ClaudeLab/` sits next to `ClaudeWorkshop/` in `ws`, and is on your GitHub.
+- [ ] `ws` itself has `.claude/`, `.tmp/`, and a short `CLAUDE.md` — Session 2
+      needs them.
 - [ ] It has `CLAUDE.md`, `CRITICAL-RULES.md`, `docs/about-my-work.md`, and
       `todos/{active,backlog,completed}`, with a first commit from today.
 - [ ] One todo in `active/` or `backlog/`, named the workshop way

@@ -114,8 +114,12 @@ ul.bullets li .sub {
 .habits li::before { content: "▸"; color: var(--accent); margin-right: 1.1vw; }
 .habits li span { display: block; font-size: 1.5vw; color: var(--muted); font-style: italic; font-weight: 400; padding-left: 2.6vw; margin-top: 0.2vh; }
 
+code { font-family: "Cascadia Code", Consolas, "SF Mono", Menlo, monospace; font-size: 0.92em; }
+
 /* Closing verb */
 .start-verb { font-size: 7vw; color: var(--accent); font-weight: 700; margin: 2vh 0 3vh; letter-spacing: -0.03em; }
+.opener .hint { font-size: 1.35vw; color: rgba(255,255,255,0.6); margin-top: 4vh; line-height: 1.7; max-width: 76vw; }
+.opener .hint code { color: rgba(255,255,255,0.8); }
 
 /* Counter */
 .counter { position: fixed; bottom: 1vh; right: 1.5vw; font-size: 1vw; color: var(--muted); font-variant-numeric: tabular-nums; letter-spacing: 0.1em; z-index: 100; pointer-events: none; }
@@ -258,16 +262,36 @@ ul.bullets li .sub {
     </ul>
   </section>
 
-  <!-- 9. Let's go -->
+  <!-- 9. Markdown Reader — do this together, right now -->
+  <section class="slide">
+    <h2 style="margin-bottom:2vh">One extension first: <span class="accent">Markdown Reader</span></h2>
+    <p style="font-size:2vw; color:var(--muted); margin-bottom:2.5vh">Every lesson is a <code>.md</code> file. This renders them in Chrome or Edge.</p>
+    <ul class="bullets">
+      <li>Install from the Chrome Web Store
+        <span class="sub">Search "Markdown Reader" — free, Chrome or Edge, Mac or Windows.</span>
+      </li>
+      <li>Turn on <strong>"Allow access to file URLs"</strong>
+        <span class="sub">Extensions (puzzle icon) → Markdown Reader → Manage extension. Everyone misses this one.</span>
+      </li>
+    </ul>
+    <p class="muted" style="margin-top:3vh">Without that second step, your own files stay plain text.</p>
+  </section>
+
+  <!-- 10. Let's go -->
   <section class="slide opener dark-bg">
-    <p class="eyebrow">Open Claude Code on your <span style="color:var(--accent)">ws</span> folder</p>
+    <p class="eyebrow">Open the README.md for session 1</p>
     <div class="start-verb">Let's build.</div>
-    <p class="sub">Ask Claude to create your ClaudeLab — then let it interview you.</p>
+    <p class="sub"><code style="color:var(--accent)">ws / ClaudeWorkshop / lessons / 01-github-and-claudelab / README.md</code></p>
+    <p class="hint">
+      Asked which program to open with? Choose <strong>Edge</strong> or <strong>Chrome</strong>. Not listed? <em>Choose an app on your PC</em>, then browse to:<br>
+      <code>C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe</code><br>
+      <code>C:\Program Files\Google\Chrome\Application\chrome.exe</code>
+    </p>
   </section>
 
 </div>
 
-<div class="counter" id="counter">1 / 9</div>
+<div class="counter" id="counter">1 / 10</div>
 
 <script>
 const slides  = document.querySelectorAll('.slide');
