@@ -109,6 +109,15 @@ same tiny shape:
   `CRITICAL-RULES.md` acts on it. (Fragile, though: it reads a file the statusline
   writes, so it can vanish in a new setup.)
 
+## Keep going, and show us
+
+Finished both tools with time left? Don't stop there.
+
+- Add one of the two above: **images**, or **context remaining**.
+- Better: build a tool for a friction **you** hit this week.
+- We'll spend the last few minutes **demoing anything anyone built** beyond the
+  two required tools. Bring what you made, working or not.
+
 ## You're on track when
 
 - [ ] A **Status** MCP server in `ClaudeLab/mcp/Status/` with a **GetLocalTime**
