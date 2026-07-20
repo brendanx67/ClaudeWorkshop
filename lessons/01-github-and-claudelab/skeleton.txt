@@ -41,6 +41,10 @@ CONTENTS  (keep every file thin — reference, don't embed)
          carries the start date:   TODO-YYYYMMDD-short-goal.md
          (the date is the day the work was started). In backlog/ (not started
          yet), no date:            TODO-short-goal.md
+      4. Put temporary and scratch files in .tmp/ at the session root — never
+         scattered through repo folders. Everything in .tmp/ is disposable; it's
+         the workspace we share, so I can see what you're doing and ask you to
+         clear it out.
     INTERVIEW: any other rule you already know you want Claude to always follow?
 
   docs/about-my-work.md — do NOT use a template.

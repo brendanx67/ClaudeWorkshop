@@ -39,6 +39,23 @@ talking to Claude. That's the assignment.
 
 Open your `ClaudeLab` on GitHub — empty for now; you'll fill it next.
 
+**Then two folders and one file, once.** These live in `ws` itself, beside your
+repos, and serve everything you do this week:
+
+> *"In my `ws` folder, make a `.claude` folder for skills and commands, a `.tmp`
+> folder for scratch work, and a short `CLAUDE.md` that points at my ClaudeLab's
+> `CLAUDE.md` and `CRITICAL-RULES.md`. Put a one-line README in each folder."*
+
+- `.claude/` — where your own skills and commands live; you build your first one
+  in Session 2. It has to sit here at `ws`: a `.claude` inside a repo folder
+  isn't picked up.
+- `.tmp/` — scratch. Claude's working files go here where you can see them, and
+  because it's outside every repo they can't be committed by accident.
+- `CLAUDE.md` — three lines pointing into your `ClaudeLab`. The rules themselves
+  stay in the repo, where they're saved and versioned; this just makes sure
+  Claude finds them from anywhere in `ws`. That's **reference, don't embed** —
+  rule 1 of the file you're about to write — applied to your own setup.
+
 Three words you'll hear all morning: a **repo** is a project folder that tracks
 its own history; a **commit** is a saved snapshot; a **push** sends your commits
 up to GitHub. You supply the intent; Claude does the Git.

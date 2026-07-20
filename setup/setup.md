@@ -113,6 +113,18 @@ Findings from the Windows Sandbox dry run (July 2026):
   check at 8:00, and worth remembering as the workshop's own lesson: a confident
   answer that verifies cleanly can still be wrong, and the check has to come from
   outside the thing being checked.
+- **Skills must live in `ws/.claude`, not inside a repo.** Tested July 20: a
+  `.claude` folder inside `ClaudeLab` is *not* discovered by a session rooted at
+  `ws` — only the session root and the user-level `~/.claude` are. Session 2's
+  tree already assumed `ws/.claude` existed but nothing created it, so Lesson 1
+  now does. Good news: `/reload-skills` is enough to pick up a new skill, and it
+  appears in the type-ahead menu immediately — no restart.
+- **No junctions or symlinks anywhere in the participant path.** Root-level
+  `CLAUDE.md` is a thin file pointing into `ClaudeLab` instead. The real content
+  stays versioned in the repo, it needs no admin rights or Developer Mode, and it
+  demonstrates "reference, don't embed" in the setup itself. (Hard-linking a file
+  into a repo is actively unsafe: `git checkout` writes a new inode, so the link
+  silently detaches and the root copy serves stale content forever with no error.)
 - The bundled installer self-updated; tell people to expect the upgrade prompt.
 - Still open: **Mac clean-machine test**. (Windows path — Git prereq, `gh`,
   Python, clone — is fully validated.)
