@@ -1,7 +1,7 @@
 # STATUS — Session 4 (Scientific data analysis)
 
 **Handoff document.** Hand this to a new agent to resume work on this session.
-Last updated: **2026-07-19**. Session is taught **Wed 2026-07-22, 8:00–10:00**
+Last updated: **2026-07-20**. Session is taught **Wed 2026-07-22, 8:00–10:00**
 (Day 2, first block) by **Mike Riffle**.
 
 ---
@@ -75,7 +75,7 @@ Last updated: **2026-07-19**. Session is taught **Wed 2026-07-22, 8:00–10:00**
 - [ ] **Rehearse each step live**, and capture **known-good fallback outputs**
       (finished findings / screenshots) so a stalled live demo doesn't derail the
       room. Nothing built for this yet. Cf. Lesson 3's `offline_backup/`.
-- [ ] **Open the PR** — not yet opened. See link below.
+- [x] **PR opened & merged** — PRs #7 and #8 (`mike/analysis-lesson`) are merged to `main`.
 - [ ] *Optional:* make the `CLAUDE.example.md` project map name `METADATA.md` and
       `DATA.md` explicitly. The deck's steps 2–3 tell Claude to write those files,
       but the map still uses generic labels. Offered, deferred by Mike.
@@ -91,10 +91,9 @@ but renumber if it bothers anyone.
 
 ## Git
 
-- **Branch:** `mike/analysis-lesson` (pushed, tracking `origin`).
+- **Branch:** `mike/analysis-lesson` — merged to `main` (PRs #7 and #8) and no
+  longer the working branch. Start new work from a fresh branch off `main`.
 - **Commits so far:** lesson + data + CLAUDE example + NOTES → self-maintaining
-  project map → slides outline + deck.
-- **PR (not yet opened):**
-  https://github.com/brendanx67/ClaudeWorkshop/pull/new/mike/analysis-lesson
-- Everything above is committed and pushed **except this file**, which may still be
-  untracked. Check `git status` before assuming.
+  project map → slides outline + deck → this STATUS doc.
+- **PR:** #7 and #8 (`mike/analysis-lesson`) opened and **merged**. All Session 4
+  work above — including this file (`f72c7aa`) — is committed and pushed to `main`.
