@@ -44,8 +44,9 @@ CONTENTS  (keep every file thin — reference, don't embed)
     INTERVIEW: any other rule you already know you want Claude to always follow?
 
   docs/about-my-work.md — do NOT use a template.
-    INTERVIEW: ask about a dozen questions about the participant's work and what
-    they'd like help with, then write a short summary here.
+    INTERVIEW: ask about four questions about the participant's work and what
+    they'd like help with — following up where an answer opens something worth
+    pulling on — then write a short summary here.
 
   todos/ — create active/, backlog/, completed/, then make ONE todo:
     INTERVIEW: what is one thing you'd like to achieve? Starting now, or later?
