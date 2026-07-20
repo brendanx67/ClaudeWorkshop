@@ -157,6 +157,247 @@ ul.bullets li .sub {
 .fragment { opacity: 0; transition: opacity 0.35s ease; }
 .fragment.visible { opacity: 1; }
 
+/* ---- Slide 3: a bare number vs. the same number in context ---------------- */
+.meta-compare { display: flex; align-items: stretch; gap: 1.6vw; height: 58vh; }
+.mc-col  { display: flex; flex-direction: column; min-width: 0; }
+.mc-col.bare { width: 24vw; flex: none; }
+.mc-col.rich { flex: 1; }
+.mc-cap  { font-size: 1.35vw; color: var(--muted); letter-spacing: 0.04em;
+           text-align: center; margin-bottom: 1vh; line-height: 1.3; }
+.mc-card { flex: 1; min-height: 0; border-radius: 1vh; position: relative;
+           display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.mc-card.bare { border: 0.22vw dashed #CFC8DC; background: #FAFAF8; }
+.mc-card.rich { border: 0.12vw solid #DED8E8; background: #FFFFFF;
+                box-shadow: 0 0.6vh 2vh rgba(54,33,97,0.10); }
+.mc-card.rich svg { width: 100%; height: 100%; }
+.mc-ghost { position: absolute; font-size: 21vw; line-height: 1; font-weight: 700;
+            color: #EDE9F3; user-select: none; }
+.mc-num   { position: relative; font-size: 9vw; font-weight: 700; line-height: 1;
+            color: #9A93A8; letter-spacing: -0.02em; }
+.mc-arrow { align-self: center; width: 5vw; flex: none; }
+.mc-kicker { font-size: 2vw; font-weight: 600; color: var(--brand-dark);
+             text-align: center; margin-top: 2.4vh; }
+
+/* ---- Slide 4: paperwork scattered on a desk ------------------------------- */
+.desk   { position: relative; width: 100%; height: 72vh; margin-top: 1vh; }
+.paper  { position: absolute; background: #FFFFFF; border: 0.09vw solid #DDD8CE;
+          overflow: hidden; z-index: 1;
+          box-shadow: 0 0.9vh 2.2vh rgba(54,33,97,0.20), 0 0.15vh 0.4vh rgba(0,0,0,0.10); }
+.paper::after, .torn-inner::after {
+          content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 7vh;
+          background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #FFFFFF 80%); }
+.paper.torn-wrap { background: transparent; border: none; box-shadow: none; overflow: visible;
+                   filter: drop-shadow(0 0.7vh 1.4vh rgba(54,33,97,0.24)); }
+.paper.torn-wrap::after { content: none; }
+.torn-inner { position: relative; width: 100%; height: 100%; background: #FFFDF8;
+              overflow: hidden;
+              clip-path: polygon(0 0, 100% 0, 100% 84%, 93% 92%, 86% 83%, 78% 93%,
+                                 70% 85%, 61% 95%, 52% 86%, 43% 95%, 34% 87%,
+                                 25% 94%, 16% 85%, 8% 93%, 0 86%); }
+.paper .pad { padding: 1.7vh 1.2vw; }
+.p-org   { font-size: 0.82vw; letter-spacing: 0.09em; text-transform: uppercase;
+           color: var(--brand); font-weight: 700; line-height: 1.3; }
+.p-title { font-size: 1.1vw; font-weight: 700; color: #1A1A1A; margin-top: 0.5vh; line-height: 1.25; }
+.p-meta  { font-size: 0.68vw; color: #8A8A8A; margin-top: 0.4vh; letter-spacing: 0.03em; }
+.p-rule  { height: 0.09vh; min-height: 1px; background: #CFC8DC; margin: 1vh 0; }
+.p-mono  { font-family: "SF Mono", Consolas, "Courier New", monospace;
+           font-size: 0.7vw; line-height: 1.85; color: #333; white-space: pre; }
+.p-mono .k { color: var(--brand); font-weight: 700; }
+.crf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9vh 0.9vw; margin-top: 0.4vh; }
+.crf-f   { display: flex; flex-direction: column; }
+.crf-f .lab, .p-chk .lab { font-size: 0.6vw; letter-spacing: 0.08em; text-transform: uppercase; color: #8E8E8E; }
+.crf-f .box { border: 0.09vw solid #C8C8C8; background: #FCFCFA; margin-top: 0.3vh;
+              height: 2.4vh; display: flex; align-items: center; padding: 0 0.35vw;
+              font-size: 0.76vw; color: #222; white-space: nowrap; overflow: hidden; }
+.p-chk   { display: flex; align-items: center; gap: 0.4vw; font-size: 0.76vw;
+           color: #333; margin-top: 1vh; white-space: nowrap; }
+.bx      { width: 0.8vw; aspect-ratio: 1; border: 0.09vw solid #999; background: #FFF;
+           display: inline-flex; align-items: center; justify-content: center;
+           font-size: 0.62vw; color: var(--brand); line-height: 1; }
+.note .rules { position: absolute; inset: 0;
+               background: repeating-linear-gradient(to bottom,
+                 rgba(0,0,0,0) 0 2.6vh, #C7D6E8 2.6vh 2.7vh); }
+.note .marg  { position: absolute; top: 0; bottom: 0; left: 2.6vw; width: 0.09vw; background: #E2A79E; }
+.note .hand  { position: relative; padding: 1.3vh 1vw 0 3.4vw;
+               font-family: "Segoe Script", "Bradley Hand", Chalkboard, cursive;
+               font-size: 1vw; line-height: 2.6vh; color: #26355F;
+               white-space: pre-line; }
+.note .hand .flag { color: var(--warn); }
+.clip { position: absolute; z-index: 6; }
+
+/* ---- Slide 7: three shipments converging --------------------------------- */
+.ship-row { display: flex; gap: 2vw; align-items: stretch; }
+.ship {
+  flex: 1; display: flex; flex-direction: column;
+  background: #FAFAF8; border: 1px solid var(--brand-light);
+  border-top: 0.6vh solid var(--accent); border-radius: 6px;
+  padding: 2.2vh 1.5vw;
+}
+.ship .disc {
+  font-size: 1.05vw; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.ship .name { font-size: 1.9vw; font-weight: 600; color: var(--brand-dark); line-height: 1.15; margin-top: 0.8vh; }
+.ship .meta { font-size: 1.35vw; color: var(--text); line-height: 1.35; margin-top: 1.2vh; flex: 1; }
+.ship .fmt {
+  align-self: flex-start; margin-top: 1.4vh;
+  font-size: 1.15vw; font-weight: 600; color: var(--brand-dark);
+  background: var(--brand-light); border-radius: 3vh; padding: 0.5vh 1vw;
+}
+.converge { width: 100%; height: 11vh; display: block; }
+.you-node {
+  align-self: center; text-align: center;
+  background: var(--brand-dark); color: #fff;
+  border-radius: 6px; padding: 1.8vh 3vw; max-width: 62vw;
+}
+.you-node .big { font-size: 2.2vw; font-weight: 700; line-height: 1.2; }
+.you-node .lbl { font-size: 1.4vw; color: var(--brand-light); margin-top: 0.6vh; line-height: 1.35; }
+
+/* ---- Slide 9: expected vs. pivoted orientation --------------------------- */
+.orient { display: flex; align-items: stretch; gap: 1.2vw; margin-top: 1vh; }
+.orient .pane { display: flex; flex-direction: column; border-radius: 6px; padding: 1.6vh 1.2vw; }
+.orient .pane.expect { flex: 1; background: #FAFAF8; border: 1px solid var(--brand-light); }
+.orient .pane.actual { flex: 1.3; background: #FFF8F6; border: 1px solid var(--warn); }
+.orient .tag { font-size: 1vw; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--muted); }
+.orient .pane.actual .tag { color: var(--warn); }
+.orient .hdr { font-size: 1.55vw; font-weight: 700; color: var(--brand-dark); line-height: 1.2; margin: 0.4vh 0 1.2vh; }
+.orient .pane.actual .hdr { color: var(--warn); }
+.orient .xl { font-size: 0.85vw; }
+.orient .xl th, .orient .xl td { white-space: normal; padding: 0.5vh 0.5vw; vertical-align: top; }
+.orient .xl td.fld { background: #F1EDF7; font-weight: 700; color: var(--brand-dark); }
+.orient .xl .ell { color: var(--muted); text-align: center; }
+.orient .note { font-size: 1.15vw; color: var(--warn); font-weight: 600; margin-top: 1vh; }
+.orient .note.q { color: var(--muted); font-weight: 400; font-style: italic; }
+.flip { flex: 0 0 6.5vw; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.flip svg { width: 4.5vw; height: 4.5vw; }
+.flip .cap {
+  font-size: 1vw; font-weight: 700; color: var(--brand); text-align: center;
+  line-height: 1.25; margin-top: 0.8vh; letter-spacing: 0.02em;
+}
+.quiet { display: flex; gap: 1.2vw; margin-top: 2vh; }
+.quiet .q {
+  flex: 1; border-left: 0.3vw solid var(--brand-light); padding-left: 0.9vw;
+  font-size: 1.25vw; color: var(--muted); line-height: 1.35;
+}
+.quiet .q b { display: block; color: var(--brand-dark); font-size: 1.3vw; }
+.quiet .q code { font-family: Consolas, "Courier New", monospace; color: var(--warn); }
+
+/* ---- Slide 11: the literature benchmark ---------------------------------- */
+.paper-card {
+  background: #FAFAF8; border: 1px solid var(--brand-light);
+  border-left: 0.6vw solid var(--brand); border-radius: 6px; padding: 2.2vh 1.6vw;
+}
+.paper-card .jrnl { font-size: 1.1vw; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+.paper-card .ttl { font-size: 1.6vw; font-weight: 600; color: var(--brand-dark); line-height: 1.3; margin: 0.8vh 0; }
+.paper-card .who { font-size: 1.35vw; }
+.paper-card .doi { font-size: 1.1vw; color: var(--muted); font-family: Consolas, "Courier New", monospace; margin-top: 0.5vh; }
+.paper-card hr { border: none; border-top: 1px solid var(--brand-light); margin: 1.4vh 0; }
+.paper-card .s1 { font-size: 1.3vw; line-height: 1.4; }
+.comp { display: flex; gap: 0.8vw; margin-top: 1.2vh; flex-wrap: wrap; }
+.comp span {
+  font-size: 1.15vw; font-weight: 600; color: var(--brand-dark);
+  background: var(--brand-light); border-radius: 3vh; padding: 0.4vh 0.9vw;
+}
+.comp span.plus { background: none; color: var(--muted); font-weight: 400; }
+.getit { margin-top: 2.2vh; }
+.getit .lead { font-size: 1.7vw; font-weight: 600; color: var(--brand-dark); margin-bottom: 1vh; }
+
+/* ---- Getting the data + opening the conversation -------------------------- */
+.label-chip {
+  display: inline-block;
+  font-size: 1.05vw; letter-spacing: 0.14em; text-transform: uppercase;
+  font-weight: 700; color: var(--accent); margin-bottom: 0.7vh;
+}
+.prompt-box {
+  background: var(--brand-light);
+  border-left: 0.45vw solid var(--brand);
+  border-radius: 0 0.4vw 0.4vw 0;
+  padding: 1.7vh 1.5vw;
+  font-size: 1.45vw; line-height: 1.5;
+  color: var(--brand-dark); font-style: italic;
+}
+.prompt-box.big { font-size: 1.6vw; line-height: 1.55; }
+.prompt-box em { font-style: normal; font-weight: 700; }
+.term {
+  font-family: "SF Mono", Consolas, "Courier New", monospace;
+  background: #201634; color: #EDE9F3;
+  border-radius: 0.35vw; padding: 1.2vh 1.1vw;
+  font-size: 1.25vw; line-height: 1.65;
+  white-space: pre; overflow: hidden;
+}
+.term .p { color: #9C8ABE; }
+.tree {
+  font-family: "SF Mono", Consolas, "Courier New", monospace;
+  font-size: 1.1vw; line-height: 1.7; color: #333;
+  background: #FAFAF8;
+  border: 0.08vw solid var(--brand-light); border-radius: 0.35vw;
+  padding: 1.3vh 1.1vw; white-space: pre; overflow: hidden;
+}
+.tree .d { color: var(--brand); font-weight: 700; }
+.tree .f { color: var(--warn); font-weight: 600; }
+ul.checklist { list-style: none; margin-top: 1.1vh; }
+ul.checklist li {
+  font-size: 1.35vw; line-height: 1.45; margin-bottom: 0.9vh;
+  padding-left: 2.1vw; text-indent: -2.1vw;
+}
+ul.checklist li::before { content: "✓"; color: #2E7D32; font-weight: 700; margin-right: 0.9vw; }
+.step-head { display: flex; align-items: center; gap: 0.8vw; margin-bottom: 1vh; }
+.step-num {
+  width: 2.3vw; height: 2.3vw; flex: none; border-radius: 50%;
+  background: var(--brand); color: #fff;
+  font-size: 1.35vw; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.step-head h3 { margin-bottom: 0; font-size: 1.9vw; }
+.note-strip {
+  font-size: 1.25vw; line-height: 1.45; color: var(--muted);
+  border-top: 0.08vw solid var(--brand-light);
+  padding-top: 1.1vh; margin-top: 1.1vh;
+}
+.note-strip b { color: var(--warn); }
+.shot { width: 100%; border-radius: 0.6vw; box-shadow: 0 0.5vh 1.8vh rgba(54,33,97,0.22); display: block; }
+
+/* ---- Output workbook + why-visualize ------------------------------------- */
+.sheet { display: flex; flex-direction: column; min-height: 0; }
+.sheet .sheet-label {
+  font-size: 1.3vw; color: var(--muted); font-style: italic;
+  margin-bottom: 0.6vh;
+}
+.sheet .sheet-label b { color: var(--brand-dark); font-style: normal; }
+.xl.log td, .xl.log th { white-space: normal; }
+.xl.log td.why { color: var(--muted); }
+.numwall {
+  flex: 1; min-height: 0; overflow: hidden;
+  font-family: "SF Mono", Consolas, "Courier New", monospace;
+  font-size: 0.66vw; line-height: 1.5; color: #3A3A3A;
+  background: #FAFAF8; border: 1px solid #E2E2DE; border-radius: 4px;
+  padding: 1.2vh 0.9vw; white-space: pre;
+}
+.viz-panel {
+  flex: 1; min-height: 0; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  background: white; border: 1px solid #E2E2DE; border-radius: 4px;
+  padding: 1.2vh 0.9vw;
+}
+.viz-panel svg { width: 100%; height: auto; max-height: 100%; }
+
+/* ---- Activity slide with bullets on a dark background --------------------- */
+.opener ul.bullets      { text-align: left; max-width: 64vw; margin-left: auto; margin-right: auto; }
+.opener ul.bullets li   { font-size: 2.4vw; }
+.opener ul.bullets li .sub { color: #C9C4D4; }
+.opener .closer {
+  font-size: 1.7vw; font-style: italic; color: #C9C4D4;
+  margin-top: 3.5vh; max-width: 64vw;
+}
+
+/* ---- Optional / bonus tag ------------------------------------------------- */
+.bonus-tag {
+  align-self: flex-start;
+  font-size: 1.15vw; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--accent); border: 1px solid var(--accent); border-radius: 0.3vw;
+  padding: 0.4vh 0.9vw; margin-bottom: 1.2vh;
+}
+
 @media print {
   @page { size: 13.333in 7.5in; margin: 0; }
   html, body { width: 13.333in; height: auto; overflow: visible; background: white; }
@@ -213,44 +454,190 @@ ul.bullets li .sub {
 
   <!-- ============ 3. What is metadata ============ -->
   <section class="slide">
-    <h2>What is metadata?</h2>
-    <ul class="bullets">
-      <li>Context that makes a measurement interpretable</li>
-      <li>Subject, sample, collection, processing, conditions</li>
-      <li>Sources: sample sheets, case manifests, clinical variables, run records</li>
-      <li>Determines how data is grouped and compared</li>
-      <li>Errors propagate downstream</li>
-    </ul>
+    <h2 style="margin-bottom:1.5vh">What is metadata?</h2>
+    <div class="meta-compare">
+
+      <div class="mc-col bare">
+        <p class="mc-cap">A measurement</p>
+        <div class="mc-card bare">
+          <span class="mc-ghost">?</span>
+          <span class="mc-num">412</span>
+        </div>
+      </div>
+
+      <svg class="mc-arrow" viewBox="0 0 60 40" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M4 20 H46" stroke="#85754D" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <path d="M38 10 L52 20 L38 30" stroke="#85754D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+
+      <div class="mc-col rich fragment">
+        <p class="mc-cap">The same measurement, <span class="accent">in context</span></p>
+        <div class="mc-card rich">
+          <svg viewBox="0 0 640 400" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+               aria-label="The number 412 surrounded by the metadata fields that make it interpretable">
+            <style>
+              .cbx  { fill: #FFFFFF; stroke: #DAD4E4; stroke-width: 1.5; }
+              .clab { font: 700 11px sans-serif; fill: #85754D; letter-spacing: 1.4px; }
+              .cval { font: 600 16px sans-serif; fill: #1A1A1A; }
+              .cbig { font: 700 54px sans-serif; fill: #4B2E83; letter-spacing: -1px; }
+              .lead { stroke: #C6BDD9; stroke-width: 1.5; stroke-dasharray: 4 4; fill: none; }
+            </style>
+
+            <path class="lead" d="M121 76 L262 166"/>
+            <path class="lead" d="M519 76 L378 166"/>
+            <path class="lead" d="M186 200 L240 200"/>
+            <path class="lead" d="M454 200 L400 200"/>
+            <path class="lead" d="M121 324 L262 234"/>
+            <path class="lead" d="M519 324 L378 234"/>
+
+            <rect x="240" y="166" width="160" height="68" rx="8" fill="#EDE9F3" stroke="#4B2E83" stroke-width="2.5"/>
+            <text x="320" y="220" text-anchor="middle" class="cbig">412</text>
+
+            <rect class="cbx" x="26" y="26" width="190" height="50" rx="6"/>
+            <text class="clab" x="40" y="46">ANALYTE</text>
+            <text class="cval" x="40" y="66">CSF p-tau</text>
+
+            <rect class="cbx" x="424" y="26" width="190" height="50" rx="6"/>
+            <text class="clab" x="438" y="46">CASE ID</text>
+            <text class="cval" x="438" y="66">BINC-24-017</text>
+
+            <rect class="cbx" x="16" y="175" width="170" height="50" rx="6"/>
+            <text class="clab" x="30" y="195">UNITS</text>
+            <text class="cval" x="30" y="215">pg / mL</text>
+
+            <rect class="cbx" x="454" y="175" width="170" height="50" rx="6"/>
+            <text class="clab" x="468" y="195">SUBJECT</text>
+            <text class="cval" x="468" y="215">67 y, male</text>
+
+            <rect class="cbx" x="26" y="324" width="190" height="50" rx="6"/>
+            <text class="clab" x="40" y="344">COLLECTED</text>
+            <text class="cval" x="40" y="364">2024-11-02</text>
+
+            <rect class="cbx" x="424" y="324" width="190" height="50" rx="6"/>
+            <text class="clab" x="438" y="344">GROUP</text>
+            <text class="cval" x="438" y="364">CTE case</text>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+    <p class="mc-kicker fragment">Metadata is what makes a number mean something.</p>
   </section>
 
   <!-- ============ 4. Examples of metadata ============ -->
   <section class="slide">
-    <h2>Examples of metadata</h2>
-    <div style="display:flex; flex-direction:column; gap:6vh; margin-top:2vh">
-      <div class="fragment">
-        <h3 style="margin-bottom:0.6vh">Human patient</h3>
-        <div class="xl">
-          <table>
-            <tr><th>Age</th><th>Sex</th><th>Diagnosis</th><th>Tissue</th><th>Post-mortem interval</th><th>CSF p-tau (pg/mL)</th></tr>
-            <tr><td>67 years</td><td>M</td><td>CTE</td><td>DLPFC</td><td>12.5 h</td><td>412</td></tr>
-            <tr><td>54 years</td><td>F</td><td>Control</td><td>Hippocampus</td><td>8.0 h</td><td>N/A</td></tr>
-            <tr><td>72 years</td><td>M</td><td>CTE</td><td>DLPFC</td><td>22.4 h</td><td>0</td></tr>
-            <tr><td>61 years</td><td>F</td><td>Control</td><td>Amygdala</td><td>15.7 h</td><td>N/A</td></tr>
-          </table>
+    <h2 style="margin-bottom:0.8vh; font-size:3.4vw">Examples of metadata</h2>
+    <p class="muted">Metadata arrives as documents — in whatever form the sender happened to use.</p>
+
+    <div class="desk">
+
+      <!-- 1. Clinical case report form -->
+      <div class="paper" style="left:0vw; top:0vh; width:28vw; height:39vh; transform:rotate(-3deg)">
+        <div class="pad">
+          <div class="p-org">Whitfield Institute · Neuropathology Core</div>
+          <div class="p-title">Case Report Form — Brain Donor Intake</div>
+          <div class="p-meta">FORM NP-04 · REV 3 · PAGE 1 OF 4</div>
+          <div class="p-rule"></div>
+          <div class="crf-grid">
+            <div class="crf-f"><span class="lab">Case ID</span><span class="box">BINC-24-017</span></div>
+            <div class="crf-f"><span class="lab">Date of death</span><span class="box">02 / 11 / 2024</span></div>
+            <div class="crf-f"><span class="lab">Age at death</span><span class="box">67 y</span></div>
+            <div class="crf-f"><span class="lab">Post-mortem interval</span><span class="box">12.5 h</span></div>
+            <div class="crf-f"><span class="lab">Brain weight</span><span class="box">1,340 g</span></div>
+            <div class="crf-f"><span class="lab">Fixation</span><span class="box">10% NBF</span></div>
+          </div>
+          <div class="p-chk"><span class="lab">Sex</span><span class="bx">✓</span>Male<span class="bx"></span>Female</div>
+          <div class="p-chk"><span class="lab">Region</span><span class="bx">✓</span>DLPFC<span class="bx"></span>Hippocampus<span class="bx"></span>Amygdala</div>
+          <div class="p-rule"></div>
+          <div class="p-title" style="font-size:0.95vw">Section B — Clinical history</div>
+          <div class="p-chk"><span class="bx"></span>Repetitive head impacts<span class="bx"></span>Cognitive decline</div>
         </div>
       </div>
-      <div class="fragment">
-        <h3 style="margin-bottom:0.6vh">scRNA-seq</h3>
-        <div class="xl">
-          <table>
-            <tr><th>Cell barcode</th><th>Cell type</th><th>Genes detected</th><th>UMI count</th><th>Mitochondrial %</th><th>Spike-in reads</th></tr>
-            <tr><td>AACGTTGCAGT-1</td><td>CD8⁺ T cell</td><td>2,145</td><td>6,780</td><td>3.2 %</td><td>0</td></tr>
-            <tr><td>GGTCAACTGCA-1</td><td>B cell</td><td>1,876</td><td>5,204</td><td>2.8 %</td><td>N/A</td></tr>
-            <tr><td>TTGCAAGGTCA-1</td><td>NK cell</td><td>2,530</td><td>8,112</td><td>4.1 %</td><td>128</td></tr>
-            <tr><td>CCATGGTACAA-1</td><td>Monocyte</td><td>3,012</td><td>9,845</td><td>5.6 %</td><td>0</td></tr>
-          </table>
+
+      <!-- 2. Freezer / biobank inventory printout -->
+      <div class="paper" style="left:26vw; top:3vh; width:31vw; height:34vh; transform:rotate(2.4deg)">
+        <div class="pad">
+          <div class="p-org">Cascade Athletic Health Center · Biorepository</div>
+          <div class="p-title">Freezer Manifest — Unit −80 °C #4</div>
+          <div class="p-rule"></div>
+          <div class="p-mono"><span class="k">RACK  POS   TUBE ID      DONOR    MATRIX     ALIQ   VOL</span>
+B     A01   CA-0181-1    SM-001   Brain         1   ---
+B     A02   CA-0181-2    SM-001   CSF           4   0.5
+B     A03   CA-0182-1    SM-002   Brain         2   ---
+B     A04   CA-0182-2    SM-002   Plasma        3   1.0
+B     A05   CA-0183-1    SM-003   Brain         1   ---
+B     A06   CA-0183-2    SM-003   Plasma        2   1.0
+B     A07   CA-0184-1    SM-004   Brain         1   ---
+B     A08   CA-0184-2    SM-004   CSF           2   0.5</div>
         </div>
       </div>
+
+      <!-- paperclip on the manifest -->
+      <svg class="clip" style="left:28.4vw; top:0.5vh; width:1.5vw; height:6.2vh; transform:rotate(8deg)"
+           viewBox="0 0 72 168" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M36 118 L36 34 C36 18 60 18 60 34 L60 122 C60 152 20 152 20 122 L20 30 C20 8 52 8 52 30 L52 104"
+              fill="none" stroke="#8E949C" stroke-width="7" stroke-linecap="round"/>
+        <path d="M36 118 L36 34 C36 18 60 18 60 34 L60 122 C60 152 20 152 20 122 L20 30 C20 8 52 8 52 30 L52 104"
+              fill="none" stroke="#D3D8DE" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+
+      <!-- 3. Instrument run log / sample sheet -->
+      <div class="paper" style="left:56vw; top:0.5vh; width:28vw; height:35vh; transform:rotate(-2.2deg)">
+        <div class="pad">
+          <div class="p-org">Core Facility · Acquisition Log</div>
+          <div class="p-title">Sequence Log — Run 2026-03-11</div>
+          <div class="p-rule"></div>
+          <div class="p-mono"><span class="k">[Header]</span>
+Instrument   LC-MS 02
+Operator     L. Fields
+Column       C18, 25 cm
+Started      2026-03-11 08:42
+
+<span class="k">#   VIAL    SAMPLE         METHOD      INJ</span>
+01  1:A,1   QC_pool_01     24min_DIA   2 uL
+02  1:A,2   BINC-24-017    24min_DIA   2 uL
+03  1:A,3   BINC-24-018    24min_DIA   2 uL
+04  1:A,4   BLANK          24min_DIA   2 uL
+05  1:A,5   TES-B-001      24min_DIA   2 uL</div>
+        </div>
+      </div>
+
+      <!-- 4. Handwritten lab notebook page -->
+      <div class="paper note" style="left:8vw; top:36vh; width:30vw; height:36vh; transform:rotate(3.2deg); background:#FFFEF6">
+        <div class="rules"></div>
+        <div class="marg"></div>
+        <div class="hand">3/11 — recvd Cascade shipment, dry ice
+14 tubes. 2 look thawed?? flagged SM-003
+ages are in <u>years</u> (asked Priya — confirmed)
+<span class="flag">PMI column is MINUTES not hours!!</span>
+→ check w/ M. before merging anything
+Rijndal file uses commas for decimals
+no consent doc yet for TES-B-004 …</div>
+      </div>
+
+      <!-- 5. Consent / IRB header, torn off -->
+      <div class="paper torn-wrap" style="left:42vw; top:34vh; width:32vw; height:38vh; transform:rotate(-4deg)">
+        <div class="torn-inner">
+          <div class="pad">
+            <div class="p-org">Universiteit van Rijndal</div>
+            <div class="p-org" style="color:#8A8A8A">Medisch-Ethische Toetsingscommissie</div>
+            <div class="p-title">Informed Consent — Biobank Specimen Use</div>
+            <div class="p-rule"></div>
+            <div class="crf-grid">
+              <div class="crf-f"><span class="lab">Protocol</span><span class="box">METC-2024-118</span></div>
+              <div class="crf-f"><span class="lab">Version</span><span class="box">4.2 (NL / EN)</span></div>
+              <div class="crf-f"><span class="lab">Approved</span><span class="box">2024-06-12</span></div>
+              <div class="crf-f"><span class="lab">Expires</span><span class="box">2027-06-11</span></div>
+              <div class="crf-f"><span class="lab">Participant code</span><span class="box">TES-B-001</span></div>
+              <div class="crf-f"><span class="lab">Cohort</span><span class="box">RIJ-2026-03</span></div>
+            </div>
+            <div class="p-chk"><span class="bx">✓</span>Secondary use of coded specimens permitted</div>
+            <div class="p-chk"><span class="bx">✓</span>Sharing with named collaborating centres</div>
+            <div class="p-chk"><span class="bx"></span>Return of individual findings requested</div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -281,14 +668,47 @@ ul.bullets li .sub {
     samples and metadata, and each wants to know how their cohort compares.</p>
   </section>
 
-  <!-- ============ 7. The three labs ============ -->
+  <!-- ============ 7. Three shipments, one recipient ============ -->
   <section class="slide">
-    <h2>Where did the data come from?</h2>
-    <ul class="bullets">
-      <li>Whitfield Institute — <span class="accent">neuropathology</span></li>
-      <li>Universiteit van Rijndal — <span class="accent">clinical biomarkers</span></li>
-      <li>Cascade Athletic Health Center — <span class="accent">sports medicine</span></li>
-    </ul>
+    <h2 style="font-size:2.9vw; margin-bottom:2.2vh">Three labs shipped to you. None of them talked to each other.</h2>
+
+    <div class="ship-row">
+      <div class="ship">
+        <div class="disc">Neuropathology</div>
+        <div class="name">Whitfield Institute</div>
+        <div class="meta">Brain bank. <strong>Post-mortem brain tissue</strong> from donors who have already died.</div>
+        <div class="fmt">Typeset PDF manifest</div>
+      </div>
+      <div class="ship">
+        <div class="disc">Clinical neurochemistry</div>
+        <div class="name">Universiteit van Rijndal</div>
+        <div class="meta">A <strong>living cohort</strong>. CSF and plasma, drawn from patients still under care.</div>
+        <div class="fmt">CSV export</div>
+      </div>
+      <div class="ship">
+        <div class="disc">Sports medicine</div>
+        <div class="name">Cascade Athletic<br>Health Center</div>
+        <div class="meta">Athlete biobank. <strong>Mixed sample types</strong> — brain, CSF, and plasma together.</div>
+        <div class="fmt">Multi-tab Excel workbook</div>
+      </div>
+    </div>
+
+    <div class="fragment">
+      <svg class="converge" viewBox="0 0 1000 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g fill="none" stroke="#4B2E83" stroke-width="3" opacity="0.55">
+          <path d="M167 2 C167 50, 500 34, 500 78"/>
+          <path d="M500 2 L500 78"/>
+          <path d="M833 2 C833 50, 500 34, 500 78"/>
+        </g>
+        <polygon points="486,74 514,74 500,98" fill="#4B2E83"/>
+      </svg>
+
+      <div class="you-node">
+        <div class="big">You — one bench, three cohorts</div>
+        <div class="lbl">Each group asks the same question: <em>“how does our cohort compare?”</em><br>
+        Not one of them can answer it without the other two.</div>
+      </div>
+    </div>
   </section>
 
   <!-- ============ 8. Lab 1 — the PDF ============ -->
@@ -300,17 +720,56 @@ ul.bullets li .sub {
   </section>
 
   <!-- ============ 9. Lab 2 — the pivoted CSV ============ -->
-  <section class="slide figure-slide">
-    <h2>Universiteit van Rijndal sent a CSV</h2>
-    <div class="figure-wrap">
-      <div class="raw"><span class="k"># Universiteit van Rijndal - Klinisch Neurochemisch Laboratorium</span>
-<span class="k"># Cohort export RIJ-2026-03. Delimiter: semicolon. Decimal separator: comma.</span>
+  <section class="slide">
+    <h2 style="font-size:2.9vw; margin-bottom:1.4vh">Universiteit van Rijndal sent a CSV — turned on its side</h2>
 
-Subject code<span class="hl">;</span>TES-B-001;TES-B-002;TES-B-003;TES-B-004;   … 40 columns
-TES classification (2021 criteria);TES - probable;TES - probable;TES - possible;   …
-Age band (years);70-79;70-79;40-49;50-59;   …
-Sex (1/2);1;2;1;2;   …
-Years contact sport;8;10;16;n.d.;   …</div>
+    <div class="orient">
+      <div class="pane expect">
+        <div class="tag">What you expect</div>
+        <div class="hdr">One <u>row</u> per patient</div>
+        <div class="xl">
+          <table>
+            <tr><th>Subject code</th><th>TES classification</th><th>Age band</th><th>Sex</th><th>Yrs contact sport</th></tr>
+            <tr><td>TES-B-001</td><td>TES - probable</td><td>70-79</td><td>1</td><td>8</td></tr>
+            <tr><td>TES-B-002</td><td>TES - probable</td><td>70-79</td><td>2</td><td>10</td></tr>
+            <tr><td>TES-B-003</td><td>TES - possible</td><td>40-49</td><td>1</td><td>16</td></tr>
+            <tr><td>TES-B-004</td><td>Control (no RHI)</td><td>50-59</td><td>2</td><td>n.d.</td></tr>
+            <tr class="ell"><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td></tr>
+          </table>
+        </div>
+        <div class="note q">40 patients → 40 rows. Grows downward.</div>
+      </div>
+
+      <div class="flip" aria-hidden="true">
+        <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 24 A18 18 0 0 1 48 24" fill="none" stroke="#4B2E83" stroke-width="4"/>
+          <polygon points="48,32 41,20 55,20" fill="#4B2E83"/>
+          <path d="M48 36 A18 18 0 0 1 12 36" fill="none" stroke="#4B2E83" stroke-width="4"/>
+          <polygon points="12,28 19,40 5,40" fill="#4B2E83"/>
+        </svg>
+        <div class="cap">rows ⇄<br>columns</div>
+      </div>
+
+      <div class="pane actual">
+        <div class="tag">What actually arrived</div>
+        <div class="hdr">One <u>column</u> per patient</div>
+        <div class="xl">
+          <table>
+            <tr><td class="fld">Subject code</td><td>TES-B-001</td><td>TES-B-002</td><td>TES-B-003</td><td>TES-B-004</td><td class="ell">…</td></tr>
+            <tr><td class="fld">TES classification (2021 criteria)</td><td>TES - probable</td><td>TES - probable</td><td>TES - possible</td><td>Control (no RHI)</td><td class="ell">…</td></tr>
+            <tr><td class="fld">Age band (years)</td><td>70-79</td><td>70-79</td><td>40-49</td><td>50-59</td><td class="ell">…</td></tr>
+            <tr><td class="fld">Sex (1/2)</td><td>1</td><td>2</td><td>1</td><td>2</td><td class="ell">…</td></tr>
+            <tr><td class="fld">Years contact sport</td><td>8</td><td>10</td><td>16</td><td>n.d.</td><td class="ell">…</td></tr>
+          </table>
+        </div>
+        <div class="note">40 patients → 40 columns. Grows sideways, off the edge of the screen.</div>
+      </div>
+    </div>
+
+    <div class="quiet fragment">
+      <div class="q"><b>Semicolons, not commas</b>Fields are split by <code>;</code></div>
+      <div class="q"><b>Comma decimals</b>A value of <code>1,06</code> means 1.06 — not 1 and 06</div>
+      <div class="q"><b>Coded values</b>Age as <code>70-79</code>, sex as <code>1/2</code>, missing as <code>n.d.</code></div>
     </div>
   </section>
 
@@ -335,21 +794,108 @@ Years contact sport;8;10;16;n.d.;   …</div>
     </div>
   </section>
 
-  <!-- ============ 11. The literature ============ -->
+  <!-- ============ 11. The benchmark from the literature ============ -->
   <section class="slide">
-    <h2>Let's add one more dataset from the literature</h2>
-    <ul class="bullets">
-      <li>Kumar et&nbsp;al., <em>Cell</em> 2026 — tauopathy-associated dementias
-        <span class="sub">doi:10.1016/j.cell.2025.12.036 · Supplementary Table S1</span>
-      </li>
-      <li>Case-level demographics: <span class="accent">one row per brain donor</span>
-        <span class="sub">24 CTE, 24 controls, plus AD, PSP, CBD, PiD, DLB.</span>
-      </li>
-      <li>If you don't have this file, <span class="accent">Claude Code can retrieve it.</span></li>
-    </ul>
+    <h2 style="font-size:2.9vw; margin-bottom:2vh">To judge a cohort, you need something to judge it against</h2>
+
+    <div class="two-col" style="flex:0 1 auto; gap:3vw">
+      <div class="col">
+        <ul class="bullets" style="margin-top:0">
+          <li style="font-size:2.1vw">The job is to <em>evaluate</em> these three cohorts
+            <span class="sub">Not just to merge them — to say whether each one looks reasonable.</span>
+          </li>
+          <li style="font-size:2.1vw">“Reasonable” only means something <span class="accent">relative to a benchmark</span>
+            <span class="sub">A large, well-characterized, published cohort with the same variables.</span>
+          </li>
+          <li style="font-size:2.1vw">So we add a <span class="accent">fourth</span> dataset — from the literature
+            <span class="sub">It is the yardstick, not another sample shipment.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col" style="justify-content:center">
+        <div class="paper-card">
+          <div class="jrnl">Cell · 2026 · the benchmark</div>
+          <div class="ttl">Molecular features of human pathological tau distinguish tauopathy-associated dementias</div>
+          <div class="who">Kumar et&nbsp;al.</div>
+          <div class="doi">doi:10.1016/j.cell.2025.12.036</div>
+          <hr>
+          <div class="s1"><strong>Supplementary Table&nbsp;S1</strong> — case-level demographics,<br>one row per brain donor.</div>
+          <div class="comp">
+            <span>24 CTE</span><span>24 controls</span>
+            <span class="plus">plus AD · PSP · CBD · PiD · DLB</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="getit fragment">
+      <div class="lead">You don't have to go hunting for it — <span class="accent">Claude Code can retrieve it.</span></div>
+      <div class="raw" style="font-size:1.25vw"><span class="k">&gt;</span> Find Kumar et al., Cell 2026 (doi:10.1016/j.cell.2025.12.036), download Supplementary Table S1,
+and give me the case-level demographics as a tidy CSV.</div>
+    </div>
   </section>
 
-  <!-- ============ 12. Unplugged planning ============ -->
+  <!-- ============ 12. Get the data ============ -->
+  <section class="slide">
+    <h2 style="margin-bottom:2vh">First — get the three files onto your machine</h2>
+    <div class="two-col">
+
+      <div class="col">
+        <div class="step-head">
+          <div class="step-num">1</div>
+          <h3>Ask Claude, in your own words</h3>
+        </div>
+        <span class="label-chip">Example — say it your way</span>
+        <div class="prompt-box">“I cloned <em>ClaudeWorkshop</em> earlier. Please pull the
+        latest changes so I have the new Session&nbsp;3 data, then show me the three cohort files.”</div>
+
+        <p class="muted" style="margin-top:2vh; margin-bottom:0.7vh">You already have this repo from
+        Lesson&nbsp;1 — the data was added <em>after</em> you cloned it, so you're updating, not re-downloading.</p>
+
+        <span class="label-chip" style="margin-top:1.4vh">If you'd rather type it yourself</span>
+        <div class="term"><span class="p">&gt;</span> cd ws/ClaudeWorkshop
+<span class="p">&gt;</span> git pull</div>
+
+        <p class="note-strip">No <code>ClaudeWorkshop</code> folder at all, or it won't update?
+        Ask Claude to <b>clone github.com/laurenfields/ClaudeWorkshop into my ws folder</b> — that
+        works from scratch too.</p>
+      </div>
+
+      <div class="col">
+        <div class="step-head">
+          <div class="step-num">2</div>
+          <h3>Where they land</h3>
+        </div>
+        <div class="tree"><span class="d">ws/</span>
+└─ <span class="d">ClaudeWorkshop/</span>
+   └─ <span class="d">lessons/</span>
+      └─ <span class="d">03-data-cleanup-and-visualization/</span>
+         └─ <span class="d">cohorts/</span>
+            ├─ lab1-neuropathology/
+            │     <span class="f">BINC_case_manifest.pdf</span>
+            ├─ lab2-biomarker/
+            │     <span class="f">rijndal_cohort_export.csv</span>
+            └─ lab3-sportsmed/
+                  <span class="f">cascade_biobank_inventory.xlsx</span></div>
+
+        <div class="step-head" style="margin-top:2.6vh">
+          <div class="step-num">3</div>
+          <h3>You're set when</h3>
+        </div>
+        <ul class="checklist">
+          <li>Three folders sit under <code>cohorts/</code> — a PDF, a CSV, and an Excel workbook</li>
+          <li>Claude lists all three back to you by name when you ask</li>
+        </ul>
+
+        <p class="note-strip"><b>Still stuck? Wave an instructor over now.</b>
+        Nothing in the rest of this session works without these three files.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ 13. Unplugged planning ============ -->
   <section class="slide opener dark-bg">
     <p class="eyebrow">Five minutes · in pairs · no laptops</p>
     <h1>How would you merge these?</h1>
@@ -357,22 +903,36 @@ Years contact sport;8;10;16;n.d.;   …</div>
     guess, or ask someone about?</p>
   </section>
 
-  <!-- ============ 13. Hand it to Claude ============ -->
+  <!-- ============ 14. Hand it to Claude — how to open the conversation ============ -->
   <section class="slide">
-    <h2>Let's go to Claude Code <em>planning mode</em></h2>
-    <div style="display:flex; justify-content:center; align-items:center; gap:2.5vw; margin:1vh 0 2.5vh">
-      <img src="assets/Plan%20in%20Claude%20Code%202.png" alt="Claude Code mode menu — Plan mode selected"
-           style="width:22vw; border-radius:8px; box-shadow:0 6px 24px rgba(54,33,97,0.22); display:block">
-      <img src="assets/Planning%20in%20Claude%20Code.png" alt="Claude Code planning mode — 'Help me plan!' with Plan mode selected"
-           style="width:46vw; border-radius:8px; box-shadow:0 6px 24px rgba(54,33,97,0.22); display:block">
+    <h2 style="margin-bottom:2vh">How to open the conversation <em>(in Plan mode)</em></h2>
+    <div class="two-col" style="gap:3vw">
+
+      <div class="col" style="flex:1.65">
+        <span class="label-chip">An example opener — put it in your own words</span>
+        <div class="prompt-box big">“I have three cohort files in
+        <em>lessons/03-data-cleanup-and-visualization/cohorts/</em> — a PDF, a CSV, and an Excel
+        workbook, each from a different lab. I want one merged table I can analyze.
+        <em>Don't start yet</em> — ask me questions until you know enough, then show me a plan.”</div>
+
+        <ul class="bullets" style="margin-top:2.2vh">
+          <li style="font-size:2vw">You don't have to specify everything up front
+            <span class="sub">Ask Claude to interview you. Its questions will surface decisions you hadn't thought of.</span>
+          </li>
+          <li style="font-size:2vw">Before you approve: require a <span class="accent">decisions log</span>
+            <span class="sub">Every column mapping, unit conversion, and dropped field, recorded.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col" style="flex:1; justify-content:center">
+        <img src="assets/Plan%20in%20Claude%20Code%202.png"
+             alt="Claude Code mode menu with Plan mode selected" class="shot">
+        <p class="caption" style="margin-top:1.4vh">Cycle to <b>Plan</b> mode first
+        (Shift&nbsp;+&nbsp;Tab). Claude proposes a plan and <b>pauses</b> before touching any file.</p>
+      </div>
+
     </div>
-    <ul class="bullets">
-      <li>Select <span class="accent">Plan</span> mode from the mode menu</li>
-      <li>Claude proposes a plan and pauses before making any edits</li>
-      <li>Review the plan, then require a <span class="accent">decisions log</span>
-        <span class="sub">Every column mapping, unit conversion, and dropped field, recorded.</span>
-      </li>
-    </ul>
   </section>
 
   <!-- ============ 14. Execution phase ============ -->
@@ -384,7 +944,161 @@ Years contact sport;8;10;16;n.d.;   …</div>
     <p class="sub" style="color:#C9C4D4; margin-top:4vh">Output in a format you feel most comfortable working with (CSV, Excel, TSV, etc.).</p>
   </section>
 
-  <!-- ============ 15. Visualization ============ -->
+  <!-- ============ 16. What you should have now ============ -->
+  <section class="slide">
+    <h2 style="margin-bottom:2vh">What you should have now</h2>
+
+    <div style="display:flex; flex-direction:column; gap:3.5vh; min-height:0">
+
+      <div class="sheet">
+        <div class="sheet-label">One workbook, one tab per cohort — plus <b>Combined</b></div>
+        <div class="xl">
+          <table>
+            <tr>
+              <th>Case ID</th><th>Cohort</th><th>Group</th><th>Age (yrs)</th>
+              <th>Sex</th><th>PMI (h)</th><th>Region</th>
+            </tr>
+            <tr><td>BINC-24-017</td><td>Whitfield</td><td>CTE</td><td>67</td><td>M</td><td>12.5</td><td>DLPFC</td></tr>
+            <tr><td>TES-B-001</td><td>Rijndal</td><td>TES (not CTE)</td><td>70–79</td><td>M</td><td>—</td><td>—</td></tr>
+            <tr><td>SM-001</td><td>Cascade</td><td>Control</td><td>35</td><td>M</td><td>42.8</td><td>DLPFC</td></tr>
+            <tr><td>KUM-014</td><td>Kumar 2026</td><td>CTE</td><td>58</td><td>M</td><td>9.2</td><td>DLPFC</td></tr>
+          </table>
+          <div class="tabs">
+            <div class="tab">Whitfield</div>
+            <div class="tab">Rijndal</div>
+            <div class="tab">Cascade</div>
+            <div class="tab">Kumar 2026</div>
+            <div class="tab on">Combined</div>
+            <div class="tab">Decisions log</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sheet fragment">
+        <div class="sheet-label">And the tab we come back to: <b>Decisions log</b></div>
+        <div class="xl log" style="font-size:1.25vw">
+          <table>
+            <tr>
+              <th style="width:12%">Cohort</th><th style="width:14%">Field</th>
+              <th style="width:36%">Decision</th><th style="width:38%">Why</th>
+            </tr>
+            <tr>
+              <td>Cascade</td><td>PMI</td>
+              <td>Converted minutes → hours (2566 → 42.8)</td>
+              <td class="why">Workbook header reads “PMI (min)”; every other cohort reports hours</td>
+            </tr>
+            <tr>
+              <td>Rijndal</td><td>Sex</td>
+              <td>Recoded 1 → M, 2 → F</td>
+              <td class="why">Coding given in the cover letter, not in the CSV</td>
+            </tr>
+            <tr class="amber">
+              <td>Rijndal</td><td>Age</td>
+              <td>Kept decade band (“70–79”); no midpoint filled in</td>
+              <td class="why">Exact age was never released — a number here would be invented</td>
+            </tr>
+          </table>
+          <div class="tabs">
+            <div class="tab">Whitfield</div>
+            <div class="tab">Rijndal</div>
+            <div class="tab">Cascade</div>
+            <div class="tab">Kumar 2026</div>
+            <div class="tab">Combined</div>
+            <div class="tab on">Decisions log</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="muted" style="margin-top:2vh">Six tabs. The last one is the one we come back to.</p>
+  </section>
+
+  <!-- ============ 17. Why visualize metadata at all? ============ -->
+  <section class="slide">
+    <h2 style="margin-bottom:2vh">Why visualize metadata at all?</h2>
+
+    <div class="two-col" style="gap:3vw; min-height:0">
+
+      <div class="col" style="min-height:0">
+        <h3 style="margin-bottom:0.8vh">104 rows in a spreadsheet</h3>
+        <div class="numwall">case    coh  age  sex  pmi    yrs  ptau  aliq  site
+W-001   1    71   1    12.4   18   412   2     1
+W-002   1    64   1    22.4   11   287   1     1
+W-003   1    58   2     8.0    0    NA   4     1
+W-004   1    77   1    15.7   21   508   2     1
+W-005   1    69   1    31.2    9   344   1     1
+R-011   2    75   1     NA     8    NA   3     2
+R-012   2    45   2     NA    16    NA   2     2
+R-013   2    55   1     NA    12    NA   1     2
+R-014   2    72   1     NA    14    NA   2     2
+R-015   2    68   2     NA     6    NA   3     2
+C-021   3    35   1    42.8   18   219   1     3
+C-022   3    28   1     4.4   11   174   4     3
+C-023   3    22   1    21.3   10   256   2     3
+C-024   3    59   1     7.7    3   198   1     3
+C-025   3    41   1    33.9   15   231   2     3
+K-031   4    58   1     9.2   13   377   2     4
+K-032   4    62   2    11.6    0   190   1     4
+K-033   4    49   1    14.8   17   402   3     4
+K-034   4    66   2    10.1    0   165   2     4
+K-035   4    54   1    18.5   12   389   1     4
+…       …    …    …     …      …    …    …     …</div>
+      </div>
+
+      <div class="col" style="min-height:0">
+        <h3 style="margin-bottom:0.8vh">The same column, plotted</h3>
+        <div class="viz-panel">
+          <svg viewBox="0 0 460 300" preserveAspectRatio="xMidYMid meet"
+               xmlns="http://www.w3.org/2000/svg"
+               aria-label="Illustration: percent male by study, where one study is 100 percent male">
+            <style>
+              .ttl { font: 700 17px sans-serif; fill: #362161; }
+              .lab { font: 600 14px sans-serif; fill: #362161; }
+              .num { font: 700 13px sans-serif; fill: #FFFFFF; }
+              .ax  { font: 400 12px sans-serif; fill: #777777; }
+              .ill { font: italic 400 11px sans-serif; fill: #999999; }
+            </style>
+
+            <text x="10" y="20" class="ttl">Percent male, by study</text>
+            <text x="10" y="36" class="ill">illustration — not your data</text>
+
+            <line x1="240" y1="52" x2="240" y2="268" stroke="#CCCCCC"
+                  stroke-width="1.5" stroke-dasharray="4 4"/>
+            <text x="240" y="286" class="ax" text-anchor="middle">50%</text>
+            <text x="120" y="286" class="ax" text-anchor="middle">0%</text>
+            <text x="440" y="286" class="ax" text-anchor="middle">100%</text>
+
+            <text x="112" y="76" class="lab" text-anchor="end">Study A</text>
+            <rect x="120" y="56" width="198" height="28" fill="#4B2E83"/>
+            <text x="308" y="76" class="num" text-anchor="end">62%</text>
+
+            <text x="112" y="128" class="lab" text-anchor="end">Study B</text>
+            <rect x="120" y="108" width="176" height="28" fill="#4B2E83"/>
+            <text x="286" y="128" class="num" text-anchor="end">55%</text>
+
+            <text x="112" y="180" class="lab" text-anchor="end">Study C</text>
+            <rect x="120" y="160" width="320" height="28" fill="#A3341F"/>
+            <text x="430" y="180" class="num" text-anchor="end">100%</text>
+
+            <text x="112" y="232" class="lab" text-anchor="end">Study D</text>
+            <rect x="120" y="212" width="186" height="28" fill="#4B2E83"/>
+            <text x="296" y="232" class="num" text-anchor="end">58%</text>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="caption fragment" style="margin-top:1.6vh; text-align:left">
+      Same numbers, twice. On the right you cannot miss it:
+      <b>one study has no women in it at all.</b>
+      Wrong units, single-site cohorts, missing data piled into one group, impossible
+      values — they hide in the table and stand out in the picture.
+    </p>
+  </section>
+
+  <!-- ============ 18. Visualization ============ -->
   <section class="slide opener dark-bg">
     <p class="eyebrow">5–10 minutes</p>
     <h1>Let's work on metadata visualization</h1>
@@ -392,7 +1106,26 @@ Years contact sport;8;10;16;n.d.;   …</div>
     <p class="sub" style="max-width:74vw; margin-top:2vh"><strong>Tip #2:</strong> Generate more than one plot to explore different views</p>
   </section>
 
-  <!-- ============ 16. Reveal 1 — the ghost row ============ -->
+  <!-- ============ 19. Activity — share with the class ============ -->
+  <section class="slide opener dark-bg">
+    <p class="eyebrow">Three minutes · everyone</p>
+    <h1>Share with the class</h1>
+    <ul class="bullets">
+      <li>Look at your plots — do the numbers make sense?
+        <span class="sub">Counts, ranges, balance between groups. Anything you'd question in a paper.</span>
+      </li>
+      <li>Tell us anything that looks odd, wrong, or surprising
+        <span class="sub">A number that's too big, a group that's too clean, a bar that isn't there.</span>
+      </li>
+      <li>Then say what you would do about it
+        <span class="sub">Go back to the source? Ask the lab? Drop it? Flag it and keep going?</span>
+      </li>
+    </ul>
+    <p class="closer">There are no wrong answers here — everyone's plots came out a little different.
+    If something looked strange to you, it is worth saying out loud.</p>
+  </section>
+
+  <!-- ============ 20. Reveal 1 — the ghost row ============ -->
   <section class="slide">
     <h2>Did anyone notice this strange result?</h2>
     <div class="reveal-grid">
@@ -495,7 +1228,172 @@ Years contact sport;8;10;16;n.d.;   …</div>
     <p class="caption">If the groups also differ in sex, site, and sample age, a <b>“disease” difference could be any of them</b>.</p>
   </section>
 
-  <!-- ============ 20. Summary ============ -->
+  <!-- ============ 24. Bonus — a shareable HTML report ============ -->
+  <section class="slide figure-slide">
+    <div class="bonus-tag">If we have time</div>
+    <h2>Ask Claude for an HTML report</h2>
+    <div class="figure-wrap" style="background:#F3F2F0">
+      <svg viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet"
+           style="width:100%; height:auto; max-height:100%" xmlns="http://www.w3.org/2000/svg"
+           aria-label="Mock of a one-page HTML cohort report opened in a browser: summary table, cases-and-controls bar chart, age histogram, sex balance and sample type charts">
+        <style>
+          .r-h1   { font: 700 19px sans-serif; fill: #362161; }
+          .r-sub  { font: 400 9.5px sans-serif; fill: #777; }
+          .r-sec  { font: 700 10.5px sans-serif; fill: #85754D; letter-spacing: 0.08em; }
+          .r-th   { font: 700 9px sans-serif; fill: #362161; }
+          .r-td   { font: 400 9px sans-serif; fill: #1A1A1A; }
+          .r-tot  { font: 700 9px sans-serif; fill: #362161; }
+          .r-ax   { font: 400 8px sans-serif; fill: #777; }
+          .r-lab  { font: 600 8.5px sans-serif; fill: #362161; }
+          .r-note { font: 400 8px sans-serif; fill: #555; }
+          .r-url  { font: 400 9px sans-serif; fill: #555; }
+          .r-val  { font: 700 8px sans-serif; fill: #FFFFFF; }
+        </style>
+
+        <rect x="0" y="0" width="1000" height="500" rx="6" fill="#FFFFFF" stroke="#D6D6D6"/>
+        <path d="M0 6 a6 6 0 0 1 6 -6 h988 a6 6 0 0 1 6 6 v22 h-1000 z" fill="#EDEDEB"/>
+        <line x1="0" y1="28" x2="1000" y2="28" stroke="#D6D6D6"/>
+        <circle cx="18" cy="14" r="4" fill="#CFCFCB"/>
+        <circle cx="32" cy="14" r="4" fill="#CFCFCB"/>
+        <circle cx="46" cy="14" r="4" fill="#CFCFCB"/>
+        <rect x="64" y="6" width="330" height="16" rx="8" fill="#FFFFFF" stroke="#DCDCD8"/>
+        <text x="76" y="17" class="r-url">file:///…/cohort_metadata_report.html</text>
+
+        <text x="60" y="62" class="r-h1">CTE Cohort Metadata — Harmonized Summary</text>
+        <text x="60" y="79" class="r-sub">Four cohorts · 148 donors · harmonized 2026-07-20 · see Decisions log</text>
+        <line x1="60" y1="92" x2="940" y2="92" stroke="#EDE9F3" stroke-width="2"/>
+
+        <text x="60" y="116" class="r-sec">1 · COHORT COMPOSITION</text>
+        <text x="60"  y="134" class="r-th">Cohort</text>
+        <text x="330" y="134" class="r-th" text-anchor="end">Cases</text>
+        <text x="400" y="134" class="r-th" text-anchor="end">Controls</text>
+        <text x="466" y="134" class="r-th" text-anchor="end">Total</text>
+        <line x1="60" y1="140" x2="466" y2="140" stroke="#D6D6D6"/>
+
+        <text x="60"  y="155" class="r-td">Whitfield Institute</text>
+        <text x="330" y="155" class="r-td" text-anchor="end">23</text>
+        <text x="400" y="155" class="r-td" text-anchor="end">7</text>
+        <text x="466" y="155" class="r-td" text-anchor="end">30</text>
+
+        <text x="60"  y="170" class="r-td">Universiteit van Rijndal</text>
+        <text x="330" y="170" class="r-td" text-anchor="end">33</text>
+        <text x="400" y="170" class="r-td" text-anchor="end">7</text>
+        <text x="466" y="170" class="r-td" text-anchor="end">40</text>
+
+        <text x="60"  y="185" class="r-td">Cascade Athletic Health</text>
+        <text x="330" y="185" class="r-td" text-anchor="end">9</text>
+        <text x="400" y="185" class="r-td" text-anchor="end">21</text>
+        <text x="466" y="185" class="r-td" text-anchor="end">30</text>
+
+        <text x="60"  y="200" class="r-td">Kumar et al. 2026</text>
+        <text x="330" y="200" class="r-td" text-anchor="end">24</text>
+        <text x="400" y="200" class="r-td" text-anchor="end">24</text>
+        <text x="466" y="200" class="r-td" text-anchor="end">48</text>
+
+        <line x1="60" y1="208" x2="466" y2="208" stroke="#D6D6D6"/>
+        <text x="60"  y="222" class="r-tot">All cohorts</text>
+        <text x="330" y="222" class="r-tot" text-anchor="end">89</text>
+        <text x="400" y="222" class="r-tot" text-anchor="end">59</text>
+        <text x="466" y="222" class="r-tot" text-anchor="end">148</text>
+
+        <text x="60" y="252" class="r-sec">2 · CASES AND CONTROLS BY COHORT</text>
+        <rect x="360" y="244" width="9" height="9" fill="#4B2E83"/>
+        <text x="374" y="252" class="r-ax">Cases</text>
+        <rect x="418" y="244" width="9" height="9" fill="#85754D"/>
+        <text x="432" y="252" class="r-ax">Controls</text>
+
+        <line x1="70" y1="335" x2="470" y2="335" stroke="#BBB"/>
+        <line x1="70" y1="309" x2="470" y2="309" stroke="#EFEFEC"/>
+        <line x1="70" y1="284" x2="470" y2="284" stroke="#EFEFEC"/>
+        <line x1="70" y1="258" x2="470" y2="258" stroke="#EFEFEC"/>
+        <text x="64" y="338" class="r-ax" text-anchor="end">0</text>
+        <text x="64" y="312" class="r-ax" text-anchor="end">10</text>
+        <text x="64" y="287" class="r-ax" text-anchor="end">20</text>
+        <text x="64" y="261" class="r-ax" text-anchor="end">30</text>
+
+        <rect x="92"  y="276" width="26" height="59" fill="#4B2E83"/>
+        <rect x="122" y="317" width="26" height="18" fill="#85754D"/>
+        <rect x="192" y="250" width="26" height="85" fill="#4B2E83"/>
+        <rect x="222" y="317" width="26" height="18" fill="#85754D"/>
+        <rect x="292" y="312" width="26" height="23" fill="#4B2E83"/>
+        <rect x="322" y="281" width="26" height="54" fill="#85754D"/>
+        <rect x="392" y="274" width="26" height="61" fill="#4B2E83"/>
+        <rect x="422" y="274" width="26" height="61" fill="#85754D"/>
+
+        <text x="120" y="348" class="r-ax" text-anchor="middle">Whitfield</text>
+        <text x="220" y="348" class="r-ax" text-anchor="middle">Rijndal</text>
+        <text x="320" y="348" class="r-ax" text-anchor="middle">Cascade</text>
+        <text x="420" y="348" class="r-ax" text-anchor="middle">Kumar 2026</text>
+
+        <text x="60" y="382" class="r-sec">3 · AGE AT DEATH (ALL COHORTS)</text>
+        <line x1="70" y1="462" x2="470" y2="462" stroke="#BBB"/>
+        <rect x="70"  y="447" width="62" height="15" fill="#4B2E83" opacity="0.85"/>
+        <rect x="136" y="435" width="62" height="27" fill="#4B2E83" opacity="0.85"/>
+        <rect x="202" y="420" width="62" height="42" fill="#4B2E83" opacity="0.85"/>
+        <rect x="268" y="397" width="62" height="65" fill="#4B2E83" opacity="0.85"/>
+        <rect x="334" y="392" width="62" height="70" fill="#4B2E83" opacity="0.85"/>
+        <rect x="400" y="414" width="62" height="48" fill="#4B2E83" opacity="0.85"/>
+        <text x="101" y="474" class="r-ax" text-anchor="middle">30s</text>
+        <text x="167" y="474" class="r-ax" text-anchor="middle">40s</text>
+        <text x="233" y="474" class="r-ax" text-anchor="middle">50s</text>
+        <text x="299" y="474" class="r-ax" text-anchor="middle">60s</text>
+        <text x="365" y="474" class="r-ax" text-anchor="middle">70s</text>
+        <text x="431" y="474" class="r-ax" text-anchor="middle">80s</text>
+
+        <line x1="504" y1="106" x2="504" y2="478" stroke="#EFEFEC"/>
+
+        <text x="540" y="116" class="r-sec">4 · SEX BALANCE BY COHORT</text>
+        <rect x="826" y="108" width="9" height="9" fill="#4B2E83"/>
+        <text x="840" y="116" class="r-ax">Male</text>
+        <rect x="884" y="108" width="9" height="9" fill="#85754D"/>
+        <text x="898" y="116" class="r-ax">Female</text>
+
+        <text x="614" y="148" class="r-lab" text-anchor="end">Whitfield</text>
+        <rect x="620" y="136" width="245" height="14" fill="#4B2E83"/>
+        <rect x="865" y="136" width="65"  height="14" fill="#85754D"/>
+        <text x="742" y="147" class="r-val" text-anchor="middle">79% M</text>
+
+        <text x="614" y="172" class="r-lab" text-anchor="end">Rijndal</text>
+        <rect x="620" y="160" width="273" height="14" fill="#4B2E83"/>
+        <rect x="893" y="160" width="37"  height="14" fill="#85754D"/>
+        <text x="756" y="171" class="r-val" text-anchor="middle">88% M</text>
+
+        <text x="614" y="196" class="r-lab" text-anchor="end">Cascade</text>
+        <rect x="620" y="184" width="233" height="14" fill="#4B2E83"/>
+        <rect x="853" y="184" width="77"  height="14" fill="#85754D"/>
+        <text x="736" y="195" class="r-val" text-anchor="middle">75% M</text>
+
+        <text x="614" y="220" class="r-lab" text-anchor="end">Kumar 2026</text>
+        <rect x="620" y="208" width="310" height="14" fill="#A3341F"/>
+        <text x="775" y="219" class="r-val" text-anchor="middle">CTE group: 100% M</text>
+
+        <text x="540" y="256" class="r-sec">5 · SAMPLE TYPE AVAILABLE</text>
+        <text x="614" y="282" class="r-lab" text-anchor="end">Brain</text>
+        <rect x="620" y="272" width="310" height="12" fill="#4B2E83"/>
+        <text x="936" y="282" class="r-ax">108</text>
+        <text x="614" y="302" class="r-lab" text-anchor="end">CSF</text>
+        <rect x="620" y="292" width="142" height="12" fill="#4B2E83" opacity="0.6"/>
+        <text x="768" y="302" class="r-ax">54</text>
+        <text x="614" y="322" class="r-lab" text-anchor="end">Plasma</text>
+        <rect x="620" y="312" width="184" height="12" fill="#4B2E83" opacity="0.6"/>
+        <text x="810" y="322" class="r-ax">61</text>
+
+        <text x="540" y="360" class="r-sec">6 · HARMONIZATION NOTES</text>
+        <rect x="540" y="370" width="390" height="86" fill="#FAFAF8" stroke="#EDE9F3"/>
+        <text x="552" y="388" class="r-note">TES (clinical) and CTE (neuropathological) kept as separate</text>
+        <text x="552" y="402" class="r-note">fields — not merged. See Kastelein cover letter.</text>
+        <text x="552" y="420" class="r-note">One Whitfield case recovered from white-on-white text;</text>
+        <text x="552" y="434" class="r-note">its 480 h post-mortem interval is flagged, not dropped.</text>
+        <text x="552" y="450" class="r-note">Cascade PMI converted min → h. Rijndal decimal commas parsed.</text>
+
+        <text x="540" y="474" class="r-sub">Generated by Claude Code · cohort_metadata_report.html · 1 file, no dependencies</text>
+      </svg>
+    </div>
+    <p class="caption">One file. Commit it, push it, or email it — a collaborator opens it in any browser
+    with <b>nothing to install</b>.</p>
+  </section>
+
+  <!-- ============ 25. Summary ============ -->
   <section class="slide">
     <h2>Summary</h2>
     <ul class="bullets">
