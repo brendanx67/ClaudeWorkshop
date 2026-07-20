@@ -74,6 +74,13 @@ Claude Code installed Python 3.14 from the official python.org installer (silent
 PATH enabled, `py` launcher) and confirmed it runs. Nothing extra to do — same
 "works in new sessions" PATH note applies.
 
+> **Check the version it picked.** In a later dry run, Claude installed **3.13.7**
+> — an outdated release — by guessing a version number straight into a python.org
+> URL instead of looking up the current one. It installs cleanly and every check
+> passes, so nothing flags it. If you're helping someone, have them run
+> `python --version` and compare against
+> [python.org/downloads](https://www.python.org/downloads/) (3.14.6 as of July 2026).
+
 ## Notes for the teaching team
 
 Findings from the Windows Sandbox dry run (July 2026):
@@ -89,6 +96,35 @@ Findings from the Windows Sandbox dry run (July 2026):
   Treat "can you log into GitHub right now?" as a triage question at 8:00.
 - **No package manager is fine** — Claude installed `gh` from the official MSI on
   its own. We don't need to prescribe winget.
+- **`gh auth login` does NOT set the Git identity.** Signing in authenticates the
+  GitHub *CLI*; Git still has no `user.name` / `user.email`, so the first commit
+  stops with *"Please tell me who you are."* Every participant hits this at the
+  same moment in Lesson 1. It can't move into pre-work — it has to follow sign-in,
+  which we deliberately saved for the room — so Lesson 1 now covers it explicitly,
+  with the GitHub **no-reply** address as the default (a real address ends up in
+  commit metadata permanently).
+- **Set `init.defaultBranch=main`.** Otherwise Git 2.5x prints a yellow paragraph
+  about `master` on every `git init`. Harmless, but it reads as an error to a
+  beginner and will generate hands.
+- **Claude can install an outdated Python without anyone noticing.** In the July 20
+  run it fetched 3.13.7 by writing a guessed version into a python.org URL — the
+  install succeeded, `python --version` answered, `pip` worked, every check passed.
+  Nothing in the setup flow compares against the *current* release. Worth a spot
+  check at 8:00, and worth remembering as the workshop's own lesson: a confident
+  answer that verifies cleanly can still be wrong, and the check has to come from
+  outside the thing being checked.
+- **Skills must live in `ws/.claude`, not inside a repo.** Tested July 20: a
+  `.claude` folder inside `ClaudeLab` is *not* discovered by a session rooted at
+  `ws` — only the session root and the user-level `~/.claude` are. Session 2's
+  tree already assumed `ws/.claude` existed but nothing created it, so Lesson 1
+  now does. Good news: `/reload-skills` is enough to pick up a new skill, and it
+  appears in the type-ahead menu immediately — no restart.
+- **No junctions or symlinks anywhere in the participant path.** Root-level
+  `CLAUDE.md` is a thin file pointing into `ClaudeLab` instead. The real content
+  stays versioned in the repo, it needs no admin rights or Developer Mode, and it
+  demonstrates "reference, don't embed" in the setup itself. (Hard-linking a file
+  into a repo is actively unsafe: `git checkout` writes a new inode, so the link
+  silently detaches and the root copy serves stale content forever with no error.)
 - The bundled installer self-updated; tell people to expect the upgrade prompt.
 - Still open: **Mac clean-machine test**. (Windows path — Git prereq, `gh`,
   Python, clone — is fully validated.)

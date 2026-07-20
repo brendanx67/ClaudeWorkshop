@@ -15,16 +15,46 @@ talking to Claude. That's the assignment.
 > `ClaudeWorkshop` already cloned inside it. Not there? Grab an instructor — that's
 > what the 8:00 hour is for.
 
+> **One step at a time.** If you point Claude at this whole lesson, it can do all
+> four steps in about a minute — and you'll have a correct repo and an empty hour.
+> Ask it to stop and check in after each numbered step. The conversation *is* the
+> lesson; the files are just where it lands.
+
 ---
 
 ## 1. Create your ClaudeLab
 
 - **Sign in to GitHub** (the one step we saved for the room — an instructor will
-  help if the browser sign-in is new).
+  help if the browser sign-in is new). You'll be asked to authorize in a browser
+  and to complete your two-factor step, so have your phone handy.
+- **Then tell Claude who you are.** Signing in authenticates the GitHub *tool* —
+  but Git itself still doesn't know your name and email, and your very first
+  commit will stop with *"Please tell me who you are."* Ask Claude to set it up.
+  Prefer your GitHub **no-reply** address over your real one: it still links
+  commits to your account, but keeps your email out of every commit forever.
 - Then ask Claude, in your words, to **create a repository called `ClaudeLab` in
-  this folder and push it to your GitHub.** Watch each step and approve it.
+  this folder and push it to your GitHub.** Ask for it to be **private** — you can
+  open it up whenever you like, but you can't un-publish something. Watch each
+  step and approve it.
 
 Open your `ClaudeLab` on GitHub — empty for now; you'll fill it next.
+
+**Then two folders and one file, once.** These live in `ws` itself, beside your
+repos, and serve everything you do this week:
+
+> *"In my `ws` folder, make a `.claude` folder for skills and commands, a `.tmp`
+> folder for scratch work, and a short `CLAUDE.md` that points at my ClaudeLab's
+> `CLAUDE.md` and `CRITICAL-RULES.md`. Put a one-line README in each folder."*
+
+- `.claude/` — where your own skills and commands live; you build your first one
+  in Session 2. It has to sit here at `ws`: a `.claude` inside a repo folder
+  isn't picked up.
+- `.tmp/` — scratch. Claude's working files go here where you can see them, and
+  because it's outside every repo they can't be committed by accident.
+- `CLAUDE.md` — three lines pointing into your `ClaudeLab`. The rules themselves
+  stay in the repo, where they're saved and versioned; this just makes sure
+  Claude finds them from anywhere in `ws`. That's **reference, don't embed** —
+  rule 1 of the file you're about to write — applied to your own setup.
 
 Three words you'll hear all morning: a **repo** is a project folder that tracks
 its own history; a **commit** is a saved snapshot; a **push** sends your commits

@@ -41,11 +41,16 @@ CONTENTS  (keep every file thin — reference, don't embed)
          carries the start date:   TODO-YYYYMMDD-short-goal.md
          (the date is the day the work was started). In backlog/ (not started
          yet), no date:            TODO-short-goal.md
+      4. Put temporary and scratch files in .tmp/ at the session root — never
+         scattered through repo folders. Everything in .tmp/ is disposable; it's
+         the workspace we share, so I can see what you're doing and ask you to
+         clear it out.
     INTERVIEW: any other rule you already know you want Claude to always follow?
 
   docs/about-my-work.md — do NOT use a template.
-    INTERVIEW: ask about a dozen questions about the participant's work and what
-    they'd like help with, then write a short summary here.
+    INTERVIEW: ask about four questions about the participant's work and what
+    they'd like help with — following up where an answer opens something worth
+    pulling on — then write a short summary here.
 
   todos/ — create active/, backlog/, completed/, then make ONE todo:
     INTERVIEW: what is one thing you'd like to achieve? Starting now, or later?
