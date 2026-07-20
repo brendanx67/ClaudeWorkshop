@@ -390,6 +390,38 @@ ul.checklist li::before { content: "✓"; color: #2E7D32; font-weight: 700; marg
   margin-top: 3.5vh; max-width: 64vw;
 }
 
+/* ---- The shared board: link + how to post -------------------------------- */
+.bigurl {
+  display: inline-block;
+  font-size: 5vw; font-weight: 700; letter-spacing: -0.015em; line-height: 1.1;
+  color: #FFFFFF;
+  border: 0.25vw solid var(--accent); border-radius: 1.2vh;
+  background: rgba(255,255,255,0.07);
+  padding: 1.8vh 3.2vw; margin-top: 1.5vh;
+}
+.howto { display: flex; gap: 2.2vw; margin-top: 4vh; text-align: left; }
+.howto .h { flex: 1; }
+.howto .h .n {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2.1vw; height: 2.1vw; border-radius: 50%;
+  background: var(--accent); color: #241738;
+  font-size: 1.2vw; font-weight: 700; margin-bottom: 0.9vh;
+}
+.howto .h .t { font-size: 1.7vw; font-weight: 600; color: #FFFFFF; line-height: 1.25; }
+.howto .h .d { font-size: 1.25vw; color: #C9C4D4; line-height: 1.4; margin-top: 0.6vh; }
+.howto .h kbd {
+  font-family: "SF Mono", Consolas, "Courier New", monospace;
+  font-size: 1.1vw; background: rgba(255,255,255,0.14); color: #FFFFFF;
+  border-radius: 0.3vw; padding: 0.15vh 0.5vw; white-space: nowrap;
+}
+.board-look {
+  border-top: 0.08vw solid rgba(255,255,255,0.22);
+  margin-top: 3.2vh; padding-top: 2vh;
+  font-size: 1.75vw; color: #FFFFFF; line-height: 1.4; max-width: 78vw;
+}
+.board-look .q { color: #D8C68C; font-weight: 600; }   /* lighter gold — reads on dark */
+.board-look .fine { display: block; font-size: 1.2vw; color: #A9A2BC; margin-top: 1.2vh; font-style: italic; }
+
 /* ---- Optional / bonus tag ------------------------------------------------- */
 .bonus-tag {
   align-self: flex-start;
@@ -1106,23 +1138,35 @@ K-035   4    54   1    18.5   12   389   1     4
     <p class="sub" style="max-width:74vw; margin-top:2vh"><strong>Tip #2:</strong> Generate more than one plot to explore different views</p>
   </section>
 
-  <!-- ============ 19. Activity — share with the class ============ -->
+  <!-- ============ 19. Activity — post your plots to the shared board ============ -->
   <section class="slide opener dark-bg">
-    <p class="eyebrow">Three minutes · everyone</p>
-    <h1>Share with the class</h1>
-    <ul class="bullets">
-      <li>Look at your plots — do the numbers make sense?
-        <span class="sub">Counts, ranges, balance between groups. Anything you'd question in a paper.</span>
-      </li>
-      <li>Tell us anything that looks odd, wrong, or surprising
-        <span class="sub">A number that's too big, a group that's too clean, a bar that isn't there.</span>
-      </li>
-      <li>Then say what you would do about it
-        <span class="sub">Go back to the source? Ask the lab? Drop it? Flag it and keep going?</span>
-      </li>
-    </ul>
-    <p class="closer">There are no wrong answers here — everyone's plots came out a little different.
-    If something looked strange to you, it is worth saying out loud.</p>
+    <p class="eyebrow">Five minutes · everyone posts</p>
+    <h1 style="font-size:4.6vw">Put your plots on the board</h1>
+    <div class="bigurl">tinyurl.com/claude-plots</div>
+
+    <div class="howto">
+      <div class="h">
+        <div class="n">1</div>
+        <div class="t">Open the link</div>
+        <div class="d">No account, no sign-in. You'll get a name like <em>Charismatic&nbsp;Donkey</em>.</div>
+      </div>
+      <div class="h">
+        <div class="n">2</div>
+        <div class="t">Drag your plot onto the board</div>
+        <div class="d">Your figures are image files Claude saved — drag one straight from the folder.</div>
+      </div>
+      <div class="h">
+        <div class="n">3</div>
+        <div class="t">Or grab what's on screen</div>
+        <div class="d"><kbd>Win + Shift + S</kbd> &nbsp;·&nbsp; <kbd>Cmd + Shift + 4</kbd><br>then paste onto the board.</div>
+      </div>
+    </div>
+
+    <p class="board-look">
+      Then look at everyone else's. <span class="q">Do the numbers make sense?</span>
+      Anything too big, too clean, or missing entirely — say it out loud.
+      <span class="fine">Posting to a public board is fine here: every one of these cohorts is synthetic.</span>
+    </p>
   </section>
 
   <!-- ============ 20. Reveal 1 — the ghost row ============ -->

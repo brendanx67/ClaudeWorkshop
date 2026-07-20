@@ -106,7 +106,22 @@ Answer honestly, including "I don't know yet." Then have it produce **around ten
 plots** representing the data — and look at every one. Some will be wrong. Say so,
 and ask for another. This is a conversation, not a render.
 
-## 7. Your favorites, as a report
+## 7. Put your plots on the shared board
+
+Everyone posts to one board so we can look at all of them side by side:
+
+> **[tinyurl.com/claude-plots](https://tinyurl.com/claude-plots)**
+
+No account, no sign-in. Drag a plot straight from the folder onto the board, or
+snip what's on your screen (`Win + Shift + S`, or `Cmd + Shift + 4` on a Mac) and
+paste it.
+
+Then look at everyone else's. Do the numbers make sense? Anything too big, too
+clean, or missing entirely is worth saying out loud.
+
+Posting to a public board is fine here — every one of these cohorts is synthetic.
+
+## 8. Your favorites, as a report
 
 Pick the plots that actually say something, and ask Claude to assemble them into
 a single **HTML report** on the cohort demographics — one page, opens in a
@@ -115,7 +130,7 @@ browser. Sections, captions, the figures. Something you'd send a collaborator.
 Push it to your ClaudeLab too. Your partner can pull it down and open it, which
 is a cheap and pleasant demonstration of why the Git hour was worth it.
 
-## 8. The wrench
+## 9. The wrench
 
 Each PI sent a **cover letter** along with their shipment. They're in
 [`cover-letters/`](cover-letters/), in this folder. Nobody has read them yet.
@@ -162,7 +177,7 @@ about it.**
 - A merge you can defend, because the decisions log says what you decided.
 - The reflex to **check what Claude actually did** — especially when it tells you
   it succeeded.
-- The uncomfortable, useful lesson of section 8: **data does not carry its own
+- The uncomfortable, useful lesson of section 9: **data does not carry its own
   context.** Somebody has to ask. That somebody is you — and you now have a tool
   that will ask twelve questions the moment you tell it to.
 
