@@ -102,6 +102,10 @@ Now open one of your own new files in the browser — say
 
 ## Keep going (or if you have time)
 
+- **Extra credit — build a skill.** Ask Claude for a small skill in
+  `ws/.claude/skills/`: something you'd otherwise explain every time. Then
+  `/reload-skills`, and run it by name — `/your-skill-name`. That's the ground
+  Session 2 builds on.
 - Add a rule to `CRITICAL-RULES.md` the moment you notice a preference.
 - Once you have a few files, ask Claude to **read your repo and write a `TOC.md`**
   — a map of your ClaudeLab.
