@@ -46,7 +46,7 @@ I want to perform QC analysis and visualization. We need to work out if normaliz
 ## Data loaders
 
 ```text
-Build robust, and well-tested data loaders that all downstream analysis scripts will use to load, normalize, batch correct, and impute (if necessary). It is essential that his be accurate and correct, as all downstream analysis depends on this. Verify assumptions about the loaded data (ie, make sure shapes are correct and other assumptions are met). These scripts need to be well documented and well commented, they will likely be shared as part of an eventual publication.
+Build robust, and well-tested data loaders that all downstream analysis scripts will use to load, normalize, batch correct, and impute (if necessary). This will match data to metadata, so it can be correctly used downstream (e.g., classifying exposure). It is essential that his be accurate and correct, as all downstream analysis depends on this. Verify assumptions about the loaded data (ie, make sure shapes are correct and other assumptions are met). These scripts need to be well documented and well commented, they will likely be shared as part of an eventual publication.
 ```
 
 > **Instructor note:** may want to start a new session here with a clean context.
