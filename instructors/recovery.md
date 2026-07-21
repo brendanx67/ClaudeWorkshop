@@ -52,10 +52,21 @@ build, so it skips the self-update prompt that costs several minutes.
 
 Install, launch, sign in with their Claude account.
 
-### 2. Git — and the quit that everyone misses
+### 2. Set the working folder — and make `ws` from inside the picker
 
-Claude Desktop → **`</> Code`** tab. If it shows a red **"Git is required"**
-message, click through and install Git with **all default options**.
+Claude Desktop → **`</> Code`** tab → set the working folder. A folder picker
+opens. Go to **Documents**, **create a new folder called `ws` right there**, and
+choose it. Don't send them to File Explorer first; the picker does both jobs.
+
+Claude then asks whether the folder is trusted — **yes**.
+
+### 3. Git — Claude offers it, and the quit everyone misses
+
+Claude Desktop now says Git is needed and offers to open the download page. Click
+**OK** and it lands on the right URL — nothing to search for.
+
+Run the installer and **click Next through every screen, then Finish.** Every
+default is correct. Don't read the options with them.
 
 Then **fully quit Claude** — closing the window is not enough:
 
@@ -65,11 +76,6 @@ Then **fully quit Claude** — closing the window is not enough:
 
 The Code tab will not see Git until you do this. If someone says "I installed Git
 and it still says Git is required," this is why, every time.
-
-### 3. The `ws` folder
-
-An empty folder called **`ws`** inside **Documents**. Then Claude Desktop →
-**`</> Code`** tab → open that folder.
 
 ### 4. One paste
 
@@ -83,9 +89,11 @@ clones the repo — no sign-in needed, it's public.
 **Python version doesn't matter.** Runs land on 3.13 or 3.14; both work for
 everything this week. Don't spend a minute on it.
 
-### 5. Markdown Reader
+### 5. Markdown Reader — do this *while* Claude is working
 
-They need this to read the lessons at all.
+Don't wait for the paste to finish. Claude will be several minutes on `gh`,
+Python, and the clone, and this is the free minute in the whole recovery. Move to
+the browser and install the extension now.
 
 1. [Chrome Web Store — Markdown Reader](https://chromewebstore.google.com/detail/markdown-reader/medapdbncneneejhbgcjceippjlfkmkg)
 2. **Extensions** (puzzle-piece icon) → **Markdown Reader** → **Manage
@@ -115,9 +123,9 @@ everyone else started, and Lesson 1 takes it from there.
 
 - **GitHub sign-in is in Lesson 1, not here.** Don't get ahead of it; they'll do
   it with the room.
-- **Do the waiting for them.** Downloads are most of these eleven minutes. Talk
-  them through what's coming next while things install rather than watching a
-  progress bar together.
+- **Never watch a progress bar together.** Downloads are most of these eleven
+  minutes. Markdown Reader is deliberately parked on top of the longest wait —
+  look for other overlaps like it, and talk them through what's coming next.
 - **Don't debug — reinstall.** Anything odd in a half-finished setup is faster to
   replace than to understand, and you don't have the time.
 - **Hand them off when they hit the start line.** Say who to wave at next, and
