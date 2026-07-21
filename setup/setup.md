@@ -69,17 +69,14 @@ cloned. GitHub sign-in is the first thing Lesson 1 does.
 ## Python (needed for the Day-1 data session)
 
 Python 3 is used later in the workshop, and the pre-event prompt above installs
-it. **Verified on a clean Windows machine:** with no package manager present,
-Claude Code installed Python 3.14 from the official python.org installer (silent,
-PATH enabled, `py` launcher) and confirmed it runs. Nothing extra to do — same
-"works in new sessions" PATH note applies.
+it. **Verified on clean Windows machines:** with no package manager present,
+Claude Code installed Python from the official python.org installer (silent, PATH
+enabled, `py` launcher) and confirmed it runs. Nothing extra to do — same "works
+in new sessions" PATH note applies.
 
-> **Check the version it picked.** In a later dry run, Claude installed **3.13.7**
-> — an outdated release — by guessing a version number straight into a python.org
-> URL instead of looking up the current one. It installs cleanly and every check
-> passes, so nothing flags it. If you're helping someone, have them run
-> `python --version` and compare against
-> [python.org/downloads](https://www.python.org/downloads/) (3.14.6 as of July 2026).
+> **Any Python 3.13 or later is fine** for everything in this workshop. Dry runs
+> landed on 3.13 and 3.14 and both worked. If someone's `python --version` shows
+> 3.12 or older, have Claude install a current one; otherwise move on.
 
 ## Notes for the teaching team
 
@@ -106,13 +103,10 @@ Findings from the Windows Sandbox dry run (July 2026):
 - **Set `init.defaultBranch=main`.** Otherwise Git 2.5x prints a yellow paragraph
   about `master` on every `git init`. Harmless, but it reads as an error to a
   beginner and will generate hands.
-- **Claude can install an outdated Python without anyone noticing.** In the July 20
-  run it fetched 3.13.7 by writing a guessed version into a python.org URL — the
-  install succeeded, `python --version` answered, `pip` worked, every check passed.
-  Nothing in the setup flow compares against the *current* release. Worth a spot
-  check at 8:00, and worth remembering as the workshop's own lesson: a confident
-  answer that verifies cleanly can still be wrong, and the check has to come from
-  outside the thing being checked.
+- **Don't chase the Python version.** Runs landed on 3.13 and on 3.14, sometimes
+  by reading python.org's version list and sometimes by writing a version straight
+  into the download URL. Every one of them works for this workshop. 3.13 or later
+  is the only bar; don't spend 8:00 triage on it.
 - **Skills must live in `ws/.claude`, not inside a repo.** Tested July 20: a
   `.claude` folder inside `ClaudeLab` is *not* discovered by a session rooted at
   `ws` — only the session root and the user-level `~/.claude` are. Session 2's

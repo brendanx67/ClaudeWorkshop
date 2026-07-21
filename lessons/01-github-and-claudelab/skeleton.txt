@@ -69,3 +69,5 @@ CONTENTS  (keep every file thin — reference, don't embed)
       - now   ->  todos/active/TODO-YYYYMMDD-<goal>.md   (today's date)
       - later ->  todos/backlog/TODO-<goal>.md            (no date)
     Keep the todo short: a title and a one-line goal.
+    Put a .gitkeep in whichever of active/, backlog/, completed/ end up empty —
+    Git does not track empty folders, so they vanish on the next clone.

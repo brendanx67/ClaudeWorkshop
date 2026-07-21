@@ -38,9 +38,24 @@ app" and you're done with that dialog.*
 
 ## 1. Create your ClaudeLab
 
-- **Sign in to GitHub** (the one step we saved for the room — an instructor will
-  help if the browser sign-in is new). You'll be asked to authorize in a browser
-  and to complete your two-factor step, so have your phone handy.
+- **Sign in to GitHub.** This is the one step Claude can't do for you — the
+  sign-in asks questions, and Claude has no way to answer them. So you run it
+  yourself, once.
+
+  On **Windows**, open **PowerShell**: press the Start button, type `powershell`,
+  and press Enter. On a **Mac**, open **Terminal** (⌘-Space, type `terminal`).
+  Paste this in and press Enter:
+
+  ```
+  gh auth login --hostname github.com --git-protocol https --web
+  ```
+
+  It shows you a short code — copy it, press Enter, and paste it into the browser
+  page that opens. Finish your two-factor step, so have your phone handy. When it
+  says you're logged in, you're done with the terminal for the day.
+
+  *(Grab an instructor if the browser sign-in is new to you — this is what the
+  8:00 hour is for.)*
 - **Then tell Claude who you are.** Signing in authenticates the GitHub *tool* —
   but Git itself still doesn't know your name and email, and your very first
   commit will stop with *"Please tell me who you are."* Ask Claude to set it up.

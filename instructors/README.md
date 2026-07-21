@@ -161,11 +161,11 @@ Ran Session 1 end to end from the pre-event email prompt, as a participant would
 - **Pacing held.** One question at a time, no wall of questions — rule #2 works as
   written.
 - **Empty `todos/` folders need `.gitkeep`.** Git won't track an empty directory,
-  so `active/` and `completed/` vanish on clone without one. Claude added them
-  unprompted here, but it's luck, not guarantee — worth a line in the skeleton.
-- **Session 1 ran ~30 minutes** with an experienced participant who already had Git,
-  GitHub sign-in, and both repos in place, and who stopped to take notes. Budget is
-  8:00–9:00 with arrival and setup inside it. Little headroom — see open questions.
+  so `active/` and `completed/` vanish on clone without one. Now stated in the
+  skeleton rather than left to luck.
+- **Session 1 ran ~30 minutes** for an experienced participant who already had Git,
+  GitHub sign-in, and both repos in place, and who stopped to take notes — plus
+  ~10 minutes of setup before that. Comfortable inside 8:00–9:00.
 
 ## Open questions (help us close these before July 21)
 
@@ -174,17 +174,4 @@ Ran Session 1 end to end from the pre-event email prompt, as a participant would
   validated.
 - **Pre-event email:** exact wording, whether to include a tray-quit screenshot,
   and how much we ask people to finish at home vs. at 8:00.
-- **Do we pin a Python version?** The July 20 run installed **3.13.14** — not by
-  guessing a URL (it read the version list off python.org first) but by *choosing*
-  the older line for scientific-wheel coverage, and said so. Defensible, yet it
-  lands on the same 3.13.x that §"clean-machine test" flags as the failure
-  signature, so an instructor triaging at 8:00 can't tell a good 3.13 from a bad
-  one by version alone. Either name a version in the prompt or tell instructors to
-  check *how* it was chosen, not just what got installed.
-- **Session-1 timing.** ~30 min for an expert; a beginner reading each prompt and
-  answering four interview questions in earnest will run longer, and 8:00–9:00
-  already absorbs arrivals and stragglers finishing setup. Decide what gets cut
-  under time pressure — candidate: the `ws`-root folders (`.claude/`, `.tmp/`,
-  `CLAUDE.md`) are one prompt and could move to the pre-event email, since they
-  need no GitHub sign-in.
 - Sessions 2–6: owners to draft their lesson folders.
