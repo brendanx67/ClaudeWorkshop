@@ -58,7 +58,8 @@ app" and you're done with that dialog.*
   8:00 hour is for.)*
 - **Then tell Claude who you are.** Signing in authenticates the GitHub *tool* —
   but Git itself still doesn't know your name and email, and your very first
-  commit will stop with *"Please tell me who you are."* Ask Claude to set it up.
+  commit will stop with *"Please tell me who you are."* Ask Claude to set it up —
+  your name, your email, and **`main` as the default branch for new repos.**
   Prefer your GitHub **no-reply** address over your real one: it still links
   commits to your account, but keeps your email out of every commit forever.
 - Then ask Claude, in your words, to **create a repository called `ClaudeLab` in
