@@ -163,9 +163,19 @@ Ran Session 1 end to end from the pre-event email prompt, as a participant would
 - **Empty `todos/` folders need `.gitkeep`.** Git won't track an empty directory,
   so `active/` and `completed/` vanish on clone without one. Now stated in the
   skeleton rather than left to luck.
-- **Session 1 ran ~30 minutes** for an experienced participant who already had Git,
-  GitHub sign-in, and both repos in place, and who stopped to take notes — plus
-  ~10 minutes of setup before that. Comfortable inside 8:00–9:00.
+- **Session 1 runs ~15 minutes** for an experienced participant working straight
+  through, from a machine already set up. Marks from the July 21 run: empty
+  `ClaudeLab` at 6:30, interview starting at 8:00, "Keep going" at 15:00. An
+  earlier run took ~30 minutes, but that one stopped throughout to take notes and
+  discuss changes. Setup from a bare machine adds ~11 minutes before any of it —
+  see [recovery.md](recovery.md).
+- **Writing the `gh auth login` line into Lesson 1 is what made the difference.**
+  With the command and "open PowerShell" written down, sign-in stopped being a
+  conversation with Claude about how to sign in. Arriving already authenticated,
+  a single sentence — *"I'm authenticated and working on Lesson 1; I need to
+  create ClaudeLab"* — is enough for Claude to start.
+- **There is real headroom in the hour.** Don't trim the interview to save time;
+  the interview is the lesson. Spend the slack there.
 
 ## Open questions (help us close these before July 21)
 
