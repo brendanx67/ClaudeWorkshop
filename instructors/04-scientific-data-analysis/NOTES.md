@@ -35,7 +35,7 @@ pays off. Surface the ones that fit the room; you won't hit all four in two hour
   biological fields `pool`/`na`.
 - **The trap:** dropping all 96 columns into a dose-vs-response comparison. The
   pools have no dose; they're process controls.
-- **Where it surfaces in the arc:** step 6 (QC) — the pools are *for* QC (batch
+- **Where it surfaces in the arc:** step 5 (QC) — the pools are *for* QC (batch
   drift, CV), then get excluded from biological analysis. Good place to teach
   "know what each sample is before you compare it."
 
@@ -45,7 +45,7 @@ pays off. Surface the ones that fit the room; you won't hit all four in two hour
   dose effect.
 - **The trap:** attributing a proteomic shift to dose when it tracks plate
   position, acquisition order, or sack day just as well.
-- **Where it surfaces:** step 6–7. Have them crosstab dose against the suspects
+- **Where it surfaces:** steps 5 and 7 (QC, then analysis). Have them crosstab dose against the suspects
   *before* believing a hit. The Lesson 3 lesson (confounded design) in a new key.
 
 ### 3. Multiple testing

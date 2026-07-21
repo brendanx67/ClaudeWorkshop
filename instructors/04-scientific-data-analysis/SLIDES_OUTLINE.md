@@ -6,8 +6,8 @@ the example [`CLAUDE.md`](../../lessons/04-scientific-data-analysis/CLAUDE.examp
 the traps to seed live are in [`NOTES.md`](NOTES.md).
 
 **Arc:** who I am → what we'll do → setup → how to work → the analysis, step by
-step (science → metadata → data → loaders → QC → analysis → report) → push it.
-**Time:** keep 1–8 brisk; the bulk of the two hours is 9–11 (loaders, QC,
+step (science → metadata → data → QC → loaders → analysis → report) → push it.
+**Time:** keep 1–8 brisk; the bulk of the two hours is 9–11 (QC, loaders,
 analysis). Everything downstream rests on 7–10 being done right.
 
 ---
@@ -76,22 +76,12 @@ analysis). Everything downstream rests on 7–10 being done right.
 
 - Have Claude open the data file. **What's the shape** — are rows samples or
   proteins? What kind of values are stored? What's the **missingness** situation?
+- **Pin down the join:** map every sample column to exactly one metadata row, and
+  sanity-check it before any plot relies on it — a bad join is the error that hides.
 - ⚠ *Values sit ~17–24 → almost certainly already log2* despite "unnormalized" in
   the name. Good "raw or transformed?" beat; don't let anyone log it twice.
 
-## 9. Build the data loaders — *real work begins*
-
-- Tell Claude that **thoroughly testing and validating this code is essential.**
-- This loader is the foundation: **every downstream analysis script uses it** to
-  get its input.
-- The decisions that have to be made **now**: **normalization**, **batch
-  correction**, and **how to handle missingness**.
-- Talk all of it through with Claude, then have it generate the reusable
-  data-loading code (with unit tests, lint, type-check).
-- ⚠ *Batch correction ties to confounding:* dose can be entangled with batch,
-  plate/well position, or acquisition order — all present as columns.
-
-## 10. QC
+## 9. QC
 
 - Generate and review QC plots; **save the good ones as findings.**
 - **CV (coefficient of variation) plots** — *compute on linear-scale intensities,
@@ -100,6 +90,19 @@ analysis). Everything downstream rests on 7–10 being done right.
 - How does **normalization** change CV (especially among controls)? How does it
   change the PCA (especially among controls)?
 - **Distribution** of protein abundances across runs. **Correlation** plots.
+- **This is where the processing decisions get made:** normalization, batch
+  correction, imputation (or filter on missingness) — the loaders encode them next.
+- ⚠ *Batch correction ties to confounding:* dose can be entangled with batch,
+  plate/well position, or acquisition order — all present as columns.
+
+## 10. Build the data loaders — *the foundation everything rests on*
+
+- Now that QC has decided the processing, build the reusable loader that **encodes
+  the join and those decisions** (normalization, batch correction, imputation).
+- **Every downstream analysis script uses it** to get its input.
+- Tell Claude that **thoroughly testing and validating this code is essential** —
+  generate it with unit tests, lint, and type-check, and **well documented** (it may
+  ship with the paper).
 
 ## 11. Data exploration and analysis — *the bulk of the time*
 

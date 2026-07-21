@@ -45,10 +45,15 @@ don't jump ahead to results.
 3. **Understand the data.** Its shape, and whether the values are raw or
    transformed (e.g. log-scaled).
 4. **Match the data to the metadata**, unambiguously — every sample mapped, with
-   no guessing.
-5. **Explore the data.** Ask the scientific questions and pursue those lines of
+   no guessing — and sanity-check that join before trusting any result.
+5. **QC the data.** Assess outliers, missingness, batch structure, and the pooled
+   controls, and **decide what processing is needed** — normalization, batch
+   correction, imputation (or filtering).
+6. **Build tested data loaders.** Encode the join and the QC decisions in a robust,
+   well-tested, well-documented loader that every downstream script uses.
+7. **Explore the data.** Ask the scientific questions and pursue those lines of
    thought.
-6. **Report the findings** in a clear, shareable report.
+8. **Report the findings** in a clear, shareable report.
 
 ## Save findings as you go
 
