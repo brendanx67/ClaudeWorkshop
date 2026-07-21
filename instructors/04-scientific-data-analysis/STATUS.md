@@ -24,7 +24,8 @@ Last updated: **2026-07-20**. Session is taught **Wed 2026-07-22, 8:00–10:00**
 | Artifact | Path | State |
 |---|---|---|
 | Participant lesson | `lessons/04-.../README.md` | **Done** — goal, 8-step arc, checkpoints, takeaways |
-| Example CLAUDE.md | `lessons/04-.../CLAUDE.example.md` | **Done** — project map, 6-step workflow, statistics rules, code rules |
+| Example CLAUDE.md | `lessons/04-.../CLAUDE.example.md` | **Done** — project map, 8-step workflow, findings manifest, statistics rules, code rules (uv-installs Python) |
+| Live prompt script | `instructors/04-.../CLAUDE_SCRIPT.md` | **Draft** — paste-in prompt per step; explore + report steps TBD |
 | Data + study blurb | `lessons/04-.../data/` | **Done** — 2 TSVs + `README.md` |
 | Slide deck | `lessons/04-.../slides/index.html` | **First draft** — 16 slides, needs a full-screen review |
 | Slides outline | `instructors/04-.../SLIDES_OUTLINE.md` | **Done** — 13-section content spine for the deck |
@@ -58,6 +59,10 @@ Last updated: **2026-07-20**. Session is taught **Wed 2026-07-22, 8:00–10:00**
 7. **Deck is built from `instructors/presentation-template/`** with its `<style>`
    and `<script>` copied verbatim. Keep the print CSS intact (16:9 PDF).
 8. **Branch per piece of work, open a PR, never commit to `main`.**
+9. **QC precedes the data loaders.** QC decides normalization / batch correction /
+   imputation; the loaders *encode* those decisions, so they're built after QC. The
+   sample↔metadata **join** is verified earlier, in the Data step, so QC never sits
+   on an unchecked mapping. Matches the live `CLAUDE_SCRIPT.md` order.
 
 ## Open items
 

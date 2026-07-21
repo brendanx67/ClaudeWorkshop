@@ -49,15 +49,22 @@ nudge; where you go inside it is up to you and your Claude.
    Flush your answers into a short doc. You can't analyze what you can't state.
 3. **Understand the metadata.** What is each column? Its data type? Is it
    internally consistent? Walk the sample sheet with Claude before trusting it.
-4. **Understand the data.** What shape is it? Is a value raw or already transformed
-   (log-scaled)? What is a row, what is a column?
-5. **Write tested data loaders.** Have Claude write Python that loads the data and
-   metadata and joins them **unambiguously — every sample mapped, no guessing** —
-   with unit tests, linting, and type-checking. Don't trust a loader you haven't
-   tested.
-6. **QC — quality control.** Look before you leap: outliers, missingness, batch
-   structure, the pooled reference samples. Decide what's signal and what's
-   artifact.
+4. **Understand the data — and pin down the join.** What shape is it? Is a value
+   raw or already transformed (log-scaled)? What is a row, what is a column? Then
+   map the data to the metadata **unambiguously — every sample column to exactly one
+   metadata row, no guessing** — and sanity-check that mapping before you trust any
+   plot. A bad join is the error that hides.
+5. **QC — quality control.** Look before you leap: outliers, missingness, batch
+   structure, the pooled reference samples. This is where you **decide what
+   processing the data needs** — normalization, batch correction, imputation (or
+   filtering) — by watching how each changes CVs and PCA. Decide what's signal and
+   what's artifact.
+6. **Write tested data loaders.** Now that QC has told you what's needed, have
+   Claude build the robust, reusable loader every downstream script will use — the
+   verified join plus the normalization, batch correction, and imputation you
+   settled on — with unit tests, linting, and type-checking. It's the foundation of
+   everything downstream (and likely shared at publication), so don't trust a loader
+   you haven't tested.
 7. **Explore and analyze — the bulk of your time.** Now ask the real questions and
    chase them. Keep the statistics honest: correct for multiple testing, pick
    models that fit the question, and match cross-validation to what you're actually
@@ -72,9 +79,12 @@ nudge; where you go inside it is up to you and your Claude.
       own folder, with a working venv.
 - [ ] You can state the study's question and hypotheses in a sentence — because you
       wrote them down, not because you guessed.
-- [ ] Data and metadata are loaded and joined by **tested** code; every sample maps
-      to exactly one metadata row.
-- [ ] You ran real QC and can name one thing it caught (or confirmed clean).
+- [ ] Every sample column maps to exactly one metadata row — you checked the join
+      before trusting a plot.
+- [ ] You ran real QC and can name one thing it caught (or confirmed clean) — and
+      what it told you to normalize, batch-correct, or impute.
+- [ ] Data and metadata are loaded by **tested** code that encodes those QC
+      decisions.
 - [ ] Your statistics are honest — multiple-testing corrected, model appropriate,
       cross-validation matched to the question.
 - [ ] A report (Markdown or PDF) with figures and tables, committed and pushed to
@@ -86,7 +96,7 @@ nudge; where you go inside it is up to you and your Claude.
   findings doc, and a shareable report — sitting in your `ClaudeLab`, ready to
   rerun and extend.
 - **A reusable workflow.** The `CLAUDE.md` you carried in — understand → metadata →
-  data → load → QC → explore → report — travels to your next dataset unchanged.
+  data → QC → load → explore → report — travels to your next dataset unchanged.
 - **The habit at the center of the week, made rigorous:** you supply the science,
   Claude supplies the code, and neither of you trusts an untested loader or an
   uncorrected p-value.

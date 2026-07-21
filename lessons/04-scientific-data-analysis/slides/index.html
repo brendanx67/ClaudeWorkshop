@@ -307,39 +307,40 @@ ul.bullets li .sub {
       <li>What's the shape — are rows samples, or proteins?</li>
       <li>What kind of values are stored? Raw, or already transformed?</li>
       <li>How bad is the missingness?</li>
+      <li>Map every sample to exactly one metadata row — check the join before you trust a plot</li>
       <li>Save the data findings to <code>DATA.md</code>, and point <code>CLAUDE.md</code> at it</li>
     </ul>
   </section>
 
-  <!-- ===================== 12. Step 4 — loaders ===================== -->
-  <!-- SPEAKER NOTE / pitfall: batch correction ties to confounding — dose can be
-       entangled with dose-rate, batch, plate/well position, or acquisition order,
-       all present as columns. Crosstab before believing any effect. -->
-  <section class="slide">
-    <h3>Step 4 · Data loaders</h3>
-    <h2>Real work begins</h2>
-    <ul class="bullets">
-      <li>Testing &amp; validating this code is essential — every downstream script uses it</li>
-      <li>Decide now: normalization, batch correction, how to handle missingness</li>
-      <li>Discuss it through, then have Claude build the reusable loader — tested, linted, typed</li>
-    </ul>
-  </section>
-
-  <!-- ===================== 13. Step 5 — QC ===================== -->
+  <!-- ===================== 12. Step 4 — QC ===================== -->
   <!-- SPEAKER NOTE / pitfalls: (1) CV on linear-scale intensities, not logged data;
        (2) watch the pooled controls specifically; (3) reference samples aren't
        biological replicates — this is where excluding them gets decided. -->
   <section class="slide">
-    <h3>Step 5 · Quality control</h3>
+    <h3>Step 4 · Quality control</h3>
     <h2>Look before you leap</h2>
     <ul class="bullets">
       <li>CV plots — on linear-scale data, not logged — especially among controls</li>
       <li>PCA plots colored by metadata variables</li>
-      <li>How does normalization change CV and PCA — especially in the controls?</li>
+      <li>Decide normalization, batch correction &amp; imputation — how does each change CV and PCA, especially in controls?</li>
       <li>Abundance distributions across runs; correlation plots</li>
       <li>Save the good ones as findings — and pull them into an HTML QC report
         <span class="sub">One page you can scroll and share; a preview of the final report.</span>
       </li>
+    </ul>
+  </section>
+
+  <!-- ===================== 13. Step 5 — loaders ===================== -->
+  <!-- SPEAKER NOTE / pitfall: batch correction ties to confounding — dose can be
+       entangled with dose-rate, batch, plate/well position, or acquisition order,
+       all present as columns. Crosstab before believing any effect. -->
+  <section class="slide">
+    <h3>Step 5 · Data loaders</h3>
+    <h2>Lock in the foundation</h2>
+    <ul class="bullets">
+      <li>Now build the reusable loader — it encodes the QC calls: normalization, batch correction, imputation</li>
+      <li>Testing &amp; validating this code is essential — every downstream script depends on it</li>
+      <li>Tested, linted, typed — and well documented; it may ship with the paper</li>
     </ul>
   </section>
 
