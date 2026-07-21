@@ -174,6 +174,9 @@ Ran Session 1 end to end from the pre-event email prompt, as a participant would
   conversation with Claude about how to sign in. Arriving already authenticated,
   a single sentence — *"I'm authenticated and working on Lesson 1; I need to
   create ClaudeLab"* — is enough for Claude to start.
+  Keep the flags. A bare `gh auth login` asks four or five questions before it
+  reaches the browser; `--hostname github.com --git-protocol https --web` answers
+  all of them in advance, leaving a single **Y**.
 - **There is real headroom in the hour.** Don't trim the interview to save time;
   the interview is the lesson. Spend the slack there.
 
