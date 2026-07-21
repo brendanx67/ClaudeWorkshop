@@ -40,12 +40,13 @@ A true story first. Ask Claude:
 It may guess, and guess wrong. Claude can't see your clock. (Mine once wrote
 `9:30 AM` at `7:42`.) That's a job for a tool.
 
-> *"Add a tool to my Status server called `GetLocalTime` that returns my
-> computer's local time. Install anything it needs, and register the server with
-> Claude Code."*
+> *"Add a tool to my Status server that returns my computer's local time. Install
+> anything it needs, and register the server with Claude Code."*
 
 Claude writes the tool, installs the `mcp` package if needed, and registers the
-server.
+server. Notice you described *what you want*, not what to name it — Claude will
+call it something like `get_local_time` on its own. That's the whole week in one
+line.
 
 ### The one manual step: restart Claude
 
@@ -60,8 +61,9 @@ quit-and-reopen you did during setup. Claude can't do this for you; it's running
 *(In the Claude Code console app this is just `/exit` then `claude --resume`.
 Claude Desktop makes you do the two-click quit instead.)*
 
-Reopen on your `ws` folder and ask again: *"What time is it?"* Now it's exact.
-Claude called your tool.
+**Reopen on your `ws` folder** — the same folder you registered from. Your Status
+server belongs to that folder; open a different one and the tool won't be there.
+Ask again: *"What time is it?"* Now it's exact. Claude called your tool.
 
 ## 3. Second tool: status of all your repos
 
@@ -72,9 +74,9 @@ Back in your `ws` folder, ask Claude:
 Watch it run Git in **each folder, one at a time.** That's an explanation you give
 every session, and a perfect thing to automate:
 
-> *"Add a `GetRepoStatus` tool to my Status server that scans the subfolders of my
-> `ws` root and reports each repo's Git status: branch, changes, and whether it's
-> ahead or behind, all in one call."*
+> *"Add a tool to my Status server that scans the subfolders of my `ws` root and
+> reports each repo's Git status: branch, changes, and whether it's ahead or
+> behind, all in one call."*
 
 **Restart Claude again** (the same quit-and-reopen). Then ask once more:
 *"What's the status of my repositories?"* **One tool call** replaces one command
@@ -120,7 +122,7 @@ Finished both tools with time left? Don't stop there.
 
 ## You're on track when
 
-- [ ] A **Status** MCP server in `ClaudeLab/mcp/Status/` with a **GetLocalTime**
+- [ ] A **Status** MCP server in `ClaudeLab/mcp/Status/` with a **local-time**
       tool and a **repo-status** tool, registered and callable from Claude Code.
 - [ ] You **restarted Claude** to load each new tool (the quit-and-reopen).
 - [ ] Your `CLAUDE.md` tells Claude to run repo-status at session start.
@@ -139,11 +141,15 @@ Finished both tools with time left? Don't stop there.
 
 ---
 
-*Instructor note (draft): the load-bearing unknowns are (1) that Claude Desktop's
-`</> Code` tab can register a local MCP (`claude mcp add`) at all, and (2) that the
-tray-quit reload actually loads new tools. Rehearse both before the day. The
-restart is the friction that will trip people; keep each tool tiny so a restart is
-the hardest part, not the Python.*
+*Instructor note: both pieces this hour rests on were verified on 2026-07-21 in a
+clean run. (1) Claude Desktop's `</> Code` tab registers a local MCP with
+`claude mcp add` — it lands at project scope, keyed to the open folder. (2) The
+tray-quit reload loads the new tool: a fresh `ws`-rooted session answered the time
+exactly via the tool. Two things to say from the front: the restart is a **full
+quit**, not a window close (same as the Git step in setup), and a tool is scoped
+to the folder it was registered from — everyone stays on `ws` all hour, so it
+won't bite, but name it before someone panics that their tool "disappeared."
+Keep each tool tiny so the restart stays the hardest part, not the Python.*
 
 *Snagged? A tool that won't appear is almost always a "restart Claude" away. Ask
 Claude to show you what it registered, or wave over an instructor.*
