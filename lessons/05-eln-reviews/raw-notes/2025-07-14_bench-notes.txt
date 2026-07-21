@@ -1,0 +1,24 @@
+tb-digest notes 7/14   (LP)
+
+samples: TB-0417, TB-0419, TB-0420   (0418 tube cracked in the rack, tossed it)
+plasma digest for the tf-scan runs. following the usual SDC protocol off the lab wiki.
+
+- pellets outta the -80, ~20 ug each (BCA from fri, numbers in slack). resusp each in 50 uL
+  100mM TEAB + 1% SDC. vortex, quick spin.
+     -> want 200 ng/uL for the run
+- reduce: 10 mM DTT, 56C, 30 min. heat block was reading 54-55, wouldn't quite hit 56. close enough
+- alkylate: 20 mM IAA, RT in the dark, 30 min
+- LysC first, 1:100, 37C ~2h
+- then trypsin. BUT -- outta the sequencing-grade aliquots. grabbed a tube from the -20 door,
+  label half smudged, pretty sure it's the promega lot, exp stamp looks like 11/2024. added 1:50.
+- digest o/n at 37C. started ~6:15pm. came in late tues, pulled them ~10:30am, so call it 16h-ish,
+  maybe a bit more
+- quench + crash the SDC: FA to ~1%, spun 10 min, took the sup
+- C18 stagetip cleanup. 2x wash (protocol says 3x but I was almost out of wash buffer and had a
+  seminar to get to). eluted 50% ACN.
+- speedvac to dry. resusp in 20 uL 0.1% FA.
+- QC inject: 1:10, 2 uL on column
+
+notes:
+0420 looked cloudy after resusp, the other two were clear. flagged the tube.
+forgot to write down the speedvac time but it was fully dry when I pulled it.
