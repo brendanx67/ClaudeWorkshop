@@ -8,6 +8,16 @@ HOW TO USE THIS FILE (participant)
      Keep every file thin, and interview me wherever it says INTERVIEW."
   Then answer Claude's questions. Letting Claude ask you is the whole point.
 
+HOW TO INTERVIEW (Claude — applies to every INTERVIEW below)
+  Ask with the Claude Code question interface (the AskUserQuestion tool), not
+  prose, whenever a question has a small set of likely answers. Offer 2-4
+  concrete options; the interface always adds "Other" for free text, so a
+  participant is never boxed in. Reserve prose questions for the genuinely
+  open-ended — and even then, prose plus a few example answers as options is
+  usually kinder than a blank prompt.
+  Pace: one INTERVIEW beat at a time. Wait for the answer, write the file, then
+  move on.
+
 MINIMAL LAYOUT
   ClaudeLab/
   ├── CLAUDE.md            Thin hub Claude reads every time it works here.
@@ -27,7 +37,9 @@ CONTENTS  (keep every file thin — reference, don't embed)
       - Always follow CRITICAL-RULES.md
       - About me and my work: docs/about-my-work.md
       - Current work: todos/active/
-      - Use the Claude Code question interface for discrete, choose-one questions.
+      - Ask with the Claude Code question interface (AskUserQuestion) by default:
+        any question with a small set of likely answers. Prose only for the
+        genuinely open-ended.
     INTERVIEW: what should we call this lab, and how should Claude refer to you?
 
   CRITICAL-RULES.md — portable rules that apply to ANY AI tool. Start with these;
