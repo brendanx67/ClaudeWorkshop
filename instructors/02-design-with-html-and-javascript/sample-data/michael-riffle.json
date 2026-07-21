@@ -1,0 +1,4410 @@
+{
+  "meta": {
+    "name": "Michael Riffle",
+    "orcid": "0000-0003-1633-8607",
+    "source": "OpenAlex",
+    "count": 108
+  },
+  "papers": [
+    {
+      "id": "W7124445368",
+      "title": "Proteomic Profiling of Human Omental and Subcutaneous Adipose Tissue in Individuals with a Broad Range of BMI",
+      "year": 2026,
+      "type": "preprint",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 1,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 1
+        }
+      ],
+      "doi": "https://doi.org/10.64898/2026.01.14.699533",
+      "url": "https://doi.org/10.64898/2026.01.14.699533",
+      "co_authors": [
+        "Alex Zelter",
+        "Yue Wen",
+        "Michael Riffle",
+        "Lindsay C. Czuba",
+        "Aprajita S. Yadav",
+        "Jerry Zhu",
+        "Jessica M. Snyder",
+        "Aaron Maurais",
+        "Jeffrey LaFrance",
+        "Saurabh Khandelwal",
+        "Judy Y. Chen",
+        "E. Allan Williams",
+        "Zoe Parr",
+        "Daniel Y. Kim",
+        "Katya B. Rubinow",
+        "Michael J. MacCoss",
+        "Nina Isoherranen"
+      ]
+    },
+    {
+      "id": "W7128954521",
+      "title": "Is Protein Quantification and Physical Normalization Always Necessary in Proteomics?",
+      "year": 2026,
+      "type": "preprint",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 1,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 1
+        }
+      ],
+      "doi": "https://doi.org/10.64898/2026.02.13.705808",
+      "url": "https://doi.org/10.64898/2026.02.13.705808",
+      "co_authors": [
+        "Alex Zelter",
+        "Michael Riffle",
+        "Gennifer E. Merrihew",
+        "Batool Mutawe",
+        "Aaron Maurais",
+        "Han-Yin Yang",
+        "Jamie L. Inman",
+        "Susan E. Celniker",
+        "Jian-Hua Mao",
+        "Kenneth H. Wan",
+        "Antoine M. Snijders",
+        "Christine C Wu",
+        "Michael J MacCoss"
+      ]
+    },
+    {
+      "id": "W7133978235",
+      "title": "Proteomic profiling of human omental and subcutaneous adipose tissue in individuals with a broad range of BMI",
+      "year": 2026,
+      "type": "data-paper",
+      "venue": "Scientific Data",
+      "cited_by_count": 1,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 1
+        }
+      ],
+      "doi": "https://doi.org/10.1038/s41597-026-06948-3",
+      "url": "https://doi.org/10.1038/s41597-026-06948-3",
+      "co_authors": [
+        "Alex Zelter",
+        "Yue Wen",
+        "Michael Riffle",
+        "Lindsay C. Czuba",
+        "Aprajita S. Yadav",
+        "Jerry Zhu",
+        "Jessica M. Snyder",
+        "Aaron Maurais",
+        "Jeffrey LaFrance",
+        "Saurabh Khandelwal",
+        "Judy Y. Chen",
+        "Estell Williams",
+        "Zoe Parr",
+        "Daniel Y. Kim",
+        "Katya B. Rubinow",
+        "Michael J. MacCoss",
+        "Nina Isoherranen"
+      ]
+    },
+    {
+      "id": "W7161749333",
+      "title": "A quantitative proteomics dataset for assessment and prediction of low dose X-ray radiation exposure in mice",
+      "year": 2026,
+      "type": "preprint",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 1,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 1
+        }
+      ],
+      "doi": "https://doi.org/10.64898/2026.05.18.725951",
+      "url": "https://doi.org/10.64898/2026.05.18.725951",
+      "co_authors": [
+        "Alex Zelter",
+        "Michael Riffle",
+        "Gennifer E. Merrihew",
+        "Batool Mutawe",
+        "Nicholas Shulman",
+        "Justin Sanders",
+        "William Stafford Noble",
+        "Danielle P Johnson Erickson",
+        "Alec Morimoto",
+        "Benjamin Shaver",
+        "Taylor N Steins",
+        "Ning Cao",
+        "Eric C Ford",
+        "Paul A. Rudnick",
+        "Daniel Chelsky",
+        "Kenneth H. Wan",
+        "Jamie L. Inman",
+        "Hang Chang",
+        "Antoine M. Snijders",
+        "Jian‐Hua Mao",
+        "S Celniker",
+        "Jared de Chant",
+        "L Obst-Huebl",
+        "Kei Nakamura",
+        "Christine C Wu",
+        "Michael J MacCoss"
+      ]
+    },
+    {
+      "id": "W7155076391",
+      "title": "Multimodal analysis of molecular remodeling in aging spleen identified global and cell type specific changes",
+      "year": 2026,
+      "type": "preprint",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.64898/2026.04.17.719305",
+      "url": "https://doi.org/10.64898/2026.04.17.719305",
+      "co_authors": [
+        "Katarina Vlajic",
+        "Alison Luciano",
+        "Gennifer E. Merrihew",
+        "Sahar Attar",
+        "Carla Ruiz Sanchez",
+        "Michael Riffle",
+        "Brian Beliveau",
+        "Mariya T. Sweetwyne",
+        "Kristine A. Tsantilas",
+        "Gary A. Churchill",
+        "Michael J. MacCoss",
+        "Devin K. Schweppe"
+      ]
+    },
+    {
+      "id": "W7160986208",
+      "title": "Identification and characterization of a novel aldehyde metabolite of WIN18,446 and associated WIN18,446-ALDH1A2 protein adducts using mass spectrometry",
+      "year": 2026,
+      "type": "dataset",
+      "venue": "Figshare",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.6084/m9.figshare.32261147.v1",
+      "url": "https://doi.org/10.6084/m9.figshare.32261147.v1",
+      "co_authors": [
+        "Alex Zelter",
+        "Guo Zhong",
+        "Michal Maes",
+        "Michael R. Hoopmann",
+        "Michael Riffle",
+        "Daniel Jaschob",
+        "Eddie A. Carlson",
+        "W L Nelson",
+        "Deepak Dalvie",
+        "Robert L. Moritz",
+        "Trisha N. Davis",
+        "Michael J. MacCoss",
+        "Nina Isoherranen"
+      ]
+    },
+    {
+      "id": "W7161045404",
+      "title": "Identification and characterization of a novel aldehyde metabolite of WIN18,446 and associated WIN18,446-ALDH1A2 protein adducts using mass spectrometry",
+      "year": 2026,
+      "type": "dataset",
+      "venue": "Figshare",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.6084/m9.figshare.32261147",
+      "url": "https://doi.org/10.6084/m9.figshare.32261147",
+      "co_authors": [
+        "Alex Zelter",
+        "Guo Zhong",
+        "Michal Maes",
+        "Michael R. Hoopmann",
+        "Michael Riffle",
+        "Daniel Jaschob",
+        "Eddie A. Carlson",
+        "W L Nelson",
+        "Deepak Dalvie",
+        "Robert L. Moritz",
+        "Trisha N. Davis",
+        "Michael J. MacCoss",
+        "Nina Isoherranen"
+      ]
+    },
+    {
+      "id": "W7161052391",
+      "title": "Identification and characterization of a novel aldehyde metabolite of WIN18,446 and associated WIN18,446-ALDH1A2 protein adducts using mass spectrometry",
+      "year": 2026,
+      "type": "article",
+      "venue": "Drug Metabolism Reviews",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.1080/03602532.2026.2670538",
+      "url": "https://doi.org/10.1080/03602532.2026.2670538",
+      "co_authors": [
+        "Alex Zelter",
+        "Guo Zhong",
+        "Michal Maes",
+        "Michael R. Hoopmann",
+        "Michael Riffle",
+        "Daniel Jaschob",
+        "Eddie A. Carlson II",
+        "W L Nelson",
+        "Deepak Dalvie",
+        "Robert L. Moritz",
+        "Trisha N. Davis",
+        "Michael J. MacCoss",
+        "Nina Isoherranen"
+      ]
+    },
+    {
+      "id": "W7163416089",
+      "title": "Noble-Lab/casanovo: Casanovo v5.2.0",
+      "year": 2026,
+      "type": "software",
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.5281/zenodo.20519535",
+      "url": "https://doi.org/10.5281/zenodo.20519535",
+      "co_authors": [
+        "Wout Bittremieux",
+        "Melih Yilmaz",
+        "Will Fondrie",
+        "Gwenneth Straub",
+        "Yuhui Hong",
+        "Varun Ananth",
+        "TheBobBob",
+        "William Stafford Noble",
+        "Ceder Dens",
+        "Mohamed Kardosha",
+        "Carlo Melendez",
+        "ishagokhale",
+        "chris",
+        "Nameless",
+        "Abhinav Shukla",
+        "Bhavya",
+        "Gaurav Singh",
+        "Manda Kausthubh",
+        "Michael Riffle",
+        "Rolly Calma"
+      ]
+    },
+    {
+      "id": "W7165355944",
+      "title": "Spatiotemporal Mapping of Phosphorylation and Oxidation in the Pig Lens",
+      "year": 2026,
+      "type": "preprint",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.64898/2026.06.15.732367",
+      "url": "https://doi.org/10.64898/2026.06.15.732367",
+      "co_authors": [
+        "Julianna S. Moock",
+        "Owen Kelley",
+        "Michael Riffle",
+        "Gennifer E. Merrihew",
+        "Michael J. MacCoss",
+        "Jeremy Whitson"
+      ]
+    },
+    {
+      "id": "W7167932127",
+      "title": "Circulating extracellular vesicles in plasma carry accessible molecular signatures of aging in mice",
+      "year": 2026,
+      "type": "preprint",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.64898/2026.07.10.737625",
+      "url": "https://doi.org/10.64898/2026.07.10.737625",
+      "co_authors": [
+        "Kristine A. Tsantilas",
+        "Michael Riffle",
+        "Gennifer E. Merrihew",
+        "Christine C Wu",
+        "Gregory R. Keele",
+        "Aaron Maurais",
+        "R T Johnson",
+        "Alison Luciano",
+        "Laura Robinson",
+        "Gary A Churchill",
+        "Michael J. MacCoss"
+      ]
+    },
+    {
+      "id": "W7169511116",
+      "title": "CasanovoGUI: a cross-platform desktop application for deep learning-based <i>de novo</i> peptide sequencing with Casanovo",
+      "year": 2026,
+      "type": "preprint",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.64898/2026.07.11.737889",
+      "url": "https://doi.org/10.64898/2026.07.11.737889",
+      "co_authors": [
+        "Bo Wen",
+        "Kai Li",
+        "Michael Riffle",
+        "Michael J. MacCoss",
+        "Wout Bittremieux",
+        "William Stafford Noble"
+      ]
+    },
+    {
+      "id": "W4411895475",
+      "title": "Enrichment of extracellular vesicles using Mag-Net for the analysis of the plasma proteome",
+      "year": 2025,
+      "type": "article",
+      "venue": "Nature Communications",
+      "cited_by_count": 54,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 36
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 18
+        }
+      ],
+      "doi": "https://doi.org/10.1038/s41467-025-60595-7",
+      "url": "https://doi.org/10.1038/s41467-025-60595-7",
+      "co_authors": [
+        "Christine C. Wu",
+        "Kristine A. Tsantilas",
+        "Jea Park",
+        "Deanna L. Plubell",
+        "Justin Sanders",
+        "Previn Naicker",
+        "Ireshyn S. Govender",
+        "Sindisiwe Buthelezi",
+        "Stoyan Stoychev",
+        "Justin Jordaan",
+        "Gennifer E. Merrihew",
+        "Eric Huang",
+        "Edward D. Parker",
+        "Michael Riffle",
+        "Andrew N. Hoofnagle",
+        "William Stafford Noble",
+        "Kathleen L. Poston",
+        "Thomas J. Montine",
+        "Michael J. MacCoss"
+      ]
+    },
+    {
+      "id": "W4411328567",
+      "title": "Assessment of false discovery rate control in tandem mass spectrometry analysis using entrapment",
+      "year": 2025,
+      "type": "article",
+      "venue": "Nature Methods",
+      "cited_by_count": 39,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 24
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 12
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 3
+        }
+      ],
+      "doi": "https://doi.org/10.1038/s41592-025-02719-x",
+      "url": "https://doi.org/10.1038/s41592-025-02719-x",
+      "co_authors": [
+        "Bo Wen",
+        "Jack Freestone",
+        "Michael Riffle",
+        "Michael J. MacCoss",
+        "William Stafford Noble",
+        "Uri Keich"
+      ]
+    },
+    {
+      "id": "W4408253631",
+      "title": "Protein signatures predict coral resilience and survival to thermal bleaching events",
+      "year": 2025,
+      "type": "article",
+      "venue": "Communications Earth & Environment",
+      "cited_by_count": 14,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 8
+        }
+      ],
+      "doi": "https://doi.org/10.1038/s43247-025-02167-7",
+      "url": "https://doi.org/10.1038/s43247-025-02167-7",
+      "co_authors": [
+        "Brook L. Nunn",
+        "Tanya Brown",
+        "Emma Timmins‐Schiffman",
+        "Miranda C. Mudge",
+        "Michael Riffle",
+        "Jeremy B. Axworthy",
+        "Jenna Dilworth",
+        "Carly D. Kenkel",
+        "Jesse Zaneveld",
+        "Lisa J. Rodrigues",
+        "Jacqueline L. Padilla‐Gamiño"
+      ]
+    },
+    {
+      "id": "W4409879428",
+      "title": "Harmful algal blooms are preceded by a predictable and quantifiable shift in the oceanic microbiome",
+      "year": 2025,
+      "type": "article",
+      "venue": "Nature Communications",
+      "cited_by_count": 14,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 10
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 4
+        }
+      ],
+      "doi": "https://doi.org/10.1038/s41467-025-59250-y",
+      "url": "https://doi.org/10.1038/s41467-025-59250-y",
+      "co_authors": [
+        "Miranda C. Mudge",
+        "Michael Riffle",
+        "Gabriella Chebli",
+        "Deanna L. Plubell",
+        "Tatiana A. Rynearson",
+        "William Stafford Noble",
+        "Emma Timmins‐Schiffman",
+        "Julia Kubanek",
+        "Brook L. Nunn"
+      ]
+    },
+    {
+      "id": "W4415958287",
+      "title": "Carafe enables high quality in silico spectral library generation for data-independent acquisition proteomics",
+      "year": 2025,
+      "type": "article",
+      "venue": "Nature Communications",
+      "cited_by_count": 12,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 10
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 2
+        }
+      ],
+      "doi": "https://doi.org/10.1038/s41467-025-64928-4",
+      "url": "https://doi.org/10.1038/s41467-025-64928-4",
+      "co_authors": [
+        "Bo Wen",
+        "Chris Hsu",
+        "David Shteynberg",
+        "Wen‐Feng Zeng",
+        "Michael Riffle",
+        "Alexis Chang",
+        "Miranda C. Mudge",
+        "Brook L. Nunn",
+        "Brendan MacLean",
+        "Matthew D. Berg",
+        "Judit Villén",
+        "Michael J. MacCoss",
+        "William Stafford Noble"
+      ]
+    },
+    {
+      "id": "W4411900698",
+      "title": "A transformer model for de novo sequencing of data-independent acquisition mass spectrometry data",
+      "year": 2025,
+      "type": "article",
+      "venue": "Nature Methods",
+      "cited_by_count": 11,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 5
+        }
+      ],
+      "doi": "https://doi.org/10.1038/s41592-025-02718-y",
+      "url": "https://doi.org/10.1038/s41592-025-02718-y",
+      "co_authors": [
+        "Justin Sanders",
+        "Bo Wen",
+        "Paul A. Rudnick",
+        "Richard S. Johnson",
+        "Christine C. Wu",
+        "Michael Riffle",
+        "Sewoong Oh",
+        "Michael J. MacCoss",
+        "William Stafford Noble"
+      ]
+    },
+    {
+      "id": "W4415790750",
+      "title": "The E3 ubiquitin ligase MGRN1 targets melanocortin receptors MC1R and MC4R via interactions with transmembrane adapters",
+      "year": 2025,
+      "type": "article",
+      "venue": "Journal of Cell Science",
+      "cited_by_count": 4,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 1
+        }
+      ],
+      "doi": "https://doi.org/10.1242/jcs.264084",
+      "url": "https://doi.org/10.1242/jcs.264084",
+      "co_authors": [
+        "Pragya Parashara",
+        "Lei Gao",
+        "Alyssa Riglos",
+        "Dorothy Lartey",
+        "Sonia B. Sidhu",
+        "Tessa Marks",
+        "Chris Williams",
+        "Grace Siauw",
+        "Kai-Jing Lee",
+        "Anna I. L. Ostrem",
+        "Christian Siebold",
+        "Michael Riffle",
+        "Maia Kinnebrew",
+        "Teresa M. Gunn",
+        "Jennifer H. Kong"
+      ]
+    },
+    {
+      "id": "W7117537506",
+      "title": "Improvements to Casanovo, a Deep Learning <i>De Novo</i> Peptide Sequencer",
+      "year": 2025,
+      "type": "article",
+      "venue": "Journal of Proteome Research",
+      "cited_by_count": 3,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 3
+        }
+      ],
+      "doi": "https://doi.org/10.1021/acs.jproteome.5c00706",
+      "url": "https://doi.org/10.1021/acs.jproteome.5c00706",
+      "co_authors": [
+        "Gwenneth Straub",
+        "Varun Ananth",
+        "William E. Fondrie",
+        "Chris Hsu",
+        "Daniela Klaproth-Andrade",
+        "Marina Pominova",
+        "Michael Riffle",
+        "Justin J. Sanders",
+        "Bo Wen",
+        "Lingwen Xu",
+        "Melih Yilmaz",
+        "Michael J. MacCoss",
+        "Sewoong Oh",
+        "Wout Bittremieux",
+        "William Stafford Noble"
+      ]
+    },
+    {
+      "id": "W4408145332",
+      "title": "Limelight: An Open, Web-Based Tool for Visualizing, Sharing, and Analyzing Mass Spectrometry Data from DDA Pipelines",
+      "year": 2025,
+      "type": "article",
+      "venue": "Journal of Proteome Research",
+      "cited_by_count": 3,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 2
+        }
+      ],
+      "doi": "https://doi.org/10.1021/acs.jproteome.4c00968",
+      "url": "https://doi.org/10.1021/acs.jproteome.4c00968",
+      "co_authors": [
+        "Michael Riffle",
+        "Alex Zelter",
+        "Daniel Jaschob",
+        "Michael R. Hoopmann",
+        "Danielle A. Faivre",
+        "Robert L. Moritz",
+        "Trisha N. Davis",
+        "Michael J. MacCoss",
+        "Nina Isoherranen"
+      ]
+    },
+    {
+      "id": "W4408912926",
+      "title": "The E3 ubiquitin ligase MGRN1 targets melanocortin receptors MC1R and MC4R via interactions with transmembrane adapters",
+      "year": 2025,
+      "type": "preprint",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 3,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 1
+        }
+      ],
+      "doi": "https://doi.org/10.1101/2025.03.25.645338",
+      "url": "https://doi.org/10.1101/2025.03.25.645338",
+      "co_authors": [
+        "Pragya Parashara",
+        "Lei Gao",
+        "Alyssa Riglos",
+        "Sonia B. Sidhu",
+        "Dorothy Lartey",
+        "Tessa Marks",
+        "Chris Williams",
+        "Grace Siauw",
+        "Anna I. L. Ostrem",
+        "Christian Siebold",
+        "Maia Kinnebrew",
+        "Michael Riffle",
+        "Teresa M. Gunn",
+        "Jennifer H. Kong"
+      ]
+    },
+    {
+      "id": "W4410925629",
+      "title": "Improved quantitation in data-independent acquisition proteomics via retention time boundary imputation",
+      "year": 2025,
+      "type": "preprint",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 2,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 1
+        }
+      ],
+      "doi": "https://doi.org/10.1101/2025.05.27.656394",
+      "url": "https://doi.org/10.1101/2025.05.27.656394",
+      "co_authors": [
+        "Lincoln Harris",
+        "Michael Riffle",
+        "Nicholas Shulman",
+        "William E. Fondrie",
+        "Christine C. Wu",
+        "Danielle P. Johnson Erickson",
+        "Alec Morimoto",
+        "Benjamin A. Shaver",
+        "Taylor N. Stein",
+        "Ning Cao",
+        "Eric C. Ford",
+        "William Stafford Noble",
+        "Michael J. MacCoss"
+      ]
+    },
+    {
+      "id": "W4412674037",
+      "title": "Improvements to Casanovo, a deep learning <i>de novo</i> peptide sequencer",
+      "year": 2025,
+      "type": "preprint",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 2,
+      "counts_by_year": [
+        {
+          "year": 2025,
+          "cited_by_count": 2
+        }
+      ],
+      "doi": "https://doi.org/10.1101/2025.07.25.666826",
+      "url": "https://doi.org/10.1101/2025.07.25.666826",
+      "co_authors": [
+        "Gwenneth Straub",
+        "Varun Ananth",
+        "William E. Fondrie",
+        "Chris Hsu",
+        "Daniela Klaproth-Andrade",
+        "Michael Riffle",
+        "Justin J. Sanders",
+        "Bo Wen",
+        "Lingwen Xu",
+        "Melih Yilmaz",
+        "Michael J. MacCoss",
+        "Sewoong Oh",
+        "Wout Bittremieux",
+        "William Stafford Noble"
+      ]
+    },
+    {
+      "id": "W4406620185",
+      "title": "Author Correction: Microbial Metagenomes Across a Complete Phytoplankton Bloom Cycle: High-Resolution Sampling Every 4 Hours Over 22 Days",
+      "year": 2025,
+      "type": "erratum",
+      "venue": "Scientific Data",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.1038/s41597-025-04445-7",
+      "url": "https://doi.org/10.1038/s41597-025-04445-7",
+      "co_authors": [
+        "Brook L. Nunn",
+        "Emma Timmins‐Schiffman",
+        "Miranda C. Mudge",
+        "Deanna L. Plubell",
+        "Gabriella Chebli",
+        "Julia Kubanek",
+        "Michael Riffle",
+        "William Stafford Noble",
+        "Elizabeth L. Harvey",
+        "Tasman A. Nunn",
+        "Tatiana A. Rynearson",
+        "Marcel Huntemann",
+        "Kurt LaButti",
+        "Brian Foster",
+        "Bryce Foster",
+        "Simon Roux",
+        "Krishna Palaniappan",
+        "Supratim Mukherjee",
+        "T. B. K. Reddy",
+        "Chris Daum",
+        "Alex Copeland",
+        "I-Min A. Chen",
+        "Natalia Ivanova",
+        "Nikos C. Kyrpides",
+        "Tijana Glavina del Rio",
+        "Emiley A. Eloe‐Fadrosh"
+      ]
+    },
+    {
+      "id": "W4407839999",
+      "title": "Force transmission through the inner kinetochore is enhanced by centromeric DNA sequences",
+      "year": 2025,
+      "type": "preprint",
+      "venue": "eLife",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.7554/elife.105150",
+      "url": "https://doi.org/10.7554/elife.105150",
+      "co_authors": [
+        "Elise Miedlar",
+        "Grace E Hamilton",
+        "Samuel R Witus",
+        "Sara Gonske",
+        "Michael Riffle",
+        "Alex Zelter",
+        "Rachel E. Klevit",
+        "Charles L. Asbury",
+        "Yoana N. Dimitrova",
+        "Trisha N. Davis"
+      ]
+    },
+    {
+      "id": "W4407840401",
+      "title": "Force transmission through the inner kinetochore is enhanced by centromeric DNA sequences",
+      "year": 2025,
+      "type": "preprint",
+      "venue": "eLife",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.7554/elife.105150.1",
+      "url": "https://doi.org/10.7554/elife.105150.1",
+      "co_authors": [
+        "Elise Miedlar",
+        "Grace E Hamilton",
+        "Samuel R Witus",
+        "Sara Gonske",
+        "Michael Riffle",
+        "Alex Zelter",
+        "Rachel E. Klevit",
+        "Charles L. Asbury",
+        "Yoana N. Dimitrova",
+        "Trisha N. Davis"
+      ]
+    },
+    {
+      "id": "W4409215571",
+      "title": "Force transmission through the inner kinetochore is enhanced by centromeric DNA sequences",
+      "year": 2025,
+      "type": "preprint",
+      "venue": "eLife",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.7554/elife.105150.2",
+      "url": "https://doi.org/10.7554/elife.105150.2",
+      "co_authors": [
+        "Elise Miedlar",
+        "Grace E Hamilton",
+        "Samuel R Witus",
+        "Sara Gonske",
+        "Michael Riffle",
+        "Alex Zelter",
+        "Rachel E. Klevit",
+        "Charles L. Asbury",
+        "Yoana N. Dimitrova",
+        "Trisha N. Davis"
+      ]
+    },
+    {
+      "id": "W4410865716",
+      "title": "Force transmission through the inner kinetochore is enhanced by centromeric DNA sequences",
+      "year": 2025,
+      "type": "article",
+      "venue": "eLife",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.7554/elife.105150.3",
+      "url": "https://doi.org/10.7554/elife.105150.3",
+      "co_authors": [
+        "Elise Miedlar",
+        "Grace E Hamilton",
+        "Samuel R Witus",
+        "Sara Gonske",
+        "Michael Riffle",
+        "Alex Zelter",
+        "Rachel E. Klevit",
+        "Charles L. Asbury",
+        "Yoana N. Dimitrova",
+        "Trisha N. Davis"
+      ]
+    },
+    {
+      "id": "W4402191150",
+      "title": "NCI’s Proteomic Data Commons: A Cloud-Based Proteomics Repository Empowering Comprehensive Cancer Analysis through Cross-Referencing with Genomic and Imaging Data",
+      "year": 2024,
+      "type": "article",
+      "venue": "Cancer Research Communications",
+      "cited_by_count": 28,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 10
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 18
+        }
+      ],
+      "doi": "https://doi.org/10.1158/2767-9764.crc-24-0243",
+      "url": "https://doi.org/10.1158/2767-9764.crc-24-0243",
+      "co_authors": [
+        "Ratna R. Thangudu",
+        "Michael Holck",
+        "Deepak Singhal",
+        "Alexander Pilozzi",
+        "Nathan Edwards",
+        "Paul A. Rudnick",
+        "Marcin J. Domagalski",
+        "Padmini Chilappagari",
+        "Lei Ma",
+        "Yi Xin",
+        "Toan Le",
+        "Kristen Nyce",
+        "Rekha Chaudhary",
+        "Karen A. Ketchum",
+        "Aaron Maurais",
+        "Brian Connolly",
+        "Michael Riffle",
+        "Matthew C. Chambers",
+        "Brendan MacLean",
+        "Michael J. MacCoss",
+        "Peter B. McGarvey",
+        "Anand Basu",
+        "John Otridge",
+        "Esmeralda Casas-Silva",
+        "Sudha Venkatachari",
+        "Henry Rodriguez",
+        "Xu Zhang"
+      ]
+    },
+    {
+      "id": "W4402363242",
+      "title": "A Framework for Quality Control in Quantitative Proteomics",
+      "year": 2024,
+      "type": "article",
+      "venue": "Journal of Proteome Research",
+      "cited_by_count": 28,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 10
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 15
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 3
+        }
+      ],
+      "doi": "https://doi.org/10.1021/acs.jproteome.4c00363",
+      "url": "https://doi.org/10.1021/acs.jproteome.4c00363",
+      "co_authors": [
+        "Kristine A. Tsantilas",
+        "Gennifer E. Merrihew",
+        "Julia Robbins",
+        "Richard S. Johnson",
+        "Jea Park",
+        "Deanna L. Plubell",
+        "Jesse D. Canterbury",
+        "Eric Huang",
+        "Michael Riffle",
+        "Vagisha Sharma",
+        "Brendan MacLean",
+        "Josh Eckels",
+        "Christine Wu",
+        "Michael S. Bereman",
+        "Sandra E. Spencer Miko",
+        "Andrew N. Hoofnagle",
+        "Michael J. MacCoss"
+      ]
+    },
+    {
+      "id": "W4396571612",
+      "title": "A Workflow for Improved Analysis of Cross-Linking Mass Spectrometry Data Integrating Parallel Accumulation-Serial Fragmentation with MeroX and Skyline",
+      "year": 2024,
+      "type": "article",
+      "venue": "Analytical Chemistry",
+      "cited_by_count": 13,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 1
+        }
+      ],
+      "doi": "https://doi.org/10.1021/acs.analchem.4c00829",
+      "url": "https://doi.org/10.1021/acs.analchem.4c00829",
+      "co_authors": [
+        "Juan Camilo Rojas Echeverri",
+        "Frank Hause",
+        "Claudio Iacobucci",
+        "Christian Ihling",
+        "Dirk Tänzler",
+        "Nicholas Shulman",
+        "Michael Riffle",
+        "Brendan MacLean",
+        "Andrea Sinz"
+      ]
+    },
+    {
+      "id": "W4403672785",
+      "title": "Detection and Quantification of Drug–Protein Adducts in Human Liver",
+      "year": 2024,
+      "type": "article",
+      "venue": "Journal of Proteome Research",
+      "cited_by_count": 8,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 4
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 1
+        }
+      ],
+      "doi": "https://doi.org/10.1021/acs.jproteome.4c00663",
+      "url": "https://doi.org/10.1021/acs.jproteome.4c00663",
+      "co_authors": [
+        "Alex Zelter",
+        "Michael Riffle",
+        "David Shteynberg",
+        "Guo Zhong",
+        "Ellen B. Riddle",
+        "Michael R. Hoopmann",
+        "Daniel Jaschob",
+        "Robert L. Moritz",
+        "Trisha N. Davis",
+        "Michael J. MacCoss",
+        "Nina Isoherranen"
+      ]
+    },
+    {
+      "id": "W4404322025",
+      "title": "Reproductive resilience: pathways to gametogenic success in Montipora capitata after bleaching",
+      "year": 2024,
+      "type": "article",
+      "venue": "Scientific Reports",
+      "cited_by_count": 4,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 2
+        }
+      ],
+      "doi": "https://doi.org/10.1038/s41598-024-78768-7",
+      "url": "https://doi.org/10.1038/s41598-024-78768-7",
+      "co_authors": [
+        "Emma Timmins‐Schiffman",
+        "E Duselis",
+        "Tony Brown",
+        "J B Axworthy",
+        "C H Backstrom",
+        "Michael Riffle",
+        "J.R. Dilworth",
+        "Carly D. Kenkel",
+        "Lisa J. Rodrigues",
+        "Brook L. Nunn",
+        "Jacqueline L. Padilla‐Gamiño"
+      ]
+    },
+    {
+      "id": "W4399303727",
+      "title": "Assessment of false discovery rate control in tandem mass spectrometry analysis using entrapment",
+      "year": 2024,
+      "type": "preprint",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 19,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 10
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 7
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 1
+        }
+      ],
+      "doi": "https://doi.org/10.1101/2024.06.01.596967",
+      "url": "https://doi.org/10.1101/2024.06.01.596967",
+      "co_authors": [
+        "Bo Wen",
+        "Jack Freestone",
+        "Michael Riffle",
+        "Michael J. MacCoss",
+        "William Stafford Noble",
+        "Uri Keich"
+      ]
+    },
+    {
+      "id": "W4403515665",
+      "title": "Carafe enables high quality <i>in silico</i> spectral library generation for data-independent acquisition proteomics",
+      "year": 2024,
+      "type": "preprint",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 7,
+      "counts_by_year": [
+        {
+          "year": 2025,
+          "cited_by_count": 7
+        }
+      ],
+      "doi": "https://doi.org/10.1101/2024.10.15.618504",
+      "url": "https://doi.org/10.1101/2024.10.15.618504",
+      "co_authors": [
+        "Bo Wen",
+        "Chris Hsu",
+        "David Shteynberg",
+        "Wen‐Feng Zeng",
+        "Michael Riffle",
+        "Alexis Chang",
+        "Miranda C. Mudge",
+        "Brook L. Nunn",
+        "Brendan MacLean",
+        "Matthew D. Berg",
+        "Judit Villén",
+        "Michael J. MacCoss",
+        "William Stafford Noble"
+      ]
+    },
+    {
+      "id": "W4404615564",
+      "title": "Microbial Metagenomes Across a Complete Phytoplankton Bloom Cycle: High-Resolution Sampling Every 4 Hours Over 22 Days",
+      "year": 2024,
+      "type": "data-paper",
+      "venue": "Scientific Data",
+      "cited_by_count": 7,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 2
+        }
+      ],
+      "doi": "https://doi.org/10.1038/s41597-024-04013-5",
+      "url": "https://doi.org/10.1038/s41597-024-04013-5",
+      "co_authors": [
+        "Brook L. Nunn",
+        "Emma Timmins‐Schiffman",
+        "Miranda C. Mudge",
+        "Deanna L. Plubell",
+        "Gabriella Chebli",
+        "Julia Kubanek",
+        "Michael Riffle",
+        "William Stafford Noble",
+        "Elizabeth L. Harvey",
+        "Tasman A. Nunn",
+        "Tatiana Rynearson",
+        "Marcel Huntemann",
+        "Kurt LaButti",
+        "Brian Foster",
+        "Bryce Foster",
+        "Simon Roux",
+        "Krishna Palaniappan",
+        "Supratim Mukherjee",
+        "T. B. K. Reddy",
+        "Chris Daum",
+        "Alex Copeland",
+        "I-Min A. Chen",
+        "Natalia Ivanova",
+        "Nikos C. Kyrpides",
+        "Tijana Glavina del Rio",
+        "Emiley A. Eloe‐Fadrosh"
+      ]
+    },
+    {
+      "id": "W4394790058",
+      "title": "A framework for quality control in quantitative proteomics",
+      "year": 2024,
+      "type": "preprint",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 6,
+      "counts_by_year": [
+        {
+          "year": 2025,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 5
+        }
+      ],
+      "doi": "https://doi.org/10.1101/2024.04.12.589318",
+      "url": "https://doi.org/10.1101/2024.04.12.589318",
+      "co_authors": [
+        "Kristine A. Tsantilas",
+        "Gennifer E. Merrihew",
+        "Julia Robbins",
+        "Richard S. Johnson",
+        "Jea Park",
+        "Deanna L. Plubell",
+        "Jesse D. Canterbury",
+        "Eric Huang",
+        "Michael Riffle",
+        "Vagisha Sharma",
+        "Brendan MacLean",
+        "Josh Eckels",
+        "Christine Wu",
+        "Michael S. Bereman",
+        "Sandra E. Spencer Miko",
+        "Andrew N. Hoofnagle",
+        "Michael J. MacCoss"
+      ]
+    },
+    {
+      "id": "W4395084136",
+      "title": "Resilience in a time of stress: revealing the molecular underpinnings of coral survival following thermal bleaching events",
+      "year": 2024,
+      "type": "preprint",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 4,
+      "counts_by_year": [
+        {
+          "year": 2025,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 2
+        }
+      ],
+      "doi": "https://doi.org/10.1101/2024.04.02.587798",
+      "url": "https://doi.org/10.1101/2024.04.02.587798",
+      "co_authors": [
+        "Brook L. Nunn",
+        "Tanya Brown",
+        "Emma Timmins‐Schiffman",
+        "Miranda C. Mudge",
+        "Michael Riffle",
+        "Jeremy B. Axworthy",
+        "Jenna Dilwort",
+        "Carly D. Kenkel",
+        "Jesse Zaneveld",
+        "Lisa J. Rodrigues",
+        "Jacqueline L. Padilla‐Gamiño"
+      ]
+    },
+    {
+      "id": "W4402948453",
+      "title": "Microbial Metagenomes Across a Complete Phytoplankton Bloom Cycle: High-Resolution Sampling Every 4 Hours Over 22 Days",
+      "year": 2024,
+      "type": "preprint",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 2,
+      "counts_by_year": [
+        {
+          "year": 2024,
+          "cited_by_count": 2
+        }
+      ],
+      "doi": "https://doi.org/10.1101/2024.09.27.614549",
+      "url": "https://doi.org/10.1101/2024.09.27.614549",
+      "co_authors": [
+        "Brook L. Nunn",
+        "Emma Timmins‐Schiffman",
+        "Miranda C. Mudge",
+        "Deanna L. Plubell",
+        "Gabriella Chebli",
+        "Julia Kubanek",
+        "Michael Riffle",
+        "William Stafford Noble",
+        "Elizabeth L. Harvey",
+        "Tasman A. Nunn",
+        "Marcel Huntemann",
+        "Alicia Clum",
+        "Brian Foster",
+        "Bryce Foster",
+        "Simon Roux",
+        "Krishna Palaniappan",
+        "Supratim Mukherjee",
+        "T. B. K. Reddy",
+        "Chris Daum",
+        "Alex Copeland",
+        "I-Min A. Chen",
+        "Natalia Ivanova",
+        "Nikos C. Kyrpides",
+        "Tijana Glavina del Rio",
+        "Emiley A. Eloe‐Fadrosh"
+      ]
+    },
+    {
+      "id": "W4400594235",
+      "title": "Reproductive Resilience: Pathways to Gametogenic Success in Montipora capitata after Bleaching ",
+      "year": 2024,
+      "type": "preprint",
+      "venue": "Research Square",
+      "cited_by_count": 1,
+      "counts_by_year": [
+        {
+          "year": 2024,
+          "cited_by_count": 1
+        }
+      ],
+      "doi": "https://doi.org/10.21203/rs.3.rs-4559943/v1",
+      "url": "http://dx.doi.org/10.21203/rs.3.rs-4559943/v1",
+      "co_authors": [
+        "Emma Timmins‐Schiffman",
+        "E Duselis",
+        "Tony Brown",
+        "J B Axworthy",
+        "C H Backstrom",
+        "Michael Riffle",
+        "F. Jeffrey Dilworth",
+        "Carly D. Kenkel",
+        "LF Rodrigues",
+        "Brook L. Nunn",
+        "JL Padilla-Gamiño"
+      ]
+    },
+    {
+      "id": "W4404051249",
+      "title": "Limelight - An open, web-based tool for visualizing, sharing, and analyzing mass spectrometry data from DDA pipelines",
+      "year": 2024,
+      "type": "preprint",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 1,
+      "counts_by_year": [
+        {
+          "year": 2025,
+          "cited_by_count": 1
+        }
+      ],
+      "doi": "https://doi.org/10.1101/2024.11.01.621597",
+      "url": "https://doi.org/10.1101/2024.11.01.621597",
+      "co_authors": [
+        "Michael Riffle",
+        "Alex Zelter",
+        "Daniel Jaschob",
+        "Michael R. Hoopmann",
+        "Danielle A. Faivre",
+        "Robert L. Moritz",
+        "Trisha N. Davis",
+        "Michael J. MacCoss",
+        "Nina Isoherranen"
+      ]
+    },
+    {
+      "id": "W4392783931",
+      "title": "A Workflow for Improved Analysis of Cross-linking Mass Spectrometry Data Integrating Parallel Accumulation-Serial Fragmentation with MeroX and Skyline",
+      "year": 2024,
+      "type": "preprint",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.1101/2024.02.13.580038",
+      "url": "https://doi.org/10.1101/2024.02.13.580038",
+      "co_authors": [
+        "Juan Camilo Rojas Echeverri",
+        "Frank Hause",
+        "Claudio Iacobucci",
+        "Christian Ihling",
+        "Dirk Tänzler",
+        "Nicholas Shulman",
+        "Michael Riffle",
+        "Brendan MacLean",
+        "Andrea Sinz"
+      ]
+    },
+    {
+      "id": "W4400344739",
+      "title": "Resilience in a time of stress: revealing the molecular underpinnings of coral survival following thermal bleaching events",
+      "year": 2024,
+      "type": "preprint",
+      "venue": "Research Square",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.21203/rs.3.rs-4566379/v1",
+      "url": "https://doi.org/10.21203/rs.3.rs-4566379/v1",
+      "co_authors": [
+        "Brook L. Nunn",
+        "Tanya Brown",
+        "Emma Timmins‐Schiffman",
+        "Miranda C. Mudge",
+        "Michael Riffle",
+        "Jeremy B. Axworthy",
+        "Jenna Dilworth",
+        "Carly D. Kenkel",
+        "Jesse Zaneveld",
+        "Lisa J. Rodrigues",
+        "Jacqeline Padilla-Gamiño"
+      ]
+    },
+    {
+      "id": "W4404366503",
+      "title": "Force transmission through the inner kinetochore is enhanced by centromeric DNA sequences",
+      "year": 2024,
+      "type": "preprint",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.1101/2024.11.13.623448",
+      "url": "https://doi.org/10.1101/2024.11.13.623448",
+      "co_authors": [
+        "Elise Miedlar",
+        "Grace E Hamilton",
+        "Samuel R Witus",
+        "Sara Gonske",
+        "Michael Riffle",
+        "Alex Zelter",
+        "Rachel E. Klevit",
+        "Charles L. Asbury",
+        "Yoana N. Dimitrova",
+        "Trisha N. Davis"
+      ]
+    },
+    {
+      "id": "W4386532751",
+      "title": "Evaluating the Performance of the Astral Mass Analyzer for Quantitative Proteomics Using Data-Independent Acquisition",
+      "year": 2023,
+      "type": "article",
+      "venue": "Journal of Proteome Research",
+      "cited_by_count": 232,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 27
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 107
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 85
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 12
+        }
+      ],
+      "doi": "https://doi.org/10.1021/acs.jproteome.3c00357",
+      "url": "https://doi.org/10.1021/acs.jproteome.3c00357",
+      "co_authors": [
+        "Lilian R. Heil",
+        "Eugen Damoc",
+        "Tabiwang N. Arrey",
+        "Anna Pashkova",
+        "Eduard Denisov",
+        "J. Petzoldt",
+        "Amelia C. Peterson",
+        "Chris Hsu",
+        "Brian C. Searle",
+        "Nicholas Shulman",
+        "Michael Riffle",
+        "B. Connolly",
+        "Brendan MacLean",
+        "Philip M. Remes",
+        "Michael W. Senko",
+        "Hamish Stewart",
+        "Christian Hock",
+        "Alexander Makarov",
+        "Daniel Hermanson",
+        "Vlad Zabrouskov",
+        "Christine C. Wu",
+        "Michael J. MacCoss"
+      ]
+    },
+    {
+      "id": "W4315619286",
+      "title": "Improved Analysis of Cross-Linking Mass Spectrometry Data with Kojak 2.0, Advanced by Integration into the Trans-Proteomic Pipeline",
+      "year": 2023,
+      "type": "article",
+      "venue": "Journal of Proteome Research",
+      "cited_by_count": 18,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 4
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 8
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 1
+        }
+      ],
+      "doi": "https://doi.org/10.1021/acs.jproteome.2c00670",
+      "url": "https://doi.org/10.1021/acs.jproteome.2c00670",
+      "co_authors": [
+        "Michael R. Hoopmann",
+        "David Shteynberg",
+        "Alex Zelter",
+        "Michael Riffle",
+        "Andrew S. Lyon",
+        "David A. Agard",
+        "Qing Luan",
+        "Brad J. Nolen",
+        "Michael J. MacCoss",
+        "Trisha N. Davis",
+        "Robert L. Moritz"
+      ]
+    },
+    {
+      "id": "W4380433096",
+      "title": "Mag-Net: Rapid enrichment of membrane-bound particles enables high coverage quantitative analysis of the plasma proteome",
+      "year": 2023,
+      "type": "preprint",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 63,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 8
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 33
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 16
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 6
+        }
+      ],
+      "doi": "https://doi.org/10.1101/2023.06.10.544439",
+      "url": "https://doi.org/10.1101/2023.06.10.544439",
+      "co_authors": [
+        "Christine Wu",
+        "Kristine A. Tsantilas",
+        "Jea Park",
+        "Deanna L. Plubell",
+        "Justin Sanders",
+        "Previn Naicker",
+        "Ireshyn S. Govender",
+        "Sindisiwe Buthelezi",
+        "Stoyan Stoychev",
+        "Justin Jordaan",
+        "Gennifer E. Merrihew",
+        "Eric Huang",
+        "Edward D. Parker",
+        "Michael Riffle",
+        "Andrew N. Hoofnagle",
+        "William Stafford Noble",
+        "Kathleen L. Poston",
+        "Thomas J. Montine",
+        "Michael J. MacCoss"
+      ]
+    },
+    {
+      "id": "W4379284857",
+      "title": "Evaluating the Performance of the Astral Mass Analyzer for Quantitative Proteomics Using Data Independent Acquisition",
+      "year": 2023,
+      "type": "preprint",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 32,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 12
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 9
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 10
+        }
+      ],
+      "doi": "https://doi.org/10.1101/2023.06.03.543570",
+      "url": "https://doi.org/10.1101/2023.06.03.543570",
+      "co_authors": [
+        "Lilian R. Heil",
+        "Eugen Damoc",
+        "Tabiwang N. Arrey",
+        "Anna Pashkova",
+        "Eduard Denisov",
+        "J. Petzoldt",
+        "Amelia C. Peterson",
+        "Chris Hsu",
+        "Brian C. Searle",
+        "Nicholas Shulman",
+        "Michael Riffle",
+        "B. Connolly",
+        "Brendan MacLean",
+        "Philip M. Remes",
+        "Michael W. Senko",
+        "Hamish Stewart",
+        "Christian Hock",
+        "Alexander Makarov",
+        "Daniel Hermanson",
+        "Vlad Zabrouskov",
+        "Christine C. Wu",
+        "Michael J. MacCoss"
+      ]
+    },
+    {
+      "id": "W4220800712",
+      "title": "Discovery and Visualization of Uncharacterized Drug–Protein Adducts Using Mass Spectrometry",
+      "year": 2022,
+      "type": "article",
+      "venue": "Analytical Chemistry",
+      "cited_by_count": 34,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 9
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 8
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 10
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 1
+        }
+      ],
+      "doi": "https://doi.org/10.1021/acs.analchem.1c04101",
+      "url": "https://doi.org/10.1021/acs.analchem.1c04101",
+      "co_authors": [
+        "Michael Riffle",
+        "Michael R. Hoopmann",
+        "Daniel Jaschob",
+        "Guo Zhong",
+        "Robert L. Moritz",
+        "Michael J. MacCoss",
+        "Trisha N. Davis",
+        "Nina Isoherranen",
+        "Alex Zelter"
+      ]
+    },
+    {
+      "id": "W4283031070",
+      "title": "Cullin-independent recognition of HHARI substrates by a dynamic RBR catalytic domain",
+      "year": 2022,
+      "type": "article",
+      "venue": "Structure",
+      "cited_by_count": 16,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 4
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 4
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 3
+        }
+      ],
+      "doi": "https://doi.org/10.1016/j.str.2022.05.017",
+      "url": "https://doi.org/10.1016/j.str.2022.05.017",
+      "co_authors": [
+        "Katherine H. Reiter",
+        "Alex Zelter",
+        "Maria K. Janowska",
+        "Michael Riffle",
+        "Nicholas Shulman",
+        "Brendan MacLean",
+        "Kaipo Tamura",
+        "Matthew Chambers",
+        "Michael J. MacCoss",
+        "Trisha N. Davis",
+        "Miklós Guttman",
+        "Peter S. Brzović",
+        "Rachel E. Klevit"
+      ]
+    },
+    {
+      "id": "W4221116390",
+      "title": "Three interacting regions of the Ndc80 and Dam1 complexes support microtubule tip-coupling under load",
+      "year": 2022,
+      "type": "article",
+      "venue": "The Journal of Cell Biology",
+      "cited_by_count": 20,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 3
+        }
+      ],
+      "doi": "https://doi.org/10.1083/jcb.202107016",
+      "url": "https://doi.org/10.1083/jcb.202107016",
+      "co_authors": [
+        "Rachel L. Flores",
+        "Zachary E. Peterson",
+        "Alex Zelter",
+        "Michael Riffle",
+        "Charles L. Asbury",
+        "Trisha N. Davis"
+      ]
+    },
+    {
+      "id": "W3173813399",
+      "title": "Discovery and visualization of uncharacterized drug-protein adducts using mass spectrometry",
+      "year": 2021,
+      "type": "preprint",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 4,
+      "counts_by_year": [
+        {
+          "year": 2025,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 1
+        }
+      ],
+      "doi": "https://doi.org/10.1101/2021.06.24.449838",
+      "url": "https://doi.org/10.1101/2021.06.24.449838",
+      "co_authors": [
+        "Michael Riffle",
+        "Michael R. Hoopmann",
+        "Daniel Jaschob",
+        "Guo Zhong",
+        "Robert L. Moritz",
+        "Michael J. MacCoss",
+        "Trisha N. Davis",
+        "Nina Isoherranen",
+        "Alex Zelter"
+      ]
+    },
+    {
+      "id": "W3099971260",
+      "title": "Survey of metaproteomics software tools for functional microbiome analysis",
+      "year": 2020,
+      "type": "article",
+      "venue": "PLoS ONE",
+      "cited_by_count": 47,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 8
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 7
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 10
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 12
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 3
+        }
+      ],
+      "doi": "https://doi.org/10.1371/journal.pone.0241503",
+      "url": "https://doi.org/10.1371/journal.pone.0241503",
+      "co_authors": [
+        "Ray Sajulga",
+        "Caleb Easterly",
+        "Michael Riffle",
+        "Bart Mesuere",
+        "Thilo Muth",
+        "Subina Mehta",
+        "Praveen Kumar",
+        "James E. Johnson",
+        "Bjoern Gruening",
+        "Henning Schiebenhoefer",
+        "Carolin A. Kolmeder",
+        "Stephan Fuchs",
+        "Brook L. Nunn",
+        "Joel Rudney",
+        "Timothy J. Griffin",
+        "Pratik Jagtap"
+      ]
+    },
+    {
+      "id": "W2998787716",
+      "title": "Survey of metaproteomics software tools for functional microbiome analysis",
+      "year": 2020,
+      "type": "preprint",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 8,
+      "counts_by_year": [
+        {
+          "year": 2023,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 4
+        }
+      ],
+      "doi": "https://doi.org/10.1101/2020.01.07.897561",
+      "url": "https://doi.org/10.1101/2020.01.07.897561",
+      "co_authors": [
+        "Ray Sajulga",
+        "Caleb Easterly",
+        "Michael Riffle",
+        "Bart Mesuere",
+        "Thilo Muth",
+        "Subina Mehta",
+        "Praveen Kumar",
+        "James E. Johnson",
+        "Bjoern Gruening",
+        "Henning Schiebenhoefer",
+        "Carolin A. Kolmeder",
+        "Stephan Fuchs",
+        "Brook L. Nunn",
+        "Joel Rudney",
+        "Timothy J. Griffin",
+        "Pratik Jagtap"
+      ]
+    },
+    {
+      "id": "W2972185270",
+      "title": "Metaproteomics reveal that rapid perturbations in organic matter prioritize functional restructuring over taxonomy in western Arctic Ocean microbiomes",
+      "year": 2019,
+      "type": "article",
+      "venue": "The ISME Journal",
+      "cited_by_count": 45,
+      "counts_by_year": [
+        {
+          "year": 2025,
+          "cited_by_count": 7
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 13
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 8
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 1
+        }
+      ],
+      "doi": "https://doi.org/10.1038/s41396-019-0503-z",
+      "url": "https://doi.org/10.1038/s41396-019-0503-z",
+      "co_authors": [
+        "Molly P. Mikan",
+        "H. Rodger Harvey",
+        "Emma Timmins‐Schiffman",
+        "Michael Riffle",
+        "Damon May",
+        "Ian Salter",
+        "William Stafford Noble",
+        "Brook L. Nunn"
+      ]
+    },
+    {
+      "id": "W2993893776",
+      "title": "Growth phase proteomics of the heterotrophic marine bacterium Ruegeria pomeroyi",
+      "year": 2019,
+      "type": "data-paper",
+      "venue": "Scientific Data",
+      "cited_by_count": 3,
+      "counts_by_year": [
+        {
+          "year": 2024,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 1
+        }
+      ],
+      "doi": "https://doi.org/10.1038/s41597-019-0308-y",
+      "url": "https://doi.org/10.1038/s41597-019-0308-y",
+      "co_authors": [
+        "Dasha Krayushkina",
+        "Emma Timmins‐Schiffman",
+        "Jessica Faux",
+        "Damon May",
+        "Michael Riffle",
+        "H. Rodger Harvey",
+        "Brook L. Nunn"
+      ]
+    },
+    {
+      "id": "W2997252471",
+      "title": "Figshare File 3",
+      "year": 2019,
+      "type": "dataset",
+      "venue": "Figshare",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.6084/m9.figshare.9894404",
+      "url": "https://doi.org/10.6084/m9.figshare.9894404",
+      "co_authors": [
+        "Brook L. Nunn",
+        "Emma Timmins‐Schiffman",
+        "H. Rodger Harvey",
+        "Dasha Krayushkina",
+        "Jessica Faux",
+        "Damon May",
+        "Michael Riffle"
+      ]
+    },
+    {
+      "id": "W4393424303",
+      "title": "Survey of metaproteomics software tools for functional microbiome analysis",
+      "year": 2019,
+      "type": "dataset",
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.5281/zenodo.3788086",
+      "url": "https://zenodo.org/record/3788086",
+      "co_authors": [
+        "Ray Sajulga",
+        "Caleb Easterly",
+        "Michael Riffle",
+        "Thilo Muth",
+        "Monika Mehta",
+        "Praveen Kumar",
+        "James E. Johnson",
+        "Bjoern Gruening",
+        "Henning Schiebenhoefer",
+        "CA Kolmeder",
+        "Stephan Fuchs",
+        "Brook L. Nunn",
+        "Joel Rudney",
+        "Timothy J. Griffin",
+        "PD Jagtap"
+      ]
+    },
+    {
+      "id": "W4393427845",
+      "title": "Survey of metaproteomics software tools for functional microbiome analysis",
+      "year": 2019,
+      "type": "dataset",
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.5281/zenodo.3569762",
+      "url": "https://doi.org/10.5281/zenodo.3569762",
+      "co_authors": [
+        "Ray Sajulga",
+        "Caleb Easterly",
+        "Michael Riffle",
+        "Thilo Muth",
+        "Monika Mehta",
+        "Praveen Kumar",
+        "James E. Johnson",
+        "Bjoern Gruening",
+        "Henning Schiebenhoefer",
+        "CA Kolmeder",
+        "Stephan Fuchs",
+        "Brook L. Nunn",
+        "Joel Rudney",
+        "Timothy J. Griffin",
+        "PD Jagtap"
+      ]
+    },
+    {
+      "id": "W4393537459",
+      "title": "Survey of metaproteomics software tools for functional microbiome analysis",
+      "year": 2019,
+      "type": "dataset",
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.5281/zenodo.4067104",
+      "url": "https://zenodo.org/record/4067104",
+      "co_authors": [
+        "Ray Sajulga",
+        "Caleb Easterly",
+        "Michael Riffle",
+        "Thilo Muth",
+        "Monika Mehta",
+        "Praveen Kumar",
+        "James E. Johnson",
+        "Bjoern Gruening",
+        "Henning Schiebenhoefer",
+        "CA Kolmeder",
+        "Stephan Fuchs",
+        "Brook L. Nunn",
+        "Joel Rudney",
+        "Timothy J. Griffin",
+        "PD Jagtap"
+      ]
+    },
+    {
+      "id": "W4393656164",
+      "title": "Survey of metaproteomics software tools for functional microbiome analysis",
+      "year": 2019,
+      "type": "dataset",
+      "venue": "Figshare",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.5281/zenodo.3569763",
+      "url": "https://doi.org/10.5281/zenodo.3569763",
+      "co_authors": [
+        "Ray Sajulga",
+        "Caleb Easterly",
+        "Michael Riffle",
+        "Thilo Muth",
+        "Monika Mehta",
+        "Praveen Kumar",
+        "James E. Johnson",
+        "Bjoern Gruening",
+        "Henning Schiebenhoefer",
+        "CA Kolmeder",
+        "Stephan Fuchs",
+        "Brook L. Nunn",
+        "Joel Rudney",
+        "Timothy J. Griffin",
+        "PD Jagtap"
+      ]
+    },
+    {
+      "id": "W4393763728",
+      "title": "Survey of metaproteomics software tools for functional microbiome analysis",
+      "year": 2019,
+      "type": "dataset",
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.5281/zenodo.3595577",
+      "url": "https://zenodo.org/record/3595577",
+      "co_authors": [
+        "Ray Sajulga",
+        "Caleb Easterly",
+        "Michael Riffle",
+        "Thilo Muth",
+        "Monika Mehta",
+        "Praveen Kumar",
+        "James E. Johnson",
+        "Bjoern Gruening",
+        "Henning Schiebenhoefer",
+        "CA Kolmeder",
+        "Stephan Fuchs",
+        "Brook L. Nunn",
+        "Joel Rudney",
+        "Timothy J. Griffin",
+        "PD Jagtap"
+      ]
+    },
+    {
+      "id": "W4393770639",
+      "title": "Survey of metaproteomics software tools for functional microbiome analysis",
+      "year": 2019,
+      "type": "dataset",
+      "venue": "Figshare",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.5281/zenodo.3816624",
+      "url": "https://doi.org/10.5281/zenodo.3816624",
+      "co_authors": [
+        "Ray Sajulga",
+        "Caleb Easterly",
+        "Michael Riffle",
+        "Thilo Muth",
+        "Monika Mehta",
+        "Praveen Kumar",
+        "James E. Johnson",
+        "Bjoern Gruening",
+        "Henning Schiebenhoefer",
+        "CA Kolmeder",
+        "Stephan Fuchs",
+        "Brook L. Nunn",
+        "Joel Rudney",
+        "Timothy J. Griffin",
+        "PD Jagtap"
+      ]
+    },
+    {
+      "id": "W4393827294",
+      "title": "Survey of metaproteomics software tools for functional microbiome analysis",
+      "year": 2019,
+      "type": "dataset",
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.5281/zenodo.4066886",
+      "url": "https://zenodo.org/record/4066886",
+      "co_authors": [
+        "Ray Sajulga",
+        "Caleb Easterly",
+        "Michael Riffle",
+        "Thilo Muth",
+        "Monika Mehta",
+        "Praveen Kumar",
+        "James E. Johnson",
+        "Bjoern Gruening",
+        "Henning Schiebenhoefer",
+        "CA Kolmeder",
+        "Stephan Fuchs",
+        "Brook L. Nunn",
+        "Joel Rudney",
+        "Timothy J. Griffin",
+        "PD Jagtap"
+      ]
+    },
+    {
+      "id": "W4394108514",
+      "title": "Figshare File 6",
+      "year": 2019,
+      "type": "dataset",
+      "venue": "Figshare",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.6084/m9.figshare.9894395",
+      "url": "https://doi.org/10.6084/m9.figshare.9894395",
+      "co_authors": [
+        "Brook L. Nunn",
+        "Emma Timmins‐Schiffman",
+        "H. Rodger Harvey",
+        "Dasha Krayushkina",
+        "Jessica Faux",
+        "Damon May",
+        "Michael Riffle"
+      ]
+    },
+    {
+      "id": "W4394241873",
+      "title": "Figshare File 2",
+      "year": 2019,
+      "type": "dataset",
+      "venue": "Figshare",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.6084/m9.figshare.9894401",
+      "url": "https://doi.org/10.6084/m9.figshare.9894401",
+      "co_authors": [
+        "Brook L. Nunn",
+        "Emma Timmins‐Schiffman",
+        "H. Rodger Harvey",
+        "Dasha Krayushkina",
+        "Jessica Faux",
+        "Damon May",
+        "Michael Riffle"
+      ]
+    },
+    {
+      "id": "W4394246774",
+      "title": "Figshare File 1",
+      "year": 2019,
+      "type": "dataset",
+      "venue": "Figshare",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.6084/m9.figshare.9894398",
+      "url": "https://doi.org/10.6084/m9.figshare.9894398",
+      "co_authors": [
+        "Brook L. Nunn",
+        "Emma Timmins‐Schiffman",
+        "H. Rodger Harvey",
+        "Dasha Krayushkina",
+        "Jessica Faux",
+        "Damon May",
+        "Michael Riffle"
+      ]
+    },
+    {
+      "id": "W4394470148",
+      "title": "Figshare File 4",
+      "year": 2019,
+      "type": "dataset",
+      "venue": "Figshare",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.6084/m9.figshare.9894371",
+      "url": "https://doi.org/10.6084/m9.figshare.9894371",
+      "co_authors": [
+        "Brook L. Nunn",
+        "Emma Timmins‐Schiffman",
+        "H. Rodger Harvey",
+        "Dasha Krayushkina",
+        "Jessica Faux",
+        "Damon May",
+        "Michael Riffle"
+      ]
+    },
+    {
+      "id": "W4394498105",
+      "title": "Figshare File 5",
+      "year": 2019,
+      "type": "dataset",
+      "venue": "Figshare",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.6084/m9.figshare.9894374",
+      "url": "https://doi.org/10.6084/m9.figshare.9894374",
+      "co_authors": [
+        "Brook L. Nunn",
+        "Emma Timmins‐Schiffman",
+        "H. Rodger Harvey",
+        "Dasha Krayushkina",
+        "Jessica Faux",
+        "Damon May",
+        "Michael Riffle"
+      ]
+    },
+    {
+      "id": "W2787442157",
+      "title": "Human Ska complex and Ndc80 complex interact to form a load-bearing assembly that strengthens kinetochore–microtubule attachments",
+      "year": 2018,
+      "type": "article",
+      "venue": "Proceedings of the National Academy of Sciences",
+      "cited_by_count": 80,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 9
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 9
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 11
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 7
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 13
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 15
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 8
+        }
+      ],
+      "doi": "https://doi.org/10.1073/pnas.1718553115",
+      "url": "https://doi.org/10.1073/pnas.1718553115",
+      "co_authors": [
+        "Luke A. Helgeson",
+        "Alex Zelter",
+        "Michael Riffle",
+        "Michael J. MacCoss",
+        "Charles L. Asbury",
+        "Trisha N. Davis"
+      ]
+    },
+    {
+      "id": "W2904026281",
+      "title": "Proxl (Protein Cross-Linking Database): A Public Server, QC Tools, and Other Major Updates",
+      "year": 2018,
+      "type": "article",
+      "venue": "Journal of Proteome Research",
+      "cited_by_count": 12,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 2
+        }
+      ],
+      "doi": "https://doi.org/10.1021/acs.jproteome.8b00726",
+      "url": "https://doi.org/10.1021/acs.jproteome.8b00726",
+      "co_authors": [
+        "Michael Riffle",
+        "Daniel Jaschob",
+        "Alex Zelter",
+        "Trisha N. Davis"
+      ]
+    },
+    {
+      "id": "W2952447516",
+      "title": "Novel phosphorylation states of the yeast spindle pole body",
+      "year": 2018,
+      "type": "article",
+      "venue": "Biology Open",
+      "cited_by_count": 12,
+      "counts_by_year": [
+        {
+          "year": 2024,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 3
+        }
+      ],
+      "doi": "https://doi.org/10.1242/bio.033647",
+      "url": "https://doi.org/10.1242/bio.033647",
+      "co_authors": [
+        "Kimberly K. Fong",
+        "Alex Zelter",
+        "Beth Graczyk",
+        "Jill M. Hoyt",
+        "Michael Riffle",
+        "Richard S. Johnson",
+        "Michael J. MacCoss",
+        "Trisha N. Davis"
+      ]
+    },
+    {
+      "id": "W2952547381",
+      "title": "The human Ska complex and Ndc80 complex interact to form a load-bearing assembly that strengthens kinetochore-microtubule attachments",
+      "year": 2018,
+      "type": "preprint",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 2,
+      "counts_by_year": [
+        {
+          "year": 2021,
+          "cited_by_count": 2
+        }
+      ],
+      "doi": "https://doi.org/10.1101/245167",
+      "url": "https://doi.org/10.1101/245167",
+      "co_authors": [
+        "Luke A. Helgeson",
+        "Alex Zelter",
+        "Michael Riffle",
+        "Michael J. MacCoss",
+        "Charles L. Asbury",
+        "Trisha N. Davis"
+      ]
+    },
+    {
+      "id": "W2786068748",
+      "title": "Novel Phosphorylation States of the Yeast Spindle Pole Body",
+      "year": 2018,
+      "type": "preprint",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 1,
+      "counts_by_year": [
+        {
+          "year": 2020,
+          "cited_by_count": 1
+        }
+      ],
+      "doi": "https://doi.org/10.1101/245340",
+      "url": "https://doi.org/10.1101/245340",
+      "co_authors": [
+        "Kimberly K. Fong",
+        "Alex Zelter",
+        "Beth Graczyk",
+        "Jill M. Hoyt",
+        "Michael Riffle",
+        "Richard S. Johnson",
+        "Michael J. MacCoss",
+        "Trisha N. Davis"
+      ]
+    },
+    {
+      "id": "W2780760144",
+      "title": "MetaGOmics: A Web-Based Tool for Peptide-Centric Functional and Taxonomic Analysis of Metaproteomics Data",
+      "year": 2017,
+      "type": "article",
+      "venue": "Proteomes",
+      "cited_by_count": 74,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 7
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 11
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 8
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 18
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 11
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 12
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 1
+        }
+      ],
+      "doi": "https://doi.org/10.3390/proteomes6010002",
+      "url": "https://doi.org/10.3390/proteomes6010002",
+      "co_authors": [
+        "Michael Riffle",
+        "Damon May",
+        "Emma Timmins‐Schiffman",
+        "Molly P. Mikan",
+        "Daniel Jaschob",
+        "William Stafford Noble",
+        "Brook L. Nunn"
+      ]
+    },
+    {
+      "id": "W2588468113",
+      "title": "The Ndc80 complex bridges two Dam1 complex rings",
+      "year": 2017,
+      "type": "article",
+      "venue": "eLife",
+      "cited_by_count": 60,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 8
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 8
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 8
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 12
+        },
+        {
+          "year": 2017,
+          "cited_by_count": 5
+        }
+      ],
+      "doi": "https://doi.org/10.7554/elife.21069",
+      "url": "https://doi.org/10.7554/elife.21069",
+      "co_authors": [
+        "Jae ook Kim",
+        "Alex Zelter",
+        "Neil T. Umbreit",
+        "Athena Bollozos",
+        "Michael Riffle",
+        "Richard S. Johnson",
+        "Michael J. MacCoss",
+        "Charles L. Asbury",
+        "Trisha N. Davis"
+      ]
+    },
+    {
+      "id": "W2951221880",
+      "title": "Integrating Discovery-driven Proteomics and Selected Reaction Monitoring To Develop a Noninvasive Assay for Geoduck Reproductive Maturation",
+      "year": 2017,
+      "type": "article",
+      "venue": "Journal of Proteome Research",
+      "cited_by_count": 31,
+      "counts_by_year": [
+        {
+          "year": 2025,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 11
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 3
+        }
+      ],
+      "doi": "https://doi.org/10.1021/acs.jproteome.7b00288",
+      "url": "https://doi.org/10.1021/acs.jproteome.7b00288",
+      "co_authors": [
+        "Emma Timmins‐Schiffman",
+        "Grace Crandall",
+        "Brent Vadopalas",
+        "Michael Riffle",
+        "Brook L. Nunn",
+        "Steven Roberts"
+      ]
+    },
+    {
+      "id": "W2601472401",
+      "title": "Direct measurement of the strength of microtubule attachment to yeast centrosomes",
+      "year": 2017,
+      "type": "article",
+      "venue": "Molecular Biology of the Cell",
+      "cited_by_count": 12,
+      "counts_by_year": [
+        {
+          "year": 2022,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2017,
+          "cited_by_count": 4
+        }
+      ],
+      "doi": "https://doi.org/10.1091/mbc.e17-01-0034",
+      "url": "https://doi.org/10.1091/mbc.e17-01-0034",
+      "co_authors": [
+        "Kimberly K. Fong",
+        "Krishna K. Sarangapani",
+        "Erik C. Yusko",
+        "Michael Riffle",
+        "Aida Llauró",
+        "Beth Graczyk",
+        "Trisha N. Davis",
+        "Charles L. Asbury"
+      ]
+    },
+    {
+      "id": "W2552620815",
+      "title": "Critical decisions in metaproteomics: achieving high confidence protein annotations in a sea of unknowns",
+      "year": 2016,
+      "type": "article",
+      "venue": "The ISME Journal",
+      "cited_by_count": 94,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 4
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 16
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 8
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 20
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 9
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 15
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 8
+        },
+        {
+          "year": 2017,
+          "cited_by_count": 9
+        }
+      ],
+      "doi": "https://doi.org/10.1038/ismej.2016.132",
+      "url": "https://doi.org/10.1038/ismej.2016.132",
+      "co_authors": [
+        "Emma Timmins‐Schiffman",
+        "Damon May",
+        "Molly P. Mikan",
+        "Michael Riffle",
+        "Chris Frazar",
+        "H. Rodger Harvey",
+        "William Stafford Noble",
+        "Brook L. Nunn"
+      ]
+    },
+    {
+      "id": "W2422039703",
+      "title": "ProXL (Protein Cross-Linking Database): A Platform for Analysis, Visualization, and Sharing of Protein Cross-Linking Mass Spectrometry Data",
+      "year": 2016,
+      "type": "article",
+      "venue": "Journal of Proteome Research",
+      "cited_by_count": 75,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 4
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 16
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 7
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 8
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 14
+        },
+        {
+          "year": 2017,
+          "cited_by_count": 6
+        }
+      ],
+      "doi": "https://doi.org/10.1021/acs.jproteome.6b00274",
+      "url": "https://doi.org/10.1021/acs.jproteome.6b00274",
+      "co_authors": [
+        "Michael Riffle",
+        "Daniel Jaschob",
+        "Alex Zelter",
+        "Trisha N. Davis"
+      ]
+    },
+    {
+      "id": "W2563344378",
+      "title": "Integrating discovery-driven proteomics and selected reaction monitoring to develop a non-invasive assay for geoduck reproductive maturation",
+      "year": 2016,
+      "type": "preprint",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 2,
+      "counts_by_year": [
+        {
+          "year": 2024,
+          "cited_by_count": 2
+        }
+      ],
+      "doi": "https://doi.org/10.1101/094615",
+      "url": "https://doi.org/10.1101/094615",
+      "co_authors": [
+        "Emma Timmins‐Schiffman",
+        "Grace Crandall",
+        "Brent Vadopalas",
+        "Michael Riffle",
+        "Brook L. Nunn",
+        "Steven B. Roberts"
+      ]
+    },
+    {
+      "id": "W2077917986",
+      "title": "Kojak: Efficient Analysis of Chemically Cross-Linked Protein Complexes",
+      "year": 2015,
+      "type": "article",
+      "venue": "Journal of Proteome Research",
+      "cited_by_count": 201,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 13
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 19
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 23
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 16
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 27
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 20
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 20
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 29
+        },
+        {
+          "year": 2017,
+          "cited_by_count": 12
+        },
+        {
+          "year": 2016,
+          "cited_by_count": 15
+        },
+        {
+          "year": 2015,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2014,
+          "cited_by_count": 1
+        }
+      ],
+      "doi": "https://doi.org/10.1021/pr501321h",
+      "url": "https://doi.org/10.1021/pr501321h",
+      "co_authors": [
+        "Michael R. Hoopmann",
+        "Alex Zelter",
+        "Richard S. Johnson",
+        "Michael Riffle",
+        "Michael J. MacCoss",
+        "Trisha N. Davis",
+        "Robert L. Moritz"
+      ]
+    },
+    {
+      "id": "W2252898419",
+      "title": "The molecular architecture of the Dam1 kinetochore complex is defined by cross-linking based structural modelling",
+      "year": 2015,
+      "type": "article",
+      "venue": "Nature Communications",
+      "cited_by_count": 54,
+      "counts_by_year": [
+        {
+          "year": 2025,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 4
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 12
+        },
+        {
+          "year": 2017,
+          "cited_by_count": 10
+        },
+        {
+          "year": 2016,
+          "cited_by_count": 5
+        }
+      ],
+      "doi": "https://doi.org/10.1038/ncomms9673",
+      "url": "https://doi.org/10.1038/ncomms9673",
+      "co_authors": [
+        "Alex Zelter",
+        "Massimiliano Bonomi",
+        "Jae ook Kim",
+        "Neil T. Umbreit",
+        "Michael R. Hoopmann",
+        "Richard S. Johnson",
+        "Michael Riffle",
+        "Daniel Jaschob",
+        "Michael J. MacCoss",
+        "Robert L. Moritz",
+        "Trisha N. Davis"
+      ]
+    },
+    {
+      "id": "W1952965507",
+      "title": "Regulation of outer kinetochore Ndc80 complex-based microtubule attachments by the central kinetochore Mis12/MIND complex",
+      "year": 2015,
+      "type": "article",
+      "venue": "Proceedings of the National Academy of Sciences",
+      "cited_by_count": 46,
+      "counts_by_year": [
+        {
+          "year": 2025,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 4
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 4
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2017,
+          "cited_by_count": 8
+        },
+        {
+          "year": 2016,
+          "cited_by_count": 7
+        }
+      ],
+      "doi": "https://doi.org/10.1073/pnas.1513882112",
+      "url": "https://doi.org/10.1073/pnas.1513882112",
+      "co_authors": [
+        "Emily Kudalkar",
+        "Emily A. Scarborough",
+        "Neil T. Umbreit",
+        "Alex Zelter",
+        "Daniel R. Gestaut",
+        "Michael Riffle",
+        "Richard S. Johnson",
+        "Michael J. MacCoss",
+        "Charles L. Asbury",
+        "Trisha N. Davis"
+      ]
+    },
+    {
+      "id": "W2099901125",
+      "title": "Genetic Regulation of Dna2 Localization During the DNA Damage Response",
+      "year": 2015,
+      "type": "article",
+      "venue": "G3 Genes Genomes Genetics",
+      "cited_by_count": 8,
+      "counts_by_year": [
+        {
+          "year": 2024,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2016,
+          "cited_by_count": 3
+        }
+      ],
+      "doi": "https://doi.org/10.1534/g3.115.019208",
+      "url": "https://doi.org/10.1534/g3.115.019208",
+      "co_authors": [
+        "Askar Yimit",
+        "Michael Riffle",
+        "Grant W. Brown"
+      ]
+    },
+    {
+      "id": "W768464191",
+      "title": "Visualization and Dissemination of Multidimensional Proteomics Data Comparing Protein Abundance During <i>Caenorhabditis elegans</i> Development",
+      "year": 2015,
+      "type": "article",
+      "venue": "Journal of the American Society for Mass Spectrometry",
+      "cited_by_count": 7,
+      "counts_by_year": [
+        {
+          "year": 2024,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2016,
+          "cited_by_count": 2
+        }
+      ],
+      "doi": "https://doi.org/10.1007/s13361-015-1193-z",
+      "url": "https://doi.org/10.1007/s13361-015-1193-z",
+      "co_authors": [
+        "Michael Riffle",
+        "Gennifer E. Merrihew",
+        "Daniel Jaschob",
+        "Vagisha Sharma",
+        "Trisha N. Davis",
+        "William Stafford Noble",
+        "Michael J. MacCoss"
+      ]
+    },
+    {
+      "id": "W2000733562",
+      "title": "Integrated RNA- and protein profiling of fermentation and respiration in diploid budding yeast provides insight into nutrient control of cell growth and development",
+      "year": 2015,
+      "type": "article",
+      "venue": "Journal of Proteomics",
+      "cited_by_count": 6,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2017,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2016,
+          "cited_by_count": 1
+        }
+      ],
+      "doi": "https://doi.org/10.1016/j.jprot.2015.01.015",
+      "url": "https://doi.org/10.1016/j.jprot.2015.01.015",
+      "co_authors": [
+        "E. Becker",
+        "Yuchen Liu",
+        "Aurélie Lardenois",
+        "Thomas Walther",
+        "Joe Horecka",
+        "Igor Stuparević",
+        "Michael J. Law",
+        "Régis Lavigne",
+        "Bertrand Evrard",
+        "Philippe Demougin",
+        "Michael Riffle",
+        "Randy Strich",
+        "Ronald W. Davis",
+        "Charles Pineau",
+        "Michael Primig"
+      ]
+    },
+    {
+      "id": "W2018481490",
+      "title": "Mason: a JavaScript web site widget for visualizing and comparing annotated features in nucleotide or protein sequences",
+      "year": 2015,
+      "type": "article",
+      "venue": "BMC Research Notes",
+      "cited_by_count": 5,
+      "counts_by_year": [
+        {
+          "year": 2022,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2015,
+          "cited_by_count": 2
+        }
+      ],
+      "doi": "https://doi.org/10.1186/s13104-015-1009-z",
+      "url": "https://doi.org/10.1186/s13104-015-1009-z",
+      "co_authors": [
+        "Daniel Jaschob",
+        "Trisha N. Davis",
+        "Michael Riffle"
+      ]
+    },
+    {
+      "id": "W2014140997",
+      "title": "Determining Protein Complex Structures Based on a Bayesian Model of in Vivo Förster Resonance Energy Transfer (FRET) Data",
+      "year": 2014,
+      "type": "article",
+      "venue": "Molecular & Cellular Proteomics",
+      "cited_by_count": 34,
+      "counts_by_year": [
+        {
+          "year": 2025,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2017,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2016,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2015,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2014,
+          "cited_by_count": 1
+        }
+      ],
+      "doi": "https://doi.org/10.1074/mcp.m114.040824",
+      "url": "https://doi.org/10.1074/mcp.m114.040824",
+      "co_authors": [
+        "Massimiliano Bonomi",
+        "Riccardo Pellarin",
+        "Seung Joong Kim",
+        "Daniel Russel",
+        "Bryan A. Sundin",
+        "Michael Riffle",
+        "Daniel Jaschob",
+        "Richard Ramsden",
+        "Trisha N. Davis",
+        "Eric G. Muller",
+        "Andrej Šali"
+      ]
+    },
+    {
+      "id": "W2113402551",
+      "title": "Kinetochore Biorientation in <i>Saccharomyces cerevisiae</i> Requires a Tightly Folded Conformation of the Ndc80 Complex",
+      "year": 2014,
+      "type": "article",
+      "venue": "Genetics",
+      "cited_by_count": 18,
+      "counts_by_year": [
+        {
+          "year": 2024,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2017,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2016,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2015,
+          "cited_by_count": 4
+        }
+      ],
+      "doi": "https://doi.org/10.1534/genetics.114.167775",
+      "url": "https://doi.org/10.1534/genetics.114.167775",
+      "co_authors": [
+        "Jerry F. Tien",
+        "Neil T. Umbreit",
+        "Alex Zelter",
+        "Michael Riffle",
+        "Michael R. Hoopmann",
+        "Richard S Johnson",
+        "Bryan R. Fonslow",
+        "John R. Yates",
+        "Michael J. MacCoss",
+        "Robert L. Moritz",
+        "Charles L. Asbury",
+        "Trisha N. Davis"
+      ]
+    },
+    {
+      "id": "W1995987144",
+      "title": "SnipViz: a compact and lightweight web site widget for display and dissemination of multiple versions of gene and protein sequences",
+      "year": 2014,
+      "type": "conference-abstract",
+      "venue": "BMC Research Notes",
+      "cited_by_count": 7,
+      "counts_by_year": [
+        {
+          "year": 2019,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2017,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2015,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2014,
+          "cited_by_count": 1
+        }
+      ],
+      "doi": "https://doi.org/10.1186/1756-0500-7-468",
+      "url": "https://doi.org/10.1186/1756-0500-7-468",
+      "co_authors": [
+        "Daniel Jaschob",
+        "Trisha N. Davis",
+        "Michael Riffle"
+      ]
+    },
+    {
+      "id": "W2336917298",
+      "title": "Benchmark Of The Fretr Bayesian Restraint",
+      "year": 2014,
+      "type": "dataset",
+      "venue": "Figshare",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "https://doi.org/10.5281/zenodo.46558",
+      "url": "https://doi.org/10.5281/zenodo.46558",
+      "co_authors": [
+        "Massimiliano Bonomi",
+        "Riccardo Pellarin",
+        "Seung Joong Kim",
+        "Daniel Russel",
+        "Bryan A. Sundin",
+        "Michael Riffle",
+        "Daniel Jaschob",
+        "Richard Ramsden",
+        "Trisha N. Davis",
+        "Eric G. Muller",
+        "Andrej Šali"
+      ]
+    },
+    {
+      "id": "W2160588775",
+      "title": "Integrative phenomics reveals insight into the structure of phenotypic diversity in budding yeast",
+      "year": 2013,
+      "type": "preprint",
+      "venue": "Genome Research",
+      "cited_by_count": 159,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 7
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 17
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 9
+        },
+        {
+          "year": 2017,
+          "cited_by_count": 20
+        },
+        {
+          "year": 2016,
+          "cited_by_count": 23
+        },
+        {
+          "year": 2015,
+          "cited_by_count": 31
+        },
+        {
+          "year": 2014,
+          "cited_by_count": 17
+        },
+        {
+          "year": 2013,
+          "cited_by_count": 5
+        }
+      ],
+      "doi": "https://doi.org/10.1101/gr.155762.113",
+      "url": "https://doi.org/10.1101/gr.155762.113",
+      "co_authors": [
+        "Daniel A. Skelly",
+        "Gennifer E. Merrihew",
+        "Michael Riffle",
+        "Caitlin Connelly",
+        "Emily O. Kerr",
+        "Marnie Johansson",
+        "Daniel Jaschob",
+        "Beth Graczyk",
+        "Nicholas Shulman",
+        "Jon Wakefield",
+        "Sara J. Cooper",
+        "Stanley Fields",
+        "William Stafford Noble",
+        "Eric G. Muller",
+        "Trisha N. Davis",
+        "Maitreya J. Dunham",
+        "Michael J. MacCoss",
+        "Joshua M. Akey"
+      ]
+    },
+    {
+      "id": "W2058274661",
+      "title": "Dissecting DNA damage response pathways by analysing protein localization and abundance changes during DNA replication stress",
+      "year": 2012,
+      "type": "article",
+      "venue": "Nature Cell Biology",
+      "cited_by_count": 534,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 10
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 22
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 31
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 32
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 48
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 37
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 60
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 36
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 44
+        },
+        {
+          "year": 2017,
+          "cited_by_count": 48
+        },
+        {
+          "year": 2016,
+          "cited_by_count": 43
+        },
+        {
+          "year": 2015,
+          "cited_by_count": 48
+        },
+        {
+          "year": 2014,
+          "cited_by_count": 42
+        },
+        {
+          "year": 2013,
+          "cited_by_count": 31
+        },
+        {
+          "year": 2012,
+          "cited_by_count": 1
+        }
+      ],
+      "doi": "https://doi.org/10.1038/ncb2549",
+      "url": "https://doi.org/10.1038/ncb2549",
+      "co_authors": [
+        "Johnny M. Tkach",
+        "Askar Yimit",
+        "Anna Y. Lee",
+        "Michael Riffle",
+        "Michael Costanzo",
+        "Daniel Jaschob",
+        "Jason A. Hendry",
+        "Jiongwen Ou",
+        "Jason Moffat",
+        "Charles Boone",
+        "Trisha N. Davis",
+        "Corey Nislow",
+        "Grant W. Brown"
+      ]
+    },
+    {
+      "id": "W2033758263",
+      "title": "A Mass Spectrometry Proteomics Data Management Platform",
+      "year": 2012,
+      "type": "article",
+      "venue": "Molecular & Cellular Proteomics",
+      "cited_by_count": 41,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2017,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2016,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2015,
+          "cited_by_count": 4
+        },
+        {
+          "year": 2014,
+          "cited_by_count": 4
+        },
+        {
+          "year": 2013,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2012,
+          "cited_by_count": 1
+        }
+      ],
+      "doi": "https://doi.org/10.1074/mcp.o111.015149",
+      "url": "https://doi.org/10.1074/mcp.o111.015149",
+      "co_authors": [
+        "Vagisha Sharma",
+        "Jimmy K. Eng",
+        "Michael J. MacCoss",
+        "Michael Riffle"
+      ]
+    },
+    {
+      "id": "W2154143683",
+      "title": "JobCenter: an open source, cross-platform, and distributed job queue management system optimized for scalability and versatility",
+      "year": 2012,
+      "type": "article",
+      "venue": "Source Code for Biology and Medicine",
+      "cited_by_count": 4,
+      "counts_by_year": [
+        {
+          "year": 2018,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2017,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2016,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2015,
+          "cited_by_count": 1
+        }
+      ],
+      "doi": "https://doi.org/10.1186/1751-0473-7-8",
+      "url": "https://doi.org/10.1186/1751-0473-7-8",
+      "co_authors": [
+        "Daniel Jaschob",
+        "Michael Riffle"
+      ]
+    },
+    {
+      "id": "W818589921",
+      "title": "P1) Technology Development in a Multidisciplinary Center",
+      "year": 2012,
+      "type": "article",
+      "venue": "Europe PMC (PubMed Central)",
+      "cited_by_count": 0,
+      "counts_by_year": [],
+      "doi": "",
+      "url": "http://europepmc.org/articles/PMC3630640",
+      "co_authors": [
+        "Trisha N. Davis",
+        "Daniel A. Skelly",
+        "Gennifer E. Merrihew",
+        "Michael Riffle",
+        "Sara J. Cooper",
+        "Emily Mitchell",
+        "Beth Graczyk",
+        "Vagisha Sharma",
+        "Daniel Jaschob",
+        "William Stafford Noble",
+        "Stanley Fields",
+        "Michael J. MacCoss",
+        "Eric G. Muller",
+        "Maitreya J. Dunham",
+        "Joshua M. Akey"
+      ]
+    },
+    {
+      "id": "W2147850946",
+      "title": "The Proteome Folding Project: Proteome-scale prediction of structure and function",
+      "year": 2011,
+      "type": "preprint",
+      "venue": "Genome Research",
+      "cited_by_count": 48,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 4
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2017,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2016,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2015,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2014,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2013,
+          "cited_by_count": 9
+        },
+        {
+          "year": 2012,
+          "cited_by_count": 4
+        }
+      ],
+      "doi": "https://doi.org/10.1101/gr.121475.111",
+      "url": "https://doi.org/10.1101/gr.121475.111",
+      "co_authors": [
+        "Kevin Drew",
+        "Patrick Winters",
+        "Glenn L. Butterfoss",
+        "Viktors Berstis",
+        "Keith Uplinger",
+        "Jonathan K. Armstrong",
+        "Michael Riffle",
+        "Erik Schweighofer",
+        "Bill Bovermann",
+        "David R. Goodlett",
+        "Trisha N. Davis",
+        "Dennis Shasha",
+        "Lars Malmström",
+        "Richard Bonneau"
+      ]
+    },
+    {
+      "id": "W2152991541",
+      "title": "Large-scale prediction of protein-protein interactions from structures",
+      "year": 2010,
+      "type": "article",
+      "venue": "BMC Bioinformatics",
+      "cited_by_count": 93,
+      "counts_by_year": [
+        {
+          "year": 2025,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 4
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 4
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2017,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2016,
+          "cited_by_count": 8
+        },
+        {
+          "year": 2015,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2014,
+          "cited_by_count": 4
+        },
+        {
+          "year": 2013,
+          "cited_by_count": 15
+        },
+        {
+          "year": 2012,
+          "cited_by_count": 14
+        }
+      ],
+      "doi": "https://doi.org/10.1186/1471-2105-11-144",
+      "url": "https://doi.org/10.1186/1471-2105-11-144",
+      "co_authors": [
+        "Martial Hue",
+        "Michael Riffle",
+        "Jean‐Philippe Vert",
+        "William Stafford Noble"
+      ]
+    },
+    {
+      "id": "W2168297493",
+      "title": "The Yeast Resource Center Public Image Repository: A large database of fluorescence microscopy images",
+      "year": 2010,
+      "type": "article",
+      "venue": "BMC Bioinformatics",
+      "cited_by_count": 40,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 4
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2017,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2016,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2015,
+          "cited_by_count": 4
+        },
+        {
+          "year": 2014,
+          "cited_by_count": 4
+        },
+        {
+          "year": 2013,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2012,
+          "cited_by_count": 5
+        }
+      ],
+      "doi": "https://doi.org/10.1186/1471-2105-11-263",
+      "url": "https://doi.org/10.1186/1471-2105-11-263",
+      "co_authors": [
+        "Michael Riffle",
+        "Trisha N. Davis"
+      ]
+    },
+    {
+      "id": "W1987462803",
+      "title": "Proteomics data repositories",
+      "year": 2009,
+      "type": "article",
+      "venue": "PROTEOMICS",
+      "cited_by_count": 49,
+      "counts_by_year": [
+        {
+          "year": 2025,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 4
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 4
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 4
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2017,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2016,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2015,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2014,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2013,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2012,
+          "cited_by_count": 2
+        }
+      ],
+      "doi": "https://doi.org/10.1002/pmic.200900216",
+      "url": "https://doi.org/10.1002/pmic.200900216",
+      "co_authors": [
+        "Michael Riffle",
+        "Jimmy K. Eng"
+      ]
+    },
+    {
+      "id": "W2164025376",
+      "title": "Transmembrane Topology and Signal Peptide Prediction Using Dynamic Bayesian Networks",
+      "year": 2008,
+      "type": "article",
+      "venue": "PLoS Computational Biology",
+      "cited_by_count": 269,
+      "counts_by_year": [
+        {
+          "year": 2025,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 17
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 16
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 17
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 14
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 23
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 21
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 28
+        },
+        {
+          "year": 2017,
+          "cited_by_count": 18
+        },
+        {
+          "year": 2016,
+          "cited_by_count": 17
+        },
+        {
+          "year": 2015,
+          "cited_by_count": 12
+        },
+        {
+          "year": 2014,
+          "cited_by_count": 13
+        },
+        {
+          "year": 2013,
+          "cited_by_count": 13
+        },
+        {
+          "year": 2012,
+          "cited_by_count": 17
+        }
+      ],
+      "doi": "https://doi.org/10.1371/journal.pcbi.1000213",
+      "url": "https://doi.org/10.1371/journal.pcbi.1000213",
+      "co_authors": [
+        "Sheila M. Reynolds",
+        "Lukas Käll",
+        "Michael Riffle",
+        "Jeff Bilmes",
+        "William Stafford Noble"
+      ]
+    },
+    {
+      "id": "W2140143861",
+      "title": "Bir1 Is Required for the Tension Checkpoint",
+      "year": 2008,
+      "type": "article",
+      "venue": "Molecular Biology of the Cell",
+      "cited_by_count": 40,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2017,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2016,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2015,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2014,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2013,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2012,
+          "cited_by_count": 4
+        }
+      ],
+      "doi": "https://doi.org/10.1091/mbc.e08-07-0723",
+      "url": "https://doi.org/10.1091/mbc.e08-07-0723",
+      "co_authors": [
+        "Michelle M. Shimogawa",
+        "Per O. Widlund",
+        "Michael Riffle",
+        "Michael Ess",
+        "Trisha N. Davis"
+      ]
+    },
+    {
+      "id": "W2032984763",
+      "title": "Superfamily Assignments for the Yeast Proteome through Integration of Structure Prediction with the Gene Ontology",
+      "year": 2007,
+      "type": "article",
+      "venue": "PLoS Biology",
+      "cited_by_count": 56,
+      "counts_by_year": [
+        {
+          "year": 2024,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 4
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 4
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2017,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2016,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2015,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2013,
+          "cited_by_count": 10
+        },
+        {
+          "year": 2012,
+          "cited_by_count": 3
+        }
+      ],
+      "doi": "https://doi.org/10.1371/journal.pbio.0050076",
+      "url": "https://doi.org/10.1371/journal.pbio.0050076",
+      "co_authors": [
+        "Lars Malmström",
+        "Michael Riffle",
+        "Charlie E. M. Strauss",
+        "Dylan Chivian",
+        "Trisha N. Davis",
+        "Richard Bonneau",
+        "David Baker"
+      ]
+    },
+    {
+      "id": "W2065593669",
+      "title": "Localization of proteins that are coordinately expressed with Cln2 during the cell cycle",
+      "year": 2004,
+      "type": "article",
+      "venue": "Yeast",
+      "cited_by_count": 33,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2017,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2014,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2012,
+          "cited_by_count": 1
+        }
+      ],
+      "doi": "https://doi.org/10.1002/yea.1133",
+      "url": "https://doi.org/10.1002/yea.1133",
+      "co_authors": [
+        "Bryan A. Sundin",
+        "Chun‐Hwei Chiu",
+        "Michael Riffle",
+        "Trisha N. Davis",
+        "Eric G. Muller"
+      ]
+    },
+    {
+      "id": "W1983034694",
+      "title": "The Yeast Resource Center Public Data Repository",
+      "year": 2004,
+      "type": "article",
+      "venue": "Nucleic Acids Research",
+      "cited_by_count": 30,
+      "counts_by_year": [
+        {
+          "year": 2019,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2017,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2015,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2013,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2012,
+          "cited_by_count": 4
+        }
+      ],
+      "doi": "https://doi.org/10.1093/nar/gki073",
+      "url": "https://doi.org/10.1093/nar/gki073",
+      "co_authors": [
+        "Michael Riffle"
+      ]
+    },
+    {
+      "id": "W2098370509",
+      "title": "Assigning Function to Yeast Proteins by Integration of Technologies",
+      "year": 2003,
+      "type": "article",
+      "venue": "Molecular Cell",
+      "cited_by_count": 267,
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2022,
+          "cited_by_count": 3
+        },
+        {
+          "year": 2021,
+          "cited_by_count": 9
+        },
+        {
+          "year": 2020,
+          "cited_by_count": 2
+        },
+        {
+          "year": 2019,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2017,
+          "cited_by_count": 6
+        },
+        {
+          "year": 2016,
+          "cited_by_count": 5
+        },
+        {
+          "year": 2015,
+          "cited_by_count": 8
+        },
+        {
+          "year": 2014,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2013,
+          "cited_by_count": 8
+        },
+        {
+          "year": 2012,
+          "cited_by_count": 10
+        }
+      ],
+      "doi": "https://doi.org/10.1016/s1097-2765(03)00476-3",
+      "url": "https://doi.org/10.1016/s1097-2765(03)00476-3",
+      "co_authors": [
+        "Tony R. Hazbun",
+        "Lars Malmström",
+        "Scott Anderson",
+        "Beth Graczyk",
+        "Bethany Fox",
+        "Michael Riffle",
+        "Bryan A. Sundin",
+        "Jennifer D. Aranda",
+        "W. Hayes McDonald",
+        "Chun-Hwei Chiu",
+        "Brian E Snydsman",
+        "Phillip Bradley",
+        "Eric G. Muller",
+        "Stanley Fields",
+        "David Baker",
+        "John R. Yates",
+        "Trisha N. Davis"
+      ]
+    }
+  ]
+}

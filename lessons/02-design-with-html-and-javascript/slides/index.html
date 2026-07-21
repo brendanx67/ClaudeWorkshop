@@ -114,6 +114,14 @@ ul.bullets li .sub {
 .statement { justify-content: center; }
 .statement .thesis { font-size: 5vw; line-height: 1.2; font-weight: 600; }
 
+/* ---- Closing / handoff verb (matches Lesson 1's "Let's build.") ---------- */
+.start-verb { font-size: 7vw; color: var(--accent); font-weight: 700; margin: 2vh 0 3vh; letter-spacing: -0.03em; }
+code { font-family: "Cascadia Code", Consolas, "SF Mono", Menlo, monospace; font-size: 0.92em; }
+
+/* ---- Chip row (steering moves) ------------------------------------------- */
+.chip-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.8vh 1.6vw; margin-top: 3vh; }
+.chip { background: var(--brand-light); border-radius: 999px; padding: 1.3vh 2.6vw; font-size: 2vw; font-weight: 600; color: var(--brand-dark); }
+
 /* ---- Figure slide (image / embed) ---------------------------------------- */
 .figure-slide { justify-content: flex-start; }
 .figure-slide h2 { margin-bottom: 2vh; }
@@ -190,10 +198,10 @@ ul.bullets li .sub {
   <section class="slide figure-slide">
     <h2>What you walk out with</h2>
     <div class="figure-wrap" style="gap:2vw;">
-      <img src="assets/finished-page.png"   alt="A finished publications page with citation charts" style="max-width:48%;">
-      <img src="assets/finished-page-2.png" alt="Another finished publications page"                style="max-width:48%;">
+      <img src="assets/finished-page.png"   alt="One part of a finished publications page, with citation charts" style="max-width:48%;">
+      <img src="assets/finished-page-2.png" alt="Another part of the same finished page"                        style="max-width:48%;">
     </div>
-    <p class="caption">You build one of these for yourself this hour, put it on a public URL, and package it into a reusable skill you can run for anyone. No coding.</p>
+    <p class="caption">You build your own and put it on a public URL. With time to spare, you package it into a reusable skill for anyone. No coding.</p>
   </section>
 
   <!-- ===================== 4. OpenAlex and ORCID ===================== -->
@@ -213,56 +221,132 @@ ul.bullets li .sub {
   <!-- ===================== 5. How this hour works ===================== -->
   <section class="slide">
     <h2>How this hour works</h2>
-    <p style="font-size:2vw; margin-bottom:2.5vh;">You will add a second repo, <span class="accent">MyPublications</span>, next to your ClaudeLab in ws.</p>
+    <p style="font-size:2vw; margin-bottom:2.5vh;">You will work in a new repo, <span class="accent">MyPublications</span>, next to your ClaudeLab.</p>
     <ul class="bullets">
       <li>Gather your papers first, and check they are yours
         <span class="sub">OpenAlex is not error-free, and Claude can make mistakes</span>
       </li>
       <li>Then <span class="accent">interview &rarr; spec &rarr; demo</span> to build the page</li>
       <li>Commit each step, and publish it live at the end</li>
-      <li>Then <span class="accent">package the workflow into a skill</span> you can run for anyone</li>
+      <li>Stretch goal &mdash; <span class="accent">package the workflow into a skill</span> for anyone</li>
     </ul>
     <p class="muted" style="margin-top:3vh">
-      You should already have your ClaudeLab in the ws folder, be signed in to GitHub, and have the Code tab open.
+      You pick up on your ws folder from Lesson 1, with its .claude skills and CLAUDE.md, signed in to GitHub.
     </p>
   </section>
 
-  <!-- ===================== 6. Review and verify each step ===================== -->
+  <!-- ===================== 6. Steer it (box of chocolates) ===================== -->
   <section class="slide">
-    <h2>Review and verify each step</h2>
-    <p style="font-size:3vw; line-height:1.2; font-weight:600; margin-bottom:3vh;">You searched Michael MacCoss.<br>OpenAlex sent back <span class="accent">Malcolm MacCoss</span>.</p>
-    <p style="font-size:2.4vw; line-height:1.5;">Two papers, a different researcher. Someone who shares your last name can turn up in your results.</p>
-    <p class="muted" style="margin-top:2.5vh;"><strong style="color:var(--warn)">Even the right ORCID puts other people's work on your page. Review your list before you build.</strong></p>
+    <p style="font-size:3.4vw; line-height:1.2; font-weight:600; text-align:center;">"Life is like a box of chocolates.<br>You never know what you're gonna get."</p>
+    <p class="muted" style="font-size:1.5vw; text-align:center; margin-top:1.2vh;">&mdash; Forrest Gump</p>
+    <h2 style="text-align:center; margin-top:6vh; margin-bottom:0;">Steer Claude</h2>
+    <div class="chip-row">
+      <span class="chip">Make it go <span class="accent">step by step</span></span>
+      <span class="chip">Let it <span class="accent">interview</span> you</span>
+      <span class="chip">Create <span class="accent">rules</span></span>
+      <span class="chip">Follow a <span class="accent">spec</span></span>
+      <span class="chip"><span class="accent">Check</span> its work</span>
+    </div>
   </section>
 
-  <!-- ===================== 7. Start with a conversation ===================== -->
+  <!-- ===================== 7. Let's build ===================== -->
+  <section class="slide opener dark-bg">
+    <p class="eyebrow">Open the README.md for Lesson 2</p>
+    <div class="start-verb">Let's build.</div>
+    <p class="sub"><code style="color:var(--accent)">ws / ClaudeWorkshop / lessons / 02-design-with-html-and-javascript / README.md</code></p>
+  </section>
+
+  <!-- ===================== 8. Set up your project ===================== -->
   <section class="slide">
-    <h2>Start with a conversation, not a design</h2>
-    <p style="font-size:2.6vw; line-height:1.5; margin-bottom:3vh;"><em>"Build a page of my papers with citation charts. Ask me at least twelve things before you build anything."</em></p>
+    <h2>Set up your project</h2>
+    <ul class="bullets">
+      <li>Create a new session on your <span class="accent">ws</span> folder in the Code tab</li>
+      <li>On the Pro plan, switch the model to <span class="accent">Sonnet 5</span>, bottom-right corner
+        <span class="sub">faster, and lighter on your usage limit for the long day</span>
+      </li>
+      <li>Tell Claude the goal, and to <em style="color:var(--brand); font-weight:700;">work step by step, waiting for your okay</em></li>
+      <li>Have it make a <span class="accent">MyPublications</span> repo here, and push it to GitHub</li>
+      <li>Start a <span class="accent">spec</span>, the goal for now, kept current as you go</li>
+    </ul>
+  </section>
+
+  <!-- ===================== 9. Find your ORCID ===================== -->
+  <section class="slide">
+    <h2>Find your ORCID</h2>
+    <ul class="bullets">
+      <li>Know your ORCID? Use it. If not, have Claude look it up from your name and institution</li>
+      <li><span class="accent">Open the ORCID record it gives you</span> and confirm the name and institution are yours</li>
+      <li>No ORCID, or too few papers? Follow along with Brendan MacLean, <span class="accent">0000-0002-9575-0255</span></li>
+    </ul>
+    <p class="muted" style="margin-top:2.5vh;"><strong style="color:var(--warn)">A wrong ID means a page full of someone else's work.</strong></p>
+  </section>
+
+  <!-- ===================== 10. Get your papers, then check them ===================== -->
+  <section class="slide">
+    <h2>Get your papers, then check them</h2>
+    <ul class="bullets">
+      <li>Fetch all your works by <span class="accent">ORCID</span> &mdash; years, venues, types, co-authors, links, citations by year
+        <span class="sub">if OpenAlex says to slow down, have Claude wait and retry</span>
+      </li>
+      <li>Get a short summary by type, like article, review, dataset, or preprint</li>
+      <li>Save a spreadsheet you can review</li>
+      <li><span class="accent">Then check.</span> Read the list yourself and drop anything that is not yours</li>
+    </ul>
+    <p class="muted" style="margin-top:2.5vh;">I searched Michael MacCoss. OpenAlex sent back <strong style="color:var(--warn)">Malcolm MacCoss</strong>, a different researcher. Even the right ORCID needs your review.</p>
+  </section>
+
+  <!-- ===================== 11. Design by conversation ===================== -->
+  <section class="slide">
+    <h2>Design by conversation</h2>
+    <p style="font-size:2.4vw; line-height:1.5; margin-bottom:3vh;"><em>"Build a page of my papers with citation charts. Ask me about ten questions before you build anything."</em></p>
     <ul class="bullets">
       <li><span class="accent">"You decide"</span> is a fine answer, and you can change anything later</li>
-      <li>Then look at what it built. Wrong? Say so, and ask again</li>
-      <li>It is a conversation, not a form</li>
+      <li>Fold your answers into the <span class="accent">spec</span>, then review the plan</li>
+      <li>Only then, build <span class="accent">index.html</span> and open it in your browser to judge</li>
     </ul>
   </section>
 
-  <!-- ===================== 8. What you take with you ===================== -->
+  <!-- ===================== 12. Make it yours ===================== -->
   <section class="slide">
-    <h2>What you take with you</h2>
+    <h2>Make it yours</h2>
     <ul class="bullets">
-      <li>A live, shareable page you built by <em>describing</em> it, not coding it</li>
-      <li>The reflex to <span class="accent">check what Claude did</span>
-        <span class="sub">especially when it tells you it succeeded</span>
-      </li>
-      <li>The design loop &mdash; inspect, adjust, repeat</li>
-      <li>A <span class="accent">publications-page skill</span> that turns your one-off page into a tool</li>
+      <li>Look, tell Claude what to change, refresh, look again</li>
+      <li>Color, headings, another chart, a dark-mode toggle, a link from each title to its DOI</li>
+    </ul>
+    <p class="muted" style="margin-top:2.5vh;">Falling behind? Get it live first, then come back to refine.</p>
+  </section>
+
+  <!-- ===================== 13. Put it online ===================== -->
+  <section class="slide">
+    <h2>Put it online with GitHub Pages</h2>
+    <ul class="bullets">
+      <li>Push everything, and confirm it landed on GitHub</li>
+      <li>Then have Claude turn on <span class="accent">GitHub Pages</span> and give you the live URL</li>
+    </ul>
+    <p class="muted" style="margin-top:2.5vh;">Live at <span class="accent">https://&lt;you&gt;.github.io/MyPublications/</span>. Share it with anyone.</p>
+  </section>
+
+  <!-- ===================== 14. Turn it into a tool ===================== -->
+  <section class="slide">
+    <h2>Turn it into a tool <span class="muted" style="font-size:1.8vw;">stretch goal</span></h2>
+    <ul class="bullets">
+      <li>Package today's work into a <span class="accent">publications-page skill</span> that takes a name or ORCID</li>
+      <li>It reuses your fetch script and your page as a template</li>
+      <li><span class="accent">Bake in the design, re-check the facts</span> &mdash; always confirm the ORCID and the paper list</li>
+      <li>Saved to <span class="accent">ws/.claude/skills</span>, the skills folder from Lesson 1</li>
     </ul>
   </section>
 
-  <!-- ===================== 9. Close ===================== -->
-  <section class="slide opener dark-bg">
-    <p class="eyebrow">Lesson 2</p>
-    <h1>Questions?</h1>
+  <!-- ===================== 15. What you can do next ===================== -->
+  <section class="slide">
+    <h2>What you can do next</h2>
+    <ul class="bullets">
+      <li><span class="accent">Refine the page</span> &mdash; more stat cards, another chart, a short intro under the title</li>
+      <li><span class="accent">Make it keep itself current</span> &mdash; a GitHub Action that re-fetches and republishes on a schedule
+        <span class="sub">your citation counts stay up to date on their own</span>
+      </li>
+    </ul>
+    <p class="muted" style="margin-top:3vh;">Snagged anytime? Ask Claude to explain the current state, or wave an instructor.</p>
   </section>
 
 </div>

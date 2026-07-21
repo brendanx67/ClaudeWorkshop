@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Workshop concepts &mdash; git, commands, and skills</title>
+<!--
+  ============================================================================
+  ClaudeWorkshop reference figures
+  ============================================================================
+  Standalone explainer figures for the workshop. No build step, no
+  dependencies. Open this file in a browser to read it; it adapts to your
+  light or dark theme on its own.
+
+  Two figures live here:
+    1. Repository, commit, push  (git fundamentals, Lesson 1)
+    2. Commands and skills        (saving your work, Lesson 2 onward)
+
+  A lesson README links to a figure rather than embedding it, because a
+  GitHub- or markdown-rendered page strips the CSS these figures need.
+  ============================================================================
+-->
+<style>
+  :root {
+    --bg: #eaeef3;
+    --panel: #ffffff;
+    --panel-2: #f4f6fa;
+    --zone: #e1e6ee;
+    --ink: #18202f;
+    --muted: #5b6478;
+    --line: #d5dbe4;
+    --brand: #e2622c;   /* git orange, used sparingly */
+    --work: #d98014;    /* working directory */
+    --local: #128a82;   /* local repository + commit + command */
+    --remote: #5a5fd4;  /* remote repository + push + skill */
+    --work-soft: #fbf1e2;
+    --local-soft: #e3f4f2;
+    --remote-soft: #ecedfb;
+    --shadow: 0 1px 2px rgba(24,32,47,.06), 0 8px 24px rgba(24,32,47,.07);
+    --mono: ui-monospace, "SFMono-Regular", "Cascadia Code", "JetBrains Mono", Menlo, Consolas, monospace;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #10141c; --panel: #1e2635; --panel-2: #171f2c; --zone: #10151f;
+      --ink: #e8ecf3; --muted: #97a1b4; --line: #2b3547; --brand: #f2793f;
+      --work: #e0972f; --local: #35b3a9; --remote: #868bf0;
+      --work-soft: #2a2416; --local-soft: #12312e; --remote-soft: #201f36;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 28px rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #eaeef3; --panel: #ffffff; --panel-2: #f4f6fa; --zone: #e1e6ee; --ink: #18202f;
+    --muted: #5b6478; --line: #d5dbe4; --brand: #e2622c; --work: #d98014;
+    --local: #128a82; --remote: #5a5fd4; --work-soft: #fbf1e2; --local-soft: #e3f4f2;
+    --remote-soft: #ecedfb; --shadow: 0 1px 2px rgba(24,32,47,.06), 0 8px 24px rgba(24,32,47,.07);
+  }
+  :root[data-theme="dark"] {
+    --bg: #10141c; --panel: #1e2635; --panel-2: #171f2c; --zone: #10151f; --ink: #e8ecf3;
+    --muted: #97a1b4; --line: #2b3547; --brand: #f2793f; --work: #e0972f;
+    --local: #35b3a9; --remote: #868bf0; --work-soft: #2a2416; --local-soft: #12312e;
+    --remote-soft: #201f36; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 28px rgba(0,0,0,.4);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--sans); line-height: 1.55; -webkit-font-smoothing: antialiased;
+  }
+
+  /* page masthead */
+  .pagehead { max-width: 1080px; margin: 0 auto; padding: 34px 24px 0; text-align: center; }
+  .pagehead .kicker {
+    font-family: var(--mono); font-size: 12px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--brand); margin: 0;
+  }
+  .pagehead .kicker-sub { font-size: 13.5px; color: var(--muted); margin: 6px 0 0; }
+
+  /* each figure */
+  .fig { max-width: 1080px; margin: 0 auto; padding: 40px 24px 20px; }
+  .fig + .fig { border-top: 1px solid var(--line); margin-top: 8px; padding-top: 40px; }
+
+  .eyebrow {
+    font-family: var(--mono); font-size: 12px; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--brand); margin: 0 0 10px;
+  }
+  h1 {
+    font-size: clamp(24px, 4vw, 36px); line-height: 1.1; letter-spacing: -.02em;
+    text-wrap: balance; margin: 0 0 12px; font-weight: 680;
+  }
+  .lede { max-width: 64ch; color: var(--muted); font-size: 16px; margin: 0 0 30px; }
+  .lede b { color: var(--ink); font-weight: 600; }
+
+  /* shared: panels, labels */
+  .col-label {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--muted); margin: 0 0 8px 2px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .col-label .dot { width: 7px; height: 7px; border-radius: 50%; flex: none; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 13px;
+    padding: 15px 15px 17px; box-shadow: var(--shadow);
+    display: flex; flex-direction: column;
+  }
+  .panel.accent-work   { border-top: 3px solid var(--work); }
+  .panel.accent-local  { border-top: 3px solid var(--local); }
+  .panel.accent-remote { border-top: 3px solid var(--remote); }
+  .panel-title { font-size: 15px; font-weight: 640; margin: 0 0 3px; }
+  .panel-sub { font-family: var(--mono); font-size: 11.5px; color: var(--muted); margin: 0 0 14px; }
+
+  /* shared: definition cards */
+  .defs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 46px; }
+  .defs.two { grid-template-columns: repeat(2, 1fr); }
+  .def {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+    padding: 20px; box-shadow: var(--shadow);
+  }
+  .def h3 { display: flex; align-items: center; gap: 9px; margin: 0 0 10px; font-size: 17px; letter-spacing: -.01em; }
+  .def h3 .chip { font-family: var(--mono); font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 6px; }
+  .def.d-repo h3 .chip    { color: var(--work);   background: var(--work-soft); }
+  .def.d-commit h3 .chip  { color: var(--local);  background: var(--local-soft); }
+  .def.d-push h3 .chip    { color: var(--remote); background: var(--remote-soft); }
+  .def.d-command h3 .chip { color: var(--local);  background: var(--local-soft); }
+  .def.d-skill h3 .chip   { color: var(--remote); background: var(--remote-soft); }
+  .def p { margin: 0 0 12px; font-size: 14px; color: var(--muted); }
+  .def p b { color: var(--ink); font-weight: 600; }
+  .def code, .def p code {
+    display: inline-block; font-family: var(--mono); font-size: 12.5px;
+    background: var(--panel-2); border: 1px solid var(--line); color: var(--ink);
+    padding: 4px 9px; border-radius: 7px;
+  }
+  .def p code { padding: 1px 5px; }
+
+  .footnote {
+    margin-top: 34px; font-size: 13px; color: var(--muted);
+    border-left: 3px solid var(--brand); padding: 4px 0 4px 14px; max-width: 74ch;
+  }
+  .footnote b { color: var(--ink); }
+
+  /* ===== Figure 1: git diagram ===== */
+  .stage-scroll { overflow-x: auto; padding-bottom: 6px; }
+  .stage {
+    display: grid;
+    grid-template-columns: minmax(450px, 2.5fr) auto minmax(185px, 1fr);
+    align-items: stretch; gap: 0; min-width: 800px;
+  }
+  .zone { background: var(--zone); border: 1px solid var(--line); border-radius: 16px; padding: 12px 14px 16px; }
+  .zone-heading {
+    display: flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 12px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--muted); margin: 2px 0 12px 2px;
+  }
+  .zone-heading svg { flex: none; }
+  .zone-github .zone-heading { color: var(--remote); }
+  .zone-inner { display: grid; grid-template-columns: 1fr auto 1fr; align-items: stretch; gap: 0; }
+  .zone-github .zone-inner { grid-template-columns: 1fr; }
+  .file {
+    display: flex; align-items: center; gap: 9px;
+    font-family: var(--mono); font-size: 12.5px;
+    padding: 6px 9px; border-radius: 8px; background: var(--panel-2); margin-bottom: 7px;
+  }
+  .file .badge {
+    margin-left: auto; font-size: 10px; letter-spacing: .04em; padding: 1px 7px;
+    border-radius: 20px; background: var(--work-soft); color: var(--work); font-weight: 600;
+  }
+  .file svg { flex: none; color: var(--muted); }
+  .history { display: flex; flex-direction: column; margin-top: 2px; }
+  .commit { display: grid; grid-template-columns: 16px 1fr; column-gap: 11px; align-items: start; }
+  .rail { display: flex; flex-direction: column; align-items: center; }
+  .node { width: 13px; height: 13px; border-radius: 50%; border: 2.5px solid var(--local); background: var(--panel); margin-top: 2px; flex: none; }
+  .accent-remote .node { border-color: var(--remote); }
+  .connector { width: 2px; flex: 1 1 auto; background: var(--line); min-height: 18px; }
+  .commit:last-child .connector { display: none; }
+  .commit-body { padding-bottom: 15px; }
+  .commit:last-child .commit-body { padding-bottom: 0; }
+  .msg { font-size: 13.5px; color: var(--ink); font-weight: 500; }
+  .msg-text { white-space: nowrap; }
+  .commit.head .node { background: var(--local); box-shadow: 0 0 0 4px var(--local-soft); }
+  .head-tag {
+    font-family: var(--mono); font-size: 9px; letter-spacing: .05em; font-weight: 700;
+    color: var(--local); background: var(--local-soft); padding: 1px 5px; border-radius: 5px;
+    margin-left: 6px; vertical-align: 1px; white-space: nowrap;
+  }
+  .ghost { opacity: .4; }
+  .missing-note {
+    font-family: var(--mono); font-size: 11px; color: var(--remote);
+    background: var(--remote-soft); border: 1px dashed var(--remote); border-radius: 8px;
+    padding: 8px 10px; margin-top: 12px;
+  }
+  .arrow { display: flex; flex-direction: column; align-items: center; justify-content: center; align-self: center; padding: 0 12px; min-width: 116px; }
+  .arrow .verb { font-family: var(--mono); font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+  .arrow.commit-arrow .verb { color: var(--local); }
+  .arrow.push-arrow .verb { color: var(--remote); }
+  .arrow-line { width: 100%; display: flex; align-items: center; }
+  .arrow-line .track { height: 2px; flex: 1; border-radius: 2px; }
+  .arrow.commit-arrow .track { background: var(--local); }
+  .arrow.push-arrow .track { background: var(--remote); }
+  .arrow-head { width: 0; height: 0; border-top: 6px solid transparent; border-bottom: 6px solid transparent; border-left: 9px solid; flex: none; }
+  .arrow.commit-arrow .arrow-head { border-left-color: var(--local); }
+  .arrow.push-arrow .arrow-head { border-left-color: var(--remote); }
+  .arrow .cmd { font-family: var(--mono); font-size: 11px; color: var(--muted); margin-top: 8px; text-align: center; }
+  .arrow .cmd b { color: var(--ink); font-weight: 600; }
+  .push-arrow { margin-top: 26px; }
+
+  /* ===== Figure 2: commands and skills ===== */
+  .cs-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 720px) { .cs-compare { grid-template-columns: 1fr; } }
+  .cs-card { display: flex; flex-direction: column; }
+  .cs-panel { height: 100%; }
+  .cs-file, .cs-folder {
+    font-family: var(--mono); font-size: 12.5px;
+    padding: 8px 10px; border-radius: 8px; background: var(--panel-2); margin-bottom: 13px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .cs-file svg, .cs-folder > svg { flex: none; color: var(--muted); }
+  .cs-folder { flex-wrap: wrap; }
+  .cs-folder .chips { display: flex; flex-wrap: wrap; gap: 5px; }
+  .cs-folder .f { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 2px 7px; }
+  .cs-invoke { font-size: 13.5px; margin-bottom: 13px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .cs-key { font-family: var(--mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+  .cs-invoke code { font-family: var(--mono); font-size: 12px; background: var(--panel-2); border: 1px solid var(--line); color: var(--ink); padding: 3px 7px; border-radius: 6px; }
+  .cs-invoke .say { color: var(--ink); font-style: italic; }
+  .cs-or { color: var(--muted); font-size: 12px; }
+  .cs-body { font-size: 13.5px; color: var(--ink); background: var(--panel-2); border-radius: 8px; padding: 11px 12px; }
+  .cs-steps { margin: 0; padding-left: 20px; font-size: 13.5px; color: var(--ink); }
+  .cs-steps li { margin-bottom: 5px; }
+  .cs-steps li:last-child { margin-bottom: 0; }
+  .cs-tag { align-self: flex-start; margin-top: 13px; font-family: var(--mono); font-size: 10px; letter-spacing: .04em; padding: 2px 9px; border-radius: 20px; font-weight: 600; }
+  .cs-tag-local  { background: var(--local-soft);  color: var(--local); }
+  .cs-tag-remote { background: var(--remote-soft); color: var(--remote); }
+</style>
+</head>
+<body>
+
+<header class="pagehead">
+  <p class="kicker">MacCoss Lab &middot; Claude Code workshop</p>
+  <p class="kicker-sub">Reference figures &mdash; open in a browser, nothing to install</p>
+</header>
+
+<!-- ============================ Figure 1: git ============================ -->
+<section class="fig">
+  <p class="eyebrow">Version control &middot; git</p>
+  <h1>Repository, commit, push: three different things</h1>
+  <p class="lede">
+    People use these words as if they mean the same action. They do not. One is a
+    <b>place</b> that stores history, one <b>saves</b> a change into that history, and one
+    <b>sends</b> saved history to another machine. Follow a single edit through all three.
+  </p>
+
+  <div class="stage-scroll">
+    <div class="stage">
+
+      <!-- ZONE: YOUR LAPTOP -->
+      <section class="zone zone-laptop">
+        <p class="zone-heading">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/></svg>
+          Your laptop
+        </p>
+        <div class="zone-inner">
+
+          <!-- working directory -->
+          <div>
+            <p class="col-label"><span class="dot" style="background:var(--work)"></span>Where you edit</p>
+            <div class="panel accent-work">
+              <p class="panel-title">Working directory</p>
+              <p class="panel-sub">your files, right now</p>
+              <div class="file">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3v5h5M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
+                login.js<span class="badge">edited</span>
+              </div>
+              <div class="file">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3v5h5M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
+                styles.css<span class="badge">edited</span>
+              </div>
+              <div class="file">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3v5h5M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
+                README.md
+              </div>
+            </div>
+          </div>
+
+          <!-- commit arrow (inside the laptop) -->
+          <div class="arrow commit-arrow">
+            <span class="verb">commit</span>
+            <div class="arrow-line"><div class="track"></div><div class="arrow-head"></div></div>
+            <p class="cmd"><b>git add</b> + <b>git commit</b><br>saves a snapshot</p>
+          </div>
+
+          <!-- local repository -->
+          <div>
+            <p class="col-label"><span class="dot" style="background:var(--local)"></span>Kept on your laptop</p>
+            <div class="panel accent-local">
+              <p class="panel-title">Local repository</p>
+              <p class="panel-sub">the hidden .git folder</p>
+              <div class="history">
+                <div class="commit head">
+                  <div class="rail"><div class="node"></div><div class="connector"></div></div>
+                  <div class="commit-body"><div class="msg"><span class="msg-text">Add login page</span><span class="head-tag">JUST NOW</span></div></div>
+                </div>
+                <div class="commit">
+                  <div class="rail"><div class="node"></div><div class="connector"></div></div>
+                  <div class="commit-body"><div class="msg">Fix typo in README</div></div>
+                </div>
+                <div class="commit">
+                  <div class="rail"><div class="node"></div><div class="connector"></div></div>
+                  <div class="commit-body"><div class="msg">Initial commit</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- PUSH ARROW crosses from laptop to github -->
+      <div class="arrow push-arrow">
+        <span class="verb">push</span>
+        <div class="arrow-line"><div class="track"></div><div class="arrow-head"></div></div>
+        <p class="cmd"><b>git push</b><br>sends commits to GitHub</p>
+      </div>
+
+      <!-- ZONE: GITHUB -->
+      <section class="zone zone-github">
+        <p class="zone-heading">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.29-.01-1.05-.02-2.06-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.39 1.24-3.23-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.92 1.24 3.23 0 4.62-2.81 5.64-5.49 5.94.43.37.81 1.1.81 2.22 0 1.61-.01 2.9-.01 3.3 0 .32.22.7.83.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/></svg>
+          GitHub
+        </p>
+        <div class="zone-inner">
+          <div>
+            <p class="col-label"><span class="dot" style="background:var(--remote)"></span>Shared with your team</p>
+            <div class="panel accent-remote">
+              <p class="panel-title">Remote repository</p>
+              <p class="panel-sub">the copy on the server</p>
+              <div class="history">
+                <div class="commit ghost">
+                  <div class="rail"><div class="node"></div><div class="connector"></div></div>
+                  <div class="commit-body"><div class="msg">Add login page</div></div>
+                </div>
+                <div class="commit">
+                  <div class="rail"><div class="node"></div><div class="connector"></div></div>
+                  <div class="commit-body"><div class="msg">Fix typo in README</div></div>
+                </div>
+                <div class="commit">
+                  <div class="rail"><div class="node"></div><div class="connector"></div></div>
+                  <div class="commit-body"><div class="msg">Initial commit</div></div>
+                </div>
+              </div>
+              <div class="missing-note">"Add login page" is greyed out because it is not on GitHub yet. It arrives only when you push.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <div class="defs">
+    <div class="def d-repo">
+      <h3><span class="chip">repo</span>Repository</h3>
+      <p>A <b>place</b>, not an action. The project folder together with its complete history of every commit. The copy on your laptop is the <b>local</b> repository. The copy on GitHub is the <b>remote</b> repository. Same history, two locations.</p>
+      <code>git init</code>
+    </div>
+    <div class="def d-commit">
+      <h3><span class="chip">commit</span>Commit</h3>
+      <p>An <b>action</b> that saves a snapshot of your changes into your <b>local</b> repository. It is a labelled checkpoint in history. Nothing leaves your laptop.</p>
+      <code>git commit -m "Add login page"</code>
+    </div>
+    <div class="def d-push">
+      <h3><span class="chip">push</span>Push</h3>
+      <p>An <b>action</b> that sends commits you already made from your local repository up to the <b>remote</b> one on GitHub. This is the step that shares your work with everyone else.</p>
+      <code>git push</code>
+    </div>
+  </div>
+
+  <p class="footnote">
+    The one-line version. <b>Commit early and often on your own laptop.</b> Then
+    <b>push</b> when you want your teammates to have those commits too. You can make ten
+    commits and push them all at once.
+  </p>
+</section>
+
+<!-- ===================== Figure 2: commands and skills ===================== -->
+<section class="fig">
+  <p class="eyebrow">Claude Code &middot; your .claude folder</p>
+  <h1>Commands and skills: two ways to save your work</h1>
+  <p class="lede">
+    Both let you teach Claude something once and reach for it again. A <b>command</b> is a
+    shortcut you type for a prompt you would otherwise write out every time. A <b>skill</b>
+    is a whole workflow, several steps plus any scripts or templates it needs, bundled in a
+    folder Claude can run for you.
+  </p>
+
+  <div class="cs-compare">
+
+    <!-- Command -->
+    <div class="cs-card">
+      <p class="col-label"><span class="dot" style="background:var(--local)"></span>Command</p>
+      <div class="panel accent-local cs-panel">
+        <p class="panel-title">A prompt you type</p>
+        <p class="panel-sub">.claude/commands/format-refs.md</p>
+        <div class="cs-file">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3v5h5M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
+          one file
+        </div>
+        <div class="cs-invoke"><span class="cs-key">you type</span> <code>/format-refs</code></div>
+        <div class="cs-body">"Format the references I paste in ACS style."</div>
+        <span class="cs-tag cs-tag-local">one saved instruction</span>
+      </div>
+    </div>
+
+    <!-- Skill -->
+    <div class="cs-card">
+      <p class="col-label"><span class="dot" style="background:var(--remote)"></span>Skill</p>
+      <div class="panel accent-remote cs-panel">
+        <p class="panel-title">A workflow Claude runs</p>
+        <p class="panel-sub">.claude/skills/publications-page/</p>
+        <div class="cs-folder">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          <span class="chips">
+            <span class="f">SKILL.md</span>
+            <span class="f">fetch.py</span>
+            <span class="f">template.html</span>
+            <span class="f">exclusions.json</span>
+          </span>
+        </div>
+        <div class="cs-invoke"><span class="cs-key">you type</span> <code>/publications-page</code> <span class="cs-or">or just ask, and Claude runs it when it fits</span></div>
+        <ol class="cs-steps">
+          <li>confirm the ORCID is the right person</li>
+          <li>fetch the papers from OpenAlex</li>
+          <li>flag any that may not be theirs</li>
+          <li>build the page from the template</li>
+        </ol>
+        <span class="cs-tag cs-tag-remote">many steps, plus its own files</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="defs two">
+    <div class="def d-command">
+      <h3><span class="chip">command</span>Command</h3>
+      <p>A saved prompt in <code>.claude/commands/</code>. You type <b>/name</b> and Claude runs that one instruction. Reach for it when you keep asking for the same single thing.</p>
+      <code>/format-refs</code>
+    </div>
+    <div class="def d-skill">
+      <h3><span class="chip">skill</span>Skill</h3>
+      <p>A folder in <code>.claude/skills/</code> holding a <b>SKILL.md</b> plus any scripts and templates the job needs. It carries a multi-step workflow. Type <b>/name</b> to run it, or just describe the job and Claude reaches for it on its own.</p>
+      <code>/publications-page</code>
+    </div>
+  </div>
+
+  <p class="footnote">
+    The rule of thumb. If you would type the same prompt again, save it as a <b>command</b>.
+    If it is a workflow with steps, and it needs scripts or templates to carry along, make it
+    a <b>skill</b>. Both are things you can run by name with <b>/</b>, and a skill has one
+    extra trick: Claude can reach for it on its own when it fits. A <b>rule</b> is different
+    again: you never invoke it, it is always-on guidance Claude follows on its own, like the
+    commit rule you wrote earlier.
+  </p>
+</section>
+
+</body>
+</html>
