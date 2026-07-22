@@ -49,12 +49,6 @@ server. Notice you described *what you want*, not what to name it — Claude wil
 call it something like `get_local_time` on its own. That's the whole week in one
 line.
 
-**Stop here — one tool only.** It's tempting to let Claude build both tools now.
-Don't. The next step is a restart, and the *first* thing you want to prove is that
-the restart flow works — and the local-time tool is the simplest possible thing to
-prove it with. A one-line tool that either says the right time or doesn't. Get that
-easy win before anything more moving can go wrong.
-
 ### The one manual step: restart Claude
 
 **A new or changed MCP won't show up until you fully restart Claude** — the same
@@ -72,13 +66,11 @@ Claude Desktop makes you do the two-click quit instead.)*
 server belongs to that folder; open a different one and the tool won't be there.
 Ask again: *"What time is it?"* Now it's exact. Claude called your tool.
 
-**This is the checkpoint.** Don't move on until the time comes back right. If it
-does, you've proven the whole pipeline — a tool you described, built, registered,
-and loaded through a restart — on the simplest possible tool. That's the easy win.
-Everything after this is just more tools through the same door. (If it *doesn't*
-come back, it's almost always the restart: a window close instead of a full quit,
-or reopening a different folder. Fix that here, where there's only one tiny tool in
-the way.)
+**This is the checkpoint.** Don't move on until the time comes back right — you've
+now proven the whole pipeline on the simplest possible tool, and everything after
+is just more tools through the same door. If it *doesn't* come back, it's almost
+always the restart: a window close instead of a full quit, or reopening a different
+folder.
 
 ## 3. Second tool: status of all your repos
 
@@ -95,23 +87,12 @@ every session, and a perfect thing to automate:
 > behind, all in one call. This tool shells out to Git, so pass
 > `stdin=subprocess.DEVNULL` on every subprocess call — otherwise it hangs."*
 
-### The one gotcha worth knowing before it bites (Windows)
-
-That last clause saves real pain. A subprocess launched from *inside* an MCP
-server inherits the server's **stdin** — the very channel Claude talks to it over.
-On Windows that makes each Git call hang for **minutes**, even though the identical
-command runs in a fraction of a second in a terminal. The symptom is unmistakable:
-the clock tool answers instantly, but repo-status just sits there and eventually
-you give up and kill it.
-
-The fix is one argument — `stdin=subprocess.DEVNULL` on every `subprocess` call —
-so the Git commands don't inherit that pipe. If you hit the hang before adding it,
-tell Claude exactly that:
+That last clause matters on Windows — without it, each Git call hangs for minutes.
+The build prompt above prevents it. If you skipped it and repo-status sits there
+while the clock stays instant, one line fixes it:
 
 > *"The repo-status tool hangs for minutes but the clock is instant. Pass
 > `stdin=subprocess.DEVNULL` to every subprocess call in the server."*
-
-With it, the same scan comes back in about a quarter-second.
 
 **Restart Claude again** (the same quit-and-reopen). Then ask once more:
 *"What's the status of my repositories?"* **One tool call** replaces one command
@@ -193,15 +174,12 @@ slow round-trip there became someone's first impression of MCP. Have them regist
 second tool — the first thing through the door should be the one that can't be slow
 or wrong in an interesting way.*
 
-*The slow round-trip in that run had one root cause, and it's worth knowing cold
-because it presents as a mystery: on Windows, a Git subprocess spawned inside the
-MCP server **inherits the server's stdin** (the JSON-RPC pipe) and hangs for
-minutes — while the same command is instant in a terminal, so nobody suspects the
-code. Diagnosed by driving the server over stdio: `initialize` returned in 0.74s,
-the tool call never did; adding `stdin=subprocess.DEVNULL` to the subprocess calls
-dropped it to 0.27s. If someone's repo-status hangs but their clock is instant,
-that's the fix — every subprocess in the tool needs `stdin=subprocess.DEVNULL`. The
-lesson now bakes it into the build request, but call it out live if you see a hang.*
+*The hang has one root cause, worth knowing cold because it presents as a mystery:
+on Windows a Git subprocess spawned inside the MCP server **inherits the server's
+stdin** (the JSON-RPC pipe) and hangs for minutes — while the same command is
+instant in a terminal, so nobody suspects the code. The fix is
+`stdin=subprocess.DEVNULL` on every subprocess call, and the build prompt now
+includes it. If someone's repo-status hangs but their clock is instant, that's it.*
 
 *Snagged? A tool that won't appear is almost always a "restart Claude" away. Ask
 Claude to show you what it registered, or wave over an instructor.*
