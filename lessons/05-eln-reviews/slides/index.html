@@ -20,9 +20,8 @@
                 own voice. Ask Claude Code to add/restyle slides.
     - Branding: theme is the shared workshop purple. To switch to Talus colors,
                 edit --brand / --brand-dark / --brand-light / --accent in :root.
-                To use a real Talus logo, drop an image in an assets/ folder and
-                replace the .brand-logo block on the title/close slides with
-                <img src="assets/talus-logo.png" alt="Talus Bio">.
+                To add a logo, drop an image in an assets/ folder and place
+                <img src="assets/talus-logo.png" alt="Talus Bio"> on the title slide.
     - Print PDF: Ctrl/Cmd-P -> "Save as PDF". Turn ON "Background graphics".
   ============================================================================
 -->
@@ -86,13 +85,11 @@ ul.bullets li .sub {
 .title-slide .byline { font-size: 2vw; font-weight: 500; margin-top: 6vh; }
 .title-slide .affil  { font-size: 1.5vw; color: var(--muted); margin-top: 0.4vh; }
 
-/* Text wordmark placeholder (swap for an <img> logo when you have one) */
-.brand-logo { display: flex; align-items: center; justify-content: center; margin-top: 4vh; }
-.brand-logo .mark {
-  font-size: 1.4vw; letter-spacing: 0.22em; font-weight: 700;
-  color: var(--brand); border: 2px solid var(--brand);
-  padding: 0.8vh 1.4vw; border-radius: 4px; text-transform: uppercase;
-}
+/* Contact line under the byline */
+.title-slide .contact { font-size: 1.5vw; margin-top: 4vh; }
+.title-slide .contact a { color: var(--brand); text-decoration: none; font-weight: 500; }
+.title-slide .contact a:hover { text-decoration: underline; }
+.title-slide .contact .dot { color: var(--muted); margin: 0 0.8vw; }
 
 /* ---- Section opener (dark background) ------------------------------------ */
 .opener { background: var(--brand-dark); color: white; justify-content: center; align-items: center; text-align: center; }
@@ -177,10 +174,11 @@ ul.bullets li .sub {
     <p class="subtitle">Session 5 · Teaching Claude to do the boring stuff you spend too much time doing</p>
     <p class="byline">Lindsay K. Pino</p>
     <p class="affil">Talus Bio</p>
-    <div class="brand-logo">
-      <!-- Placeholder wordmark. Swap for <img src="assets/talus-logo.png" alt="Talus Bio"> when ready. -->
-      <span class="mark">Talus Bio</span>
-    </div>
+    <p class="contact">
+      <a href="mailto:lpino@talus.bio">lpino@talus.bio</a>
+      <span class="dot">·</span>
+      <a href="https://www.lindsaykpino.com">www.lindsaykpino.com</a>
+    </p>
   </section>
 
   <!-- ===================== 2. Who I am ===================== -->
