@@ -35,9 +35,18 @@ Point to where each of these lives, and fill them in as they appear:
 
 ## How to work through an analysis
 
-Follow these steps in order. Understand each one before moving to the next, and
-don't jump ahead to results.
+Work through these steps **one at a time, in order**, and **stay inside the
+current step** — do only its work, nothing from a later one. When you're
+understanding the metadata, don't open the data; before the QC step, run no QC;
+and so on. Understand each step before the next. When a step is done, **stop and
+check with me before moving on** — never advance to the next step, or jump ahead
+to results, on your own.
 
+0. **Scaffold the project.** Before any analysis, stand up a working
+   environment: confirm Python is available, create the project-local `venv`, and
+   install the tooling — all per **How the code should be written** below. Don't
+   open the data or start the interview yet; this step is only the sandbox
+   everything else runs in.
 1. **Understand the project.** The science and domain, the questions and
    hypotheses, and the purpose of the analysis — before touching the data.
 2. **Understand the metadata.** What each column is, its data type, and whether
