@@ -51,9 +51,9 @@ Then check the entry on these axes and report only real problems:
    entry's Deviations section. **"Deviations: none" while the sources show departures is the most
    serious finding you can report.**
 
-6. **Header & completeness.** Check required header fields are filled — date performed **and date of
-   completion**, operator, sample IDs, project/run. Flag blank or missing fields, unrecorded times,
-   absent lot numbers, and values written as precise that the sources record as approximate.
+6. **Header & completeness.** Check required header fields are filled — author, **date started and
+   date completed**, project, and sample IDs (where applicable). Flag blank or missing fields, unrecorded
+   times, absent lot numbers, and values written as precise that the sources record as approximate.
 
 7. **Measurement provenance / dilution-factor propagation.** For every reported concentration or
    amount, trace it back to the actual measurement it came from. If a value was measured on a diluted
