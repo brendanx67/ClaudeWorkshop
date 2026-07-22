@@ -1,19 +1,36 @@
-# 2025-07-14 — Plasma tryptic digest, TB-0417–0420
+# Plasma tryptic digest, TB-0417–0420
 
-- **Operator:** LP
-- **Date performed:** 2025-07-14
-- **Sample IDs:** TB-0417, TB-0418, TB-0419, TB-0420
-- **Project / run:** tf-scan atlas
+| Field | Value |
+|---|---|
+| **Experiment ID** | EXP24 |
+| **Project** | tf-scan atlas |
+| **Author** | Lindsay Pino — lpino@talus.bio |
+| **Collaborators** | — |
+| **Reviewers** | — |
+| **Date started** | 2025-07-14 |
+| **Date completed** | 2025-07-14 |
+| **Date reviewed** |  |
 
-## Objective
-Four-sample plasma digest for the tf-scan atlas runs, following the standard SDC protocol.
+**Experiment type:** Sample prep · **Experiment status:** Completed · **Review status:** In review
+
+## Objectives
+Four-sample plasma digest for the tf-scan atlas runs, following the standard SDC protocol
+([PR — SDC plasma digest](../protocols/SDC-plasma-digest.md)).
+
+## Experimental Summary
+| Parameter | Description | This experiment |
+|---|---|---|
+| Sample type | what was measured | Human plasma |
+| Num. samples | total, including controls | 4 (TB-0417, TB-0418, TB-0419, TB-0420) |
+| Time point(s) | when assayed | n/a (prep only) |
+| Controls | positive and negative | n/a |
 
 ## Reagents & materials
 - 100 mM TEAB + 1% SDC (lysis)
 - DTT, IAA
 - LysC; sequencing-grade trypsin
 
-## Procedure
+## Procedure (as performed)
 - Resuspended pellets (~20 µg each) in 50 µL lysis buffer → 200 ng/µL.
 - Reduced with 10 mM DTT, 56 °C, 30 min.
 - Alkylated with 20 mM IAA, RT in the dark, 30 min.
@@ -27,12 +44,21 @@ Four-sample plasma digest for the tf-scan atlas runs, following the standard SDC
 ## Deviations from protocol
 None.
 
+## Analysis — file locations
+| Data type | Location | What's there |
+|---|---|---|
+| Bench notes | [2025-07-14 bench notes](../raw-notes/2025-07-14_bench-notes.txt) | what actually happened at the bench |
+| Raw instrument data | s3://data-pipeline-raw-bucket/250714_TFscan_plasma_QC/ | QC injections |
+
 ## Observations
 All samples processed normally.
 
 ## Results / output
 - Digests prepared at 200 ng/µL, ready for LC-MS.
 - QC injections acquired.
+
+## Conclusions
+Four plasma digests prepared to spec, no deviations; ready for acquisition. *(LP)*
 
 ## Next steps
 Acquire full runs and search.
