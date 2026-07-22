@@ -20,9 +20,8 @@
                 own voice. Ask Claude Code to add/restyle slides.
     - Branding: theme is the shared workshop purple. To switch to Talus colors,
                 edit --brand / --brand-dark / --brand-light / --accent in :root.
-                To use a real Talus logo, drop an image in an assets/ folder and
-                replace the .brand-logo block on the title/close slides with
-                <img src="assets/talus-logo.png" alt="Talus Bio">.
+                To add a logo, drop an image in an assets/ folder and place
+                <img src="assets/talus-logo.png" alt="Talus Bio"> on the title slide.
     - Print PDF: Ctrl/Cmd-P -> "Save as PDF". Turn ON "Background graphics".
   ============================================================================
 -->
@@ -78,6 +77,10 @@ ul.bullets li .sub {
   display: block; font-size: 1.5vw; font-weight: 400; font-style: italic;
   color: var(--muted); margin-top: 0.3vh; padding-left: 2.5vw;
 }
+/* Nested sub-bullets */
+ul.bullets li ul { list-style: none; margin: 0.6vh 0 0.4vh 0; padding-left: 2.5vw; }
+ul.bullets li ul li { font-size: 1.9vw; font-weight: 400; margin-bottom: 0.5vh; }
+ul.bullets li ul li::before { content: "·"; color: var(--accent); margin-right: 0.8vw; font-weight: 700; }
 
 /* ---- Title slide --------------------------------------------------------- */
 .title-slide { text-align: center; align-items: center; justify-content: center; }
@@ -86,13 +89,11 @@ ul.bullets li .sub {
 .title-slide .byline { font-size: 2vw; font-weight: 500; margin-top: 6vh; }
 .title-slide .affil  { font-size: 1.5vw; color: var(--muted); margin-top: 0.4vh; }
 
-/* Text wordmark placeholder (swap for an <img> logo when you have one) */
-.brand-logo { display: flex; align-items: center; justify-content: center; margin-top: 4vh; }
-.brand-logo .mark {
-  font-size: 1.4vw; letter-spacing: 0.22em; font-weight: 700;
-  color: var(--brand); border: 2px solid var(--brand);
-  padding: 0.8vh 1.4vw; border-radius: 4px; text-transform: uppercase;
-}
+/* Contact line under the byline */
+.title-slide .contact { font-size: 1.5vw; margin-top: 4vh; }
+.title-slide .contact a { color: var(--brand); text-decoration: none; font-weight: 500; }
+.title-slide .contact a:hover { text-decoration: underline; }
+.title-slide .contact .dot { color: var(--muted); margin: 0 0.8vw; }
 
 /* ---- Section opener (dark background) ------------------------------------ */
 .opener { background: var(--brand-dark); color: white; justify-content: center; align-items: center; text-align: center; }
@@ -177,10 +178,11 @@ ul.bullets li .sub {
     <p class="subtitle">Session 5 · Teaching Claude to do the boring stuff you spend too much time doing</p>
     <p class="byline">Lindsay K. Pino</p>
     <p class="affil">Talus Bio</p>
-    <div class="brand-logo">
-      <!-- Placeholder wordmark. Swap for <img src="assets/talus-logo.png" alt="Talus Bio"> when ready. -->
-      <span class="mark">Talus Bio</span>
-    </div>
+    <p class="contact">
+      <a href="mailto:lpino@talus.bio">lpino@talus.bio</a>
+      <span class="dot">·</span>
+      <a href="https://www.lindsaykpino.com">www.lindsaykpino.com</a>
+    </p>
   </section>
 
   <!-- ===================== 2. Who I am ===================== -->
@@ -199,26 +201,75 @@ ul.bullets li .sub {
     </ul>
   </section>
 
-  <!-- ===================== 3. Thesis (your framing) ===================== -->
+  <!-- ===================== 3. Syllabus / overview ===================== -->
+  <section class="slide">
+    <h2>The next 45 minutes</h2>
+    <ul class="bullets">
+      <li>Why this matters — AI as leverage for a scientist
+        <span class="sub">the industry view, and my take</span>
+      </li>
+      <li>Hands-on: teach Claude to review your notebook
+        <ul>
+          <li>Let Claude interview you — pull your review checklist out of your head</li>
+          <li>Build a <span class="accent">/review-entry</span> skill, saved in your ClaudeLab</li>
+          <li>Run it on a real entry, then teach it to catch what it missed</li>
+        </ul>
+      </li>
+      <li>What you take with you</li>
+    </ul>
+  </section>
+
+  <!-- ===================== 4. Philosophy opener ===================== -->
+  <section class="slide opener dark-bg">
+    <p class="eyebrow">For the academics in the room</p>
+    <h1>How industry hopes you'll learn to <span style="color:var(--accent)">use AI</span></h1>
+    <p class="sub">A quick detour into how AI-first companies are starting to work — and what they'll want from the scientists they hire.</p>
+  </section>
+
+  <!-- ===================== 5. Philosophy: the industry shift ===================== -->
+  <section class="slide">
+    <h2>The shift industry is betting on</h2>
+    <ul class="bullets">
+      <li><strong>Humans amplified by AI</strong> — "AI-first is not AI-only."
+        <span class="sub">the valued move is orchestrating AI, not doing every step by hand</span>
+      </li>
+      <li>Teams organize around <strong>outcomes</strong>, not job titles — people go more full-stack and let AI fill the skill gaps.</li>
+      <li>The new bottleneck isn't building — it's <strong>iterating</strong>: prototype, ship, learn, repeat.</li>
+    </ul>
+    <p class="muted" style="margin-top:2vh">Framing borrowed from NFX, "AI-First Company Structure: Mission Pods." DISCLAIMER: NfX is one of my investors so I kind of have to listen to them :p</p>
+  </section>
+
+  <!-- ===================== 6. Philosophy: eval culture ===================== -->
+  <section class="slide">
+    <h2>LLMs still need your specific <span class="accent">expertise</span></h2>
+    <ul class="bullets">
+      <li>Without it, you just pile up half-finished, never-shipped work — you feel fast, but you're spinning your wheels.</li>
+      <li>So the scarce skill becomes <strong>quality control</strong>: evaluating what the AI actually produced. Industry calls it <em>eval culture</em>.</li>
+      <li>Things like ELN reviews is eval culture for your own science — which is exactly what we'll practice next.</li>
+    </ul>
+    <p class="muted" style="margin-top:2vh">ELN review is just one example. I'm positive you all have some tedious, time-consuming task that you hate doing but needs to get done!</p>
+  </section>
+
+  <!-- ===================== 7. Thesis (your framing) ===================== -->
   <section class="slide statement">
     <p class="thesis">Using AI to automate the <span class="accent">low-reward but high-repetition</span> tasks of science.</p>
     <p class="muted" style="margin-top:2vh">Nobody lists documentation as their favorite part of science, but everyone's work depends on it being done correctly and consistently. See: Lesson 3.</p>
   </section>
 
-  <!-- ===================== 4. What this hour is really about ===================== -->
+  <!-- ===================== 8. What this hour is really about ===================== -->
   <section class="slide statement">
     <p class="thesis">A review is only as good as <span class="accent">what you make Claude check against</span>.</p>
     <p class="muted" style="margin-top:2vh">And what to check is a thing only <em>you</em> know. The point of the hour isn't to learn my personal ELN checklist, it's to teach Claude yours, and to see how you can use Claude to automate beyond data analyses.</p>
   </section>
 
-  <!-- ===================== 5. Section 1 opener ===================== -->
+  <!-- ===================== 9. Section 1 opener ===================== -->
   <section class="slide opener dark-bg">
     <p class="eyebrow">Step one</p>
     <h1>Let Claude <span style="color:var(--accent)">interview you</span></h1>
     <p class="sub">Pull your own review checklist out of your head, one question at a time.</p>
   </section>
 
-  <!-- ===================== 6. Section 1 content ===================== -->
+  <!-- ===================== 10. Section 1 content ===================== -->
   <section class="slide">
     <h2>Let Claude interview you</h2>
     <ul class="bullets">
@@ -231,14 +282,14 @@ ul.bullets li .sub {
     <p class="prompt">Nudge if it asks in prose: <span class="cmd">"ask me with the question buttons, a few options each, one at a time."</span></p>
   </section>
 
-  <!-- ===================== 7. Section 2 opener ===================== -->
+  <!-- ===================== 11. Section 2 opener ===================== -->
   <section class="slide opener dark-bg">
     <p class="eyebrow">Step two</p>
     <h1>Turn your answers into a <span style="color:var(--accent)">skill</span></h1>
     <p class="sub">Flush it into your ClaudeLab so you never have to re-explain it.</p>
   </section>
 
-  <!-- ===================== 8. Section 2 content ===================== -->
+  <!-- ===================== 12. Section 2 content ===================== -->
   <section class="slide">
     <h2>Build the <span class="accent">/review-entry</span> skill</h2>
     <ul class="bullets">
@@ -246,18 +297,17 @@ ul.bullets li .sub {
         <span class="sub">"Save that as a skill called review-entry so I can run /review-entry on any entry."</span>
       </li>
       <li>All you have to do is explain. Claude writes the skill; you brought the expertise.</li>
-      <li>Give it character! Have it sign off each review, e.g. "LKP".</li>
     </ul>
   </section>
 
-  <!-- ===================== 9. Section 3 opener ===================== -->
+  <!-- ===================== 13. Section 3 opener ===================== -->
   <section class="slide opener dark-bg">
     <p class="eyebrow">Step three</p>
     <h1>Run it on a <span style="color:var(--accent)">real entry</span></h1>
     <p class="sub">Point your skill at a notebook entry that initially looks complete, but has some sneaky errors.</p>
   </section>
 
-  <!-- ===================== 10. Section 3 content ===================== -->
+  <!-- ===================== 14. Section 3 content ===================== -->
   <section class="slide">
     <h2>Run it on a real entry</h2>
     <ul class="bullets">
@@ -271,7 +321,7 @@ ul.bullets li .sub {
     </ul>
   </section>
 
-  <!-- ===================== 11. Capstone beat (teach it to remember) ===================== -->
+  <!-- ===================== 15. Capstone beat (teach it to remember) ===================== -->
   <section class="slide">
     <h2>When it misses something, <span class="accent">teach it</span></h2>
     <ul class="bullets">
@@ -283,7 +333,7 @@ ul.bullets li .sub {
     </ul>
   </section>
 
-  <!-- ===================== 12. What you take with you ===================== -->
+  <!-- ===================== 16. What you take with you ===================== -->
   <section class="slide">
     <h2>What you take with you</h2>
     <ul class="bullets">
@@ -293,7 +343,19 @@ ul.bullets li .sub {
     </ul>
   </section>
 
-  <!-- ===================== 13. Close ===================== -->
+  <!-- ===================== 17. What's next (lead-in to Lesson 6) ===================== -->
+  <section class="slide">
+    <h2>What's next — <span class="accent">Lesson 6</span></h2>
+    <ul class="bullets">
+      <li>Today you taught Claude with a <strong>skill</strong> — an explanation it follows.</li>
+      <li>Next hour: turn an explanation into an actual <strong>tool</strong> you build — a small MCP server in Python.
+        <span class="sub">a skill is the same idea in a smaller pot; an MCP tool is the runnable version</span>
+      </li>
+      <li>With Brendan — your first tools ("what time is it?", the status of all your repos), then getting Claude to reach for them automatically.</li>
+    </ul>
+  </section>
+
+  <!-- ===================== 18. Close ===================== -->
   <section class="slide opener dark-bg">
     <p class="eyebrow">Thank you</p>
     <h1>Questions?</h1>
