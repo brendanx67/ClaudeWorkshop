@@ -49,7 +49,28 @@ a reusable **skill** — a saved instruction you run with a slash command like
 You bring the judgment; Claude does the interviewing, the reading, and the math. The
 prompts below are **examples — say them however you'd say them.**
 
-**1 · Let Claude interview you.** Before we review anything, get Claude to pull *your*
+> **Pace it — one entry at a time.** This lesson works best slow: do a single entry, then
+> *stop and talk it through together* before moving on. Don't let Claude sprint ahead and
+> hand you finished reviews for every entry at once — if it does, just say *"one at a time,
+> wait for me."* Two habits make it click:
+> - **You first, if you like.** Before Claude runs the skill on an entry, take a pass
+>   yourself — say what you'd check, or what smells off — then run it and compare. It's
+>   *your* review instinct we're here to exercise, not Claude's.
+> - **You decide the depth.** Say *"just run it"* and discuss the output, or ask Claude to
+>   walk the entry section by section (metadata → design → the data link → the results
+>   claim), pausing at each so you can react.
+
+We build one skill, then put it to work across a few entries with a little less hand-holding
+each time — **watch me take one, then we take one together, then you take one on your own.**
+Working through this on your own? Same entries — you just drive all three passes yourself.
+
+**1 · Warm-up: read one by hand.** Before Claude touches it, open the batch-3 sample entry
+(the Word doc above) and review it yourself — the way you would a labmate's entry you'd been
+asked to sign off on. Get a feel for the format, the numbers, what it links to, and jot down
+what you'd want to check. No hunting for anything in particular; just get the lay of the land.
+We'll come back to this exact entry.
+
+**2 · Let Claude interview you.** Now get Claude to pull *your*
 review checklist out of your head. Start it off, roughly:
 
 > *"I want to build a skill that reviews my lab notebook entries. Before you write
@@ -68,7 +89,7 @@ point; you'll get somewhere you wouldn't have reached by staring at a blank prom
 your Claude launches into prose questions, nudge it: "ask me with the question buttons,
 a few options each, one at a time.")*
 
-**2 · Turn your answers into a skill.** Once Claude's got your list, flush it into *your*
+**3 · Turn your answers into a skill.** Once Claude's got your list, flush it into *your*
 lab so you never have to re-explain it:
 
 > *"Great — save that as a skill called `review-entry` in my ClaudeLab, so I can run
@@ -77,22 +98,28 @@ lab so you never have to re-explain it:
 That's the week's refrain again: **all you have to do is explain.** Claude writes the
 skill; you brought the expertise about what "reviewed" means *in your world*.
 
-**3 · Try it on a real entry.** Point your new skill at the sample entry:
+**4 · Run it — one entry at a time.** Now put the skill to work, taking the training wheels
+off as you go. Pause and talk after each entry before starting the next.
 
-> *"Run `/review-entry` on the batch-3 analysis entry in this lesson's folder."*
+- **The batch-3 entry you just read by hand.** Run the skill on it and compare — what did it
+  catch that you didn't, and did you spot anything it missed?
+  > *"Run `/review-entry` on the batch-3 analysis entry in this lesson's folder."*
 
-(It'll sign off in your lab's voice at the end — small thing, never gets old.)
+  (It signs off in your lab's voice at the end — small thing, never gets old.) A lot of what
+  needs checking lives in what the entry *links to*, not in its words — an ELN entry is a
+  **hub**. If your skill didn't already say so, tell it to follow links, open any linked
+  analysis, and recompute the numbers rather than trusting the write-up. *(That sample is a
+  Word doc; if reading it is fiddly, there's a helper — `python .../tools/read_eln.py <file>`
+  prints every link as `text -> destination`. Ask Claude first, though.)*
+- **A second entry — the wet-lab digest.** Point the skill at
+  `notebook/2025-07-14_entry-for-review.md` and see how your checklist holds up on a different
+  kind of entry (a bench prep, with its own linked notes). Compare again.
 
-Two things worth watching. First: a lot of what needs checking lives in what the entry
-*links to*, not in its words — an ELN entry is a **hub**. If your skill didn't already say
-so, tell it to follow links, open any linked analysis, and recompute the numbers rather
-than trusting the write-up. *(That sample is a Word doc; if reading it is fiddly, there's
-a helper — `python .../tools/read_eln.py <file>` prints every link as `text ->
-destination`. Ask Claude first, though.)* Second: it'll catch some things and miss others,
-because it's tuned to *my* mistakes, not yours — which is exactly the setup for the last step.
+Your skill will catch some things and miss others — it's tuned to *your* mistakes, and even
+those aren't all captured yet. That's exactly the setup for the last pass.
 
-**4 · Capstone: catch something your skill missed, and teach it to remember.** Every review
-skill has holes — the test is what you do when you find one. Find a problem in an entry
+**5 · On your own — the capstone: catch something your skill missed, and teach it to
+remember.** Every review skill has holes — the test is what you do when you find one. Find a problem in an entry
 that your skill *didn't* flag (there's a subtle one waiting in the batch-4 injection-prep
 entry — the arithmetic looks fine, so ask where a number actually *came from*; or use one
 of your own entries and a mistake from your own life). Then close the loop:
@@ -116,11 +143,12 @@ Done early? Amazing — there's no wall here:
 
 ## You're on track when
 
+- [ ] You read an entry by hand first — before Claude — and formed your own take.
 - [ ] Claude interviewed *you* — one question at a time — and your answers, not my
       checklist, shaped the skill.
 - [ ] A `review-entry` skill lives in your ClaudeLab, runs as `/review-entry`, and checks
       for things that are specific to *your* work.
-- [ ] You ran it on a real entry and saw it both catch things and miss things.
+- [ ] You ran it on more than one entry, one at a time, and saw it both catch and miss things.
 - [ ] You found something it missed and taught it a new check.
 - [ ] ClaudeLab committed and pushed.
 
