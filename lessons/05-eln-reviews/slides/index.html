@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ELN Reviews — Session 5</title>
+
+<!--
+  ============================================================================
+  Lesson 5 — ELN reviews · slide deck
+  ============================================================================
+  Scaffolded from instructors/presentation-template/index.html. Single file, no
+  build step. Open in a browser to present; print to a 16:9 PDF to share.
+
+  HOW TO USE
+    - Present:  double-click index.html. Arrow keys / Space / click to advance.
+                Press F for fullscreen.
+    - Edit:     each <section class="slide"> is one slide. The words are
+                PLACEHOLDERS drawn from the lesson README — rewrite them in your
+                own voice. Ask Claude Code to add/restyle slides.
+    - Branding: theme is the shared workshop purple. To switch to Talus colors,
+                edit --brand / --brand-dark / --brand-light / --accent in :root.
+                To use a real Talus logo, drop an image in an assets/ folder and
+                replace the .brand-logo block on the title/close slides with
+                <img src="assets/talus-logo.png" alt="Talus Bio">.
+    - Print PDF: Ctrl/Cmd-P -> "Save as PDF". Turn ON "Background graphics".
+  ============================================================================
+-->
+
+<style>
+:root {
+  /* ---- Shared workshop palette (UW purple). Swap for Talus colors here. ---- */
+  --brand:       #4B2E83;   /* primary */
+  --brand-dark:  #362161;   /* headings, dark section backgrounds */
+  --brand-light: #EDE9F3;   /* light section backgrounds, borders */
+  --accent:      #85754D;   /* highlights, bullet markers */
+  /* ----------------------------------------------------------------------- */
+  --bg:    #FFFFFF;
+  --text:  #1A1A1A;
+  --muted: #777777;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  width: 100%; height: 100%;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ---- Slide model --------------------------------------------------------
+   One .slide is shown at a time (.active). Sizes use vw/vh so the deck fills
+   any screen. In print, these same units resolve against the 16:9 page box. */
+.deck  { position: relative; width: 100vw; height: 100vh; }
+.slide {
+  position: absolute; inset: 0;
+  padding: 6vh 8vw;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+}
+.slide.active { display: flex; }
+
+/* ---- Typography ---------------------------------------------------------- */
+h1 { font-size: 5.5vw; line-height: 1.05; font-weight: 700; color: var(--brand-dark); letter-spacing: -0.02em; }
+h2 { font-size: 3.8vw; line-height: 1.1;  font-weight: 600; color: var(--brand-dark); letter-spacing: -0.01em; margin-bottom: 4vh; }
+h3 { font-size: 2.4vw; color: var(--accent); margin-bottom: 1vh; font-weight: 600; }
+p, li { font-size: 2.2vw; line-height: 1.5; }
+.accent { color: var(--accent); }
+.muted  { color: var(--muted); font-size: 1.6vw; }
+
+/* Bullet list */
+ul.bullets { list-style: none; margin-top: 2vh; }
+ul.bullets li { font-size: 2.6vw; font-weight: 500; margin-bottom: 1.6vh; }
+ul.bullets li::before { content: "▸"; color: var(--accent); margin-right: 1.2vw; font-weight: 700; }
+ul.bullets li .sub {
+  display: block; font-size: 1.5vw; font-weight: 400; font-style: italic;
+  color: var(--muted); margin-top: 0.3vh; padding-left: 2.5vw;
+}
+
+/* ---- Title slide --------------------------------------------------------- */
+.title-slide { text-align: center; align-items: center; justify-content: center; }
+.title-slide h1 { font-size: 7vw; margin-bottom: 2.5vh; letter-spacing: -0.025em; }
+.title-slide .subtitle { font-size: 2.4vw; color: var(--muted); line-height: 1.35; }
+.title-slide .byline { font-size: 2vw; font-weight: 500; margin-top: 6vh; }
+.title-slide .affil  { font-size: 1.5vw; color: var(--muted); margin-top: 0.4vh; }
+
+/* Text wordmark placeholder (swap for an <img> logo when you have one) */
+.brand-logo { display: flex; align-items: center; justify-content: center; margin-top: 4vh; }
+.brand-logo .mark {
+  font-size: 1.4vw; letter-spacing: 0.22em; font-weight: 700;
+  color: var(--brand); border: 2px solid var(--brand);
+  padding: 0.8vh 1.4vw; border-radius: 4px; text-transform: uppercase;
+}
+
+/* ---- Section opener (dark background) ------------------------------------ */
+.opener { background: var(--brand-dark); color: white; justify-content: center; align-items: center; text-align: center; }
+.opener .eyebrow { font-size: 1.8vw; color: var(--brand-light); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 4vh; }
+.opener h1 { color: white; font-size: 6vw; line-height: 1.1; max-width: 80vw; }
+.opener .sub { font-size: 2.2vw; color: var(--brand-light); margin-top: 4vh; font-weight: 400; max-width: 70vw; }
+
+/* ---- Two-column ---------------------------------------------------------- */
+.two-col { display: flex; gap: 4vw; flex: 1; }
+.two-col .col { flex: 1; display: flex; flex-direction: column; }
+.two-col .col h3 { margin-bottom: 2vh; }
+
+/* ---- Big statement ------------------------------------------------------- */
+.statement { justify-content: center; }
+.statement .thesis { font-size: 5vw; line-height: 1.2; font-weight: 600; }
+
+/* ---- Figure slide (image / embed) ---------------------------------------- */
+.figure-slide { justify-content: flex-start; }
+.figure-slide h2 { margin-bottom: 2vh; }
+.figure-wrap {
+  flex: 1; width: 100%;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--brand-light); border-radius: 6px; overflow: hidden;
+}
+.figure-wrap img, .figure-wrap svg { max-width: 100%; max-height: 100%; object-fit: contain; }
+.figure-wrap iframe, .figure-wrap video { width: 100%; height: 100%; border: none; display: block; }
+.caption { font-size: 1.4vw; color: var(--muted); text-align: center; margin-top: 1.6vh; font-style: italic; }
+
+/* ---- Code / prompt callout ----------------------------------------------- */
+.prompt {
+  background: var(--brand-light); border-left: 0.6vw solid var(--accent);
+  padding: 2.4vh 2.2vw; border-radius: 4px; margin-top: 2vh;
+  font-size: 1.9vw; line-height: 1.45; font-style: italic; color: var(--brand-dark);
+}
+.prompt .cmd { font-style: normal; font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; font-weight: 600; }
+
+/* ---- Slide counter ------------------------------------------------------- */
+.counter {
+  position: fixed; bottom: 1vh; right: 1.5vw;
+  font-size: 1vw; color: var(--muted);
+  font-variant-numeric: tabular-nums; letter-spacing: 0.1em;
+  z-index: 100; pointer-events: none;
+}
+.counter.dark { color: rgba(255,255,255,0.55); }
+
+/* ---- Screen/print element swap ------------------------------------------
+   Interactive content (iframe, video) cannot render in a printed PDF. Mark it
+   .screen-only, and provide a static .print-only image beside it as a fallback.
+   On screen you see the live thing; in the PDF you see the picture. */
+.print-only { display: none; }
+
+/* ==========================================================================
+   PRINT: one slide per 16:9 page. Ctrl/Cmd-P -> Save as PDF.
+   In the print dialog: Margins = None (or Default), and turn ON "Background
+   graphics" so dark slides keep their color.
+   ========================================================================== */
+@media print {
+  @page { size: 13.333in 7.5in; margin: 0; }   /* 16:9 at 96dpi = 1280x720 */
+  html, body { width: 13.333in; height: auto; overflow: visible; background: white; }
+  .deck { width: 13.333in; height: auto; position: static; }
+  .slide {
+    display: flex !important;
+    position: relative; inset: auto;
+    width: 13.333in; height: 7.5in;
+    page-break-after: always; break-after: page;
+    overflow: hidden;
+  }
+  .slide:last-of-type { page-break-after: auto; break-after: auto; }
+  .counter { display: none !important; }
+  .screen-only { display: none !important; }
+  .print-only  { display: block !important; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+}
+</style>
+</head>
+<body tabindex="-1">
+<div class="deck">
+
+  <!-- ===================== 1. Title ===================== -->
+  <section class="slide title-slide active">
+    <h1>ELN Reviews</h1>
+    <p class="subtitle">Session 5 · Teaching Claude to do the boring stuff you spend too much time doing</p>
+    <p class="byline">Lindsay K. Pino</p>
+    <p class="affil">Talus Bio</p>
+    <div class="brand-logo">
+      <!-- Placeholder wordmark. Swap for <img src="assets/talus-logo.png" alt="Talus Bio"> when ready. -->
+      <span class="mark">Talus Bio</span>
+    </div>
+  </section>
+
+  <!-- ===================== 2. Who I am ===================== -->
+  <section class="slide">
+    <h2>Who I am</h2>
+    <ul class="bullets">
+      <li>MacCoss–Noble lab alumna (PhD 2019), now CTO &amp; co-founder at Talus Bio.
+        <span class="sub">background in mass spec-based proteomics, bridging data acquisition to computational analyses</span>
+      </li>
+      <li>Reviews are personal for me mostly because of how much time they take and how little I enjoy doing it.
+        <span class="sub">coordinating 5 direct-report scientists, each starting ~1 new experiment/ELN a week and an experiment runs 3–4 weeks to fully write up, plus wrangling metadata and staying compliant for a future FDA IND</span>
+      </li>
+      <li>Today I review carefully (again, FDA compliance!) but it's slow and tedious and I dread doing it.
+        <span class="sub">most common errors I spot are (1) incorrect raw data paths, (2) missing metadata, (3) wrong/confusing axis labels</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ===================== 3. Thesis (your framing) ===================== -->
+  <section class="slide statement">
+    <p class="thesis">Using AI to automate the <span class="accent">low-reward but high-repetition</span> tasks of science.</p>
+    <p class="muted" style="margin-top:2vh">Nobody lists documentation as their favorite part of science, but everyone's work depends on it being done correctly and consistently. See: Lesson 3.</p>
+  </section>
+
+  <!-- ===================== 4. What this hour is really about ===================== -->
+  <section class="slide statement">
+    <p class="thesis">A review is only as good as <span class="accent">what you make Claude check against</span>.</p>
+    <p class="muted" style="margin-top:2vh">And what to check is a thing only <em>you</em> know. The point of the hour isn't to learn my personal ELN checklist, it's to teach Claude yours, and to see how you can use Claude to automate beyond data analyses.</p>
+  </section>
+
+  <!-- ===================== 5. Section 1 opener ===================== -->
+  <section class="slide opener dark-bg">
+    <p class="eyebrow">Step one</p>
+    <h1>Let Claude <span style="color:var(--accent)">interview you</span></h1>
+    <p class="sub">Pull your own review checklist out of your head, one question at a time.</p>
+  </section>
+
+  <!-- ===================== 6. Section 1 content ===================== -->
+  <section class="slide">
+    <h2>Let Claude interview you</h2>
+    <ul class="bullets">
+      <li>Don't explain everything up front, have Claude ask you.
+        <span class="sub">"Interview me, one question at a time, about what I'd check in an entry from my own work."</span>
+      </li>
+      <li>Answer honestly and specifically. This is the real work of the hour!</li>
+      <li>Example: recompute the dilution math; did the concentrations actually come out to what the entry claims?</li>
+    </ul>
+    <p class="prompt">Nudge if it asks in prose: <span class="cmd">"ask me with the question buttons, a few options each, one at a time."</span></p>
+  </section>
+
+  <!-- ===================== 7. Section 2 opener ===================== -->
+  <section class="slide opener dark-bg">
+    <p class="eyebrow">Step two</p>
+    <h1>Turn your answers into a <span style="color:var(--accent)">skill</span></h1>
+    <p class="sub">Flush it into your ClaudeLab so you never have to re-explain it.</p>
+  </section>
+
+  <!-- ===================== 8. Section 2 content ===================== -->
+  <section class="slide">
+    <h2>Build the <span class="accent">/review-entry</span> skill</h2>
+    <ul class="bullets">
+      <li>Save your checklist as a reusable skill in <em>your</em> ClaudeLab.
+        <span class="sub">"Save that as a skill called review-entry so I can run /review-entry on any entry."</span>
+      </li>
+      <li>All you have to do is explain. Claude writes the skill; you brought the expertise.</li>
+      <li>Give it character! Have it sign off each review, e.g. "LKP".</li>
+    </ul>
+  </section>
+
+  <!-- ===================== 9. Section 3 opener ===================== -->
+  <section class="slide opener dark-bg">
+    <p class="eyebrow">Step three</p>
+    <h1>Run it on a <span style="color:var(--accent)">real entry</span></h1>
+    <p class="sub">Point your skill at a notebook entry that initially looks complete, but has some sneaky errors.</p>
+  </section>
+
+  <!-- ===================== 10. Section 3 content ===================== -->
+  <section class="slide">
+    <h2>Run it on a real entry</h2>
+    <ul class="bullets">
+      <li>Point <span class="accent">/review-entry</span> at the batch-3 analysis entry (a Word doc).
+        <span class="sub">notebook/2025-07-16_analysis-entry-for-review.docx</span>
+      </li>
+      <li>An ELN entry is <strong>evidentiary material</strong>, much of what needs checking lives in what it <em>links to</em>: systems of record, metadata annotations, protocol deviations, etc.
+        <span class="sub">tell the skill to follow links, open the analysis, and recompute the numbers; trust the write-up but verify!</span>
+      </li>
+      <li>It'll catch some things and miss others because it only knows what you've told it. The "institutional knowledge" in your head needs to get dumped out explicitly.</li>
+    </ul>
+  </section>
+
+  <!-- ===================== 11. Capstone beat (teach it to remember) ===================== -->
+  <section class="slide">
+    <h2>When it misses something, <span class="accent">teach it</span></h2>
+    <ul class="bullets">
+      <li>Find a problem your skill didn't flag.
+        <span class="sub">there's a subtle one in the batch-4 injection-prep entry... ask where a number actually came from</span>
+      </li>
+      <li>Close the loop: "You missed this. Add a check for it so you catch it every time."</li>
+      <li>Your Claude auto-reviewer just learned something <strong>permanent</strong>, a living SOP, for you and anyone you share it with.</li>
+    </ul>
+  </section>
+
+  <!-- ===================== 12. What you take with you ===================== -->
+  <section class="slide">
+    <h2>What you take with you</h2>
+    <ul class="bullets">
+      <li>A good review is <strong>personal</strong> and will depend on your own specific workflows. The mistakes worth catching are the ones from your bench and your pipeline.</li>
+      <li>Trust your scientists/trainees/self, but don't trust the write-up! Perform the review, then review the review.</li>
+      <li>Your skill is a living SOP, so every miss becomes a new check, caught forever after.</li>
+    </ul>
+  </section>
+
+  <!-- ===================== 13. Close ===================== -->
+  <section class="slide opener dark-bg">
+    <p class="eyebrow">Thank you</p>
+    <h1>Questions?</h1>
+    <p class="sub">lpino@talus.bio</p>
+  </section>
+
+</div>
+
+<div class="counter" id="counter">1 / 1</div>
+
+<script>
+const slides  = document.querySelectorAll('.slide');
+const counter = document.getElementById('counter');
+let current = 0;
+
+function show(n) {
+  n = Math.max(0, Math.min(slides.length - 1, n));
+  slides.forEach(s => s.classList.remove('active'));
+  slides[n].classList.add('active');
+  current = n;
+  counter.textContent = `${n + 1} / ${slides.length}`;
+  counter.classList.toggle('dark', slides[n].classList.contains('dark-bg'));
+  try { document.body.focus(); } catch (_) {}
+}
+function next() { show(current + 1); }
+function prev() { show(current - 1); }
+
+document.addEventListener('keydown', e => {
+  if (['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)) { next(); e.preventDefault(); }
+  else if (['ArrowLeft','ArrowUp','PageUp'].includes(e.key))     { prev(); e.preventDefault(); }
+  else if (e.key === 'Home') { show(0); e.preventDefault(); }
+  else if (e.key === 'End')  { show(slides.length - 1); e.preventDefault(); }
+  else if (e.key === 'f' || e.key === 'F') {
+    if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+    else document.exitFullscreen();
+    e.preventDefault();
+  }
+});
+
+/* Click to advance — but ignore drags (text selection) and clicks on embeds/links. */
+let downX = 0, downY = 0;
+document.addEventListener('mousedown', e => { downX = e.clientX; downY = e.clientY; });
+document.addEventListener('click', e => {
+  if (Math.hypot(e.clientX - downX, e.clientY - downY) > 5) return;
+  if (['IFRAME','VIDEO','A'].includes(e.target.tagName)) return;
+  if (e.target.closest('.figure-wrap')) return;
+  next();
+});
+
+window.addEventListener('load', () => { try { document.body.focus(); } catch (_) {} });
+show(0);
+</script>
+</body>
+</html>
