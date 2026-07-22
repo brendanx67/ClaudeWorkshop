@@ -77,6 +77,10 @@ ul.bullets li .sub {
   display: block; font-size: 1.5vw; font-weight: 400; font-style: italic;
   color: var(--muted); margin-top: 0.3vh; padding-left: 2.5vw;
 }
+/* Nested sub-bullets */
+ul.bullets li ul { list-style: none; margin: 0.6vh 0 0.4vh 0; padding-left: 2.5vw; }
+ul.bullets li ul li { font-size: 1.9vw; font-weight: 400; margin-bottom: 0.5vh; }
+ul.bullets li ul li::before { content: "·"; color: var(--accent); margin-right: 0.8vw; font-weight: 700; }
 
 /* ---- Title slide --------------------------------------------------------- */
 .title-slide { text-align: center; align-items: center; justify-content: center; }
@@ -204,14 +208,13 @@ ul.bullets li .sub {
       <li>Why this matters — AI as leverage for a scientist
         <span class="sub">~10 min: the industry view, and my take</span>
       </li>
-      <li>Step 1 · Let Claude interview you
-        <span class="sub">pull your own review checklist out of your head</span>
-      </li>
-      <li>Step 2 · Build a <span class="accent">/review-entry</span> skill
-        <span class="sub">save it in your ClaudeLab</span>
-      </li>
-      <li>Step 3 · Run it on a real entry, then teach it
-        <span class="sub">catch a planted error, then make the fix permanent</span>
+      <li>Hands-on: teach Claude to review your notebook
+        <span class="sub">~30 min</span>
+        <ul>
+          <li>Let Claude interview you — pull your review checklist out of your head</li>
+          <li>Build a <span class="accent">/review-entry</span> skill, saved in your ClaudeLab</li>
+          <li>Run it on a real entry, then teach it to catch what it missed</li>
+        </ul>
       </li>
       <li>What you take with you
         <span class="sub">~5 min to wrap</span>
