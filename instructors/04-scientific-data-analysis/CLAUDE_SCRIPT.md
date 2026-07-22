@@ -51,6 +51,27 @@ Build robust, and well-tested data loaders that all downstream analysis scripts 
 
 > **Instructor note:** may want to start a new session here with a clean context.
 
----
 
-*Not yet scripted: the Explore & analyze step and the Report step.*
+## Data analysis
+
+```text
+I want to know which proteins correlate with radiation dose. Choose an appropriate method for my data for finding these. Generate appropriate figures for my review. Save protein lists as CSV and generate plots for the most correlated proteins.
+```
+
+```text
+Do a Gene Ontology enrichment for the most correlated proteins, both positive and negative. Generate appropriate CSV reports and visualizations for the top terms. What pathways stand out?
+```
+
+```text
+I want to build a model to predict whether a new sample has been exposed to radiation. Build a linear classification model. Develop appropriate visualizations and statistics for evaluating the model. Generate visualizations that show me the most important proteins.
+```
+
+```text
+I want to build a model to predict the dose of an unseen sample. Build a linear regression model. Watch out for overfitting. Develop appropriate visualizations and statistics for evaluating the model. Generate visualizations that show me the most important proteins.
+```
+
+## Report
+
+```text
+Generate a HTML report with a results, methods, and discussion section containing figures, tables, and supporting evidence for our claims. Something appropriate to share with a collaborator.
+```
