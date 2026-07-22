@@ -104,6 +104,7 @@ Built: `lessons/05-eln-reviews/slides/index.html` (off `instructors/presentation
 a 20-slide deck: title / who-I-am, the AI-as-leverage framing, a "read one by hand first"
 warm-up, the hands-on as three gradual-release passes (**watch me → together → on your own**),
 takeaways, and the Lesson-6 handoff. Print to a 16:9 PDF from the browser (Ctrl/Cmd-P,
-"Background graphics" on). Note the deck's three-pass framing is more structured than the
-README's four-step flow — same beats, just paced explicitly; reconcile the two if you tighten
-either.
+"Background graphics" on). The deck and the README now share one shape — read-by-hand warm-up
+→ interview → build the skill → run it one entry at a time (batch-3, then the wet-lab digest)
+→ capstone (batch-4), framed as **watch me / together / on your own**. Keep them in sync if
+you tighten either.
