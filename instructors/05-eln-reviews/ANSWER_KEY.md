@@ -107,7 +107,7 @@ It links to `analysis/tf-scan_batch3_cv.ipynb` and the dirs under `data/`.
 
 | # | The entry shows | What's actually true | Caught by |
 |---|---|---|---|
-| 1 | Header **Date of completion** and **Project/run** left blank | fields just… empty | reading the header |
+| 1 | Header **Date completed** and **Project** left blank | fields just… empty | reading the header |
 | 2 | Data link text **"tf-scan batch 3 data"** | target is `data/kinase-panel-batch2/` — a *different project* | pulling the link **target**, not the text (this is why round 1 whiffs) |
 | 3 | "Figure 1: distribution of per-protein CV" | plot code hard-codes **"Retention time (min)" / "Peak area" / "RT alignment — kinase panel"**, copy-pasted from another analysis | open the `.ipynb`, read the plot cell |
 | 4 | "CV computed across **all three** replicates … median CV low" | notebook quietly runs `df[df.replicate != 'R3']` first. Median CV is **~0.017 without R3**, **~0.99 with all three** | open the `.ipynb`, read the filter cell; compare to the entry's method |

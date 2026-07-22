@@ -210,9 +210,10 @@ ul.bullets li ul li::before { content: "·"; color: var(--accent); margin-right:
       </li>
       <li>Hands-on: teach Claude to review your notebook
         <ul>
-          <li>Let Claude interview you — pull your review checklist out of your head</li>
-          <li>Build a <span class="accent">/review-entry</span> skill, saved in your ClaudeLab</li>
-          <li>Run it on a real entry, then teach it to catch what it missed</li>
+          <li>First, review a real entry by hand — get a feel for it</li>
+          <li>Watch me: one full review loop, start to finish</li>
+          <li>Together: build and run your own <span class="accent">/review-entry</span></li>
+          <li>On your own: run it solo, then teach it what it missed</li>
         </ul>
       </li>
       <li>What you take with you</li>
@@ -262,78 +263,103 @@ ul.bullets li ul li::before { content: "·"; color: var(--accent); margin-right:
     <p class="muted" style="margin-top:2vh">And what to check is a thing only <em>you</em> know. The point of the hour isn't to learn my personal ELN checklist, it's to teach Claude yours, and to see how you can use Claude to automate beyond data analyses.</p>
   </section>
 
-  <!-- ===================== 9. Section 1 opener ===================== -->
+  <!-- ===================== 9. Before Claude: read it yourself ===================== -->
   <section class="slide opener dark-bg">
-    <p class="eyebrow">Step one</p>
-    <h1>Let Claude <span style="color:var(--accent)">interview you</span></h1>
-    <p class="sub">Pull your own review checklist out of your head, one question at a time.</p>
+    <p class="eyebrow">Before we touch Claude</p>
+    <h1>Read one <span style="color:var(--accent)">with your own eyes</span></h1>
+    <p class="sub">Open a real notebook entry and review it the way you would today — no AI yet.</p>
   </section>
 
-  <!-- ===================== 10. Section 1 content ===================== -->
+  <!-- ===================== 10. Manual review activity ===================== -->
   <section class="slide">
-    <h2>Let Claude interview you</h2>
+    <h2>Your turn — review it by hand</h2>
     <ul class="bullets">
-      <li>Don't explain everything up front, have Claude ask you.
-        <span class="sub">"Interview me, one question at a time, about what I'd check in an entry from my own work."</span>
+      <li>Open <span class="accent">notebook/2025-07-16_analysis-entry-for-review.docx</span> — a real analysis entry (an exported Google Doc).
+        <span class="sub">prefer plain text? there's a markdown twin, …-review.md</span>
       </li>
-      <li>Answer honestly and specifically. This is the real work of the hour!</li>
-      <li>Example: recompute the dilution math; did the concentrations actually come out to what the entry claims?</li>
+      <li>Read it like a labmate's entry you've been asked to sign off on — get a feel for the format, the numbers, what it links to.</li>
+      <li>Jot down what you'd want to check before you'd trust it.</li>
     </ul>
-    <p class="prompt">Nudge if it asks in prose: <span class="cmd">"ask me with the question buttons, a few options each, one at a time."</span></p>
+    <p class="muted" style="margin-top:2vh">No hunting for anything in particular — just get the lay of the land. We'll come back to this exact entry later.</p>
   </section>
 
-  <!-- ===================== 11. Section 2 opener ===================== -->
-  <section class="slide opener dark-bg">
-    <p class="eyebrow">Step two</p>
-    <h1>Turn your answers into a <span style="color:var(--accent)">skill</span></h1>
-    <p class="sub">Flush it into your ClaudeLab so you never have to re-explain it.</p>
-  </section>
-
-  <!-- ===================== 12. Section 2 content ===================== -->
+  <!-- ===================== 11. Hands-on: three passes ===================== -->
   <section class="slide">
-    <h2>Build the <span class="accent">/review-entry</span> skill</h2>
+    <h2>How we'll practice: <span class="accent">three passes</span></h2>
     <ul class="bullets">
-      <li>Save your checklist as a reusable skill in <em>your</em> ClaudeLab.
-        <span class="sub">"Save that as a skill called review-entry so I can run /review-entry on any entry."</span>
-      </li>
-      <li>All you have to do is explain. Claude writes the skill; you brought the expertise.</li>
+      <li><strong>Watch me</strong> — I run one full loop end to end; you just watch.</li>
+      <li><strong>Together</strong> — we run one as a room, one step at a time.</li>
+      <li><strong>On your own</strong> — you take one solo, and make it stick.</li>
     </ul>
+    <p class="muted" style="margin-top:2vh">Same loop each pass: let Claude interview you → build a <span class="accent">/review-entry</span> skill → run it and see what it catches.</p>
   </section>
 
-  <!-- ===================== 13. Section 3 opener ===================== -->
+  <!-- ===================== 12. Pass 1 · I do (opener) ===================== -->
   <section class="slide opener dark-bg">
-    <p class="eyebrow">Step three</p>
-    <h1>Run it on a <span style="color:var(--accent)">real entry</span></h1>
-    <p class="sub">Point your skill at a notebook entry that initially looks complete, but has some sneaky errors.</p>
+    <p class="eyebrow">Pass 1 · Watch me</p>
+    <h1>One full loop, <span style="color:var(--accent)">start to finish</span></h1>
+    <p class="sub">I'll let Claude interview me, build my review skill, and run it on the batch-3 entry — the one you just read by hand.</p>
   </section>
 
-  <!-- ===================== 14. Section 3 content ===================== -->
+  <!-- ===================== 13. Pass 1 · I do (watch the loop) ===================== -->
   <section class="slide">
-    <h2>Run it on a real entry</h2>
+    <h2>Watch the loop</h2>
     <ul class="bullets">
-      <li>Point <span class="accent">/review-entry</span> at the batch-3 analysis entry (a Word doc).
+      <li>Claude interviews me — my answers, not a generic checklist, become the skill.</li>
+      <li>I save it as <span class="accent">/review-entry</span>, then run it on the batch-3 entry.
         <span class="sub">notebook/2025-07-16_analysis-entry-for-review.docx</span>
       </li>
-      <li>An ELN entry is <strong>evidentiary material</strong>, much of what needs checking lives in what it <em>links to</em>: systems of record, metadata annotations, protocol deviations, etc.
-        <span class="sub">tell the skill to follow links, open the analysis, and recompute the numbers; trust the write-up but verify!</span>
-      </li>
-      <li>It'll catch some things and miss others because it only knows what you've told it. The "institutional knowledge" in your head needs to get dumped out explicitly.</li>
+      <li>An ELN entry is <strong>evidentiary material</strong> — much of what needs checking lives in what it <em>links to</em>, so the skill follows links, opens the analysis, and recomputes. Trust the write-up, but verify!</li>
     </ul>
+    <p class="muted" style="margin-top:2vh">Notice how much lived in what the entry linked to — not in the words you read by hand.</p>
   </section>
 
-  <!-- ===================== 15. Capstone beat (teach it to remember) ===================== -->
+  <!-- ===================== 14. Pass 2 · We do (opener) ===================== -->
+  <section class="slide opener dark-bg">
+    <p class="eyebrow">Pass 2 · Together</p>
+    <h1>Now we build <span style="color:var(--accent)">yours</span></h1>
+    <p class="sub">Same loop — but this time it's your interview, your skill. We'll do it together, one step at a time.</p>
+  </section>
+
+  <!-- ===================== 15. Pass 2 · We do (build it together) ===================== -->
   <section class="slide">
-    <h2>When it misses something, <span class="accent">teach it</span></h2>
+    <h2>Build it together</h2>
     <ul class="bullets">
-      <li>Find a problem your skill didn't flag.
-        <span class="sub">there's a subtle one in the batch-4 injection-prep entry... ask where a number actually came from</span>
+      <li>Let Claude interview <em>you</em> — one question at a time.
+        <span class="sub">"Interview me, one question at a time, about what I'd check in an entry from my own work." (nudge: "ask me with the question buttons, a few options each, one at a time")</span>
       </li>
-      <li>Close the loop: "You missed this. Add a check for it so you catch it every time."</li>
-      <li>Your Claude auto-reviewer just learned something <strong>permanent</strong>, a living SOP, for you and anyone you share it with.</li>
+      <li>Flush your answers into a <span class="accent">/review-entry</span> skill in your ClaudeLab.
+        <span class="sub">"Save that as a skill called review-entry so I can run /review-entry on any entry."</span>
+      </li>
+      <li>Run it on the wet-lab digest entry, and compare across the room.
+        <span class="sub">notebook/2025-07-14_entry-for-review.md</span>
+      </li>
+    </ul>
+    <p class="muted" style="margin-top:2vh">All you have to do is explain. Claude writes the skill; you brought the expertise.</p>
+  </section>
+
+  <!-- ===================== 16. Pass 3 · You do (opener) ===================== -->
+  <section class="slide opener dark-bg">
+    <p class="eyebrow">Pass 3 · On your own</p>
+    <h1>Take one <span style="color:var(--accent)">solo</span></h1>
+    <p class="sub">Run your skill on the batch-4 injection-prep entry — then teach it what it missed.</p>
+  </section>
+
+  <!-- ===================== 17. Pass 3 · You do (run it, then teach it) ===================== -->
+  <section class="slide">
+    <h2>On your own — then <span class="accent">make it stick</span></h2>
+    <ul class="bullets">
+      <li>Run <span class="accent">/review-entry</span> on the batch-4 injection-prep entry.
+        <span class="sub">notebook/2025-07-18_batch4-injection-prep.md</span>
+      </li>
+      <li>The arithmetic looks fine — so ask where a number actually <em>came from</em>. Something slips through.</li>
+      <li>Close the loop: "You missed this. Add a check for it so you catch it every time." Commit and push.
+        <span class="sub">your Claude auto-reviewer just learned something permanent — a living SOP, for you and anyone you share it with</span>
+      </li>
     </ul>
   </section>
 
-  <!-- ===================== 16. What you take with you ===================== -->
+  <!-- ===================== 18. What you take with you ===================== -->
   <section class="slide">
     <h2>What you take with you</h2>
     <ul class="bullets">
@@ -343,7 +369,7 @@ ul.bullets li ul li::before { content: "·"; color: var(--accent); margin-right:
     </ul>
   </section>
 
-  <!-- ===================== 17. What's next (lead-in to Lesson 6) ===================== -->
+  <!-- ===================== 19. What's next (lead-in to Lesson 6) ===================== -->
   <section class="slide">
     <h2>What's next — <span class="accent">Lesson 6</span></h2>
     <ul class="bullets">
@@ -355,7 +381,7 @@ ul.bullets li ul li::before { content: "·"; color: var(--accent); margin-right:
     </ul>
   </section>
 
-  <!-- ===================== 18. Close ===================== -->
+  <!-- ===================== 20. Close ===================== -->
   <section class="slide opener dark-bg">
     <p class="eyebrow">Thank you</p>
     <h1>Questions?</h1>
