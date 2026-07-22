@@ -47,6 +47,14 @@ it is trustworthy (5) → connect to your live ELN (6).**
 Solo means I can't work the room and present at once — so the interview and the capstone are
 where I spend my legs. The framing (6 min) and the skill-save (fast) can run from the front.
 
+**Keep it paced — don't let it steamroll.** This is a one-at-a-time lesson: a single entry,
+then pause and talk before the next. In a test run a driving Claude dumped a finished review
+for the sample entry *and* pre-empted the batch-4 capstone in one go — which flattens the
+whole point (it's *their* review instinct we're exercising, not the model's). If you see it —
+in the demo or on someone's screen — rein it in: *"one at a time, wait for me,"* and offer the
+participant the first pass before the skill runs. The README's **"Pace it"** callout now says
+this to participants directly.
+
 ## Stuff to confirm before July 22 (the load-bearing unknowns)
 
 - [ ] **The interview actually interviews.** Lesson 1's dry run found Claude won't reach for
@@ -90,10 +98,12 @@ The workshop path lives under OneDrive
   will *not* be editing the same files from Windows and WSL at once.
 - **CRLF** — cosmetic here; ignore it, or `git config core.autocrlf true` and move on.
 
-## Slides (optional, not built yet)
+## Slides
 
-The other lessons ship a `slides/index.html` off `instructors/presentation-template/`. This
-one doesn't have slides yet. If I want them, copy the template into
-`lessons/05-eln-reviews/slides/` and put the two example prompts + the round-1 vs round-2
-contrast on it. Not mandatory — the README carries the hour without it — but it'd be a nice
-excuse to dogfood the exact skill we're teaching.
+Built: `lessons/05-eln-reviews/slides/index.html` (off `instructors/presentation-template/`) —
+a 20-slide deck: title / who-I-am, the AI-as-leverage framing, a "read one by hand first"
+warm-up, the hands-on as three gradual-release passes (**watch me → together → on your own**),
+takeaways, and the Lesson-6 handoff. Print to a 16:9 PDF from the browser (Ctrl/Cmd-P,
+"Background graphics" on). Note the deck's three-pass framing is more structured than the
+README's four-step flow — same beats, just paced explicitly; reconcile the two if you tighten
+either.
